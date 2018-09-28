@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "ignore": ["node_modules", "public/compiled.js", "public/compiled_delayed.js", "load_test/*.js", "public/public_configs.js", "output.log", "*.log", "*.css"],
+  "ext": "js json scss"
+}

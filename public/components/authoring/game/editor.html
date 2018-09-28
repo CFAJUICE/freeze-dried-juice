@@ -1,0 +1,112 @@
+<div class="ju-header-bar" style="padding-left: 10px;">{{content.header}}</div>
+
+<div class="row">
+  <div class="col-sm-12 edit-btns" style="margin-top: 0;">
+    <button class='btn btn-success' authoring-save-modal>Save File</button>
+    <button class="btn btn-primary"
+            play-game
+            feedback="{{content.feedbackType}}"
+            game-name="{{content.gameName}}"
+            game-title="{{content.gameTitle}}"
+            game-description="{{content.gameDescription}}"
+            authoring="true">
+      Preview
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="tabbable form-horizontal">
+      <ul class="nav nav-pills nav-stacked col-md-3">
+        <li ng-class="{'active': authoring.activeTab == 'instructions'}"><a href="#instructions"
+                                                                            cancel-click data-toggle="tab"
+                                                                            ng-click="authoring.tab('instructions')">Instructions</a>
+        </li>
+        <li ng-class="{'active': authoring.activeTab == 'gameplay'}"><a href="#gameplay" data-toggle="tab"
+                                                                    cancel-click
+                                                                    ng-click="authoring.tab('gameplay')">Game</a></li>
+        <!--<li ng-class="{'active': authoring.activeTab == 'feedback'}"><a href="#feedback" data-toggle="tab"-->
+                                                                      <!--cancel-click-->
+                                                                      <!--ng-click="authoring.tab('feedback')">Review</a>-->
+        <!--</li>-->
+      </ul>
+
+      <div class="tab-content col-md-9">
+        <div class="tab-pane"
+             ng-controller="GameInstructionCtrl as instruct"
+             ng-class="{'active': authoring.activeTab == 'instructions'}"
+             ng-show="authoring.activeTab == 'instructions'">
+          <div class="form-group">
+            <label class="col-sm-2 control-label text-left">Instructions</label>
+
+            <div class="col-sm-10">
+              <textarea placeholder="Instructions" class="form-control" ng-model="instruct.data.instructions"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label text-left">Tip</label>
+
+            <div class="col-sm-10">
+              <input type="text" placeholder="Tip" class="form-control" ng-model="instruct.data.tip"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label text-left">Upload Image</label>
+
+            <div class="col-sm-10">
+              <input type="file"
+                     accept="image/*"
+                     onchange="angular.element(this).scope().fileChanged(this)"/>
+              <select class="form-control">
+                <option>Existing Image</option>
+              </select>
+
+              <p class="help-block">
+                Either upload a new image for your instructions, or use an existing one.
+                These would typically be helpful screenshots of in-game content with descriptions.
+              </p>
+            </div>
+            <div class="col-sm-12" ng-if="instruct.data.image">
+              <img ng-src="data:image/png;base64, {{instruct.data.image}}" alt="Instructions Image" style="width: 500px;"/>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!--ng-controller="GameContentCtrl as content"-->
+        <div class="tab-pane"
+             ng-transclude
+             ng-class="{'active': authoring.activeTab == 'gameplay'}" ng-show="authoring.activeTab == 'gameplay'"></div>
+
+
+
+        <!--<div class="tab-pane"-->
+             <!--ng-controller="GameFeedbackCtrl as feedback"-->
+             <!--ng-class="{'active': authoring.activeTab == 'feedback'}" ng-show="authoring.activeTab == 'feedback'">-->
+          <!--<div class="form-group">-->
+            <!--<label class="col-sm-2 control-label text-left">Feedback Type</label>-->
+
+            <!--<div class="col-sm-10">-->
+              <!--<select class="form-control"-->
+                      <!--ng-model="feedback.data.feedbackType">-->
+                <!--<option></option>-->
+                <!--<option ng-selected="feedback.data.feedbackType == 'confetti'" value="confetti">Confetti</option>-->
+                <!--<option ng-selected="feedback.data.feedbackType == 'fireworks'" value="fireworks">Fireworks</option>-->
+                <!--<option ng-selected="feedback.data.feedbackType == 'balloons'" value="balloons">Balloons</option>-->
+              <!--</select>-->
+
+              <!--<p class="help-block">-->
+                <!--Choose the type of feedback the player will see on the review screen-->
+              <!--</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+      </div>
+    </div>
+  </div>
+</div>

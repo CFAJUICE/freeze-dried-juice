@@ -1,0 +1,34 @@
+<div class="instructions instructions-view" ng-show="juiceGame.instructions"
+     ng-class="{'go-away': !juiceGame.instructions}"
+     bg-pattern="{background: juiceGame.infoBackground}">
+  <div class="header">
+    <div title="{{gameTitle || juiceGame.gameTitle}}" class="game-logo" style="background-size: auto 40px; background-image: url({{logo || juiceGame.logo}})">
+      &nbsp;
+    </div>
+  </div>
+  <div class="row main-content instructions-content">
+    <div class="col-xs-12 instructions-title">Before you begin, here's how to play!</div>
+    
+    <div class="col-xs-4 col-xs-offset-1">
+      <div class="popover instruct left fade in">
+        <div class="arrow"></div>
+        <div class="popover-inner">
+          <div class="popover-content">
+            <div class="content" bind-html-compile="::juiceGame.section.instructions.instructions"></div>
+            <div class="content tip"><div style="text-align: left;" ng-bind-html="::juiceGame.section.instructions.tip"></div></div>
+            <div class="instructions-legend">
+                <p><strong>Legend:</strong> </p>
+                <p><img src="/javascripts/game/images/info_button.png" style="width:30px"> Instructions</p>
+                <p><img src="/javascripts/game/images/refresh_button.png" style="width:30px"> Restart round</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+      <img class="instruction-img"
+           ng-src="{{section.instructions.image || juiceGame.section.instructions.image ? 'data:image/png;base64, ' + (section.instructions.image || juiceGame.section.instructions.image) : '/images/splash.png'}}"
+           alt="Splash Image" onclick="$('#down-arrow-container').fadeIn().fadeOut();" />
+    </div>
+  </div>
+</div>

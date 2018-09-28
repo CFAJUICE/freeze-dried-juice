@@ -1,0 +1,19 @@
+
+
+<div class="underlay" ng-show="ferpa"></div>
+<div class="common-modal force-scrollbar" ng-init="ferpaAgree = false" ng-show="ferpa">
+    <h2>Welcome to the JUICE academic skill-building system! </h2>
+    <p> Please read and click the checkbox below to accept our privacy terms.</p>
+    <div id="ferpa-content" class="force-scrollbar">
+        <s3-template-loader path="docs/privacy_policy.html"></s3-template-loader>
+    </div>
+    <div>
+        <input type="checkbox" ng-model="ferpaAgree" name="ferpa-agree" id="ferpa-agree"> <label for="ferpa-agree">&nbsp;&nbsp;I have read and accept JUICE Learning privacy terms. </label>
+    </div>
+    <br>
+    <div>
+        <button class="juice-button" ng-click="doFerpaAgree()" ng-disabled="(ferpaAgree!==true)">
+            Continue
+        </button>
+    </div>
+</div>

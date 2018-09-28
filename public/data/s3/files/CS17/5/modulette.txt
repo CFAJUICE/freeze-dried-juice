@@ -1,0 +1,104 @@
+{
+  "title": "Building body paragraphs",
+  "name": "CS17.5.Building body paragraphs",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "42",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS17.5.Refresher_Building_body_paragraphs"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a writing scenario and work through interactive steps to write paragraphs that effectively support your ideas.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Winning a movie essay contest",
+          "title": "No distractions, intense effects, and more!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.5.GuidedPractice1_Building_body_paragraphs"
+          ]
+        },
+        {
+          "description": "Article to help consumers save money",
+          "title": "Safety, hygiene, and durability",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.5.GuidedPractice2_Building_body_paragraphs"
+          ]
+        },
+        {
+          "description": "Blog article on making a good impression ",
+          "title": "No substitute for enthusiam",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.5.GuidedPractice3_Building_body_paragraphs"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about building body paragraphs!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Find a topic sentence that supports your thesis statement",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS17.5.Challenge1_Building_body_paragraphs_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Which sentences belong in an essay body paragraph?\n",
+          "widget_name": "highlighter_widget",
+          "widget_description": "Select words and phrases",
+          "files": [
+            "CS17.5.Challenge2_Building_body_paragraphs_highlighter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Build an essay body paragraph\n",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "CS17.5.Challenge3_Building_body_paragraphs_pickandstack"
+          ]
+        }
+      ]
+    }
+  ]
+}

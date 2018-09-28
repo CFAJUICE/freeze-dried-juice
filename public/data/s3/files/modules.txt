@@ -1,0 +1,1766 @@
+[
+  {
+    "title": "Arguing with Aplomb",
+    "subtitle": "Law reporter",
+    "description": "Do you want to refresh your argument skills? Try exploring one of these mini-lessons for a quick review of the stages of an argument using examples from Mr. Aplomb's lawsuit against Ms. Esprit for making too much noise. Or, try a round or two of the Challenge Wheel to check what you already know!",
+    "id": "CS28CCT3.arguments",
+    "goal": "Access Information",
+    "popup_title": "Refresh your argument skills!",
+    "popup_description": " Do you need to review how to identify and construct an effective argument? Review and practice using mini-lessons about Mr. Aplomb's lawsuit against Ms. Esprit.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "1",
+    "competencies": [
+      "Can articulate an argument",
+      "Can develop and support an argument with evidence",
+      "Can recognize the flaws and inconsistencies of an argument"
+    ],
+    "competencies_id": [
+      "CS38",
+      "CS39",
+      "CCT3"
+    ],
+    "modulettes": [
+      {
+        "name": "CS28CCT3.1.Identifying arguments",
+        "title": "Identifying arguments",
+        "id": "CS28CCT3.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Recognizing an argument",
+          "Developing an argument"
+        ],
+        "subcompetencies_id": [
+          "CS38.1",
+          "CS39.1"
+        ]
+      },
+      {
+        "name": "CS28CCT3.2.Supporting arguments",
+        "title": "Supporting arguments",
+        "id": "CS28CCT3.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Recognizing evidence",
+          "Evaluating evidence",
+          "Providing evidence"
+        ],
+        "subcompetencies_id": [
+          "CS38.2",
+          "CCT3.1",
+          "CS39.2"
+        ]
+      },
+      {
+        "name": "CS28CCT3.3.Rebutting an argument",
+        "title": "Rebutting an argument",
+        "id": "CS28CCT3.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Recognizing a rebuttal",
+          "Evaluating a rebuttal",
+          "Preparing a rebuttal"
+        ],
+        "subcompetencies_id": [
+          "CS38.3",
+          "CCT3.2",
+          "CS39.3"
+        ]
+      },
+      {
+        "name": "CS28CCT3.4.Answering the rebuttal",
+        "title": "Answering the rebuttal",
+        "id": "CS28CCT3.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Recognizing a counter-rebuttal",
+          "Evaluating a counter-rebuttal",
+          "Preparing a counter-rebuttal"
+        ],
+        "subcompetencies_id": [
+          "CS38.4",
+          "CCT3.3",
+          "CS39.4"
+        ]
+      },
+      {
+        "name": "CS28CCT3.5.Judging arguments",
+        "title": "Judging arguments",
+        "id": "CS28CCT3.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Judging an argument"
+        ],
+        "subcompetencies_id": [
+          "CCT3.4"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "blue",
+        "name": "GMOs: Good or Bad?",
+        "dashboard_order": "1",
+        "goal": "Access Information"
+      },
+      {
+        "color": "purple",
+        "name": "Piracy and Counterfeit",
+        "dashboard_order": "3",
+        "goal": "Access Information"
+      },
+      {
+        "color": "blue",
+        "name": "IMHO",
+        "dashboard_order": "0",
+        "goal": "Apply Economic Theories"
+      },
+      {
+        "color": "purple",
+        "name": "Rent or Buy?",
+        "dashboard_order": "3",
+        "goal": "Apply Economic Theories"
+      },
+      {
+        "color": "blue",
+        "name": "From TV to Twitter",
+        "dashboard_order": "1",
+        "goal": "Chart the Evolution of Media"
+      },
+      {
+        "color": "purple",
+        "name": "#electionfever",
+        "dashboard_order": "3",
+        "goal": "Chart the Evolution of Media"
+      }
+    ]
+  },
+  {
+    "title": "Facing grammar fearlessly",
+    "subtitle": "Online magazine editor-in-chief",
+    "description": "Do you want to refresh your grammar skills for writing? Try exploring one of these mini-lessons for a quick review of the basics of grammar using examples about editing an online magazine called Community Living. Or, try a round or two of the Challenge Wheel to check what you already know!",
+    "id": "CS33.grammar",
+    "goal": "Explore Writing",
+    "popup_title": "Refresh your grammar skills!",
+    "popup_description": "Do you need a quick review of verbs, pronouns, tricky words, capitalization, punctuation and other grammar basics? Review and practice using mini-lessons with examples about editing an online magazine.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "3",
+    "competencies": [
+      "Can use standard syntax and sentence structure; correct spelling, punctuation, and capitalization; appropriate grammar (e.g., correct tense, subject-verb agreement, no missing words)"
+    ],
+    "competencies_id": [
+      "CS33"
+    ],
+    "modulettes": [
+      {
+        "name": "CS33.1.How sentences work",
+        "title": "How sentences work",
+        "id": "CS33.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "How sentences work"
+        ],
+        "subcompetencies_id": [
+          "CS33.1"
+        ]
+      },
+      {
+        "name": "CS33.2.Avoid run-on sentences",
+        "title": "Avoid run-on sentences",
+        "id": "CS33.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Avoid run-on sentences"
+        ],
+        "subcompetencies_id": [
+          "CS33.2"
+        ]
+      },
+      {
+        "name": "CS33.3.Fix incomplete sentences",
+        "title": "Fix incomplete sentences",
+        "id": "CS33.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Fix incomplete sentences"
+        ],
+        "subcompetencies_id": [
+          "CS33.3"
+        ]
+      },
+      {
+        "name": "CS33.4.Match subjects with the right verb form",
+        "title": "Subject-verb agreement",
+        "id": "CS33.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Subject-verb agreement"
+        ],
+        "subcompetencies_id": [
+          "CS33.4"
+        ]
+      },
+      {
+        "name": "CS33.5.Choose the right verb tense",
+        "title": "Choose the right verb tense",
+        "id": "CS33.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Choose the right verb tense"
+        ],
+        "subcompetencies_id": [
+          "CS33.5"
+        ]
+      },
+      {
+        "name": "CS33.6.Personal pronouns",
+        "title": "Personal pronouns",
+        "id": "CS33.6",
+        "order": "6",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Personal pronouns"
+        ],
+        "subcompetencies_id": [
+          "CS33.6"
+        ]
+      },
+      {
+        "name": "CS33.7.Plurals, possessives, and plural possessives",
+        "title": "Plurals, possessives, and plural possessives",
+        "id": "CS33.7",
+        "order": "7",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Plurals, possessives and plural possessives."
+        ],
+        "subcompetencies_id": [
+          "CS33.7"
+        ]
+      },
+      {
+        "name": "CS33.8.Words that are easy to confuse",
+        "title": "Words that are easy to confuse",
+        "id": "CS33.8",
+        "order": "8",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Words that are easy to confuse"
+        ],
+        "subcompetencies_id": [
+          "CS33.8"
+        ]
+      },
+      {
+        "name": "CS33.9.When to use commas, semicolons, and colons",
+        "title": "When to use commas, semicolons, and colons",
+        "id": "CS33.9",
+        "order": "9",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "When to use commas, semi colons and colons"
+        ],
+        "subcompetencies_id": [
+          "CS33.9"
+        ]
+      },
+      {
+        "name": "CS33.10.When to use capital letters",
+        "title": "When to use capital letters",
+        "id": "CS33.10",
+        "order": "10",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "When to use capital letters"
+        ],
+        "subcompetencies_id": [
+          "CS33.10"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "blue",
+        "name": "Speaking of Human Rights",
+        "dashboard_order": "13",
+        "goal": "Explore Writing"
+      },
+      {
+        "color": "blue",
+        "name": "Poems about Fathers",
+        "dashboard_order": "14",
+        "goal": "Explore Writing"
+      },
+      {
+        "color": "purple",
+        "name": "Origins",
+        "dashboard_order": "15",
+        "goal": "Explore Writing"
+      },
+      {
+        "color": "purple",
+        "name": "You May Already be a Winner!",
+        "dashboard_order": "12",
+        "goal": "Develop a Budget"
+      },
+      {
+        "color": "blue",
+        "name": "GMOs: Good or Bad?",
+        "dashboard_order": "1",
+        "goal": "Access Information"
+      },
+      {
+        "color": "purple",
+        "name": "Piracy and Counterfeit",
+        "dashboard_order": "3",
+        "goal": "Access Information"
+      },
+      {
+        "color": "blue",
+        "name": "Home Free!",
+        "dashboard_order": "4",
+        "goal": "Analyze Data"
+      },
+      {
+        "color": "purple",
+        "name": "Running for Office",
+        "dashboard_order": "7",
+        "goal": "Analyze Data"
+      },
+      {
+        "color": "blue",
+        "name": "Inflation, Unemployment and the Fed",
+        "dashboard_order": "6",
+        "goal": "Analyze Data"
+      },
+      {
+        "color": "blue",
+        "name": "Up, Up, and Away!",
+        "dashboard_order": "11",
+        "goal": "Develop a Budget"
+      },
+      {
+        "color": "blue",
+        "name": "Using Information Wisely",
+        "dashboard_order": "2",
+        "goal": "Access Information"
+      },
+      {
+        "color": "blue",
+        "name": "How's My Driving?",
+        "dashboard_order": "5",
+        "goal": "Analyze Data"
+      },
+      {
+        "color": "blue",
+        "name": "Let's Get Visual!",
+        "dashboard_order": "9",
+        "goal": "Develop a Budget"
+      },
+      {
+        "color": "blue",
+        "name": "Step by Step",
+        "dashboard_order": "8",
+        "goal": "Develop a Budget"
+      },
+      {
+        "color": "blue",
+        "name": "IMHO",
+        "dashboard_order": "0",
+        "goal": "Apply Economic Theories"
+      },
+      {
+        "color": "purple",
+        "name": "Rent or Buy?",
+        "dashboard_order": "3",
+        "goal": "Apply Economic Theories"
+      },
+      {
+        "color": "blue",
+        "name": "Furby Mania",
+        "dashboard_order": "2",
+        "goal": "Apply Economic Theories"
+      },
+      {
+        "color": "blue",
+        "name": "Launching a New Product",
+        "dashboard_order": "0",
+        "goal": "Build Teamwork Through Marketing"
+      },
+      {
+        "color": "blue",
+        "name": "From TV to Twitter",
+        "dashboard_order": "1",
+        "goal": "Chart the Evolution of Media"
+      },
+      {
+        "color": "blue",
+        "name": "Under the Influence",
+        "dashboard_order": "2",
+        "goal": "Chart the Evolution of Media"
+      },
+      {
+        "color": "purple",
+        "name": "#electionfever",
+        "dashboard_order": "3",
+        "goal": "Chart the Evolution of Media"
+      },
+      {
+        "color": "blue",
+        "name": "Chutes and Ladders",
+        "dashboard_order": "1",
+        "goal": "Confront Culture"
+      },
+      {
+        "color": "blue",
+        "name": "Anthropologist for a Day",
+        "dashboard_order": "2",
+        "goal": "Confront Culture"
+      },
+      {
+        "color": "blue",
+        "name": "After the Spill",
+        "dashboard_order": "2",
+        "goal": "Consider the Environment"
+      },
+      {
+        "color": "blue",
+        "name": "The Lead Paint Study",
+        "dashboard_order": "3",
+        "goal": "Consider the Environment"
+      },
+      {
+        "color": "blue",
+        "name": "Product Life Cycle",
+        "dashboard_order": "4",
+        "goal": "Consider the Environment"
+      },
+      {
+        "color": "purple",
+        "name": "Water, Water, Everywhere",
+        "dashboard_order": "5",
+        "goal": "Consider the Environment"
+      },
+      {
+        "color": "blue",
+        "name": "Can I Trust This Site?",
+        "dashboard_order": "1",
+        "goal": "Decode Media"
+      },
+      {
+        "color": "blue",
+        "name": "Mixed Messages",
+        "dashboard_order": "2",
+        "goal": "Decode Media"
+      },
+      {
+        "color": "blue",
+        "name": "What are They Really Selling?",
+        "dashboard_order": "3",
+        "goal": "Decode Media"
+      },
+      {
+        "color": "purple",
+        "name": "Buy Me!",
+        "dashboard_order": "4",
+        "goal": "Decode Media"
+      },
+      {
+        "color": "blue",
+        "name": "A Passion for Science",
+        "dashboard_order": "1",
+        "goal": "Evaluate Popular Psychology"
+      },
+      {
+        "color": "purple",
+        "name": "Psychology at Work",
+        "dashboard_order": "2",
+        "goal": "Evaluate Popular Psychology"
+      },
+      {
+        "color": "blue",
+        "name": "Selling Organs--Is it Ethical?",
+        "dashboard_order": "1",
+        "goal": "Examine Ethical Perspectives"
+      },
+      {
+        "color": "blue",
+        "name": "The Lifeboat Dilemma",
+        "dashboard_order": "2",
+        "goal": "Examine Ethical Perspectives"
+      },
+      {
+        "color": "purple",
+        "name": "Torture--Is it Ever Ethical?",
+        "dashboard_order": "3",
+        "goal": "Examine Ethical Perspectives"
+      },
+      {
+        "color": "blue",
+        "name": "In Terms of Art",
+        "dashboard_order": "2",
+        "goal": "Experience Art "
+      },
+      {
+        "color": "blue",
+        "name": "The Creation (and Re-Creation) of Venus",
+        "dashboard_order": "3",
+        "goal": "Experience Art "
+      },
+      {
+        "color": "purple",
+        "name": "Body of Work",
+        "dashboard_order": "4",
+        "goal": "Experience Art "
+      },
+      {
+        "color": "blue",
+        "name": "Remember This?",
+        "dashboard_order": "2",
+        "goal": "Experiment with Psychology"
+      },
+      {
+        "color": "blue",
+        "name": "Seeing an Illusion?",
+        "dashboard_order": "3",
+        "goal": "Experiment with Psychology"
+      },
+      {
+        "color": "purple",
+        "name": "Get Your Lab Coat!",
+        "dashboard_order": "4",
+        "goal": "Experiment with Psychology"
+      },
+      {
+        "color": "blue",
+        "name": "Talking it Through",
+        "dashboard_order": "1",
+        "goal": "Interact Effectively in the Workplace"
+      },
+      {
+        "color": "blue",
+        "name": "Introducing Human Resources",
+        "dashboard_order": "2",
+        "goal": "Interact Effectively in the Workplace"
+      },
+      {
+        "color": "blue",
+        "name": "Agenda for Corporate Responsibility",
+        "dashboard_order": "1",
+        "goal": "Investigate Business Ethics "
+      },
+      {
+        "color": "blue",
+        "name": "Mapping Globalization",
+        "dashboard_order": "2",
+        "goal": "Investigate Business Ethics "
+      },
+      {
+        "color": "blue",
+        "name": "Smartshoes Goes Global",
+        "dashboard_order": "3",
+        "goal": "Investigate Business Ethics "
+      },
+      {
+        "color": "purple",
+        "name": "Globalization News",
+        "dashboard_order": "4",
+        "goal": "Investigate Business Ethics "
+      },
+      {
+        "color": "blue",
+        "name": "What Is the Problem?",
+        "dashboard_order": "1",
+        "goal": "Leverage Business Tools"
+      },
+      {
+        "color": "purple",
+        "name": "Mind Your Business",
+        "dashboard_order": "2",
+        "goal": "Leverage Business Tools"
+      },
+      {
+        "color": "blue",
+        "name": "Making Connections",
+        "dashboard_order": "1",
+        "goal": "Own Your Career "
+      },
+      {
+        "color": "blue",
+        "name": "Cover Letter and Resume",
+        "dashboard_order": "2",
+        "goal": "Own Your Career "
+      },
+      {
+        "color": "blue",
+        "name": "Informational Interview",
+        "dashboard_order": "3",
+        "goal": "Own Your Career "
+      },
+      {
+        "color": "purple",
+        "name": "My Professional Portfolio",
+        "dashboard_order": "4",
+        "goal": "Own Your Career "
+      },
+      {
+        "color": "blue",
+        "name": "I Hear You",
+        "dashboard_order": "1",
+        "goal": "Plan for Success"
+      },
+      {
+        "color": "blue",
+        "name": "Myself as a Learner",
+        "dashboard_order": "2",
+        "goal": "Plan for Success"
+      },
+      {
+        "color": "blue",
+        "name": "Search the Web",
+        "dashboard_order": "3",
+        "goal": "Plan for Success"
+      },
+      {
+        "color": "purple",
+        "name": "Past, Present and Future",
+        "dashboard_order": "4",
+        "goal": "Plan for Success"
+      },
+      {
+        "color": "blue",
+        "name": "You're So Lean!",
+        "dashboard_order": "1",
+        "goal": "Solve Problems in the Workplace"
+      },
+      {
+        "color": "blue",
+        "name": "Solutions by Design",
+        "dashboard_order": "2",
+        "goal": "Solve Problems in the Workplace"
+      },
+      {
+        "color": "purple",
+        "name": "Game Plan",
+        "dashboard_order": "3",
+        "goal": "Solve Problems in the Workplace"
+      }
+    ]
+  },
+  {
+    "title": "JUICE testing module 9/21/17",
+    "subtitle": "testing module subtitle",
+    "description": "This module is for testing purposes only.  It may be missing images or have text that looks odd.   Do not be alarmed unless you specifically just made some kind of testing change and it is not showing here. ",
+    "id": "D1.demomodule",
+    "goal": "",
+    "popup_title": "Welcome to the JUICE testing module!",
+    "popup_description": "This module is for testing purposes only.  It may be missing images or have text that looks odd.   Do not be alarmed unless you specifically just made some kind of testing change and it is not showing here. ",
+    "hide_from_dashboard": "1",
+    "dashboard_order": "0",
+    "competencies": [
+      ""
+    ],
+    "competencies_id": [],
+    "modulettes": [
+      {
+        "name": "D1.1.Demo Basic Math module",
+        "title": "Demo Basic Math module",
+        "id": "D1.1",
+        "order": "1",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.2.Argument game holder hidden module",
+        "title": "Argument game holder hidden module",
+        "id": "D1.2",
+        "order": "",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.5.Probability overview",
+        "title": "Probability overview",
+        "id": "D1.5",
+        "order": "4",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.6.Basic probability",
+        "title": "Basic probability",
+        "id": "D1.6",
+        "order": "5",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.7.Probability with \"OR\" and \"AND\"",
+        "title": "Probability with OR and AND",
+        "id": "D1.7",
+        "order": "6",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.8.Conditional probability",
+        "title": "Conditional probability",
+        "id": "D1.8",
+        "order": "",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.9.Compound probability",
+        "title": "Compound probability",
+        "id": "D1.9",
+        "order": "7",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.10.Overview and Try It test plan",
+        "title": "Overview and Try It test plan",
+        "id": "D1.10",
+        "order": "2",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.11.Reviewer Training",
+        "title": "Mastered or Not Yet",
+        "id": "D1.11",
+        "order": "8",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.12.Game testing",
+        "title": "Game testing",
+        "id": "D1.12",
+        "order": "3",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D1.13.Equivalence",
+        "title": "Equivalence",
+        "id": "D1.13",
+        "order": "10",
+        "hide_from_dashboard": "1"
+      }
+    ],
+    "projects": []
+  },
+  {
+    "title": "Authoring resources",
+    "subtitle": "",
+    "description": "This is a collection of mini-lessons that are helpful for authoring.",
+    "id": "D3.authoring",
+    "goal": "",
+    "popup_title": "Welcome to the authoring module",
+    "popup_description": "",
+    "hide_from_dashboard": "1",
+    "dashboard_order": "0",
+    "competencies": [
+      ""
+    ],
+    "competencies_id": [],
+    "modulettes": [
+      {
+        "name": "D3.1.Making a mini-lesson",
+        "title": "Making a mini-lesson",
+        "id": "D3.1",
+        "order": "1",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D3.2.Math library",
+        "title": "Math library",
+        "id": "D3.2",
+        "order": "2",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D3.3.Authoring math notation",
+        "title": "Authoring math notation",
+        "id": "D3.3",
+        "order": "3",
+        "hide_from_dashboard": "0"
+      },
+      {
+        "name": "D3.4.Authoring for screen readers",
+        "title": "Authoring for screen readers",
+        "id": "D3.4",
+        "order": "4",
+        "hide_from_dashboard": "0"
+      }
+    ],
+    "projects": []
+  },
+  {
+    "title": "Mastering citations",
+    "subtitle": "Writing a family history",
+    "description": "Are citations driving you crazy? Get help on documenting your sources by exploring mini-lessons using examples from a family history project. Or, start with the Challenge Wheel game to check what you already know!",
+    "id": "JCS100.citations",
+    "goal": "",
+    "popup_title": "Cite your sources with confidence!",
+    "popup_description": "Are citations driving you crazy?  Get a clear understanding of how to document sources using mini-lessons with examples about a family history project.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "4",
+    "competencies": [
+      "Can accurately document sources of information using APA format."
+    ],
+    "competencies_id": [
+      "JCS100"
+    ],
+    "modulettes": [
+      {
+        "name": "JCS100.1.Why documenting sources matters",
+        "title": "Why documenting sources matters",
+        "id": "JCS100.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Why documenting sources matters"
+        ],
+        "subcompetencies_id": [
+          "JCS100.1"
+        ]
+      },
+      {
+        "name": "JCS100.2.When to cite sources",
+        "title": "When to cite sources",
+        "id": "JCS100.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "When to cite sources"
+        ],
+        "subcompetencies_id": [
+          "JCS100.2"
+        ]
+      },
+      {
+        "name": "JCS100.3.Including many sources in a paragraph",
+        "title": "Using many sources in a paragraph",
+        "id": "JCS100.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "When to cite sources"
+        ],
+        "subcompetencies_id": [
+          "JCS100.2"
+        ]
+      },
+      {
+        "name": "JCS100.4.Basic rules for documenting sources",
+        "title": "Basic rules for documenting sources",
+        "id": "JCS100.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Basic rules for documenting sources"
+        ],
+        "subcompetencies_id": [
+          "JCS100.3"
+        ]
+      },
+      {
+        "name": "JCS100.5.Finding citation and reference details",
+        "title": "Finding citation and reference details",
+        "id": "JCS100.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Finding citation and reference details",
+          "Dealing with missing citation information"
+        ],
+        "subcompetencies_id": [
+          "JCS100.4",
+          "JCS100.5"
+        ]
+      }
+    ],
+    "projects": []
+  },
+  {
+    "title": "Conquering decimals, fractions, and percents",
+    "subtitle": "Adventures in home improvement",
+    "description": "Do you need help with math problems using decimals, fractions, or percents? Try exploring one of these mini-lessons for a quick review of the basics using examples about home improvements. Or, try a round or two of the Challenge Wheel to check what you already know!",
+    "id": "QS1.basic_math",
+    "goal": "Develop a Budget",
+    "popup_title": "Boost your basic math skills!",
+    "popup_description": "Explore mini-lessons for a quick review of decimals, fractions, percents and problem solving using examples about home improvements.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "2",
+    "competencies": [
+      "Can add, subtract, multiply and divide with whole numbers, fractions, decimals and percents"
+    ],
+    "competencies_id": [
+      "QS1"
+    ],
+    "modulettes": [
+      {
+        "name": "QS1.1.Finding percentage",
+        "title": "Finding percentage",
+        "id": "QS1.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Finding percentage"
+        ],
+        "subcompetencies_id": [
+          "QS1.1"
+        ]
+      },
+      {
+        "name": "QS1.2.Percent of a number",
+        "title": "Percent of a number",
+        "id": "QS1.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Percent of a number"
+        ],
+        "subcompetencies_id": [
+          "QS1.2"
+        ]
+      },
+      {
+        "name": "QS1.3.Percent increase",
+        "title": "Percent increase",
+        "id": "QS1.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Percent increase"
+        ],
+        "subcompetencies_id": [
+          "QS1.3"
+        ]
+      },
+      {
+        "name": "QS1.4.Percent decrease",
+        "title": "Percent decrease",
+        "id": "QS1.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Percent decrease"
+        ],
+        "subcompetencies_id": [
+          "QS1.4"
+        ]
+      },
+      {
+        "name": "QS1.5.Multiplying fractions",
+        "title": "Multiplying fractions",
+        "id": "QS1.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Multiplying fractions"
+        ],
+        "subcompetencies_id": [
+          "QS1.5"
+        ]
+      },
+      {
+        "name": "QS1.6.Writing math expressions",
+        "title": "Writing math expressions",
+        "id": "QS1.6",
+        "order": "6",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Working with math expressions"
+        ],
+        "subcompetencies_id": [
+          "QS1.6"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "blue",
+        "name": "Where Did My Paycheck Go?",
+        "dashboard_order": "10",
+        "goal": "Develop a Budget"
+      },
+      {
+        "color": "purple",
+        "name": "You May Already be a Winner!",
+        "dashboard_order": "12",
+        "goal": "Develop a Budget"
+      },
+      {
+        "color": "blue",
+        "name": "How's My Driving?",
+        "dashboard_order": "5",
+        "goal": "Analyze Data"
+      },
+      {
+        "color": "purple",
+        "name": "Rent or Buy?",
+        "dashboard_order": "3",
+        "goal": "Apply Economic Theories"
+      },
+      {
+        "color": "blue",
+        "name": "Furby Mania",
+        "dashboard_order": "2",
+        "goal": "Apply Economic Theories"
+      }
+    ]
+  },
+  {
+    "title": "Writing a great paragraph",
+    "subtitle": "Getting your money back",
+    "description": "Do you want to refresh your paragraph writing skills?  Try exploring one of these mini-lessons for a quick review using an example about writing a letter to get your money back after a bad hotel experience. Or, try a round or two of the Challenge Wheel to check what you already know!",
+    "id": "CS16.paragraph",
+    "goal": "Explore Writing",
+    "popup_title": "Build your paragraph writing skills!",
+    "popup_description": "Review and practice identifying audience and purpose, developing a topic sentence, and providing convincing details using mini-lessons about writing a complaint letter.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "10",
+    "competencies": [
+      "Can write a paragraph"
+    ],
+    "competencies_id": [
+      "CS16"
+    ],
+    "modulettes": [
+      {
+        "name": "CS16.1.Pick the right paragraph type",
+        "title": "Decide on your audience and purpose",
+        "id": "CS16.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Pick the right paragraph type"
+        ],
+        "subcompetencies_id": [
+          "CS16.1"
+        ]
+      },
+      {
+        "name": "CS16.2.Write a strong topic sentence",
+        "title": "Write a strong topic sentence",
+        "id": "CS16.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Write a strong topic sentence"
+        ],
+        "subcompetencies_id": [
+          "CS16.2"
+        ]
+      },
+      {
+        "name": "CS16.3.Add support",
+        "title": "Add support",
+        "id": "CS16.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Add support"
+        ],
+        "subcompetencies_id": [
+          "CS16.3"
+        ]
+      },
+      {
+        "name": "CS16.4.Stick to the topic",
+        "title": "Stick to the topic",
+        "id": "CS16.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Stick to the topic"
+        ],
+        "subcompetencies_id": [
+          "CS16.4"
+        ]
+      },
+      {
+        "name": "CS16.5.Connect sentences",
+        "title": "Connect sentences",
+        "id": "CS16.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Connect sentences"
+        ],
+        "subcompetencies_id": [
+          "CS16.5"
+        ]
+      },
+      {
+        "name": "CS16.6.Make sure the parts work together",
+        "title": "Make sure the parts work together",
+        "id": "CS16.6",
+        "order": "6",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Make sure the parts work together"
+        ],
+        "subcompetencies_id": [
+          "CS16.6"
+        ]
+      },
+      {
+        "name": "CS16.7.Body paragraphs for an essay",
+        "title": "Body paragraphs for an essay",
+        "id": "CS16.7",
+        "order": "7",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Body paragraphs for an essay"
+        ],
+        "subcompetencies_id": [
+          "CS16.7"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "purple",
+        "name": "Origins",
+        "dashboard_order": "15",
+        "goal": "Explore Writing"
+      },
+      {
+        "color": "blue",
+        "name": "Poems about Fathers",
+        "dashboard_order": "14",
+        "goal": "Explore Writing"
+      },
+      {
+        "color": "blue",
+        "name": "Speaking of Human Rights",
+        "dashboard_order": "13",
+        "goal": "Explore Writing"
+      }
+    ]
+  },
+  {
+    "title": "Writing a winning essay",
+    "subtitle": "Enter a writing contest or write an article",
+    "description": "If you are facing a big writing assignment, these mini-lessons can help you get ready to plan and organize your writing process, starting with an essay contest example. For each step in the process, you can also practice writing skills using a consumer article or a blog. Try the Challenge Wheel game first if you are not sure which skills you need to review.",
+    "id": "CS17.essays",
+    "goal": "Explore Writing",
+    "popup_title": "Boost your essay writing skills!",
+    "popup_description": "Learn about planning an essay, developing a thesis statement, writing a first draft, and revising your work using mini-lessons about a movie essay contest.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "11",
+    "competencies": [
+      "Can write a five-paragraph essay"
+    ],
+    "competencies_id": [
+      "CS17"
+    ],
+    "modulettes": [
+      {
+        "name": "CS17.1.Generating ideas",
+        "title": "Generating ideas",
+        "id": "CS17.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Generating ideas"
+        ],
+        "subcompetencies_id": [
+          "CS17.1"
+        ]
+      },
+      {
+        "name": "CS17.2.Developing a strong thesis statement",
+        "title": "Developing a strong thesis statement",
+        "id": "CS17.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Developing a strong thesis statement"
+        ],
+        "subcompetencies_id": [
+          "CS17.2"
+        ]
+      },
+      {
+        "name": "CS17.3.Planning and organizing",
+        "title": "Planning and organizing",
+        "id": "CS17.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Planning and organizing"
+        ],
+        "subcompetencies_id": [
+          "CS17.3"
+        ]
+      },
+      {
+        "name": "CS17.4.Beginning with a compelling introduction",
+        "title": "Beginning with a compelling introduction",
+        "id": "CS17.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Beginning with a compelling introduction"
+        ],
+        "subcompetencies_id": [
+          "CS17.4"
+        ]
+      },
+      {
+        "name": "CS17.5.Building body paragraphs",
+        "title": "Building body paragraphs",
+        "id": "CS17.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Building body paragraphs"
+        ],
+        "subcompetencies_id": [
+          "CS17.5"
+        ]
+      },
+      {
+        "name": "CS17.6.Ending with a good conclusion",
+        "title": "Ending with a good conclusion",
+        "id": "CS17.6",
+        "order": "6",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Ending with a good conclusion"
+        ],
+        "subcompetencies_id": [
+          "CS17.6"
+        ]
+      },
+      {
+        "name": "CS17.7.Improving what you wrote",
+        "title": "Improving what you wrote",
+        "id": "CS17.7",
+        "order": "7",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Improving what you wrote"
+        ],
+        "subcompetencies_id": [
+          "CS17.7"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "blue",
+        "name": "Speaking of Human Rights",
+        "dashboard_order": "13",
+        "goal": "Explore Writing"
+      },
+      {
+        "color": "purple",
+        "name": "Origins",
+        "dashboard_order": "15",
+        "goal": "Explore Writing"
+      },
+      {
+        "color": "blue",
+        "name": "Poems about Fathers",
+        "dashboard_order": "14",
+        "goal": "Explore Writing"
+      }
+    ]
+  },
+  {
+    "title": "Smart techniques for reading and summarizing",
+    "subtitle": "Getting to the point of an op-ed article about a mysterious burglary",
+    "description": "Would you like to get better at gathering key ideas and information as you read?  Do you need tips and tools to help you write a summary in your own words?   Try exploring one of these mini-lessons using an Op-Ed about a mysterious series of musical instrument thefts to learn about tools and techniques for skimming, reading, and summarizing.  Or, try a round or two of the Challenge Wheel to check what you already know! \n",
+    "id": "CS6.criticalreading",
+    "goal": "Analyze Data",
+    "popup_title": "Refresh your critical reading and summarizing skills!",
+    "popup_description": "Review and practice using mini-lessons based on an opinion article about music.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "8",
+    "competencies": [
+      "Can read critically in order to identify main ideas, supporting evidence, and conclusions"
+    ],
+    "competencies_id": [
+      "CS6"
+    ],
+    "modulettes": [
+      {
+        "name": "CS6.1.Previewing and organizing",
+        "title": "Previewing and organizing",
+        "id": "CS6.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Previewing and organizing"
+        ],
+        "subcompetencies_id": [
+          "CS6.1"
+        ]
+      },
+      {
+        "name": "CS6.2.Extracting key ideas and details",
+        "title": "Extracting key ideas and details",
+        "id": "CS6.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Extracting key ideas and details"
+        ],
+        "subcompetencies_id": [
+          "CS6.2"
+        ]
+      },
+      {
+        "name": "CS6.3.Restating the conclusion",
+        "title": "Restating the conclusion",
+        "id": "CS6.3",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Restating the conclusion"
+        ],
+        "subcompetencies_id": [
+          "CS6.3"
+        ]
+      },
+      {
+        "name": "CS6.4.Creating your summary",
+        "title": "Creating your summary ",
+        "id": "CS6.4",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Creating your summary"
+        ],
+        "subcompetencies_id": [
+          "CS6.4"
+        ]
+      },
+      {
+        "name": "CS6.5.Understanding what you read",
+        "title": "Understanding what you read",
+        "id": "CS6.5",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Understanding what you read"
+        ],
+        "subcompetencies_id": [
+          "CS6.5"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "blue",
+        "name": "Inflation, Unemployment and the Fed",
+        "dashboard_order": "6",
+        "goal": "Analyze Data"
+      },
+      {
+        "color": "purple",
+        "name": "Running for Office",
+        "dashboard_order": "7",
+        "goal": "Analyze Data"
+      },
+      {
+        "color": "blue",
+        "name": "IMHO",
+        "dashboard_order": "0",
+        "goal": "Apply Economic Theories"
+      },
+      {
+        "color": "purple",
+        "name": "Rent or Buy?",
+        "dashboard_order": "3",
+        "goal": "Apply Economic Theories"
+      }
+    ]
+  },
+  {
+    "title": "What's the probability?",
+    "subtitle": "Planning the office summer picnic",
+    "description": "Do you need help with math problems using basic statistics or probability? Try exploring one of these mini-lessons for a quick review using examples about randomly selecting a planning committee and ordering food for the office summer picnic. Or, try a round or two of the Challenge Wheel to check what you already know!",
+    "id": "QS8.probability",
+    "goal": "Analyze Data",
+    "popup_title": "Boost your probability and statistics skills!",
+    "popup_description": " Review and practice mean, median, mode, and probability calculations using mini-lessons about selecting volunteers for a picnic committee.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "9",
+    "competencies": [
+      "Can explain and apply basic concepts of statistics and probability"
+    ],
+    "competencies_id": [
+      "QS8"
+    ],
+    "modulettes": [
+      {
+        "name": "QS8.1.Mean, median, and mode",
+        "title": "Mean, median, and mode",
+        "id": "QS8.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Mean, median and mode"
+        ],
+        "subcompetencies_id": [
+          "QS8.1"
+        ]
+      },
+      {
+        "name": "QS8.2.Introduction to probability",
+        "title": "Introduction to probability",
+        "id": "QS8.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Introduction to probability."
+        ],
+        "subcompetencies_id": [
+          "QS8.2"
+        ]
+      },
+      {
+        "name": "QS8.3.Basic probability",
+        "title": "Basic probability",
+        "id": "QS8.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Basic probability"
+        ],
+        "subcompetencies_id": [
+          "QS8.3"
+        ]
+      },
+      {
+        "name": "QS8.4.Probability with \"OR\"",
+        "title": "Probability with OR",
+        "id": "QS8.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Probability with \"OR\""
+        ],
+        "subcompetencies_id": [
+          "QS8.4"
+        ]
+      },
+      {
+        "name": "QS8.6.Compound probability",
+        "title": "Compound probability",
+        "id": "QS8.6",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Compound probability"
+        ],
+        "subcompetencies_id": [
+          "QS8.6"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "blue",
+        "name": "Home Free!",
+        "dashboard_order": "4",
+        "goal": "Analyze Data"
+      },
+      {
+        "color": "purple",
+        "name": "Running for Office",
+        "dashboard_order": "7",
+        "goal": "Analyze Data"
+      }
+    ]
+  },
+  {
+    "title": "Problem-solving at Giganto-Mart",
+    "subtitle": "Trip to the superstore",
+    "description": "Do you need help with using math to solve problems and make decisions? Try exploring one of these mini-lessons for a quick review using examples about a trip to the local superstore. Or, try a round or two of the Challenge Wheel to check what you already know!\n",
+    "id": "QS67.problemsolving",
+    "goal": "Develop a Budget",
+    "popup_title": "Boost your math problem-solving skills!",
+    "popup_description": "Review and practice making financial decisions, calculating unit costs, and using formulas with examples about a trip to the superstore.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "6",
+    "competencies": [
+      "Can represent practical problems as mathematical expressions.",
+      "Can use appropriate mathematical formulas to inform financial decisions."
+    ],
+    "competencies_id": [
+      "QS6",
+      "QS7"
+    ],
+    "modulettes": [
+      {
+        "name": "QS67.1.Deciding what math to use",
+        "title": "Deciding what math to use",
+        "id": "QS67.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Deciding what math to use"
+        ],
+        "subcompetencies_id": [
+          "QS6.1"
+        ]
+      },
+      {
+        "name": "QS67.2.Making financial decisions",
+        "title": "Making financial decisions",
+        "id": "QS67.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Making financial decisions"
+        ],
+        "subcompetencies_id": [
+          "QS7.1"
+        ]
+      },
+      {
+        "name": "QS67.3.Using formulas",
+        "title": "Using formulas",
+        "id": "QS67.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Using formulas"
+        ],
+        "subcompetencies_id": [
+          "QS7.2"
+        ]
+      },
+      {
+        "name": "QS67.4.Comparing units and unit cost",
+        "title": "Comparing units and unit cost",
+        "id": "QS67.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Comparing units and unit cost"
+        ],
+        "subcompetencies_id": [
+          "QS7.3"
+        ]
+      },
+      {
+        "name": "QS67.5.Working with graphs and charts",
+        "title": "Working with graphs and charts",
+        "id": "QS67.5",
+        "order": "",
+        "hide_from_dashboard": "1",
+        "subcompetencies": [
+          "work with graphs and charts"
+        ],
+        "subcompetencies_id": [
+          "QS10.1"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "blue",
+        "name": "Up, Up, and Away!",
+        "dashboard_order": "11",
+        "goal": "Develop a Budget"
+      },
+      {
+        "color": "purple",
+        "name": "You May Already be a Winner!",
+        "dashboard_order": "12",
+        "goal": "Develop a Budget"
+      },
+      {
+        "color": "blue",
+        "name": "Surf to Turf",
+        "dashboard_order": "1",
+        "goal": "Consider the Environment"
+      },
+      {
+        "color": "purple",
+        "name": "Water, Water, Everywhere",
+        "dashboard_order": "5",
+        "goal": "Consider the Environment"
+      }
+    ]
+  },
+  {
+    "title": "Ratios and proportions: Toys for the holidays!",
+    "subtitle": "Toy company manufacturing manager",
+    "description": "Do you need help with calculating averages or solving math problems involving ratios, rates, and proportions? Try exploring one of these mini-lessons for a quick review using examples about toy manufacturing. Or, try a round or two of the Challenge Wheel to check what you already know! ",
+    "id": "QS2.ratiosandproportions",
+    "goal": "",
+    "popup_title": "",
+    "popup_description": "Review and practice calculating averages and solving math problems involving ratios, rates, and proportions using examples about filling a rush order for Yeti-Man action figures.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "7",
+    "competencies": [
+      "Can calculate averages, ratios, proportions and rates"
+    ],
+    "competencies_id": [
+      "QS2"
+    ],
+    "modulettes": [
+      {
+        "name": "QS2.1.Calculating averages",
+        "title": "Calculating averages",
+        "id": "QS2.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Calculating Averages"
+        ],
+        "subcompetencies_id": [
+          "QS2.1"
+        ]
+      },
+      {
+        "name": "QS2.2.Ratios and rates",
+        "title": "Ratios and rates",
+        "id": "QS2.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Ratios and rates"
+        ],
+        "subcompetencies_id": [
+          "QS2.2"
+        ]
+      },
+      {
+        "name": "QS2.3.Proportions",
+        "title": "Proportions",
+        "id": "QS2.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Proportions"
+        ],
+        "subcompetencies_id": [
+          "QS2.3"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "blue",
+        "name": "Stroop Test",
+        "dashboard_order": "1",
+        "goal": "Experiment with Psychology"
+      },
+      {
+        "color": "purple",
+        "name": "Get Your Lab Coat!",
+        "dashboard_order": "4",
+        "goal": "Experiment with Psychology"
+      }
+    ]
+  },
+  {
+    "title": "Measurements: Solving for distance, area, volume, and more!",
+    "subtitle": "Resort hotel property manager",
+    "description": "Do you need help with solving practical problems involving measurements? Try exploring one of these mini-lessons for a quick review using examples about completing the pool area at a resort hotel. Or, try a round or two of the Challenge Wheel to check what you already know!<br><br>Note:  Audio narration is not yet available for this module.",
+    "id": "QS11.measurements",
+    "goal": "",
+    "popup_title": "",
+    "popup_description": "Review and solve practical problems involving measurements using examples about getting a resort hotel's pool area ready for its grand opening.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "5",
+    "competencies": [
+      "Can solve practical problems using measurements such as time, temperature, distance, length and volume"
+    ],
+    "competencies_id": [
+      "QS11"
+    ],
+    "modulettes": [
+      {
+        "name": "QS11.1.Distance, rate, and time",
+        "title": "Distance, rate, and time",
+        "id": "QS11.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Distance, rate, and time"
+        ],
+        "subcompetencies_id": [
+          "QS11.1"
+        ]
+      },
+      {
+        "name": "QS11.2.Perimeter",
+        "title": "Perimeter",
+        "id": "QS11.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Length"
+        ],
+        "subcompetencies_id": [
+          "QS11.2"
+        ]
+      },
+      {
+        "name": "QS11.3.Area",
+        "title": "Area",
+        "id": "QS11.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Area"
+        ],
+        "subcompetencies_id": [
+          "QS11.3"
+        ]
+      },
+      {
+        "name": "QS11.4.Volume",
+        "title": "Volume",
+        "id": "QS11.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Volume"
+        ],
+        "subcompetencies_id": [
+          "QS11.4"
+        ]
+      },
+      {
+        "name": "QS11.5.Temperature",
+        "title": "Temperature",
+        "id": "QS11.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Temperature"
+        ],
+        "subcompetencies_id": [
+          "QS11.5"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "color": "blue",
+        "name": "Surf to Turf",
+        "dashboard_order": "1",
+        "goal": "Consider the Environment"
+      },
+      {
+        "color": "purple",
+        "name": "Water, Water, Everywhere",
+        "dashboard_order": "5",
+        "goal": "Consider the Environment"
+      }
+    ]
+  }
+]

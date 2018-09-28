@@ -1,0 +1,43 @@
+<div>
+     
+     <div class='module-box-outer' ng-style=outerBox() ng-click=showReadOnly(1) role='none'>
+
+	      <div class='icon-container' ng-class='{"link":!isCoachStudentView()}' ng-style=iconDepth()>
+              <img-with-fallback
+                      src="modules[index].program_icon"
+                      fallback="modules[index].icon"
+                      imgclass="'circle-icon'"
+                      ng-click="isCoachStudentView()||$location.path('module/'+modules[index].id)">
+              </img-with-fallback>
+         </div>
+         <div id='module-inner-{{prefix}}{{index}}' class='module-box-inner' ng-style=innerHeight() role='none'>
+	         <div  id='{{modid}}' role="treeitem" aria-level="{{arialevel}}" tabindex="{{modid == tree.current.id?0:-1}}"  aria-setsize="{{ariasetsize}}" aria-posinset="{{ariaPosinset}}" aria-expanded="false" class='title-small' ng-class='{"title-hover":!isCoachStudentView(), "link":!isCoachStudentView(), "def-cursor":isCoachStudentView()}' ng-click=isCoachStudentView()||$location.path('module/'+modules[index].id)
+			 ng-keydown="($event.keyCode === 13 && $location.path('module/'+modules[index].id) && !isCoachStudentView()) ||($event.keyCode === 40 || $event.keyCode === 39 || $event.keyCode === 38 || $event.keyCode === 37) && tree_arrowKeys($event)">{{modules[index].title}}
+			 </div>
+             <div class='modulette-titles'  ng-repeat='mod in modules[index].modulettes | orderBy:filterModulettes track by $index'>
+                 <div class='modulette-line-container' ng-class='{"title-hover":!isCoachStudentView(), "recently-visited": moduletteRecentlyVisited(index, mod.id, timeFrame)}' ng-hide= 'hideFromDashboard(mod)'>
+                     <div class='oranges-img-container' ng-click=isCoachStudentView()||$location.path('modulette/'+mod.name)><img ng-src='/images/orange_wedges/20x20/of_6/{{getProgress(modules[index].id, mod.id)}}.png' class='oranges'><tooltip class='modulette-tip' id='tooltip-{{makeHtmlId(mod.name)}}' ng-bind-html='getTooltip(modules[index].id, mod.id,nil,nil,isCoachStudentView())'></tooltip>
+                     </div>
+                     <div class='modulette-title' ng-class='{"link":!isCoachStudentView(), "def-cursor":isCoachStudentView()}' ng-style=keyboardNavStyle(modid)
+					   id="{{treeItemId(mod.id)}}" role="treeitem" aria-level="{{arialevel+1}}" tabindex="{{treeItemId(mod.id) == tree.current.id?0:-1}}"  aria-setsize="{{modules[index].modulettes.length}}" aria-posinset="{{$index + 1}}" 
+					   ng-keydown="($event.keyCode === 13 && $location.path('modulette/'+mod.name) && !isCoachStudentView()) || ($event.keyCode === 40 || $event.keyCode === 39 || $event.keyCode === 38 || $event.keyCode === 37) && tree_arrowKeys($event)"
+					   ng-click=isCoachStudentView()||$location.path('modulette/'+mod.name)>{{mod.title}}
+                     </div>
+                 </div>
+             </div>
+	     </div>
+         <div class='modulette-footer' ng-show='isOverflowed()'> <img src='/images/module-box-down-arrow.png' ng-click=boxExpand($event)> 
+         </div>     
+	     <div id='expando-{{prefix}}{{index}}' class='modulette-footer' ng-show='isExpanded()'> <img src='/images/module-box-up-arrow.png' ng-click=boxClose($event)> </div>
+     </div>
+
+     <div class='module-box-outer' ng-style=standardHeight() ng-show=isExpanded()>
+         <div class='module-box-inner'>
+         </div>  
+     </div>
+
+     <div class='readonly-message' ng-show='isCoachStudentView() && variables.showReadOnlyMessage' ng-click=showReadOnly(0)> This page is a read-only report for {{viewedUser.user.lis_person_name_full}}. Click on one of the other tabs to browse and go to modules and mini-lessons.
+     <div class="close-element"><span>X</span></div>
+     </div>
+
+</div>

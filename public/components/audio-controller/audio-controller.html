@@ -1,0 +1,10 @@
+{{audioObject.audioInProgress}}
+<div class="audio-coaching-control" ng-click="audioToggle()">
+    <img ng-if="audioService.globalAudio && audioService.audioOn" src="/images/audio_guy_inprogress.png" />
+    <img ng-if="!(audioService.globalAudio && audioService.audioOn)" src="/images/audio_guy.png" />
+    <div class="action-name on" ng-if="audioService.globalAudio && audioService.audioOn">Turn Off</div>
+    <div class="action-name off" ng-if="!(audioService.globalAudio && audioService.audioOn)">Turn On</div>
+    <div class="action-target">Audio Coaching</div>
+    <div class="small-action-name on" ng-if="audioService.globalAudio && audioService.audioOn">Pause</div>
+    <div class="small-action-name off" ng-if="!(audioService.globalAudio && audioService.audioOn)">Play</div>
+</div>

@@ -1,0 +1,102 @@
+{
+  "description": "Do you want to refresh your grammar skills for writing? Try exploring one of these mini-lessons for a quick review of the basics of grammar using examples about editing an online magazine called Community Living. Or, try a round or two of the Challenge Wheel to check what you already know!",
+  "id": "CS33.grammar",
+  "subtitle": "Online magazine editor-in-chief",
+  "title": "Facing grammar fearlessly",
+  "subject": "writing",
+  "challenge_widget_type": "quick_pick_widget",
+  "record_id_": "4",
+  "dashboard_order": "3",
+  "challenge_wheel_available": "1",
+  "popup_title": "Refresh your grammar skills!",
+  "popup_description": "Do you need a quick review of verbs, pronouns, tricky words, capitalization, punctuation and other grammar basics? Review and practice using mini-lessons with examples about editing an online magazine.",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "Animal Antics",
+      "title": "Sentences",
+      "record_id_": "13",
+      "modulettes": [
+        {
+          "id": "CS33.1.How sentences work",
+          "description": "Subject?  Verb?  Clause?   What are the parts of a strong sentence?",
+          "link_text": "How sentences work"
+        },
+        {
+          "id": "CS33.2.Avoid run-on sentences",
+          "description": "Are my sentences too long?  Do I need commas or a semicolon?",
+          "link_text": "Avoid run-on sentences"
+        },
+        {
+          "id": "CS33.3.Fix incomplete sentences",
+          "description": "Why isn't my meaning clear?  Is my sentence missing something?",
+          "link_text": "Fix incomplete sentences"
+        }
+      ]
+    },
+    {
+      "subtitle": "Around town",
+      "title": "Using verbs",
+      "record_id_": "15",
+      "modulettes": [
+        {
+          "id": "CS33.4.Match subjects with the right verb form",
+          "description": "<I>Each of the boys play...</I>  Or should it be <I>plays</I>?",
+          "link_text": "Subject-verb agreement"
+        },
+        {
+          "id": "CS33.5.Choose the right verb tense",
+          "description": "Is it <i>I choose</i> or <i>I chose</>?",
+          "link_text": "Choose the right verb tense"
+        }
+      ]
+    },
+    {
+      "subtitle": "Ask Bob",
+      "title": "Pronouns, plurals, and possessives",
+      "record_id_": "16",
+      "modulettes": [
+        {
+          "id": "CS33.6.Personal pronouns",
+          "description": "Which is correct here:<br><I>I</I> or <I>me</I>?  <i>She</i> or <i>her</i>?  <i>They</i> or <i>them</i>?",
+          "link_text": "Personal pronouns"
+        },
+        {
+          "id": "CS33.7.Plurals, possessives, and plural possessives",
+          "description": "How do I use an apostrophe?  Is it <i>phone's</i> or <i>phones' </i>?  \n",
+          "link_text": "Plurals, possessives, and plural possessives"
+        }
+      ]
+    },
+    {
+      "subtitle": "How's the Weather?",
+      "title": "Tricky words",
+      "record_id_": "17",
+      "modulettes": [
+        {
+          "id": "CS33.8.Words that are easy to confuse",
+          "description": "Which word?  <I>To</I>&nbsp;&nbsp;or <I>too</I>? <I>There</I>&nbsp;&nbsp;or <I>their</I>?   <I>Affect</I>&nbsp;&nbsp;or <I>effect</I>?",
+          "link_text": "Words that are easy to confuse"
+        }
+      ]
+    },
+    {
+      "subtitle": "From the Editor",
+      "title": "Capitalization and punctuation",
+      "record_id_": "14",
+      "modulettes": [
+        {
+          "id": "CS33.9.When to use commas, semicolons, and colons",
+          "description": "What punctuation should I use?",
+          "link_text": "When to use commas, semicolons, and colons"
+        },
+        {
+          "id": "CS33.10.When to use capital letters",
+          "description": "Way too many capital letters!  Which ones should I change?",
+          "link_text": "When to use capital letters"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{ "content": { 
+    "text" : "[[Alpha]] is for A, [[Bravo]] is for B, and [[Zulu]] is for Z."
+  }, 
+  "feedback" : {
+    "correctFeedback": "Great job!", 
+    "incorrectFeedback":"Sorry, this is not correct (placeholder--will be answer-specific)."
+  }
+}

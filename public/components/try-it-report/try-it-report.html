@@ -1,0 +1,132 @@
+<div id="page-try-it-report">
+    <h1>Try it report for {{filePath}}</h1>
+    <h2>Filters</h2>
+    <form class="filters" ng-submit="updateData();">
+        <p>
+            <label>
+                Start Date (UTC)
+            </label>
+            <input id="start_date" class="date-input" type="text" ng-model="filters.start_date" name="start_date">
+        </p>
+        <p>
+            <label>
+                End Date (UTC)
+            </label>
+            <input id="end_date" class="date-input" type="text" name="end_date" ng-model="filters.end_date">
+        </p>
+        <p>
+            <label>
+                Context Id
+            </label>
+            <input type="text" name="context_id" id="context_id" value="juicetestaccount" ng-model="filters.context_id">
+        </p>
+        <p>
+            <label>
+                Role
+            </label>
+            <input type="text" name="roles" id="roles" value="Student" ng-model="filters.roles">
+        </p>
+        <p>
+            <label>
+                Tool Consumer
+            </label>
+            <input type="text" name="tool_consumer_instance_guid" id="tool_consumer_instance_guid" value="" ng-model="filters.tool_consumer_instance_guid">
+        </p>
+        <p>
+            <label>
+                <select name="custom_field" id="custom_field" ng-model="filters.custom_field" ng-options="obj.value as obj.text for obj in record_fields"></select>
+            </label>
+            <input type="text" name="custom_value" id="custom_value" ng-model="filters.custom_value" placeholder="Filter by custom field">
+        </p>
+
+        <p id="submit-container">
+            <label>
+                &nbsp;
+            </label>
+            <input type="submit" value="Filter" ng-click="updateData()">
+        </p>
+    </form>
+
+    <div id="report-output">
+        &nbsp;&nbsp;&nbsp;<input type="button" value="Generate User Report (using current filters)" ng-click="generateUserReport()">
+        <h2>Output</h2>
+        <div id="generating" ng-show="!fileData || !reportData">
+            Generating data... please wait.
+        </div>
+        <div id="data-loaded" ng-if="fileData && reportData">
+            <div class="section">
+            <h3>Report Summary</h3>
+
+            <table>
+                <tr ng-repeat="item in reportData.summary ">
+                    <td style="padding-right:1em">
+                        {{item.key}}:
+                    </td>
+                    <td>
+                        {{item.value}}
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <div class="section" id="question-breakdown">
+            <h3>Question Breakdown</h3>
+            <div class="step" ng-repeat="(step_index, step) in fileData.steps">
+                <div>
+                    <h4>Step {{step_index+1}}</h4>: {{step.stepText}}
+                </div>
+                <div class="question no-questions" ng-if="!step.questions || step.questions.length == 0">
+                    No Questions
+                </div>
+                <div class="question" ng-repeat="question in step.questions track by question.id" ng-init="questionData = reportData.q_objs[question.id]">
+                    <h5><span class="object-id">{{question.id}}</span> Total Tries: {{0+questionData.total_tries}}</h5>
+                    <div class="drop-offs">
+                        <div class="drop-off" ng-repeat="i in tryIndexes">
+                            <div class="try-count">Try {{i+1}}</div>
+                            <div class="correct">{{0+questionData.try_counts[i].correct_count}} Correct </div>
+                            <div class="incorrect">{{0+questionData.try_counts[i].failed_count}} Incorrect  &rightarrow;</div>
+                            <div class="details-answers">
+                                <h5>Answer Counts</h5>
+                                <table class="details-answers-table">
+                                    <tr class="details-answer">
+                                        <th>Answer</th>
+                                        <th>count</th>
+                                        <th>%</th>
+                                    </tr>
+                                    <tr class="details-answer" ng-repeat="answer in questionData.try_counts[i].answers">
+                                        <td class="details-answer-answer"><span class="has-title-tooltip" ng-class="{correctAnswer: answer.correct===true}" title={{answer.long_text}}>{{answer.text}}</span></td>
+                                        <td>{{answer.count}}</td>
+                                        <td>{{answer.percent}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="drop-off">
+                            <div class="try-count">No Success</div>
+                            <div class="incorrect">Count {{0+questionData.unsuccessful_count}}</div>
+                        </div>
+                    </div>
+                    <h5 class="link user-answers-link" ng-click="toggle('user-answers-' + question.id)">User answers ({{0+questionData.user_answers_table.length}})</h5>
+                    <div class="user-answers" style="display:none" id="user-answers-{{question.id}}">
+                        <div class="user-answer-row" ng-repeat="row in questionData.user_answers_table">
+                            <div class="user-answer-cell">
+                                {{row.record_id}}
+                            </div>
+                            <div class="user-answer-cell">
+                                {{row.date}}
+                            </div>
+                            <div class="user-answer-cell">
+                                {{row.user_id}}
+                            </div>
+                            <div class="user-answer-cell" ng-repeat="userAnswerTry in row.tries">
+                                <span title="{{userAnswerTry.long_text}}">{{userAnswerTry.text}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</div><!--page end div-->

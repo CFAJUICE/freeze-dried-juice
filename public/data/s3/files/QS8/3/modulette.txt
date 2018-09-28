@@ -1,0 +1,104 @@
+{
+  "title": "Basic probability",
+  "name": "QS8.3.Basic probability",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "12",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS8.3.Refresher_Basic_probability"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "What are the chances?  Choose a scenario and work through interactive steps to review probability basics.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Summer picnic committee",
+          "title": "Selecting the first few members",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.3.GuidedPractice1_Basic_probability"
+          ]
+        },
+        {
+          "description": "Carnival games",
+          "title": "Pick a ticket!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.3.GuidedPractice2_Basic_probability"
+          ]
+        },
+        {
+          "description": "Office fundraiser",
+          "title": "Maximizing your winnings",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.3.GuidedPractice3_Basic_probability"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Choose the steps to calculate probability\n",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "QS8.3.Challenge1_Basic_probability_pickandstack"
+          ]
+        },
+        {
+          "description": "",
+          "title": "What are your chances of winning?\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "QS8.3.Challenge2_Basic_probability_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "What are your chances as changes happen?\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "QS8.3.Challenge3_Basic_probability_quickpick"
+          ]
+        }
+      ]
+    }
+  ]
+}

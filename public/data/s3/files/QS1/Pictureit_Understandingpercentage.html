@@ -1,0 +1,85 @@
+<html>
+  <head>
+      <link href="//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link href="../docs/common_css/picture-it.css" rel="stylesheet" type="text/css">
+
+    <script>
+	  var currentPage = 1;
+	  function showNext() {
+        currentPage = currentPage + 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage-1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+
+	  }
+	  function showPrev() {
+		currentPage = currentPage - 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage+1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+	  }      
+    </script>
+  </head>
+  <title>Understanding percentage</title>
+<body>
+
+    <div class="page" id="page1" style="display:block">
+      <h1  tabindex="0"  class="page-header">Understanding percentage</h1><p/>
+      <img src="percentage_page1.gif" alt="A diagram shows a cake cut into 100 pieces. One of the pieces has been eaten. This eaten piece represents 1% of the whole cake.  If you eat one piece, you have eaten 1 out of 100 pieces or 1%.  Percent means per 100 or out of 100" >
+	  <p/>
+      <div>
+ 	    <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false" disabled> </button>
+	    <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">1 of 5</p>
+ 	  </div>
+    </div>
+
+    <div class="page" id="page2">
+      <h1  tabindex="0"  class="page-header">Calculating percentage</h1><p/>
+      <img src="percentage_page2.gif" alt="A diagram shows a cake cut into 100 pieces, with 24 pieces already eaten. 24 out of 100 pieces is 24% of the cake. 24 out of 100 is the same as the fraction 24 over 100. 24 over 100 is the same as 24 divided by 100. 24 divided by 100 equals 0.24. 0.24 equals 24% and 24% equals 0.24. 0.24 is twenty-four one-hundredths. You can also say zero point two four.">
+      <p/>
+      <div>
+    <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">2 of 5</p>
+	  </div>
+    </div> 
+
+    <div class="page" id="page3" >
+      <h1  tabindex="0" class="page-header">Any quantity can be written as  a percentage!</h1><p/>
+      <img src="percentage_page3.gif" alt="You can write any fraction as a percentage by dividing the numerator, or top of the fraction, by its denominator to convert to a decimal, and then moving the decimal point 2 places to the right and writing the percent symbol. A diagram shows a cake cut into 25 pieces, with 7 pieces removed. 7 out of 25 pieces of cake is the same as 7 divided by 25. 7 divided by 25 = 0.28. 0.28 = 28%" >
+	  <p/>
+      <div>
+    <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">3 of 5</p>
+	  </div>
+    </div>
+
+ <div class="page" id="page4" >
+      <h1  tabindex="0"  class="page-header">Comparisons using percentage</h1><p/>
+      <img src="percentage_page4.gif" alt="Convert quantities to percentage to compare them. A diagram shows two cakes that are the same size.  One has 24 out of 100 pieces missing, and the other has 7 out of 25 pieces missing.  24 out of 100 pieces is the same as 24 divided by 100. 24 divided by 100 equals 0.24 which equals 24% of the first cake. 7 out of 25 pieces is the same as 7 divided by 25. 7 divided by 25 equals 0.28 which equals 28% of the second cake. Since 28% is more than 24%, 7 of 25 pieces is more than 24 of 100 pieces." >
+	  <p/>
+      <div>
+    <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">4 of 5</p>
+ 	  </div>
+    </div>
+
+ <div class="page" id="page5">
+      <h1  tabindex="0"  class="page-header">More comparisons using percentage</h1><p/>
+      <img src="percentage_page5.gif" alt="A diagram shows the results of an ice cream flavor taste test. 35 of 40 tasters prefer Banana Cream Pie ice cream.  36 of 50 tasters prefer Mango Siracha.  35 of 40 is 35 divided by 40 = 0.85 = 85%.  36 out of 50 is 36 divided by 50 = 0.72 = 72%. 85% of the tasters loved Banana Cream Pie. 72% of the tasters loved Mango Siracha.  A higher percentage of tasters prefer Banana Cream Pie ice cream.">
+	  <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false" disabled> </button>
+<p class="pager">5 of 5</p>
+ 	  </div>
+    </div>
+
+
+  </body>
+</html>

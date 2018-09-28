@@ -1,0 +1,29 @@
+<div ng-controller='refresherCtl' style='padding-bottom:15px;'>
+<div class="row" ng-show='lclData.falsy'>
+      <div class="col-sm-12 ju-header-bar">A fake header </div>
+</div>
+ <div ng-repeat="step in lclData.steps track by $index">
+ step: {{step.settings.showStep}}
+   <div class="row" ng-show='false'>
+      <div class="col-sm-12 ju-header-bar">{{step.headerText}} </div>
+   </div>
+header: {{lclData.truthy}}
+   <div class="row" ng-show='step.settings.showStep'>
+	 <div class="col-sm-1"><img src="/images/audio_guy.png" ng-show="step.settings.showAudio" ng-click="playNarration($index)" style="float:left"/></div>
+	 <div class="col-sm-6" ng-show="step.settings.showLeft"> 
+		 <div ng-bind-html="step.leftText"></div>        
+	 </div>
+	 <div class="col-sm-5" style="padding-left: 25px; padding-right:25px">
+         <div class="jumbotron" style="padding-left:30px; padding-right:30px">
+		   <div ng-class="{'ju-hidden': !step.settings.showRight}" ng-bind-html="step.rightText"></div>
+		 </div>
+	 </div>
+   </div>
+
+   <div class="row"  ng-show="step.settings.showStep && step.settings.showNext">
+      <div class="col-sm-12" style="text-align:center"><img src="/images/next_arrow.png" ng-click='next($index)'/></div>
+   </div>
+
+ </div>
+ <a id="bottom"></a>
+</div>

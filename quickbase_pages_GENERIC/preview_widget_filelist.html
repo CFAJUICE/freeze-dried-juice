@@ -1,0 +1,37 @@
+<html>
+ <head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+   
+ //var QBU_thisTableId = window.location.pathname;
+ var QBU_thisTableId =$.getUrlVar("tableid");
+
+   $(document).ready(function() {
+   $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+   $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+   QBU_deltaTime = QBU_serverTime - new Date().getTime();
+   loadSchemaThenExecute(function(){
+     var index = 0;
+     var widgetName = $.getUrlVar('name');
+	 var files = $.getUrlVar('files');
+         var bucketName = $.getUrlVar('bucket');
+	 files = files.replace(/%20/g, "_" );
+	 //var filesArr = files.split(",");
+	 //console.log(filesArr);
+     //$('#message').html(files);
+     window.location.replace(QBU_juiceDomain_s + 'juice/preview/' + widgetName + "/" + files + "?bucket=" + bucketName + '&sb=' + QBU_encryptedSecret() + '&program=' + programPrefix().split("/")[1]);
+   });
+   });
+   });
+ });
+  </script>
+ </head>
+ <body>
+   <div id='message'></div>
+   <div id='error'></div>
+   <div> <input id="btn_prev" type="button" value="Previous" /> <input id="btn_next" type="button" value="Next" /></div>
+ </body>
+</html>

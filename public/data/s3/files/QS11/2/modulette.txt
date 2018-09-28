@@ -1,0 +1,104 @@
+{
+  "title": "Perimeter",
+  "name": "QS11.2.Perimeter",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "84",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS11.2.Refresher_Perimeter"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to find perimeter.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Enough to go around?",
+          "title": "Fencing shortfall",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS11.2.GuidedPractice1_Perimeter"
+          ]
+        },
+        {
+          "description": "How much wallpaper border?",
+          "title": "Decorating dilemma",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS11.2.GuidedPractice2_Perimeter"
+          ]
+        },
+        {
+          "description": "Garden fencing project!",
+          "title": "A place to plant",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS11.2.GuidedPractice3_Perimeter"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "How do I solve it?",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "QS11.2.Challenge1_Perimeter_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Formula frenzy",
+          "widget_name": "fix_it_widget",
+          "widget_description": "Correct words and phrases",
+          "files": [
+            "QS11.2.Challenge2_Perimeter_fixit"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Perimeter puzzles",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "QS11.2.Challenge3_Perimeter_perfectword"
+          ]
+        }
+      ]
+    }
+  ]
+}

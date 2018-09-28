@@ -1,0 +1,126 @@
+{
+  "title": "Demo title test 8/7/18",
+  "name": "D1.1.Demo Basic Math module",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "48",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D1.1.Refresher_Basic_Math_demo"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "To come",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "D1.1.GuidedPractice1_Demo_Basic_Math_c",
+            "D1.1.Demo_Basic_Math_GuidedPractice",
+            "D1.1.GuidedPractice1_Demo_Basic_Math_b"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Test track",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "D1.1.GuidedPractice2_Demo_Basic_Math"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Default image track",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget"
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Finders Keepers",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "D1.1.Challenge1_Demo_Basic_Math_finderskeepers"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Puzzler",
+          "widget_name": "puzzler_widget",
+          "widget_description": "Puzzler Game"
+        },
+        {
+          "description": "",
+          "title": "Paragraph challenge wheel"
+        },
+        {
+          "description": "",
+          "title": "Essay Challenge wheel",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game"
+        },
+        {
+          "description": "",
+          "title": "Grammar challenge wheel",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game"
+        }
+      ]
+    },
+    {
+      "tab_name": "",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "",
+      "id": "",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D1.1.Betsytab_Demo_Basic_Math_module"
+          ]
+        }
+      ]
+    }
+  ]
+}

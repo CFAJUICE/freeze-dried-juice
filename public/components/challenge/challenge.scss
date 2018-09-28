@@ -1,0 +1,194 @@
+challenge{
+    .challenge-underlay{
+        opacity: .5;
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        position:fixed;
+        z-index:5000;
+        top:0px;
+        left:0px;
+    }
+    .challenge-modal{
+        box-shadow:0 5px 15px rgba(0,0,0,.5);
+        position:fixed;
+        background:green;
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        top: 72px;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        /* give it dimensions */
+        min-height: 80%;
+        width: 90%;
+        max-width:900px;
+        z-index:5001;
+        height:640px;
+        @media (max-width: 700px) {
+            width:100%;
+            height:100%;
+        }
+        @media (max-height: 640px){
+            width:100%;
+            height:100%;
+        }
+        .challenge-close{
+            width:41px;
+            height:41px;
+            position:absolute;
+            right:9px;
+            top:2px;
+        }
+        .challenge-footer, .challenge-header{
+            position:absolute;
+            left:0px;   
+            width:100%;
+        }
+        .challenge-header{
+            top:0px;
+            position:absoulte;
+            background:red;
+            height:50px;
+            .left, .right, .center{
+                height:50px;
+            }
+            .left, .right{
+                width:10px;
+                position:absolute;
+            }
+            .left{
+                left:0px;
+                background-image:url('/components/challenge/images/top-bar-left.png');
+            }
+            .right{
+                right:0px;
+                background-image:url('/components/challenge/images/top-bar-right.png');
+            }
+            .center{
+                position:absolute;
+                left:10px;
+                right:10px;
+                background-image:url('/components/challenge/images/top-bar-center.png');
+                text-align:center;
+                .rounds{
+                    .rounds-label, li, ul, .round-label{
+                        display:inline-block;
+                    }
+                    .rounds-label{
+                        font-size:22px;
+                        color:white;
+                        @media (max-width:400px) {
+                            display:none;
+                        }
+                    }
+                    li{
+                        width:30px;
+                        height:30px;
+                        position:relative;
+                        top: 7px;
+                        left: -29px;
+                        margin-right:4px;
+                        .round-label:before{
+                            display:inline-block;
+                            background-size: 100%;
+                            background: url(/javascripts/game/images/round_light_off_color.png) no-repeat;
+                            &.on{
+                                background: url(/javascripts/game/images/round_light_on_color.png) no-repeat;
+                            }
+                            width:25px;
+                            height:25px;
+                            position:absolute;
+                            top:0px;
+                            left:0px;
+                        }
+                        .round-label{
+                            position:absolute;
+                            top:0px;
+                            left:0px;
+                            width:30px;
+                            height:30px;
+                            padding:5px;
+                            background: url(/javascripts/game/images/round_light.png) no-repeat;
+                            background-size: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .challenge-footer{
+            bottom:0px; 
+            height:95px;
+            position:absolute;
+            .left, .right, .center{
+                height:95px;
+            }
+            .left, .right{
+                width:60px;
+                position:absolute;
+            }
+            .left{
+                left:0px;
+                background-image:url('/components/challenge/images/bottom-bar-left.png');
+            }
+            .right{
+                right:0px;
+                background-image:url('/components/challenge/images/bottom-bar-right.png');
+            }
+            .center{
+                position:absolute;
+                left:60px;
+                right:60px;
+                background-image:url('/components/challenge/images/bottom-bar-center.png');
+                text-align:center;
+                padding:20px;
+                @media (max-width:500px){
+                    //padding-top:15px;
+                }
+                .challenge-info, .challenge-reset{
+                    width: 66px;
+                    height: 66px;
+                    position: absolute;
+                    top: 19px;
+                }
+                .challenge-info{
+                    left: -38px;
+                    background-image: url(/javascripts/game/images/info_button.png);
+                    &:active{
+                        background-image: url(/javascripts/game/images/info_button_pressed.png);
+                    }
+                }
+                .challenge-reset{
+                    right:-38px;
+                    background-image: url(/javascripts/game/images/refresh_button.png);
+                    &:active{
+                        background-image: url(/javascripts/game/images/refresh_button_pressed.png);
+                    }
+                }
+                .challenge-footer-button{
+                    padding-top:16px;
+                    color:white;
+                    background-image: url(/javascripts/game/images/bar_button.png);
+                    width:152px;
+                    height:52px;
+                    display:inline-block;
+                    background-size: 100%;
+                    font-size:16px;
+                    &:active{
+                        background-image: url(/javascripts/game/images/bar_button_pressed.png);
+                    }
+                    @media (max-width:500px){
+                        width:152px*.75;
+                        height:52px*.75;
+                        font-size:16px*.75;
+                        padding-top:16px*.75;
+                    }
+                }
+                
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<html>
+ <head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+
+
+  <script>
+  // var QBU_thisTableId = window.location.pathname;
+   var QBU_thisTableId = $.getUrlVar('table');
+   var tagString, rid, tableId, newTags = [], promArr = [], promAll; 
+
+    function all(arrayOfPromises) {
+      return $.when.apply($, arrayOfPromises).then(function() {
+        return arguments;
+    });
+  };
+
+   addTags = function(out) {
+       var tags = out[0].tags;
+       newTags = tagString.split(";");
+       tagString = tags ? tags +";" + tagString : tagString;
+       var QBU_editRecord = QBU_db_baseURL + tableIdMapping[tableId];
+      // var QBU_addRecord = QBU_db_baseURL + tableIdMapping["_dbid_tags"];  
+       var QBU_addRecord = QBU_db_baseURL + QBU_dbid_common_tags;
+       //add new tags to existing ones in record
+      
+         //add new tags to tags table
+        $.each(newTags, function(index, tag){
+               promArr.push($.get(QBU_addRecord, {a: "API_AddRecord", _fnm_tag: tag.trim()})); //_fid_6
+         });
+         promAll = all(promArr);
+         promAll.done(function(){
+                $.get(QBU_editRecord, {a: "API_EditRecord", rid:rid, _fnm_tags: tagString})
+		 .done(function(result){
+              window.history.go(-2);
+              window.location.reload(true);            
+            });
+        });
+   }
+
+   $(document).ready(function() {
+   $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+     tableId = $.getUrlVar('table');
+     rid = $.getUrlVar("rid");
+     tableIdMapping[tableId] = tableId;
+//     loadSchemaThenExecute();
+     $( "#update-btn" ).click(function() {
+        tagString = $("#tags").val();   
+        doQuery(tableId, "{3.EX.'" + rid + "'}", addTags);
+     });
+   }); 
+   });   
+  </script>
+ </head>
+ <body>
+   
+   <p/> 
+   <p/>
+
+     Enter the new tags, separated by semicolons (max. tag size is 40 characters):
+     <p/> <input id="tags" type="text" size="120"/>
+     <p/> <input id="update-btn" type="button" value="submit"/>
+   <p> </p>
+   <p/>
+
+
+   <div id='message'></div>
+   <div id='error'></div>
+
+ </body>
+</html>

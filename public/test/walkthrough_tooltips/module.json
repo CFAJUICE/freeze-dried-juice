@@ -1,0 +1,8 @@
+{
+  "tooltips":[
+    {
+      "label":"Listen to the audio coach as you read.",
+      "element":".audio-coaching-control .audio-button"
+    }
+  ]
+}

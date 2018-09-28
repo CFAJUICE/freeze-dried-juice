@@ -1,0 +1,29 @@
+<div class="feedback-rounds-container">
+    <ul class="feedback-rounds">
+        <li ng-repeat="n in juiceGame.roundCountIterator"
+            ng-click="juiceGame.showRound(n)"
+            ng-class="{incorrect: !juiceGame.isRoundCorrect(n), active: (juiceGame.gameRoundIndex + 1) == n}"
+            style="height: 135px; overflow: hidden;"
+                >
+            <div>
+                <div class="round-number">
+                    <span class="round">{{::n}}</span>
+                    <span class="round-light on"></span>
+                    <span class="round-light off"></span>
+                </div>
+
+                <span class="round-number-message"
+                      ng-bind-html="juiceGame.feedbackMessage(n)"
+                      truncate-feedback='{"threshold": 135, "maxHeight": 150}'>
+                </span>
+                <button class="btn btn-info game-btn"
+                        ng-click="juiceGame.go('showAttempt', n)"
+                        cancel-click
+                        click-sound>
+                        <span class="normal-label">See it again</span>
+                        <span class="short-label">Review</span>
+                    </button>
+            </div><!-- /not challenge wheel game-->
+        </li>
+    </ul>
+</div>

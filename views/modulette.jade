@@ -1,0 +1,25 @@
+extends overview_bar
+
+block append content
+  //****** module used to pass data (i.e., modulette structure JSON representation)from the server to the modulette hosting page
+  div(ng-app='modulette' ng-controller='ctlModulette') 
+      div(class="ju-colors" style="height:80px; padding-left: 61px; padding-top:20px") <h3>{{moduletteData.name}}</h3>
+      div(class="ju-colors" style="padding-left:61px;")
+        div(class="ju-tab" ng-click='gotoTab1()' ng-style='{"background-color":tabColors.tab1, "color":tabTextColors.tab1}') 
+          img(src="/images/refresher.png" style="float:left")
+          div(style="display:inline-block; padding-top:18px; padding-left:5px;") Refresher
+        div(class="ju-tab" style="width:10px; background-color:#08A47D;")
+        div(class="ju-tab" ng-click='gotoTab2()'  ng-style='{"background-color":tabColors.tab2, "color":tabTextColors.tab2}')  
+          img(src="/images/guide.png" style="float:left")
+          div(style="display:inline-block; padding-top:18px; padding-left:5px") Guided Practice
+        div(class="ju-tab" style="width:10px; background-color:#08A47D;")
+        div(class="ju-tab" ng-click='gotoTab3()'  ng-style='{"background-color":tabColors.tab3, "color":tabTextColors.tab3}')  
+          img(src="/images/challenge.png" style="float:left")
+          div(style="display:inline-block; padding-top:18px; padding-left:5px") Challenge!
+      div(class="ju-colors" style="margin-bottom:25px")
+        button(ng-click='reload()' style='margin-bottom:5px; float:right; ') Reload 
+        button(ng-click='next()' ng-disabled="disabledButton.next" style='margin-right:5px; margin-bottom:5px; float:right; ') Next  
+        button(ng-click='previous()' ng-disabled="disabledButton.previous" style='margin-right:5px; margin-bottom:5px; float:right;') Previous
+      div(style="padding-left: 61px")
+        div(class="container ju-container-main" style="background-color:#FFFFFF")
+            <div ui-view> </div>

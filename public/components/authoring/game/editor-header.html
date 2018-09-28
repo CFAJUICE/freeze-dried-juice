@@ -1,0 +1,49 @@
+<div class="form-inline" style="margin-bottom: 10px;">
+  <div class="form-group" style="width: 100%;">
+    <div class="col-sm-6 text-left">
+      <label style="width: 150px; display: inline-block;">Number of Rounds</label>
+      <input type="number" min="1" max="20" step="1" class="form-control" ng-model="content.data.number_rounds"/>
+    </div>
+    <div class="col-sm-6 text-right">
+      <div class="btn-group" dropdown is-open="status.isopen">
+        <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+          Round Options <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"
+                 play-game
+                 feedback="{{content.feedbackType}}"
+                 game-name="{{content.gameName}}"
+                 game-title="{{content.gameTitle}}"
+                 game-description="{{content.gameDescription}}"
+                 authoring-round="{{content.round}}"
+                 authoring="true">Preview Round</a></li>
+          <li><a href="#" cancel-click ng-click="content.addRound()">Add Round</a></li>
+          <li><a href="#" cancel-click ng-click="content.copyRound(content.round)">Copy Round</a></li>
+          <li><a class="bg-danger" style="color: white;" href="#" cancel-click ng-click="content.deleteRound(content.round)">Delete Round</a></li>
+          <li class="divider"></li>
+          <li>
+            <a href="#" cancel-click ng-click="content.openFile()">Import From CSV</a>
+            <div style="display: none;">
+              <input type="file"
+                     accept="image/*"
+                     id="file-import"
+                     onchange="angular.element(this).scope().importFile(this)"/>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-inline">
+  <div class="form-group">
+    <div class="col-sm-12 text-left">
+      <label style="width: 150px; display: inline-block;">Current Round</label>
+      <select class="form-control" ng-model="content.currentRound" ng-change="content.changing()">
+        <option ng-repeat="n in [] | range:content.data.rounds.length" value="{{n - 1}}"
+                ng-selected="{{n - 1 == content.currentRound}}">Round #{{n}}</option>
+      </select>
+    </div>
+  </div>
+</div>

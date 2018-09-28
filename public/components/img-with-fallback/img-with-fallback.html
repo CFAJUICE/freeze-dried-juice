@@ -1,0 +1,7 @@
+<img ng-src="{{src}}" alt-src="{{fallback}} " aria-hidden="true" class="{{imgclass}}" onerror="
+var el = angular.element(this);
+if(el.attr('src') == el.attr('alt-src')){
+   el.attr('src', '/components/img-with-fallback/generic.png');
+}else{
+     el.attr('src', el.attr('alt-src'));
+}" />

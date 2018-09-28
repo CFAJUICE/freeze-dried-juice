@@ -1,0 +1,103 @@
+{
+  "title": "Fix incomplete sentences",
+  "name": "CS33.3.Fix incomplete sentences",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS33.3.Refresher_Fix_incomplete_sentences"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose an online news story and work through an interactive example on finding and fixing sentence fragments",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Sanctuaries give elephants a chance",
+          "title": "Safe haven",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.3.GuidedPractice1_Fix_incomplete_sentences"
+          ]
+        },
+        {
+          "description": "How can you help?",
+          "title": "A threatened species",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.3.GuidedPractice2_Fix_incomplete_sentences"
+          ]
+        },
+        {
+          "description": "The pros and cons",
+          "title": "Zoo controversy",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.3.GuidedPractice3_Fix_incomplete_sentences"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "What's missing from the sentence fragment?\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS33.3.Challenge1_Fix_incomplete_sentences_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Sort out sentence fragments\n",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "CS33.3.Challenge2_Fix_incomplete_sentences_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Fix a bunch of sentence fragments\n",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "CS33.3.Challenge3_Fix_incomplete_sentences_fridgemagnets"
+          ]
+        }
+      ]
+    }
+  ]
+}

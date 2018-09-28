@@ -1,0 +1,25 @@
+.answer-choice:hover{
+    background-color:rgba(255, 255, 0, 0.3);
+    cursor:pointer;
+}
+
+.user-is-touching .answer-choice:hover{
+    background-color:transparent;
+}
+
+.answer-choice.unselectable:hover{
+    background-color: transparent;
+    cursor: default;
+}
+
+.answer-choice.selected, .user-is-touching .answer-choice.selected:hover{
+  background-color:rgba(255, 255, 0, 1)
+}
+
+.selected.correct-answer.show-correct-and-incorrect-selected{
+    background-color:#11ff11;
+}
+.selected.incorrect-answer.show-correct-and-incorrect-selected{
+    background-color:orange;
+    text-decoration:line-through;
+}

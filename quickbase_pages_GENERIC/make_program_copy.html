@@ -1,0 +1,140 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+<script>
+
+  //var QBU_thisTableId = window.location.pathname;
+  var QBU_thisTableId =$.getUrlVar("tableid");
+  var QBU_programId;
+
+ //* MAIN *// 
+
+ // Takes an object and returns XML to be included in the POST body of API_AddRecord
+//
+function generateXML(obj) {
+  var doc = document.implementation.createDocument(null, "qdbapi", null);
+  $.each(obj, function(key, elem){ 
+    var fieldElement;
+	  fieldElement = doc.createElement("field");
+	var field = doc.createTextNode(elem);
+	fieldElement.setAttribute("name", key);
+    fieldElement.appendChild(field);
+    doc.documentElement.appendChild(fieldElement);
+  });
+   var errElement = doc.createElement("ignoreError");
+   errElement.appendChild(doc.createTextNode("1"));
+   doc.documentElement.appendChild(errElement);
+  return doc;
+}
+
+
+function all(arrayOfPromises) {
+    return $.when.apply($, arrayOfPromises).then(function() {
+        return arguments;
+    });
+}
+
+
+var updateDbVar = function (dbid, wid, callback) {  //update copy_qa_prod_data application var 
+    var copyData = {dash: {date: "", dateToQA: "", dateToProd:""}, cust: {date: 1, dateToQA: "", dateToProd:""}};
+    var obj = {a: "API_SetDBVar", varname:"copy_qa_prod_data", value:JSON.stringify(copyData)};  
+    $.get(dbid, obj).done(function(res){ callback(wid) });
+}
+
+    var syncWidgets = function (widgets_id) {
+      //purge table
+	  $.get(widgets_id, {a: "API_PurgeRecords", query: ""}).done(function () {
+         doQuery("_dbid_widgets", "", function(records) {  // alias for widgets table was _dbid_table_1 !!!! 
+			 var url= widgets_id;
+			 var promArray = [];
+             records.forEach(function(record){	
+               //importProgress();
+			   //console.log("widget", record.name);
+               var doc = generateXML(record);
+		       (function(doc) {
+			      var prom = $.ajax({
+                    type: "POST",
+                    url: url,
+                    headers: {"QUICKBASE-ACTION":"API_AddRecord", "Content-Type":"application/xml"},
+                    processData: false,
+                    data: doc
+			      });
+				  promArray.push(prom);
+				})(doc);
+             });
+             var promAll = all(promArray);
+             promAll.done(function() {
+                 $("#message").html("<div style='font-size:14px; font-weight:bold'>Copy Completed</div>");
+             }); 
+	     });
+      }); 
+    }       
+
+
+       $(document).ready(function () {
+       $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+         loadSchemaThenExecute(function mainCallbackAfterSchemaLoad(){
+
+              if (QBU_isProgramCopy) {
+                    $('#message').html("<div style='font-size:24px; font-weight:bold'>You can generate a Program Copy only from the master CAMPER instance!</div>");
+                    $('#update-btn').hide();
+                    $('#program').hide();
+              }
+
+
+          $("#update-btn").click(function() {
+             QBU_programId = $("#program").val();
+             console.log("Program Id:", QBU_programId);
+             if (!QBU_programId || QBU_programId.length < 1){
+                $('#message').html("<div style='font-size:14px; font-weight:bold'>Please enter a Program Id</div>");
+             } else {
+               var db = $.get(QBU_dbid, { a: "API_CloneDatabase", newdbname:"CAMPER Program " + QBU_programId});  //copy db structure
+               db.done(function(result){
+                     console.log(result);
+                     var el = $(result).find("newdbid");
+                     var dbid = $(el).text(); 
+                     console.log("new db id",dbid);
+                     var obj = {a: "API_SetDBVar", varname:"program_id", value:QBU_programId};  
+                     $.get(dbid, obj).done(function(res){  //set program_id application var 
+					     console.log(res); 
+						 var audio_maps_id, widgets_id;
+                         $.get(dbid, {a: "API_GetSchema"}).done(function (result) {  //get audio_maps table id and widgets table id in new program db
+                               $(result).find("chdbid").each(function (ind, el) {
+                                 var name = $(el).attr("name");
+                                 if (name == "_dbid_audio_maps") audio_maps_id = $(el).text();
+								 if (name == "_dbid_widgets") widgets_id = $(el).text();
+                               });
+							   console.log("audio_maps_id", audio_maps_id);
+                               var obj = {a: "API_AddRecord", _fnm_default_name:" Publish Mapping to Server"};  //add Publish entry to audio_maps table
+							   $.get(audio_maps_id, obj).done(function(results){
+							       console.log(results);
+								   //syncWidgets(widgets_id);
+								   updateDbVar(dbid, widgets_id, syncWidgets);  //copy widgets from master after updating copy_qa_prod_data application var
+                               });
+							       
+						}); 
+                     });					 
+						 
+                }); 
+             }
+           });
+
+
+	     });
+       });
+       });
+
+    </script>
+</head>
+<body>
+
+Program Id:
+<p/><input id="program" type="text" size="20"/>
+<p/> <input id="update-btn" type="button" value="Make Copy"/>
+
+<div id='message'></div>
+<div id='error'></div>
+
+</body>
+</html>

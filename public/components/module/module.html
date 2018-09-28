@@ -1,0 +1,128 @@
+<div id="common-modal-overlay" ng-show="showModal() && !ferpa" ng-click="showModal(false)">
+    &nbsp;
+</div>
+<div id="common-modal" ng-show="showModal() && !ferpa" class="force-scrollbar">
+    <div id="close-common-modal" class="icon-cancel" ng-click="showModal(false)"></div>
+    <img ng-src="{{programValues.module.modal.logo}}" id="module-modal-logo" style="padding-bottom:1em">
+    <div class="circle-icon-container">
+        <img-with-fallback src="program_module_icon" fallback="module_icon" imgclass="'circle-icon'"></img-with-fallback>
+    </div>
+    <h2 id="module-modal-popup-title">{{module.popup_title || module.title}}</h2>
+
+    <p id="popup-description">{{(module.popup_description || module.description) | trustHTML}}</p>
+
+    <div class="juice-button" ng-click="showModal(false)">
+        Continue
+    </div>
+    <div id="learn-more-container" ng-if="programValues.module.modal.show_learn_more">
+        <a ng-click="learnMoreClick()" class="icon-info-circled">{{programValues.module.modal.learn_more_link_label}}</a>
+    </div>
+
+    <div ng-if="showLearnMore" ng-bind-html="programValues.module.modal.learn_more_content_html">
+        <p>
+            Welcome to JUICE skill-building resources! 
+        </p>
+
+        <p>
+            It’s easy to get started: Click Continue to explore the module page. From there choose a skill or start by
+            trying the Challenge Wheel game. Whatever you choose you’ll get encouraging feedback and options for as much
+            review and practice as you need.
+        </p>
+
+        <p>
+            Tip: See the <span id="page-tour" class="icon-map-o">page tour</span> for a quick way to learn about features.
+        </p>
+    </div>
+</div>
+
+<div id="page-module" ng-if="loaded" class="subject-{{module.subject}}">
+    <walkthrough-tooltip pointer-bottom="false" order="5" last=false required-element=".breadcrumbs" relative-to=".breadcrumbs .element-1" pointer-bottom="false"  left-adjust="-88" top-adjust="-150" position="top: 0px;left: 0px;position: fixed;z-index: 10000;">
+        Go to JUICE home and see other JUICE modules
+    </walkthrough-tooltip>
+    <div class="page-head">
+        <div class="circle-icon-container">
+            <img-with-fallback src="program_module_icon" fallback="module_icon" imgclass="'circle-icon'"></img-with-fallback>
+        </div>
+        <div id="tab-modules" class="module-summary" tabindex=0 ng-keydown="($event.keyCode === 9) && setKeyNav()">
+            <h2>{{module.title}}</h2>
+            <h3>{{module.subtitle}}</h3>
+            <p class="description" ng-bind-html="module.description | trustHTML">
+            </p>
+        </div>
+        <div  class="audio-and-favorites">
+            <div ng-class="(programValues.module.hide_main_audio || module.hide_audio==='1') ? 'not-visible' : 'visible'" class="audio-coaching-control" ng-click="audioClick('overview')">
+                <img ng-if="'overview' != audioService.currentlyPlayingId" class="audio-button audio-element" src="/images/audio_guy.png"  />
+                <img ng-if="'overview' == audioService.currentlyPlayingId" class="audio-button audio-element" src="/images/audio_guy_inprogress.png" />
+            </div>
+        </div>
+        <walkthrough-tooltip required-element=".audio-coaching-control" lean-right="true" pointer-bottom="false" order="1" position="top: 4px;right: 252px;">
+            Listen to the audio coach as you read
+        </walkthrough-tooltip>
+    </div>
+    <div class="header-body-separator ju-color-background">
+        Choose a skill to explore!
+        <div class="not-sure-help" style="display:none">
+            <a href="#">
+                Not sure where to go? Let us help.
+            </a>
+        </div>
+        <div class="page-actions">
+            <div id="page-tour" class="icon-map-o clickable" ng-click="restartTour()">&nbsp;&nbsp;page tour</div>
+        </div>
+    </div>
+    <div class="page-body" role="tree">
+        <div class="modulette-groups">
+            <div class="modulette-group tile relative" ng-repeat="group in module.modulette_groups" ng-if="group.title!='challenge_wheel'" ng-class="{'just-one-modulette':group.modulettes.length==1}" ng-init="group_index = $index">
+                <img ng-class="(programValues.module.hide_sub_audio || module.hide_sub_audio==='1') ? 'not-visible' : 'visible'" ng-if="$index+1 != audioService.currentlyPlayingId" class="audio-button audio-element" src="/images/audio_guy.png" ng-click="audioClick($index + 1)" />
+                <img ng-class="(programValues.module.hide_sub_audio || module.hide_sub_audio==='1') ? 'not-visible' : 'visible'" ng-if="$index+1 == audioService.currentlyPlayingId" class="audio-button audio-element" src="/images/audio_guy_inprogress.png" ng-click="audioClick($index + 1)" />
+                <walkthrough-tooltip required-element=".modulette-in-group" ng-if="$index == 0" pointer-bottom="true" order="2" position="top:-79px;left:0px">
+                    Choose a mini-lesson for skill review and practice
+                </walkthrough-tooltip>
+
+                <div id="{{group.record_id_}}" class="tile-top" role="treeitem" tabindex="{{group.record_id_ == modPageTree.current.id?0:-1}}" ng-keydown="($event.keyCode === 40 || $event.keyCode === 39 || $event.keyCode === 38 || $event.keyCode === 37) && tree_arrowKeys($event)" aria-level="1" aria-setsize="{{ariasetsize}}" aria-posinset="{{$index+1}}" aria-expanded="false">
+                    <h4>{{group.title}}</h4>
+                    <div class="summary">
+                        {{group.subtitle}}
+                    </div>
+                </div>
+                <div class="modulettes-in-group">
+                    <walkthrough-tooltip required-element=".orange-container" ng-if="(group_index == 0)" pointer-bottom="true" order="4" position="top: -104px;left: {{group.modulettes.length < 3 ? 84 + (166*(group.modulettes.length-1)) : 84+(166*2)}}px;">
+                        This shows where you have been.  Roll over for details
+                    </walkthrough-tooltip>
+                    <div  class="modulette-in-group" ng-repeat="modulette in group.modulettes"  ng-init="link='modulette/'+modulette.id" ng-click="$location.path(link)" >
+
+                        <div class="orange-container">
+                            <img ng-src="/images/orange_wedges/20x20/of_6/{{progress.getProgress(module_id, modulette.id)}}.png">
+                            <tooltip id="tooltip-{{makeHtmlId(modulette.id)}}" ng-bind-html="progress.getTooltip(module_id, modulette.id)"></tooltip>
+                        </div>
+
+                        <div class="description"  ng-bind-html="modulette.description | trustHTML" ng-style="keyboardNavStyle(group.record_id_)">
+                        </div>
+                        <div  class="go-to-modulette-in-group" >
+                            <a id="{{treeItemId(modulette.id)}}" role="treeitem" tabindex="{{modulette.id == modPageTree.current.id?0:-1}}" ng-href="{{link}}" ng-keydown="($event.keyCode === 40 || $event.keyCode === 39 || $event.keyCode === 38 || $event.keyCode === 37) && tree_arrowKeys($event)" ng-style="keyboardNavStyle(group.record_id_)">{{modulette.link_text}}<span class="screen-reader-only" ng-bind-html="modulette.description | trustHTML"> </span><span class="screen-reader-only" ng-bind-html="progress.getTooltip(module_id, modulette.id)"> </span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="module.challenge_wheel_available==='1'" class="modulette-group tile putting-it-all-together ju-color-background"">
+                <walkthrough-tooltip pointer-bottom="true" order="3" position="top:-181px;left:0px">
+                    Play a Challenge Wheel game to check your skills
+                </walkthrough-tooltip>
+                <img src="/components/module/images/challenge_wheel_static.png" class="together-image clickable" ng-click="challengeWheelClick()">
+                <img ng-class="(programValues.module.hide_sub_audio || module.hide_sub_audio==='1') ? 'not-visible' : 'visible'" ng-if="'challenge_wheel' != audioService.currentlyPlayingId" class="audio-button audio-element" src="/images/audio_guy.png" ng-click="audioClick('challenge_wheel')" />
+                <img ng-class="(programValues.module.hide_sub_audio || module.hide_sub_audio==='1') ? 'not-visible' : 'visible'" ng-if="'challenge_wheel' == audioService.currentlyPlayingId" class="audio-button audio-element" src="/images/audio_guy_inprogress.png" ng-click="audioClick('challenge_wheel')" />
+                <div id="CW" class="clickable" ng-click="challengeWheelClick()" role="treeitem" tabindex="{{'CW' == modPageTree.current.id?0:-1}}" ng-keydown="($event.keyCode === 13 || $event.keyCode === 40 || $event.keyCode === 40 || $event.keyCode === 39 || $event.keyCode === 38 || $event.keyCode === 37) && tree_arrowKeys($event)" aria-level=1 aria-posinset="{{module.modulette_groups.length + 1}}" aria-setsize="{{ariasetsize}}">
+                    <h4>Challenge Wheel!</h4>
+                    <div class="summary">
+                        Play mini-games to see how much you know.
+                    </div>
+
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <div ng-if="showChallengeWheelWidget">
+        <ng-widget src="challenge_widget_name" options="{}" class="ng-scope ng-isolate-scope"></ng-widget>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+{
+  "title": "Add support",
+  "name": "CS16.3.Add support",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS16.3.Refresher_Add_support"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Practice adding convincing details to your writing by working through one of these interactive examples",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Letter of complaint to the Gravel Mountain Motel",
+          "title": "Everything went wrong . . .",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.3.GuidedPractice1_Add_support"
+          ]
+        },
+        {
+          "description": "Facebook posting about the Downtown Street Fair",
+          "title": "Amazing variety!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.3.GuidedPractice2_Add_support"
+          ]
+        },
+        {
+          "description": "Contest entry for the <i>Worst cook in town.</i>",
+          "title": "A little too much cornstarch . . .",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.3.GuidedPractice3_Add_support"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about adding support!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Which sentence supports this topic?",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS16.3.Challenge1_Add_support_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Pick the better paragraph",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS16.3.Challenge2_Add_support_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Choose convincing details",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS16.3.Challenge3_Add_support_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

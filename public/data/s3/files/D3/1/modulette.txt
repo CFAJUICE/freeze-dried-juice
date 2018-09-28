@@ -1,0 +1,39 @@
+{
+  "title": "Making a mini-lesson",
+  "name": "D3.1.Making a mini-lesson",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "89",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Overview authoring basics",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D3.1.Refresher_Making_a_mini-lesson"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Using spacing to maximize readability",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D3.1.Refresher2_Making_a_mini-lesson"
+          ]
+        }
+      ]
+    }
+  ]
+}

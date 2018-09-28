@@ -1,0 +1,56 @@
+{
+  "description": "Would you like to get better at gathering key ideas and information as you read?  Do you need tips and tools to help you write a summary in your own words?   Try exploring one of these mini-lessons using an Op-Ed about a mysterious series of musical instrument thefts to learn about tools and techniques for skimming, reading, and summarizing.  Or, try a round or two of the Challenge Wheel to check what you already know! \n",
+  "id": "CS6.criticalreading",
+  "subtitle": "Getting to the point of an op-ed article about a mysterious burglary",
+  "title": "Smart techniques for reading and summarizing",
+  "subject": "writing",
+  "challenge_widget_type": "finders_keepers_widget",
+  "record_id_": "3",
+  "dashboard_order": "8",
+  "challenge_wheel_available": "1",
+  "popup_title": "Refresh your critical reading and summarizing skills!",
+  "popup_description": "Review and practice using mini-lessons based on an opinion article about music.",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "How do you know what it's all about?",
+      "title": "Reading for critical information",
+      "record_id_": "29",
+      "modulettes": [
+        {
+          "id": "CS6.1.Previewing and organizing",
+          "description": "Lots of information!   How do I make sense of it?",
+          "link_text": "Previewing and organizing"
+        },
+        {
+          "id": "CS6.2.Extracting key ideas and details",
+          "description": "How do I find the most important ideas?",
+          "link_text": "Extracting key ideas and details"
+        },
+        {
+          "id": "CS6.5.Understanding what you read",
+          "description": "I need tips and tools for understanding a complex topic.",
+          "link_text": "Understanding what you read"
+        },
+        {
+          "id": "CS6.3.Restating the conclusion",
+          "description": "What is the author's message?",
+          "link_text": "Restating the conclusion"
+        }
+      ]
+    },
+    {
+      "subtitle": "How do you summarize it?",
+      "title": "Making sense of what           you've read",
+      "record_id_": "30",
+      "modulettes": [
+        {
+          "id": "CS6.4.Creating your summary",
+          "description": "Briefly explain what the author is saying in your own words. . .",
+          "link_text": "Creating your summary "
+        }
+      ]
+    }
+  ]
+}

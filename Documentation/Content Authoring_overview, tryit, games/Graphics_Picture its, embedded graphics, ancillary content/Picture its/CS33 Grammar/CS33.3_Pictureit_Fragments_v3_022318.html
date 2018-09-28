@@ -1,0 +1,59 @@
+<html>
+  <head><link href="//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <script>
+	  var currentPage = 1;
+	  function showNext() {
+        currentPage = currentPage + 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage-1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+
+	  }
+	  function showPrev() {
+		currentPage = currentPage - 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage+1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+	  }      
+    </script>
+  </head>
+  <title>Sentence fragments</title>
+<body>
+
+    <div id="page1" style="text-align:center;">
+      <h1 tabindex="0"  style="text-align:left;font-family:lato;font-size:20px;color:rgb(85,38,86);">Sentence fragments: Missing a subject</h1><p/>
+      <img src="fragments_page1.gif" alt="Seeks companionship is a fragment because it does not say or who or what seeks companionship.  It is missing a subject.  The elephant seeks companionship is a complete sentence." style="width:765px;height:560px;">
+	  <p/>
+      <div>
+ 	    <button aria-label="Previous" alt="Previous" style="background:url(../../docs/common_images/previousinactive.gif); width:130px;height:32px;border:-2px" onclick="showPrev(); return false" disabled> </button>
+	    <button aria-label="Next" alt="Next" style="background:url(../../docs/common_images/next.gif); width:130px;height:32px;border:-2px" onclick="showNext(); return false"> </button>
+<p style="font-family:lato;font-size:16px;color:rgb(85,38,86);margin-top:-1px">1 of 3</p>
+ 	  </div>
+    </div>
+
+    <div id="page2" style="display:none;text-align:center;">
+      <h1 tabindex="0"  style="text-align:left;font-family:lato;font-size:20px;color:rgb(85,38,86);">Sentence fragments: Missing a verb</h1><p/>
+      <img src="fragments_page2.gif" alt="A highly qualified staff is a fragment because it does not say what the highly qualified staff is doing or being.  It is missing a verb.  A highly qualified staff cares for the elephants is a complete sentence. " style="width:765px;height:560px;">
+      <p/>
+      <div>
+ 	    <button aria-label="Previous" alt="Previous" style="background:url(../../docs/common_images/previous.gif); width:130px;height:32px;border:-2px" onclick="showPrev(); return false"> </button>
+	    <button aria-label="Next" alt="Next" style="background:url(../../docs/common_images/next.gif); width:130px;height:32px;border:-2px" onclick="showNext(); return false"> </button>
+<p style="font-family:lato;font-size:16px;color:rgb(85,38,86);margin-top:-1px">2 of 3</p>
+	  </div>
+    </div> 
+
+    <div id="page3" style="display:none;text-align:center;">
+      <h1 tabindex="0" style="text-align:left;font-family:lato;font-size:20px;color:rgb(85,38,86);">Sentence fragments: Dependent clause without an independent clause</h1><p/>
+      <img src="fragments_page3.gif" alt="Because the elephants require the ability to roam is a fragment.  It is a dependent clause with the marker word because, which makes its meaning incomplete.  Because the elephants require the ability to roam, sanctuaries provide lots of space is a complete sentence." style="width:765px;height:560px;" >
+	  <p/>
+      <div>
+ 	    <button aria-label="Previous" alt="Previous" style="background:url(../../docs/common_images/previous.gif); width:130px;height:32px;border:-2px" onclick="showPrev(); return false"> </button>
+	    <button aria-label="Next" alt="Next" style="background:url(../../docs/common_images/nextinactive.gif); width:130px;height:32px;border:-2px" onclick="showNext(); return false" disabled> </button>
+<p style="font-family:lato;font-size:16px;color:rgb(85,38,86);margin-top:-1px">3 of 3</p>
+	  </div>
+    </div>
+
+  </body>
+</html>

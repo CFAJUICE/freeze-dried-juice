@@ -1,0 +1,209 @@
+//standard game settings
+.short-round-count{
+    display:none;
+}
+
+//scaleable game settings
+.scaleable-game{
+    $max-width: 900px;
+    $max-height: 640px;
+    .highlighter-game-container{
+        canvas#canvas{
+            display:none;
+        }
+        .answers-container{
+            padding-bottom:75px;
+        }
+    }
+    .modal-content .feedback-view.challenge-wheel-game-feedback ul.feedback-rounds{
+        width:95%;
+       //    height:113px;
+    }
+    .modal-content .feedback-view.challenge-wheel-game-feedback ul.feedback-rounds{
+        overflow-y:hidden;
+        height: initial;
+    }
+
+    .feedback-view{
+        .modal-body{
+            overflow: hidden;
+        }
+    }
+    @media (max-width: $max-width){
+        .hide-if-small{
+            display:none;
+        }
+        .modal-content ul.rounds li{
+            &.hide-if-small{
+                display:none;
+            }
+        }
+        .modal-content .feedback-view ul.feedback-rounds{
+            left:9px;
+        }
+        .modal-content .feedback-view.challenge-wheel-game-feedback ul.feedback-rounds .round-number-message{
+            width:32%;
+        }
+        .modal-content .feedback-view.challenge-wheel-game-feedback .icon {
+            margin-left:-13px;
+        }
+        .modal-content .feedback-view.challenge-wheel-game-feedback li.feedback-column-header-section{
+            margin-bottom:-5px;
+        }
+    }
+
+    @media (max-width: 550px){
+        .many-rounds{
+            &.full-round-count{
+                display:none;
+            }
+        
+            &.short-round-count{
+                display:block;
+                .round-title.of{
+                    padding: 0px;
+                    margin-right: -30px;
+                    top: -16px;
+                    margin-left: -34px;
+                }
+            }
+        }
+    }
+
+    ul.feedback-rounds {
+        li{
+            white-space: nowrap;
+        }
+        .round-number-message{
+            white-space: pre-wrap;
+        }
+        .round-number-message{
+        width:50%;
+        height:100%;
+        }
+    }
+    &.modal.game .modal-dialog {
+        max-width: 902px;
+        width: 902px;
+        height:90%;
+        @media (max-width: $max-width), (max-height: $max-height){
+            width:100%;
+            min-height:100%;
+            margin:0px;
+        }
+        @media (max-height: $max-height){ 
+            max-width:5000px;
+        }
+        .modal-body{
+            overflow:auto;
+            height:640px;
+            &::-webkit-scrollbar {
+                -webkit-appearance: none;
+                width: 6px;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 4px;
+                background-color: rgba(0,0,0,.5);
+                -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+            }
+            
+        }
+        .modal-content, .modal-wrapper, .modal-body{
+            .feedback-view{
+                background-size:cover;
+                height:620px;
+                &.challenge-wheel-game-feedback  {
+                    height:800px;
+                }
+                @media (max-width: $max-width), (max-height: $max-height){
+                    height:800px;
+                }
+            }
+            #canvas-container{
+                height:100%;
+                background-size: cover;
+            }
+            .highlighterinstructions{ /* game area name... yes, a misnomer */
+                font-size:50px;
+                //overflow:scroll;
+            }
+            .header{
+                position:fixed;
+                z-index:40000;
+            }    
+            @media (max-height: $max-height){
+                max-width:5000px;
+            }
+
+
+            @media (max-width:900px){
+                .round-end-buttons {
+                    left: 68px;
+                    right: 68px;
+                    padding: 0 1em;
+                }
+                .game-btn{
+                    background-size: 100% 100%;
+                    width: 73px;
+                    font-size: 12px;
+                    height: 37px;
+                    display:inline-block;
+                    margin-left: 0px;
+                    margin-right:0px;
+                    .normal-label{
+                        display:none;
+                    }
+                    .short-label{
+                        display:block;
+                    }
+                }
+            }
+            .modal-footer{
+                margin-top:-75px;
+            }
+            @media (max-width: $max-width), (max-height: $max-height){
+                top:0px;
+                width:100%;
+                height:100%;
+
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                //overflow: scroll;
+                //padding-bottom: 70px;
+                .modal-footer{
+                    position: fixed;
+                    bottom: 0px;
+                    width: 100%;
+                    margin-top:0px;
+                }
+            }
+        }
+
+        .instructions-view{
+            background-size:cover;
+            position:relative;
+            .col-xs-7{
+                img{
+                    //width: 500px;
+                }
+            }
+            @media (max-width: $max-width), (max-height: $max-height){
+                .main-content{
+                    .popover-content{
+                        font-size: 12px;
+                    }
+                    top:37px;
+                    .instructions-title{
+                        display:none;
+                    }
+                    .popover.right-popover{
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
+
+}

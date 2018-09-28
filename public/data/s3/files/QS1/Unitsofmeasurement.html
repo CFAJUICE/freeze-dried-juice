@@ -1,0 +1,114 @@
+<html>
+  <head>
+      <link href="//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link href="../docs/common_css/picture-it.css" rel="stylesheet" type="text/css">
+
+    <script>
+	  var currentPage = 1;
+	  function showNext() {
+        currentPage = currentPage + 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage-1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+
+	  }
+	  function showPrev() {
+		currentPage = currentPage - 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage+1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+	  }      
+    </script>
+  </head>
+  <title>Units of measurement</title>
+<body>
+    <div  class="page" id="page1" style="display:block">
+      <h1 tabindex="0" class="page-header">Units of measurement</h1><p/>
+      <img src="units_page1.gif" alt="The meaning of numbers is not clear without units of measurement.  An illustration shows a man asking a giant yeti how tall he is.  The yeti replies that his height is 4.  The man thinks the yeti is 4 feet tall, which is shorter than the man.  The yeti clarifies that he is 4 meters tall, which is twice as tall as the man. Juice answers may require units! Do include units when using numbers to give information about what you know, or when stating your answer. Do not include units when you use numbers to calculate.">
+	  <p/>
+      <div>
+ 	    <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false" disabled> </button>
+	    <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+        <p class="pager">1 of 8</p>
+ 	  </div>
+    </div>
+
+    <div  class="page" id="page2">
+      <h1  tabindex="0" class="page-header">Common units used in JUICE</h1><p/>
+      <img src="units_page2.gif" alt="Units of Currency.  The United States currency is based on dollars and cents.  1 dollar = 100 cents.  1 cent is one one-hundredth of a dollar or 1 % of a dollar.  Include the $ symbol or cents symbol when you write currency values. 1 cent can be written $0.01.  ">
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+          <p class="pager">2 of 8</p>
+	  </div>
+    </div> 
+
+    <div  class="page" id="page3">
+      <h1  tabindex="0" class="page-header">Common units used in JUICE</h1><p/>
+      <img src="units_page3.gif" alt="Units of Length: Inches and feet.  An inch is about as long as a paperclip.   The abbreviation for inch is i n period. A foot is about as long as a men's size 11 and a half shoe.  The abbreviation for foot is f t period. There are 12 inches in a foot, so 1 inch is one twelfth of a foot.">
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+          <p class="pager">3 of 8</p>
+	  </div>
+    </div> 
+
+    <div  class="page" id="page4">
+      <h1  tabindex="0" class="page-header">Common units used in JUICE</h1><p/>
+      <img src="units_page4.gif" alt="More units of length: Yards and miles.  The length from your nose to your fingertip is about a yard long.  A yard equals 3 feet equals 36 inches.  The abbreviation for yard is y d period.   A mile is how long your car will travel in one minute if it is driving 60 miles per hour.  It is 5280 feet.  The abbreviation for mile is m I period.">
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+          <p class="pager">4 of 8</p>
+	  </div>
+    </div> 
+
+    <div  class="page" id="page5">
+      <h1 tabindex="0" class="page-header">Common units used in JUICE</h1><p/>
+      <img src="units_page5.gif" alt="Units of area: Square feet and square yards.  A square foot is a square that is 1 foot long all sides.   The abbreviation for square foot is s q period f t period.   A square yard is a square that is 1 yard or 3 feet on all sides.  The abbreviation for square yard is  s q period y d period.">
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+          <p class="pager">5 of 8</p>
+	  </div>
+    </div> 
+
+    <div  class="page" id="page6">
+      <h1 tabindex="0" class="page-header">Common units used in JUICE</h1><p/>
+      <img src="units_page6.gif" alt="More units of area: Acres.   An acre is a common unit of land.  It is 43560 square feet, or about three quarters of a football field.  An acre does not have to be a rectangle. It can be any shape containing 43560 square feet.  The abbreviation for acre is a c period.">
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+          <p class="pager">6 of 8</p>
+	  </div>
+    </div> 
+
+ <div  class="page" id="page7">
+      <h1  tabindex="0" class="page-header">Common units used in JUICE</h1><p/>
+      <img src="units_page7.gif" alt="Units of temperature.  The two common units of temperature are Fahrenheit, and Celsius.  An illustration of two Fahrenheit thermometers shows water freezes at 32 degrees Fahrenheit and boils at 212 degrees Fahrenheit.   An illustration of two Celsius thermometers shows water freezes at 0 degrees Celsius and boils at 100 degrees Celsius.  To change Celsius to Fahrenheit, multiply the known temperature in Celsius by nine-fifths and add 32.  To change Fahrenheit to Celsius, subtract 32 from the known temperature in Fahrenheit, and then multiply the result by five-ninths.">
+	  <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+          <p class="pager">7 of 8</p>
+ 	  </div>
+    </div>
+ <div  class="page" id="page8">
+      <h1 tabindex="0" class="page-header">Common units used in JUICE</h1><p/>
+      <img src="units_page8.gif" alt="Units of Time.  The units of time are hours, minutes, and seconds.  One day is divided into 24 equal parts called hours. Hours are abbreviated as h r period. Each hour is divided into 60 equal parts called minutes. Minutes are abbreviated as m i n period. Each minute is divided into 60 equal parts called seconds. Seconds are abbreviated as s e c period. One hour equals 60 seconds times 60 minutes or 3600 seconds.">
+	  <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false" disabled> </button>
+          <p class="pager">8 of 8</p>
+ 	  </div>
+    </div>
+  </body>
+</html>

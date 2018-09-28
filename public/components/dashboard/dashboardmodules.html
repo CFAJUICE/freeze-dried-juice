@@ -1,0 +1,6 @@
+<div class="dashtitle title"><h2>{{programValues.dashboard.tabs.modules.header}}</h2></div>
+<div class="dash-body" role="tree" aria-label="JUICE Learning modules">
+  <div ng-repeat="module in modules track by $index" class='module-box' role='none'>
+   <dashboard-module index="{{$index}}" arialevel=1 ariasetsize="{{modulesSetSize}}" modid="{{module.id}}"/>
+  </div>
+</div>

@@ -1,0 +1,229 @@
+{
+  "title": "Game testing",
+  "name": "D1.12.Game testing",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "88",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "These look like Try its, but they really are the healthcheck games!  ",
+      "tab_subheader": "When you open a game, this page will go blank.  Click the tab again after you close the game to refresh the page.",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Balancer healthcheck",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "pmtest1.balancer_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Finders Keepers healthcheck",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "pmtest1.finderskeepers_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Fix it healthcheck",
+          "widget_name": "fix_it_widget",
+          "widget_description": "Correct words and phrases",
+          "files": [
+            "pmtest1.fixit_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Fridge mags healthcheck",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "pmtest1.fridge_magnets_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Spotlight healthcheck",
+          "widget_name": "highlighter_widget",
+          "widget_description": "Select words and phrases",
+          "files": [
+            "pmtest1.highlighter_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Perfect Word healthcheck",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "pmtest1.perfect_word_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Pick and Stack healthcheck",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "pmtest1.pick_and_stack_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Puzzler healthcheck",
+          "widget_name": "puzzler_widget",
+          "widget_description": "Puzzler Game",
+          "files": [
+            "pmtest1.puzzler_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Quick Pick healthcheck",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "pmtest1.quick_pick_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Sorter healthcheck",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "pmtest1.sorter_healthcheck"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Stacker healthcheck",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "pmtest1.stacker_healthcheck"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "These are the content games!  Scroll down to see them all.",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Balancer content",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "pmtest1.betsy_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Finder Keepers content",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "pmtest1.betsy_finderskeepers"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Fix it content",
+          "widget_name": "fix_it_widget",
+          "widget_description": "Correct words and phrases",
+          "files": [
+            "pmtest1.betsy_fixit"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Fridge mags content",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "pmtest1.betsy_fridge_magnets"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Spotlight content",
+          "widget_name": "highlighter_widget",
+          "widget_description": "Select words and phrases",
+          "files": [
+            "pmtest1.betsy_highlighter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Perfect Word content",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "pmtest1.betsy_perfectword"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Pick and Stack content",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "pmtest1.betsy_pick_and_stack"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Puzzler content",
+          "widget_name": "puzzler_widget",
+          "widget_description": "Puzzler Game",
+          "files": [
+            "pmtest1.betsy_puzzler"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Quick Pick content",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "pmtest1.betsy_quick_pick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Sorter content",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "pmtest1.betsy_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Stacker content",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "pmtest1.betsy_stacker"
+          ]
+        }
+      ]
+    }
+  ]
+}

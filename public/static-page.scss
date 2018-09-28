@@ -1,0 +1,127 @@
+.static-page{
+  padding:0px;
+  margin:0px;
+
+  .terms-and-policy{
+    text-align:center;
+    font-weight:normal;
+    font-size:13px;
+    span{
+      padding: 0em 0.5em;
+    }
+  }
+
+  #log-back-in, .message{
+    background:$juice-purple;
+    display:none;
+    color:white;
+    height:50px;
+    text-align:center;
+    .blob-inner{
+      text-align:center;
+      width:100%;
+      //line-height:50px;
+    }
+  }
+  .message{
+    display:block;
+  }
+
+  header{
+    text-align:center;
+    #logo{
+      width:300px;
+      @media (max-width: $small-width){
+        width: 58vw;
+      }
+    }
+  }
+  #blurb{
+    //$blurb_height:150px;
+    //height:$blurb_height;
+    padding:40px 0 40px 0;
+    background:$light-blue;
+    //line-height:$blurb_height;
+    text-align:center;
+    color:white;
+    font-size:1.3em;
+    white-space:nowrap;
+    @media (max-width: $small-width) {
+      font-size: 3.25vw;
+    }
+  }
+  #content{
+    background:$lighter-blue;
+    color:$dark-blue;
+  }
+  #footer{
+    margin-top: 0em;
+    $footer-height:80px;
+    height:$footer-height;
+    @media (max-width: $small-width) {
+      display:block;
+    }
+
+    #footer-wrapper {
+      display:table-row;
+      & > div {
+        display: table-cell;
+        height:$footer-height;
+        @media (max-width: $small-width){
+          display:block;
+        }
+        img{
+          height:$footer-height;
+        }
+      }
+    }
+
+
+    #cfa-container{
+      width:6%;
+      #cfa-logo{
+        float:left;
+      }
+    }
+    #cc{
+      width:52%;
+      line-height:1.3em;
+      vertical-align: top;
+      font-size:0.8em;
+    }
+    #snhu-container{
+      #snhu-logo{
+        float:right;
+      }
+    }
+
+  }
+
+  .blob-container{
+    padding:1em;
+    display: flex;
+    justify-content: center;
+    .blob-inner {
+      width: 700px;
+      align-self: center;
+    }
+  }
+}
+
+#server-error-page, .simple-static-page{
+  #blurb{
+    font-size:1.8em;
+  }
+  #content{
+    .blob-inner{
+      text-align: center;
+      font-size:1.5em;
+    }
+  }
+}
+
+.social-auth{
+  &.static-page #blurb{
+    background:#639F42;
+  }
+}

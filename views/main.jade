@@ -1,0 +1,24 @@
+extends juice_bar
+block append content
+  body(class="top-path-{{top_path}} {{slim}}")
+    div(id="loading" class="loading-{{top_path}}")
+    ferpa(ferpa="ferpa")
+    social-modal
+    feedback
+    div
+      div(style="display:none" id="code-initializer")
+        | vnrulsferlosujwnsyxl
+      notify
+      div(class="navbar-fixed-top ju-main-nav-bar small-width-navbar" role="banner" aria-label="JUICE")
+        topnav
+        breadcrumbs
+      div(class="nav-spacer")
+      div(class="main" role="main")
+        div(id="content-frame")
+          div(ui-view class="content-area")
+    .cookie-notice
+      .pad
+        | &nbsp;
+      .notice-content(tabindex=0)
+        | We use cookies to give you the best online experience. By using our website, you agree to our use of cookies in accordance with our privacy policy.
+        button(class='juice-button' aria-label='Accept cookies OK button') OK

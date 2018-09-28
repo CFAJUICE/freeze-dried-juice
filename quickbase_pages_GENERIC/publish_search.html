@@ -1,0 +1,420 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+    <script>
+
+        
+
+        //var QBU_thisTableId = window.location.pathname;
+        var QBU_thisTableId = $.getUrlVar("tableid");
+        var keys = {};
+
+        function truthy(bool) {
+            if (bool === '1') return true;
+            if (bool === '0') return false;
+            if (bool) return true;
+            return false;
+        }
+
+        function splitTags(tags, sep) {
+            if (!sep) sep = ';';
+            if (!tags) return [];
+            tags = tags.trim().split(sep);
+            tags.forEach(function (value, index) {
+                tags[index] = value.trim();
+            });
+            return tags;
+        }
+
+        function getModuleFromKey(modules, module_key) {
+            var out = null;
+            modules.forEach(function (module) {
+                if (module.key == module_key) {
+                    out = module;
+                }
+            });
+            return out;
+        }
+
+        function setModuleFromKey(item, modules, module_key) {
+            var module = getModuleFromKey(modules, module_key);
+            item.module = module;
+        }
+
+        function addAncillaryFiles(modules, callback) {
+            var query = "";
+            var collection = '_dbid_ancillary_files';
+            var remap = {
+                "title": "title",
+                description: "description",
+                file_name: "file_name",
+                search_tags: "tags",
+                exclude_words: "exclude_words_from_search"
+            };
+            doQuery(collection, query, function (records) {
+                if (!records[0]) {
+                    records = [];
+                }
+                out = [];
+                records.forEach(function (record) {
+                    if (truthy(record.exclude_from_search)) {
+                        return; //skip this record
+                    }
+                    var item = remapRecord(record, remap);
+                    item.search_tags = splitTags(item.search_tags);
+                    var module_key = item.file_name.split('/')[0];
+                    if(module_key === 'programs'){
+                        module_key = item.file_name.split('/')[2];
+                    }
+                    setModuleFromKey(item, modules, module_key);
+                    out.push(item);
+                })
+                return callback(out);
+            });
+        }
+
+        function cleanupExcludes(output_data) {
+            var exclude_cleanup = {
+                modules: ['title', 'rubrics'],
+                modulettes: ['group', 'title', 'rubrics'],
+                ancillary_files: ['title', 'description']
+            }
+            for (var collection_key in output_data) {
+                var collection = output_data[collection_key];
+                var cleanup = exclude_cleanup[collection_key];
+                collection.forEach(function (obj) {
+                    cleanup.forEach(function (property) {
+                        var val = obj[property];
+                        if (!val) return;
+                        if (typeof(val) === 'object') {
+                            val = val.join(' ');
+                        }
+
+                        val = val.replace(/[\W_]+/g, " ").toLowerCase();
+                        var excludes = splitTags(obj.exclude_words, ',');
+                        excludes.forEach(function (exclude) {
+                            exclude = exclude.toLowerCase();
+                            val = val.split(exclude).join('');
+                        });
+                        obj['search_' + property] = val;
+                    });
+                });
+            }
+            return output_data;
+        }
+
+        function addRubricsToModules(modules, callback) {
+            var query = "";
+            var collection = '_dbid_rubrics';
+            var remap = {
+                description: "description",
+                module_id: "juice__module_id",
+                modulette_rubrics: "modulette_rubrics",
+            };
+            doQuery(collection, query, function (records) {
+                records.forEach(function (record) {
+                    var item = remapRecord(record, remap);
+                    var module = getModuleFromKey(modules, item.module_id.split('.')[0]);
+                    if (module && item.description && (module.rubrics.indexOf(item.description) === -1)) {
+                        module.rubrics.push(item.description);
+                    }
+                })
+                return callback(modules);
+            });
+        }
+
+        function addProjectsToModules(modules, callback) {
+            modules.forEach(function addProjectsArrayToModule(module){
+                module.search_project_names = [];
+                module.search_project_goals = [];
+            })
+            var query = "";
+            var collection = '_dbid_module_instances';
+
+//            return callback(modules);
+            doQuery(collection, query, function (records) {
+                records.forEach(function (record) {
+                    modules.forEach(function(module){
+                        if(module.id === record.module_id){
+                            module.search_project_names.push(record.project___name);
+                            module.search_project_goals.push(record.project___goal);
+                            module.search_project_names = arrayUnique(module.search_project_names);
+                            module.search_project_goals = arrayUnique(module.search_project_goals);
+                        }
+                    });
+                });
+                return callback(modules);
+            });
+        }
+
+        var arrayUnique = function(a) {
+            return a.reduce(function(p, c) {
+                if (p.indexOf(c) < 0) p.push(c);
+                return p;
+            }, []);
+        };
+
+        function addRubricsToModulettes(modulettes, modules, callback) {
+            var query = "";
+            var collection = '_dbid_modulette_rubrics';
+            var remap = {
+                description: "rubric_description",
+                modulette_name: "modulette_name"
+            };
+            doQuery(collection, query, function (records) {
+                records.forEach(function (record) {
+                    var item = remapRecord(record, remap);
+                    modulettes.forEach(function (modulette) {
+                        if ((modulette.id === item.modulette_name) && (modulette.rubrics.indexOf(item.description) === -1)) {
+                            modulette.rubrics.push(item.description);
+                            //remove ruberics from related module.
+                            var module_key = modulette.id.split('.')[0];
+                            modules.forEach(function (module) {
+                                if (module.key !== module_key) {
+                                    return;
+                                }
+                                var index = 1;
+                                while (index !== -1) {
+                                    index = module.rubrics.indexOf(item.description);
+                                    if (index === -1) break;
+                                    module.rubrics.splice(index, 1); //remove ruberic from module
+                                }
+
+                                if (module.key == 'QS8') {
+                                    console.log('herehhhhh, remove ', item.description, module, index, module.rubrics.indexOf(item.description));
+                                    ;
+                                }
+
+                            });
+
+                        }
+                    });
+                })
+                return callback(modulettes);
+            });
+        }
+
+
+        function addModules(callback) {
+            var query = "";
+            var out = [];
+            var collection = '_dbid_modules';
+            doQuery(collection, query, function (records) {
+                if (!records[0]) {
+                    return console.log('ERROR, no item in db ' + collection + ' found for query', query);
+                }
+                console.log('raw modules', records);
+                var remap = {
+                    "title": "title",
+                    "subtitle": "subtitle",
+                    "id": "id",
+                    "goal": "goal",
+                    "competencies": "competencies",
+                    "search_tags": "tags",
+                    "popup_title": "popup_title",
+                    "popup_description": "popup_description",
+                    exclude_words: "exclude_words_from_search"
+                }
+
+                records.forEach(function (record) {
+                    if (truthy(record.hide_from_dashboard)) {
+                        return; //skip this record
+                    }
+                    var item = remapRecord(record, remap);
+                    item.key = item.id.split('.')[0];
+                    item.competencies = item.competencies.trim().split("\n");
+                    item.search_tags = splitTags(item.search_tags);
+                    item.rubrics = [];
+                    out.push(item);
+                })
+                return callback(out);
+            });
+        }
+
+
+        function addModulettes(modules, callback) {
+            var query = "";
+            var collection = '_dbid_modulettes';
+            var remap = {
+                id: 'modulette_name',
+                group: 'modulette_group___title',
+                description: 'description_in_module',
+                search_tags: "tags",
+                order: "order_in_modulette_group",
+                exclude_words: "exclude_words_from_search"
+            };
+
+            doQuery(collection, query, function (records) {
+                if (!records[0]) {
+                    return console.log('ERROR, no item in db ' + collection + ' found for query', query);
+                }
+                console.log('raw modulettes', records);
+                var out = [];
+                records.forEach(function (record) {
+                    if (truthy(record.exclude_from_search)) {
+                        return; //skip this record
+                    }
+                    var item = remapRecord(record, remap);
+                    item.search_tags = splitTags(item.search_tags);
+                    setModuleFromKey(item, modules, item.id.split('.')[0]);
+                    item.name = item.id.split('.')[2];
+                    item.rubrics = [];
+                    // mod.push(item);
+                    if (record.link_text_in_module) {
+                        item.title = record.link_text_in_module;
+                    } else if (record.title) {
+                        item.title = record.title;
+                    } else {
+                        item.title = record.modulette_name.split('.')[2];
+                    }
+                    out.push(item);
+                });
+                return callback(out);
+            });
+        }
+
+
+        function addProjects(modules, callback) {
+            var query = "";
+            doQuery('_dbid_module_instances', query, function (records) {
+                var projects = {};//will be a lookup table based on record id
+                records.forEach(function (record) {
+                    var remap = {color: "color", name: "name", dashboard_order: "dashboard_order", goal: "goal"};
+                    projects[record.record_id_] = remapRecord(record, remap);
+                });
+                modules.forEach(function (module) {
+                    module.projects = [];
+                    //go through related project ids and assign matches
+                    for (var i = 0; i <= 4; i++) {
+                        var project_id = module["related_project" + i];
+                        if (!project_id) {
+                            delete module["related_project" + i];
+                            continue;
+                        }
+                        if (!projects[project_id]) {
+                            console.log('error finding project' + project_id);
+                        } else {
+                            module.projects.push(projects[project_id]);
+                            delete module["related_project" + i];
+                        }
+                    }
+                    //handle Xtra projects
+                    var xtraProjects = module["related_projectsxtra"];
+                    if (!xtraProjects) {
+                        delete module["related_projectsxtra"];
+                    } else {
+                        var xtraProjectsIds = xtraProjects.split(",");
+                        xtraProjectsIds.forEach(function (pId) {
+                            var project_id = parseInt(pId);
+                            if (!projects[project_id]) {
+                                console.log('error finding project' + project_id);
+                            } else {
+                                module.projects.push(projects[project_id]);
+                            }
+                        });
+                        delete module["related_projectsxtra"];
+                    }
+                });
+                callback(modules);
+            });
+        }
+
+        function submitForm() {
+            var action = $('#publish_form').attr('action');
+            $('#publish_form').attr('action', action + '?sb=' + QBU_encryptedSecret());
+            $("#publish_form").submit();
+        }
+
+
+        function addProgramIdsToOutputData(outputData) {
+            var search_program_id = QBU_programId ? QBU_programId : 'juice';
+            var search_ancillary_files_program_id = QBU_programId ? QBU_programId : 'global';
+            for (var key in outputData) {
+                var data = outputData[key];
+                var program_id = (key === 'ancillary_files') ? search_ancillary_files_program_id : search_program_id;
+                data.forEach(function (record) {
+                    record.program_id = program_id;
+                })
+            }
+        }
+
+        //* MAIN *//
+        $(document).ready(function () {
+            var outputData = {};
+            $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function () {
+			$.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+			QBU_deltaTime = QBU_serverTime - new Date().getTime();
+                loadSchemaThenExecute(function mainCallbackAfterSchemaLoad() {
+                    var PP = programPrefix() ? programPrefix().split("/")[1] : "-";
+                    var program_id = QBU_programId ? QBU_programId : 'juice';
+                    $('#program_id_label').text(program_id);
+                    $('#publish_form').attr('action', QBU_juiceDomain_s + 'juice/searchpub');
+                    $('#server-selector').change(function () {
+                        $('#publish_form').attr('action', $('#server-selector').val() + 'juice/searchpub');
+                    });
+                    addModules(function addModulesCb(modules) {
+                        outputData.modules = modules;
+                        addAncillaryFiles(modules, function ancillaryFilesCb(ancillary_files) {
+                            outputData.ancillary_files = ancillary_files;
+                            addModulettes(modules, function addModuletteCb(modulettes) {
+                                outputData.modulettes = modulettes;
+                                addRubricsToModules(modules, function addRubricsToModulesCb(modules) {
+                                    addRubricsToModulettes(outputData.modulettes, modules, function addRubricsToModulettesCB() {
+                                        addProjectsToModules(modules, function addProjectsToModulesCB(modules){
+                                            //outputData.modules = modules;
+                                            console.log('all data compiled', outputData);
+                                            cleanupExcludes(outputData);
+                                            addProgramIdsToOutputData(outputData);
+                                            var json = JSON.stringify(outputData, null, 2);
+                                            $("#data").val(json);
+                                            var program_id = QBU_programId ? QBU_programId : 'juice';
+                                            $("#program_id").val(program_id);
+                                            console.log(outputData);
+                                            $('#submit-button').prop('disabled', false);
+                                            //$("#publish_form").submit();
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+			});
+        });
+
+    </script>
+</head>
+<body>
+
+<div id='message'></div>
+<div id='error'></div>
+
+<form action="" method="POST" id="publish_form">
+
+    <p>
+        Select server to publish search for program_id <span style="font-weight:bold" id="program_id_label"></span> to
+        <select id="server-selector">
+            <option value="https://dev.__YOUR_SERVER.COM__/">https://dev.__YOUR_SERVER.COM__/</option>
+            <option value="https://test.__YOUR_SERVER.COM__/">https://test.__YOUR_SERVER.COM__/</option>
+            <option value="https://www.__YOUR_SERVER.COM__/">https://www.__YOUR_SERVER.COM__/</option>
+            <option value="https://connect.__YOUR_SERVER.COM__/">https://connect.__YOUR_SERVER.COM__/</option>
+            <option value="http://127.0.0.1/">http://127.0.0.1/</option>
+        </select>
+    <p>
+
+    <p><strong>NOTE:</strong> Be sure to publish to connect.__YOUR_SERVER.COM__ when you publish to www.__YOUR_SERVER.COM__!</p>
+    <p>
+        <input type="button" name="Publish" value="Publish" id="submit-button" disabled="disabled"
+               onclick="submitForm()">
+    </p>
+    <input type="hidden" id="data" name="data" value=""/>
+    <input type="hidden" id="program_id" name="program_id" value=""/>
+    <input type="hidden" id="fname" name="fname" value=""/>
+    <input type="hidden" id="link" name="link" value=""/>
+</form>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{
+  "title": "Comparing units and unit cost",
+  "name": "QS67.4.Comparing units and unit cost",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "39",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS67.4.Refresher_Comparing_units_and_unit_cost"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to find and compare unit costs.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Which jar is the better deal?",
+          "title": "Out of peanut butter!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS67.4.GuidedPractice1_Comparing_units_and_unit_cost"
+          ]
+        },
+        {
+          "description": "Which roast turkey is the better deal?",
+          "title": "Bring your lunch to work",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS67.4.GuidedPractice2_Comparing_units_and_unit_cost"
+          ]
+        },
+        {
+          "description": "Which caterer offers the better deal?",
+          "title": "Catering the office picnic",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS67.4.GuidedPractice3_Comparing_units_and_unit_cost"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Build math expressions for smart buying decisions\n",
+          "widget_name": "puzzler_widget",
+          "widget_description": "Puzzler Game",
+          "files": [
+            "QS67.4.Challenge1_Comparing_units_and_unit_cost_puzzler"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Choose the steps to calculate unit cost",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "QS67.4.Challenge2_Comparing_units_and_unit_cost_pickandstack"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Which is the best buy?\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "QS67.4.Challenge3_Comparing_units_and_unit_cost_balancer"
+          ]
+        }
+      ]
+    }
+  ]
+}

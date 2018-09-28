@@ -1,0 +1,104 @@
+{
+  "title": "Identifying arguments",
+  "name": "CS28CCT3.1.Identifying arguments",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "57",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS28CCT3.1.Refresher_Identifying_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a situation and work through interactive steps to tell what the argument is. ",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Neighbor sues neighbor",
+          "title": "Aplomb says \"tone it down!\"",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.1.GuidedPractice1_Identifying_arguments"
+          ]
+        },
+        {
+          "description": "Family dispute over too much technology",
+          "title": "Your sister needs advice",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.1.GuidedPractice2_Identifying_arguments"
+          ]
+        },
+        {
+          "description": "Year-round school proposal",
+          "title": "The school board's argument",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.1.GuidedPractice3_Identifying_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about identifying arguments!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Sort out the real claims!\n",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "CS28CCT3.1.Challenge1_Identifying_arguments_sorter_\t"
+          ]
+        },
+        {
+          "description": "",
+          "title": "What reasons justify the claims?\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS28CCT3.1.Challenge2_Identifying_arguments_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Can you spot the arguments?\n",
+          "widget_name": "highlighter_widget",
+          "widget_description": "Select words and phrases",
+          "files": [
+            "CS28CCT3.1.Challenge3_Identifying_arguments_highlighter"
+          ]
+        }
+      ]
+    }
+  ]
+}

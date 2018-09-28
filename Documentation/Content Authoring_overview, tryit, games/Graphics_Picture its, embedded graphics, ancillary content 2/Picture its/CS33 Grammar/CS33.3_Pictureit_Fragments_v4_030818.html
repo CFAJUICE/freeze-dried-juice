@@ -1,0 +1,62 @@
+<html>
+  <head>
+      <link href="//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link href="../../docs/common_css/picture-it.css" rel="stylesheet" type="text/css">
+      
+    <script>
+	  var currentPage = 1;
+	  function showNext() {
+        currentPage = currentPage + 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage-1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+
+	  }
+	  function showPrev() {
+		currentPage = currentPage - 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage+1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+	  }      
+    </script>
+  </head>
+  <title>Sentence fragments</title>
+<body>
+
+    <div  class="page" id="page1" style="display:block">
+      <h1 tabindex="0"  class="page-header">Sentence fragments: Missing a subject</h1><p/>
+      <img src="fragments_page1.gif" alt="Seeks companionship is a fragment because it does not say or who or what seeks companionship.  It is missing a subject.  The elephant seeks companionship is a complete sentence." >
+	  <p/>
+      <div>
+ 	   <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false" disabled> </button>
+	    <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">1 of 3</p>
+ 	  </div>
+    </div>
+
+    <div  class="page" id="page2" >
+      <h1 tabindex="0"   class="page-header">Sentence fragments: Missing a verb</h1><p/>
+      <img src="fragments_page2.gif" alt="A highly qualified staff is a fragment because it does not say what the highly qualified staff is doing or being.  It is missing a verb.  A highly qualified staff cares for the elephants is a complete sentence. " >
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">2 of 3</p>
+	  </div>
+    </div> 
+
+    <div  class="page" id="page3" >
+      <h1 tabindex="0"  class="page-header">Sentence fragments: Dependent clause without an independent clause</h1><p/>
+      <img src="fragments_page3.gif" alt="Because the elephants require the ability to roam is a fragment.  It is a dependent clause with the marker word because, which makes its meaning incomplete.  Because the elephants require the ability to roam, sanctuaries provide lots of space is a complete sentence."  >
+	  <p/>
+      <div>
+<button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false" disabled> </button>
+<p class="pager">3 of 3</p>
+	  </div>
+    </div>
+
+  </body>
+</html>

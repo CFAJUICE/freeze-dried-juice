@@ -1,0 +1,104 @@
+{
+  "title": "Finding citation and reference details",
+  "name": "JCS100.5.Finding citation and reference details",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "74",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "JCS100.5.Refresher_Finding_citation_and_reference_details"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to learn where to find citation and reference details.\n",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Family history",
+          "title": "Where's the information I need?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "JCS100.5.GuidedPractice1_Finding_citation_and_reference_details"
+          ]
+        },
+        {
+          "description": "Tips for buying a used car",
+          "title": "Looking for some details?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "JCS100.5.GuidedPractice2_Finding_citation_and_reference_details"
+          ]
+        },
+        {
+          "description": "Hiking in national parks",
+          "title": "Finding the fine print",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "JCS100.5.GuidedPractice3_Finding_citation_and_reference_details"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Find the facts!\n",
+          "widget_name": "highlighter_widget",
+          "widget_description": "Select words and phrases",
+          "files": [
+            "JCS100.5.Challenge1_Finding_citation_and_reference_details_highlighter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Reference list entry treasure hunt\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "JCS100.5.Challenge2_Finding_citation_and_reference_details_finderskeepers"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Put it all together and prove your mastery!\n",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "JCS100.5.Challenge3_Finding_citation_and_reference_details_perfectword"
+          ]
+        }
+      ]
+    }
+  ]
+}

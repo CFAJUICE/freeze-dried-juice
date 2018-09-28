@@ -1,0 +1,50 @@
+
+.audio-coaching-control {
+  background: #F5F5F6;
+  border: 2px solid #F2F2F2;
+  height: 33px;
+  width: 184px;
+  font-size: 11px;
+  color: #59595E;
+  font-weight: bold;
+  text-transform: uppercase;
+
+
+  .action-name {
+    color: #F17441;
+    margin-top: 0px;
+    &.on{
+      color: $juice-green;
+    }
+  }
+
+  .small-action-name{
+    display:none;
+    font-size: 9px;
+    width: 100%;
+    text-align: center;
+    color: #F17441;
+    &.on{
+      color:$juice-green;
+    }
+  }
+  img {
+    float: left;
+    height: 100%;
+    margin-right: 5px;
+  }
+  @media (max-width:$small-width){
+    overflow:hidden;
+    width:33px;
+    .action-name, .action-target{
+      display:none;
+    }
+    .small-action-name{
+      display:block;
+    }
+    img{
+      height:20px;
+      margin-left:5px;
+    }
+  }
+}

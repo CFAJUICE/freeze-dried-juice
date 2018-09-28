@@ -1,0 +1,25 @@
+<!--HTML file for drag-and-drop widget -->
+<!--Note: styles should be moved to a properly name-spaced css... -->
+<!-- -->
+<div ng-controller='ddctl' style="padding-left:20px; padding-top:10px; padding-bottom:10px; border:1px solid #F0F0F0; margin:5px; "> 
+&nbsp;
+	 <table>
+       <tr>
+         <td ng-repeat='choice in lclData.choicesDisplay' id={{getDragIndex($index)}} x-lvl-draggable='true' text={{getChoice($index)}}> {{choice}} &nbsp;  </td>
+	   </tr>
+	 </table>
+    <div style="margin-left:20px; color:#663300"> 
+      <i> <b>
+      <span> &nbsp; </span>  
+      <span id="corFeedback" ng-show="lclData.correct"> {{passedData.feedback.correctFeedback}} </span>
+      <span id="incorFeedback" ng-show="lclData.incorrect"> {{passedData.feedback.incorrectFeedback}} </span>
+      </i></b>
+    </div> 
+    <div >
+
+      <span ng-repeat='fragment in lclData.dataArr track by $index' x-lvl-drop-target={{dropIsTrue($index)}} x-on-drop='dropped()' id={{getDropIndex($index)}}> {{fragment}} <span>
+
+    </div>
+</div>
+  
+ 

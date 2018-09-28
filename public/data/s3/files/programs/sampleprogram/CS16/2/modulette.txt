@@ -1,0 +1,103 @@
+{
+  "title": "Write a strong topic sentence",
+  "name": "CS16.2.Write a strong topic sentence",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS16.2.Refresher_Write_a_topic_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Practice writing a strong topic sentence by working through one of these interactive examples",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Letter of complaint to the Gravel Mountain Motel",
+          "title": "The vacation that wasn't",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.2.GuidedPractice1_Write_a_strong_topic_sentence"
+          ]
+        },
+        {
+          "description": "Facebook posting about the Downtown Street Fair",
+          "title": "Fun for everyone!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.2.GuidedPractice2_Write_a_strong_topic_sentence"
+          ]
+        },
+        {
+          "description": "Contest entry for the <i>Worst cook in town.</i>",
+          "title": "Hot and sour soup fiasco",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.2.GuidedPractice3_Write_a_strong_topic_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about writing a strong topic sentence!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Find the topic and main idea",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "CS16.2.Challenge1_Write_a_strong_topic_sentence_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Which topic sentence is the best?",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS16.2.Challenge2_Write_a_strong_topic_sentence_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Build your own topic sentence",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "CS16.2.Challenge3_Write_a_strong_topic_sentence_fridgemagnets"
+          ]
+        }
+      ]
+    }
+  ]
+}

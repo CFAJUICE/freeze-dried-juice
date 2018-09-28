@@ -1,0 +1,104 @@
+{
+  "title": "Creating your summary",
+  "name": "CS6.4.Creating your summary",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "49",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS6.4.Refresher_Putting_together_your_summary"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose an article and work through interactive steps to use an organizer to write your summary.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Bringing music back to the schools",
+          "title": "In your own words. . .",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.4.GuidedPractice1_Putting_together_your_summary"
+          ]
+        },
+        {
+          "description": "Baseball in the Olympics",
+          "title": "The author said . . .",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.4.GuidedPractice2_Putting_together_your_summary"
+          ]
+        },
+        {
+          "description": "Solar energy",
+          "title": "Summarizing the key points . . .",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.4.GuidedPractice3_Putting_together_your_summary"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about creating your summary!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Fun facts about summarizing",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS6.4.Challenge1_Putting_together_your_summary_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Pick the best way to paraphrase an idea\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS6.4.Challenge2_Putting_together_your_summary_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Writing a summary of an article:  Do it yourself!\n",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "CS6.4.Challenge3_Putting_together_your_summary_pickandstack"
+          ]
+        }
+      ]
+    }
+  ]
+}

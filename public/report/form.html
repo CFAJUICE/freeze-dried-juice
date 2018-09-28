@@ -1,0 +1,132 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/form.css"/>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/bower_components/jquery-ui/themes/smoothness/jquery-ui.css"></link>
+    <link rel="stylesheet" href="/bower_components/datetimepicker/jquery.datetimepicker.css"></link>
+
+    <script src="/bower_components/datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="/report/report.js"></script>
+    <style>
+        .small-button {
+            cursor: pointer;
+            border: 1px solid gray;
+            border-radius: 4px;
+            margin: 5px;
+            padding: 1px 3px;
+            font-family: sans-serif;
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h3>Generate report data</h3>
+    <form method="post">
+        <p>
+            Note: At least a start or a end date is required. Date constraints are in UTC (GMT time zone).
+        </p>
+        <p>
+            <label>
+                Start Date (UTC)
+            </label>
+            <input id="start_date" class="date-input" type="text" name="start_date">
+        </p>
+        <p>
+            <label>
+                End Date (UTC)
+            </label>
+            <input id="end_date" class="date-input" type="text" name="end_date">
+        </p>
+        <p>
+            <label>
+                Context Id (make empty to ignore context_id)
+            </label>
+            <input type="text" name="context_id" id="context_id" value="juicetestaccount">
+        </p>
+
+        <p>
+            <label>
+                Role (make empty to ignore)
+            </label>
+            <input type="text" name="roles" id="roles" value="Student">
+        </p>
+
+        <p>
+            <label>
+                tool_consumer_instance_guid
+            </label>
+            <input type="text" name="tool_consumer_instance_guid" id="tool_consumer_instance_guid" value="">
+        </p>
+
+        <p>
+            <label>
+                custom_JUICEgroup
+            </label>
+            <input type="text" name="custom_JUICEgroup" id="custom_JUICEgroup" value="">
+        </p>
+        <div id="additional-fields" style="clear:both">
+
+        </div>
+        <div id="additional-field-template" style="display:none">
+            <p>
+                <label style="height:20px">
+                    <input placeholder="custom field name" type="additional-field-name" onchange="updateFieldName(this)" data-target="field-value-TARGETID" style="width:220px;">
+                    <input type="checkbox" class="field-value-TARGETID" value="not" style="width:20px;">Not
+                </label>
+                <input placeholder="custom values, comma seperated" type="text" class="field-value field-value-TARGETID" value="">
+            </p>
+        </div>
+        <p id="additional-fields-plus" style="clear:both">
+            <span class="small-button" id="add-parameter" onclick="addField()">+</span> Add query field
+        </p>
+        <script>
+            var id = 0;
+            function addField(){
+                var html = $('#additional-field-template').html();
+                html = html.replace('TARGETID', id).replace('TARGETID',id).replace('TARGETID',id);
+                id++;
+                $('#additional-fields').append(html);
+                console.log('hello', html)
+            }
+
+            function updateFieldName(field){
+                var name = $(field).val();
+                $('.'+$(field).attr('data-target')).each(function(){
+                    var target = $(this);
+                    if(target.attr('type')=='text') {
+                        target.attr('name', 'custom-field-' + name)
+                    } else {
+                        target.attr('name', 'not-' + name)
+                    }
+                })
+
+
+            }
+        </script>
+
+        <p>
+            <label>
+                Hash IDs
+            </label>
+            <input type="checkbox" name="hash_ids" value="1">
+        </p>
+
+        <p id="submit-container">
+            <label>
+                &nbsp;
+            </label>
+            <input type="submit">
+        </p>
+
+        <h4 style="clear:both">Debug Options</h4>
+        <p id="json-output-container">
+            <label>
+                JSON Output
+            </label>
+            <input type="checkbox" name="json_output" value="1">
+        </p>
+    </form>
+
+</body>
+</html>

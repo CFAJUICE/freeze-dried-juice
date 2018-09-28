@@ -1,0 +1,30 @@
+{
+  "title": "Conditional probability",
+  "name": "D1.8.Conditional probability",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "58",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D1.8.Refresher_Conditional_probability"
+          ]
+        }
+      ]
+    }
+  ]
+}

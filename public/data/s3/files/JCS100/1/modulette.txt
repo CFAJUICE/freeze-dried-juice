@@ -1,0 +1,104 @@
+{
+  "title": "Why documenting sources matters",
+  "name": "JCS100.1.Why documenting sources matters",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "71",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "JCS100.1.Refresher_Why_documenting_sources_matters"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to learn why documenting source matters.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Family history",
+          "title": "From legend to fact",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "JCS100.1.GuidedPractice1_Why_documenting_sources_matters"
+          ]
+        },
+        {
+          "description": "Tips for buying a used car",
+          "title": "Getting good value",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "JCS100.1.GuidedPractice2_Why_documenting_sources_matters"
+          ]
+        },
+        {
+          "description": "Hiking in national parks",
+          "title": "The wonders of nature",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "JCS100.1.GuidedPractice3_Why_documenting_sources_matters"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Test your knowledge!\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "JCS100.1.Challenge1_Why_documenting_sources_matters_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "How, when, and where?\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "JCS100.1.Challenge2_Why_documenting_sources_matters_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Are you an expert?\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "JCS100.1.Challenge3_Why_documenting_sources_matters_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

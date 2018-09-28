@@ -1,0 +1,95 @@
+#page-home{
+  .page-head {
+    min-height: 170px;
+    padding:3em;
+  }
+  .module{
+    min-width: 200px;
+    max-width: 934px;
+    border: 1px solid #E6E6E6;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    background: white;
+    @include clear-after;
+    .goal {
+      color:#595959;
+    }
+    .project-color-blue{
+      color:#4BAAD3;
+    }
+    .project-color-purple{
+      color:#A05CBB;
+    }
+    .oranges {
+      .modulette-orange-container {
+        margin-right:5px;
+        float: left;
+      }
+      @include clear-after;
+    }
+
+    .module-inner {
+      display: table-row;
+      .module-left, .module-right{
+        display:table-cell;
+        vertical-align: top;
+      }
+      .module-left {
+        width:440px;
+        padding: 14px;
+        border-right:4px solid $background-gray;
+        ul.task-list {
+          padding-left:0px;
+          li.task {
+            list-style-type: none;
+          }
+        }
+
+        .cfa-projects {
+          .project {
+            float: left;
+            span {
+              margin-right: 0.5em;
+            }
+          }
+        }
+      }
+
+      .module-right {
+        width:440px;
+        .module-right-inner {
+          display:table-row;
+
+          .circle-icon-container, .text-content{
+            display:table-cell;
+            vertical-align: top;
+          }
+          .circle-icon-container {
+            float: left;
+            height: 100%;
+
+            .circle-icon {
+              $module-right-icon-size: 100px;
+              width: $module-right-icon-size;
+              height: $module-right-icon-size;
+              -moz-border-radius: $module-right-icon-size/2;
+              -webkit-border-radius: $module-right-icon-size/2;
+              border-radius: $module-right-icon-size/2;
+            }
+          }
+          .oranges{
+            margin-bottom:5px;
+            margin-top:5px;
+          }
+          .text-content{
+            padding-left:1em;
+          }
+        }
+        padding: 14px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,104 @@
+{
+  "title": "Restating the conclusion",
+  "name": "CS6.3.Restating the conclusion",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "52",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS6.3.Refresher_Restating_the_conclusion"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose an article and work through interactive steps to find the conclusion and make sure you understand it.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Bringing music back to the schools",
+          "title": "Bring the music back to our schools!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.3.GuidedPractice1_Restating_the_conclusion"
+          ]
+        },
+        {
+          "description": "Baseball in the Olympics",
+          "title": "Reinstate baseball!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.3.GuidedPractice2_Restating_the_conclusion"
+          ]
+        },
+        {
+          "description": "Solar energy",
+          "title": "Check out solar!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.3.GuidedPractice3_Restating_the_conclusion"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about restating the conclusion!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Conclusions trivia challenge!\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS6.3.Challenge1_Restating_the_conclusion_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "How good are you at paraphrasing?\n",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "CS6.3.Challenge2_Restating_the_conclusion_fridgemagnets"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Can you pick a good restatement of an article's conclusion?\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS6.3.Challenge3_Restating_the_conclusion_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

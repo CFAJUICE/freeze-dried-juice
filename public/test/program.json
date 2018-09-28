@@ -1,0 +1,39 @@
+{
+  "logo":"/images/juice_logo.png",
+  "short_logo":"/images/juice_logo_short.png",
+  "show_help":true,
+  "breadcrumbs":{
+    "site_parent":{
+      "label":"College for America",
+      "link":null
+    },
+    "site":{
+      "label":"JUICE",
+      "icon":"/components/breadcrumbs/orange-icon.png",
+      "link":"/juice/"
+    }
+  },
+  "dashboard":{
+    "modules_tab":{
+      "label":"JUICE Modules"
+    },
+    "goals_and_projects_tab":{
+      "show":true,
+      "label":"CfA Goals & Projects"
+    }
+  },
+  "module":{
+    "modal":{
+      "logo":"/images/juice_logo_large.png",
+      "learn_more_link_label":"Learn more about JUICE",
+      "learn_more_content":[
+        "<p>Welcome to JUICE skill-building resources! ",
+        "</p>",
+        "<p>It’s easy to get started: Click Continue to explore the module page. From there choose a skill or start by",
+        "trying the Challenge Wheel game. Whatever you choose you’ll get encouraging feedback and options for as much",
+        "review and practice as you need.</p>",
+        "<p>Tip: See the <span id=\"page-tour\" class=\"icon-map-o\">page tour</span> for a quick way to learn about features.</p>"
+      ]
+    }
+  }
+}

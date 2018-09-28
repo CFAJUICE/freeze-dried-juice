@@ -1,0 +1,104 @@
+{
+  "title": "Probability with OR",
+  "name": "QS8.4.Probability with \"OR\"",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "36",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS8.4.Refresher_Probability_with_OR"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "What are the chances?  Choose a scenario and work through interactive steps to learn to calculate probability with \"OR.\"",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Summer picnic committee",
+          "title": "Selecting the last member",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.4.GuidedPractice1_Probability_with_OR"
+          ]
+        },
+        {
+          "description": "Carnival games",
+          "title": "Pick a card!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.4.GuidedPractice2_Probability_with_OR"
+          ]
+        },
+        {
+          "description": "Office fundraiser",
+          "title": "Winning combinations?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.4.GuidedPractice3_Probability_with_OR"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Mutually exclusive?  Overlapping?  What kind of probability is it?",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "QS8.4.Challenge1_Probability_with_or_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Pick the probability\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "QS8.4.Challenge2_Probability_with_or_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Which pick  is most likely?  Least likely?   \n",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "QS8.4.Challenge3_Probability_with_or_stacker"
+          ]
+        }
+      ]
+    }
+  ]
+}

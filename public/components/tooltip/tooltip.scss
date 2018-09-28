@@ -1,0 +1,31 @@
+tooltip{
+  position:absolute;
+  z-index:10000;
+  padding:1em;
+  background:$tooltip-background;
+  border-radius:10px;
+  color:white;
+  width:308px;
+  display:none;
+  .show{
+    display:block;
+  }
+}
+
+.inline-tooltip-container {
+  &:hover tooltip {
+    display: block;
+  }
+}
+
+.user-is-touching{
+  & tooltip, & .inline-tooltip-container:hover tooltip{
+    display:none;
+  }
+  #dashboard, #modulette{
+    .tab:hover .tab-tooltip, .tab-element:hover .tab-tooltip{
+      display: none;
+    }
+  }
+}
+

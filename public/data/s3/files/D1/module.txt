@@ -1,0 +1,90 @@
+{
+  "description": "This module is for testing purposes only.  It may be missing images or have text that looks odd.   Do not be alarmed unless you specifically just made some kind of testing change and it is not showing here.  Test the link syntax by clicking this <a href=\"S3_BUCKET_/JCS100/4/game_references.pdf\" onclick=\"window.open(this.href, '', 'scrollbars=yes,dependent=yes,width=1000,left=100,height=700,top=50'); return false;\">link text</a>.",
+  "id": "D1.demomodule",
+  "subtitle": "testing module subtitle. ",
+  "title": "JUICE testing module 8/7/18",
+  "subject": "",
+  "challenge_widget_type": "finders_keepers_widget",
+  "record_id_": "9",
+  "dashboard_order": "0",
+  "challenge_wheel_available": "1",
+  "popup_title": "Welcome to the JUICE testing module!",
+  "popup_description": "This module is for testing purposes only.  It may be missing images or have text that looks odd.   Do not be alarmed unless you specifically just made some kind of testing change and it is not showing here.",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "",
+      "title": "Group 1",
+      "record_id_": "31",
+      "modulettes": [
+        {
+          "id": "D1.1.Demo Basic Math module",
+          "description": "What works?  What doesn't?   Review this mini-lesson and find out!",
+          "link_text": "Demo Basic Math module"
+        },
+        {
+          "id": "D1.10.Overview and Try It test plan",
+          "description": "",
+          "link_text": "Overview and Try It test plan"
+        },
+        {
+          "id": "D1.12.Game testing",
+          "description": "",
+          "link_text": "Game testing"
+        }
+      ]
+    },
+    {
+      "subtitle": "testing out George's recommendations",
+      "title": "Probability",
+      "record_id_": "32",
+      "modulettes": [
+        {
+          "id": "D1.5.Probability overview",
+          "description": "What do I need to know about probability to get started?",
+          "link_text": "Probability overview"
+        },
+        {
+          "id": "D1.6.Basic probability",
+          "description": "What are the odds that my first pick will been to the picnic at least 7 times?",
+          "link_text": "Basic probability"
+        },
+        {
+          "id": "D1.7.Probability with \"OR\" and \"AND\"",
+          "description": "How likely is it that I will pick a manager OR a director? ",
+          "link_text": "Probability with OR and AND"
+        },
+        {
+          "id": "D1.9.Compound probability",
+          "description": "If I pick two at a time, what are the chances I will get the variety I need for the committee?",
+          "link_text": "Compound probability"
+        }
+      ]
+    },
+    {
+      "subtitle": "",
+      "title": "Making sense of numbers",
+      "record_id_": "45",
+      "modulettes": [
+        {
+          "id": "D1.13.Equivalence",
+          "description": "",
+          "link_text": "Equivalence"
+        }
+      ]
+    },
+    {
+      "subtitle": "",
+      "title": "Reviewer Training",
+      "record_id_": "43",
+      "modulettes": [
+        {
+          "id": "D1.11.Reviewer Training",
+          "description": "Guided practices for reviewing deliverables",
+          "link_text": "Mastered or Not Yet"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+
+  var QBU_thisTableId =$.getUrlVar("tableid");
+
+
+
+  function doAuthor(redirect_to,fileName, flag, tableId, rid) {       
+           if (flag){
+              $.get(tableId, {a:"API_EditRecord", rid: rid, _fnm_file_name: fileName, _fnm_dev_status: "New", _fnm_date_to_qa: "", _fnm_qa_status: "", _fnm_date_to_prod: "", _fnm_draft_no: "0"}).done(function(result){
+                 window.location.replace(redirect_to);				  
+			  });
+		   } else window.location.replace(redirect_to);
+  }
+
+       $(document).ready(function() {
+            setTimeout(loadAuthoringTool, 1000);//give a second for keyboard options 
+
+            function loadAuthoringTool() {
+			 $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+			 $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+			 QBU_deltaTime = QBU_serverTime - new Date().getTime();
+                   console.log( QBU_deltaTime);
+             loadSchemaThenExecute(function(){
+
+				var QBU_filesTableId = tableIdMapping["_dbid_files"];
+                var QBU_readRecord = QBU_db_baseURL + QBU_filesTableId;
+                var recId = $.getUrlVar('recID');
+				var author = $.getUrlVar('author');
+                var widgetName = $.getUrlVar('name');
+                var fileRef = $.getUrlVar('fileRef');
+                fileRef = fileRef.replace(/%20/g, "_");
+				var fileNameInDB = fileRef;
+				var updateFileNameFlag = false;
+				if (QBU_isProgramCopy){
+                     if (fileRef.indexOf(QBU_programId + ".") < 0) {
+                                //fileNameInDB = QBU_programId + "." + fileRef;
+								fileNameInDB = programPrefix(".") + fileRef;
+								updateFileNameFlag = false;  //was true when file name had to be saved from QB
+                     }  
+				}
+                
+				var tester = sjcl.encrypt("mYXQ9CpT2hUksOx9LCSH", (new Date().getTime() + QBU_deltaTime).toString(), {"iv":"/PnnyYipMEbWqpBeHzTneA==","salt":""});
+
+			
+                               var redirect_to = QBU_juiceDomain_s + 'juice/author/' + widgetName + '/' + fileRef + '?'  + '&program=' + programPrefix().split("/")[1] + '&tableid=' + QBU_readRecord + '&rid=' + recId + '&sb=' +QBU_encryptedSecret() ;
+console.log(redirect_to);
+
+                if (!author)  {		//Admin mode		      
+					    doAuthor(redirect_to, fileNameInDB, updateFileNameFlag, QBU_filesTableId, recId);  
+				}
+
+                var record = $.get(QBU_readRecord, {a: "API_DoQuery", clist: "26", query: "{3.EX.'" + recId + "'}"});
+                record.done(function (result) {
+                    var rec = $(result).find("record").find("dev_status").text();
+                    if (rec == "Locked") {
+                        $("#message").html("<b><p>This file is locked! </p><p>Please refresh your screen to updates the status.</p></b> <input type='button' value='Close' onclick='window.close()'/>");
+                    } else {
+                       doAuthor(redirect_to, fileNameInDB, updateFileNameFlag, QBU_filesTableId, recId);  
+                    }
+
+
+                });
+			  });
+			  });
+			  });
+            }
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+<div id='message'></div>
+
+</body>
+</html>

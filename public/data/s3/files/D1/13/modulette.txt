@@ -1,0 +1,85 @@
+{
+  "title": "Equivalence",
+  "name": "D1.13.Equivalence",
+  "subject": "math",
+  "hide_from_dashboard": "1",
+  "hide_audio": "0",
+  "record_id_": "91",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "The first Overview is an attempt to extract exposition from the Empower material. The second is a rough outline of what it might be nice to cover in a mini-lesson like this based on Sandee's Picture its.",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Empower",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D1.13.Refresher_Equivalence"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Alternate",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D1.13.Refresher2_Equivalence"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play these challenges to build your number sense.   Pick any challenge to get started!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "What's the reason?",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "D1.13.Challenge1_Equivalence_finderskeepers"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Largest and smallest",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "D1.13.Challenge2_Equivalence_fridgemagnets"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Sort 'em out!  Find the equivalents",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "D1.13.Challenge3_Equivalence_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Put 'em in order!",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "D1.13.Challenge4_Equivalence_stacker"
+          ]
+        }
+      ]
+    }
+  ]
+}

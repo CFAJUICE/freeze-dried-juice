@@ -1,0 +1,11 @@
+.top-path-author-program{
+  topnav, breadcrumbs, .navbar-fixed-top, .nav-spacer, feedback #feedback-button{
+    display:none;
+  }
+  #response {
+    background: lightcyan;
+    margin: 2em;
+    border: 1px solid gray;
+    padding: 1em;
+  }
+}

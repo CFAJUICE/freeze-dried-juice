@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "number_rounds": "integer",
+    "rounds": {
+      "type": "array",
+      "items": {
+        "type": "round"
+      }
+    }
+  },
+
+
+  "definitions": {
+    "round": {
+      "type": "object",
+      "properties": {
+        "question": "string",
+        "question_align": "string",
+        "equation": "string",
+        "equation_align": "string",
+
+        "general_correct": "string",
+        "general_incorrect": "string",
+        "id": "string",
+
+        "answer_sets": {
+          "type": "array",
+          "items": {
+            "type": "answer_set"
+          }
+        },
+
+        "feedback": {
+          "type": "array",
+          "items": {
+            "type": "round"
+          }
+        }
+      }
+    },
+
+    "answer_set": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "answer"
+          }
+        }
+      }
+    },
+
+    "feedback": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "content": "string",
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "condition"
+          }
+        }
+      }
+    },
+
+    "answer": {
+      "id": "string",
+      "content": "string"
+    },
+
+    "value": {
+      "id": "string",
+      "content": "string"
+    },
+
+    "condition": {
+      "content": "string"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<span>
+	<input id={{fieldId}} type='text' ng-disabled='isDisabled($index)' ng-style='inputWidthStyle'/>
+</span>
+<ng-transclude></ng-transclude>
+<div class='screen-reader-only' ng-show='showCorrect($index)'>You answered correctly. </div>
+<div class='screen-reader-only' ng-show='!showCorrect($index) && !showCheckAnswer($index)'>You did not answer correctly. </div>
+<div ng-if='lastField(fieldId, id)' style='position:static;'>
+	<img tabindex=0 src='/images/check_arrow.png' ng-click='checkAnswer($index)' class='ju-mc-submit' ng-show='showCheckAnswer($index)' style='position:absolute;right:28px;' ng-style= 'checkArrowOffset($index)' aria-label='check answer'/>
+</div>
+<div ng-if='lastField(fieldId, id)' style='position:static;'>
+	<img tabindex=-1 src='/images/correct_check.png' class='ju-mc-submit' ng-show='showCorrect($index)' style='position:absolute;right:26px;' ng-style= 'checkArrowOffset($index)'/>
+</div>
+<div ng-if='lastField(fieldId, id)&&feedbackReviewFlag' style='background-color:#F5FFA0'>
+	<div><b>Correct Answer(s):</b> </div>
+	<div style='padding-left:10px'  ng-repeat='a in lclData.inputData[id].correct track by $index'>
+		<span ng-bind-html=buildCorrectSA(a)/>
+	</div>
+	<div><b>Correct Feedback:</b> <span ng-bind-html='lclData.inputData[id].correctFeedback'/></div> 
+	<div><b>Generic Incorrect Feedback:</b> <span ng-bind-html='lclData.inputData[id].incorrectFeedback'/></div> 
+	<div><b>Specific Incorrect Feedback</b>
+		<div style='padding-left:10px'  ng-repeat='a in lclData.inputData[id].specificIncFeedback track by $index'>
+			<span ng-bind-html=buildFeedbackSA(a)/>
+		</div> 
+	</div>
+</div>

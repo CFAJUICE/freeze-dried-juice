@@ -1,0 +1,8 @@
+<div id="common-modal-overlay" ng-show="service.message" ng-click="showNotifyModal(false)">
+    &nbsp;
+</div>
+
+<div id="common-modal" ng-show="service.message"  class="force-scrollbar">
+    <div id="close-common-modal" class="icon-cancel" ng-click="showNotifyModal(false)"></div>
+    {{service.message}}
+</div>

@@ -1,0 +1,34 @@
+extends layout
+
+block content
+ script angular.module('Preloaded', []).constant('preloadedData',!{feedback});
+ div(ng-controller='ctl1')
+  h2= templateName
+  table(style='height=20px')
+   tr(style='height=20px')
+    for choice, i in choices
+     td(id='choice_'+ i, x-lvl-draggable='true', text=choice, style="margin-right:10px height=20px"): h3 #{choicesDisplay[i]}&nbsp;
+  div(style="margin-left:20px; color:#663300"): i: b 
+    span &nbsp;  
+    span(id="corFeedback" ng-show="myData.correct") {{myData.feedbackData.correctFeedback}}
+    span(id="incorFeedback" ng-show="myData.incorrect") {{myData.feedbackData.incorrectFeedback}} 
+  div(style='width:600px; line-height:200%'): h3 
+      for data, i in dataArr
+        if indexArr[i] < 0
+          span #{data}
+        else
+          span(x-lvl-drop-target='true' x-on-drop='dropped()' id='answer_'+indexArr[i]) #{data}
+  p &nbsp;
+  div
+    button(ng-click='postItems()' style='margin-right:5px; margin-bottom:5px') Preview   
+    button(ng-click='reset()' style='margin-right:25px; margin-bottom:5px') Reset
+    button(ng-click='goHome()') Back to Home Page
+  div(style='float:left; margin-right:10px;')  
+    textarea(id='ta' style='width:600px; height:200px;' ).
+      #{rawText}
+  div 
+    p: i Any word bracketed by [[...]] in the text on the left will become choices to be dragged in place.  
+    P: i You can experiment yourself by bracketing any word (or group of words), and click Preview--the activity above will automatically update. Feel free to write your own paragraph! 
+    p: i Clik Reset to display the original problem.  
+
+ 

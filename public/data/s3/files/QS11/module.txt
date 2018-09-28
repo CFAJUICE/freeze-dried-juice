@@ -1,0 +1,63 @@
+{
+  "description": "Do you need help with solving practical problems involving measurements? Try exploring one of these mini-lessons for a quick review using examples about completing the pool area at a resort hotel. Or, try a round or two of the Challenge Wheel to check what you already know!",
+  "id": "QS11.measurements",
+  "subtitle": "Resort hotel property manager",
+  "title": "Measurements: Solving for distance, area, volume, and more!",
+  "subject": "math",
+  "challenge_widget_type": "quick_pick_widget",
+  "record_id_": "15",
+  "dashboard_order": "5",
+  "challenge_wheel_available": "1",
+  "popup_title": "",
+  "popup_description": "Review and solve practical problems involving measurements using examples about getting a resort hotel's pool area ready for its grand opening.",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "A race against time",
+      "title": "How far, fast, or long?",
+      "record_id_": "44",
+      "modulettes": [
+        {
+          "id": "QS11.1.Distance, rate, and time",
+          "description": "The pool heater is in a warehouse 320 miles away!  How long will it take to get it here?",
+          "link_text": "Distance, rate, and time"
+        }
+      ]
+    },
+    {
+      "subtitle": "Problems getting the pool area ready",
+      "title": "Distance around, size of the surface, how much it holds. . . ",
+      "record_id_": "46",
+      "modulettes": [
+        {
+          "id": "QS11.2.Perimeter",
+          "description": "The hotel manager added a hot tub to the pool area!  How much fencing does the pool area need now?",
+          "link_text": "Perimeter"
+        },
+        {
+          "id": "QS11.3.Area",
+          "description": "We have to make new pool and hot tub covers!  How big should they be?",
+          "link_text": "Area"
+        },
+        {
+          "id": "QS11.4.Volume",
+          "description": "The water company needs to know how many gallons of water the pool can hold!\n",
+          "link_text": "Volume"
+        }
+      ]
+    },
+    {
+      "subtitle": "Oops, it's not Fahrenheit",
+      "title": "Hot or cold?",
+      "record_id_": "47",
+      "modulettes": [
+        {
+          "id": "QS11.5.Temperature",
+          "description": "What's the right temperature for the hot  tub heater in degrees Celsius?",
+          "link_text": "Temperature"
+        }
+      ]
+    }
+  ]
+}

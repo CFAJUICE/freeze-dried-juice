@@ -1,0 +1,58 @@
+doctype html
+html
+  head
+    title "JUICE Sandbox"
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(href='//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css')
+
+    |<script type="text/x-mathjax-config">
+    |  MathJax.Hub.Config({
+    |  "HTML-CSS": {
+    |       availableFonts: ["TeX"], 
+    |       scale: 90
+    |   },
+    |   MMLorHTML: {prefer: "HTML"},
+    |  });
+    |  MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+    |     var VARIANT = MathJax.OutputJax["HTML-CSS"].FONTDATA.VARIANT;
+    |     VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+    |     VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+    |     VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+    |     VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+    |  });
+    |  MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+    |     var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+    |     VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+    |     VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+    |     VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+    |     VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+    |  });
+    |</script>
+
+    script(src="/bower_components/angular/angular.min.js")
+    script(src="/bower_components/angular-animate/angular-animate.min.js")
+    script(src="/bower_components/angular-widget/angular-widget.js")
+    script(src="/bower_components/angular-ui-router/release/angular-ui-router.min.js")
+    script(src="/bower_components/angular-sanitize/angular-sanitize.min.js")
+    script(src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js")
+    script(src="/bower_components/ckeditor/ckeditor.js")
+    script(src="/javascripts/vendor/lvl-drag-drop.js")
+    script(src="/bower_components/lvl-drag-drop/script/lvl-uuid.js")
+    script(src="/javascripts/dd_main.js")
+    script(src="/javascripts/modulette.js")
+    script(src="/javascripts/preview.js")
+    script(src="/javascripts/author.js")
+    script(src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full")
+
+    link(href='/stylesheets/widget-animation.css', rel='stylesheet')
+  body
+    div(class="navbar-fixed-top ju-main-nav-bar")  
+      div(style="padding-left:57px") <img src="/images/juice_logo.png">
+      div(class="ju-main-nav-bar-under") Back to College for America
+    div(style="height:111px")
+    block content
+  
+
+

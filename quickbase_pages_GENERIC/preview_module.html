@@ -1,0 +1,153 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+
+  
+
+        //var QBU_thisTableId = window.location.pathname;
+        var QBU_thisTableId = $.getUrlVar("tableid");
+		var QBU_editRecord;
+
+        function buildModule(callback) {
+            var moduleId = $.getUrlVar('id');
+            var query = "{id.EX.'" + moduleId + "'}";
+            //module_query = '';
+            doQuery('_dbid_modules', query, function (modules) {
+                if (!modules[0]) {
+                    return console.log('ERROR, no module found for query', module_query);
+                }
+                var remap = {
+                    description: 'description',
+                    id: 'id',
+                    subtitle: 'subtitle',
+                    title: 'title',
+                    subject: 'subject',
+                    challenge_widget_type: 'challenge_widget_type',
+                    record_id_: 'record_id_',
+                    dashboard_order: 'dashboard_order',
+                    challenge_wheel_available: 'challenge_wheel_available',
+                    popup_title: 'popup_title',
+                    popup_description: 'popup_description',
+                    hide_audio: 'hide_audio',
+                    hide_sub_audio: 'hide_sub_audio'
+                };
+                var module = remapRecord(modules[0], remap);
+                return callback(module);
+            });
+        }
+
+        function addModuletteGroups(module, callback) {
+            module.modulette_groups = [];
+            var query = "{'9'.EX.'" + module.record_id_ + "'}";
+            doQuery('_dbid_modulette_groups', query, function (records) {
+                records.sort(function (a, b) {
+                    return Number(a.order) - Number(b.order);
+                });
+
+                var remap = {subtitle: 'subtitle', title: 'title', record_id_: 'record_id_'};
+                records.forEach(function (record) {
+                    module.modulette_groups.push(remapRecord(record, remap));
+                });
+                return callback(module);
+            });
+        }
+
+        function addModulettes(module, callback) {
+            var query = "";
+            //we are iterting through all modulettes and just looking for matches
+            doQuery('_dbid_modulettes', query, function (records) {
+                records.sort(function (a, b) {
+                    return Number(a.order_in_modulette_group) - Number(b.order_in_modulette_group);
+                });
+                var remap = {
+                    id: 'modulette_name',
+                    description: 'description_in_module',
+                    link_text: 'link_text_in_module'
+                };
+                records.forEach(function (record) {
+                    if (record.related_modulette_group) { // the modulette in a group?
+                        module.modulette_groups.forEach(function (modulette_group) { //go through each of the groups to find a match
+                            if (modulette_group.record_id_ == record.related_modulette_group) { //match!
+                                if (!modulette_group.modulettes) {
+                                    modulette_group.modulettes = [];
+                                }
+                                var modulette = remapRecord(record, remap);
+                                if (!modulette.link_text) {
+                                    modulette.link_text = modulette.id.split('.').slice(-1)[0];
+                                }
+                                modulette_group.modulettes.push(modulette); //add to modulette group
+                            }
+                        });
+                    }
+                });
+                return callback(module);
+            });
+        }
+
+        //* MAIN *//
+        $(document).ready(function () {
+            $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function () {
+			$.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+			QBU_deltaTime = QBU_serverTime - new Date().getTime();
+                loadSchemaThenExecute(function mainCallbackAfterSchemaLoad() {
+                    var PP = programPrefix() ? programPrefix().split("/")[1] : "-";
+                    document.getElementById("preview_form").setAttribute("action", QBU_juiceDomain_s + 'juice/module/preview?sb=' + QBU_encryptedSecret() + '&program=' + PP);
+                    document.getElementById("publish_form").setAttribute("action", QBU_juiceDomain_s + 'juice/s3save?sb=' + QBU_encryptedSecret());
+                    buildModule(function (module) {
+                        addModuletteGroups(module, function addModuletteGroupsCb(module) {
+                            addModulettes(module, function addModulettesCb(module) {
+                                var json = JSON.stringify(module, null, 2);
+
+                                $("#data").val(json);
+                                $("#preview_data").val(json);
+
+
+                                var path = programPrefix() + $.getUrlVar('id').split('.')[0] + '.module';
+                                console.log("PATH", path)
+                                $("#fname").val(path);
+                                $("#link").val('/juice/module/' + $.getUrlVar('id') + '?program=' + PP);
+
+                                if (keys['S']) {
+                                    console.log(json);
+                                    return;//stop! do nothing
+                                }
+
+                                if ($.getUrlVar('publish')) {
+                                        var date = $.getUrlVar("date");
+				        QBU_editRecord = QBU_db_baseURL + QBU_thisTableId;
+				       $.get(QBU_editRecord, {a: "API_editRecord", rid:module.record_id_, _fnm_publish_date_internal:date}).done(function(res) { 
+                                            $("#publish_form").submit();
+                                    });
+                                } else {
+                                    $("#preview_form").submit();
+                                }
+                                ;
+                            });
+                        });
+                    });
+                });
+            });
+			});
+        });
+
+    </script>
+</head>
+<body>
+<div id='message'></div>
+<div id='error'></div>
+
+<form style="display: hidden" method="POST" id="preview_form">
+    <input type="hidden" id="preview_data" name="preview_data" value=""/>
+</form>
+
+<form style="display: hidden" method="POST" id="publish_form">
+    <input type="hidden" id="data" name="data" value=""/>
+    <input type="hidden" id="fname" name="fname" value=""/>
+    <input type="hidden" id="link" name="link" value=""/>
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<div id="response" ng-show="response" >
+    <div class="close" ng-click="close()">
+        X
+    </div>
+    <div ng-bind-html="response">
+    </div>
+    <input type="button" value="close" ng-click="close()">
+</div>
+
+<div ng-show="!response">
+    <h1>Author Program</h1>
+    <form id="author-program-form" ng-submit="submit()" >
+        <p ng-repeat="element in form" style="position:relative;">
+            <span ng-if="element.type=='object'" style="margin-left:{{(element.indent)*3}}em">*</span>
+            <span ng-if="element.type!='object'" style="margin-left:{{(element.indent-1)*3}}em;padding-right:1em">|-</span>
+            <span "padding-left:1em">
+            {{element.display}}
+            <input ng-if="element.type=='string'" type="text" name="{{element.path}}" value="{{element.val}}" size="100">
+            <select name="{{element.path}}" ng-if="element.type=='boolean'">
+                <option value="true" ng-selected="{{element.val==true}}">True</option>
+                <option value="false" ng-selected="{{element.val==false}}">False</option>
+            </select>
+            <select name="{{element.path}}" ng-if="element.type=='select'">
+                <option ng-repeat="opt in element.options" value="{{opt.val}}" ng-selected="{{element.val==opt.val}}">{{opt.val}}</option>
+            </select>
+            <textarea cols="60" rows="10" name="{{element.path}}" ng-if="element.type=='textarea'" style="display:block;margin-left:{{(element.indent)*3}}em">{{element.val}}</textarea>
+
+            </span>
+        </p>
+        <input type="submit">
+    </form>
+</div>

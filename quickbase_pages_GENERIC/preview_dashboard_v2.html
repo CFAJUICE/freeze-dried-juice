@@ -1,0 +1,260 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+    <script>
+        
+        var competencyModules = {}, subcompModulettes = {};
+
+        
+
+        //var QBU_thisTableId = window.location.pathname;
+        var QBU_thisTableId = $.getUrlVar("tableid");
+
+        function all(arrayOfPromises) {
+            return $.when.apply($, arrayOfPromises).then(function () {
+                return arguments;
+            });
+        }
+
+        function buildModules(callback) {
+            var modules = [];
+            //
+            //handling the competencies and subcompetencies here!
+            //
+            doQuery("_dbid_modulette_sub_competencies", "", function(records) {
+                records.forEach(function(record){
+                    //var key = record.sub_competency___related_competency;
+                    //moduleDict[record.related_module_id] = record.related_module_title;
+                    //if (!moduleSubs[record.related_module_id]) moduleSubs[record.related_module_id] = [];
+                    //moduleSubs[record.related_module_id].push({'sub':record.sub_competency, 'subid': record.sub_competency_id});
+                    if (!competencyModules[record.related_module_id]) competencyModules[record.related_module_id] = {competency:[], competency_id:[]};
+                    if ($.inArray(record.competency_id, competencyModules[record.related_module_id].competency_id) < 0 ) {
+                        if(record.competency) competencyModules[record.related_module_id].competency.push(record.competency.trim());
+                        if(record.competency_id) competencyModules[record.related_module_id].competency_id.push(record.competency_id.trim());
+                    }
+                    if (!subcompModulettes[record.modulette_name]) subcompModulettes[record.modulette_name] = {sub_competency:[], sub_competency_id:[]};
+                    if ($.inArray(record.sub_competency_id, subcompModulettes[record.modulette_name].sub_competency_id) < 0 ) {
+                        if(record.sub_competency) subcompModulettes[record.modulette_name].sub_competency.push(record.sub_competency.trim());
+                        if(record.sub_competency_id) subcompModulettes[record.modulette_name].sub_competency_id.push(record.sub_competency_id.trim());
+                    }
+                });
+                return callback(modules);
+            });
+        }
+
+        function addModules(modules, callback) {
+            var query = "";
+            doQuery('_dbid_modules', query, function (records) {
+                if (!records[0]) {
+                    return console.log('ERROR, no module found for query', query);
+                }
+                var remap = {
+                    "title": "title",
+                    "subtitle": "subtitle",
+                    "description": "description",
+                    "id": "id",
+                    "goal": "goal",
+                    "popup_title": "popup_title",
+                    "popup_description": "popup_description",
+                    "hide_from_dashboard": "hide_from_dashboard",
+                    //"competencies": "competencies",
+                    //"related_project0":"related_project",
+                    //"related_project1":"related_project2",
+                    //"related_project2":"related_project3",
+                    //"related_project3":"related_project4",
+                    //"related_projectsxtra":"related_projectsxtra",
+                    dashboard_order: "dashboard_order"
+                }
+                records.forEach(function (record) {
+                    var module = remapRecord(record, remap);
+                    if (competencyModules[record.id]){
+                        module.competencies = competencyModules[record.id].competency;
+                        module.competencies_id =competencyModules[record.id].competency_id;
+                    } else {
+                        module.competencies = [""];
+                        module.competencies_id = [];
+                    }
+                    modules.push(module);
+                })
+                return callback(modules);
+            });
+        }
+
+        /* Sorts array of modulettes by name using the second part of
+           the name when seperated by dots. For example this would be
+           in order Zzz.5, xxx.10 because 5 is less than 10.
+           */
+        function moduletteSorter(a, b) {
+            //a is less than b by some ordering criterion
+            var sortA = Number(a.modulette_name.split('.')[1]);
+            var sortB = Number(b.modulette_name.split('.')[1]);
+
+            if (sortA < sortB) {
+                return -1;
+            }
+            if (sortA > sortB) {
+                return 1;
+            }
+            // a must be equal to b
+            return 0;
+        }
+
+
+        function addModulettes(modules, callback) {
+            var query = "";
+            doQuery('_dbid_modulettes', query, function (records) {
+                if (!records[0]) {
+                    return console.log('ERROR, no modulettes found for query', query);
+                }
+
+
+                records.sort(moduletteSorter);
+                records.forEach(function (record) {
+
+                });
+                modules.forEach(function (module) {
+                    module.modulettes = [];
+                    records.forEach(function (modulette) {
+                        module_id = module.id.split('.')[0];
+                        modulette_module_id = modulette.modulette_name.split('.')[0];
+                        if (module_id == modulette_module_id) {
+                            var modulette_info = {
+                                name: modulette.modulette_name,
+                                title: modulette.modulette_name.split('.').slice(2).join('.'),
+                                id: modulette.modulette_name.split('.').slice(0, 2).join('.'),
+                                order: modulette.order_in_modulette_group,
+                                hide_from_dashboard: modulette.hide_from_dashboard,
+                            };
+                            if (subcompModulettes[modulette_info.name]){
+                                modulette_info.subcompetencies = subcompModulettes[modulette_info.name].sub_competency;
+                                modulette_info.subcompetencies_id = subcompModulettes[modulette_info.name].sub_competency_id;
+                            }
+                            if (modulette.link_text_in_module) modulette_info.title = modulette.link_text_in_module;
+                            module.modulettes.push(modulette_info);
+                        }
+                        ;
+                    });
+                })
+                //console.log('modules', modules);
+                //console.log('modulettes:', records);
+                return callback(modules);
+            });
+        }
+
+
+        function addProjects(modules, callback) {
+            var query = "";
+            var projects = {};//will be a lookup table based on record id
+            doQuery('_dbid_projects', query, function (records) {
+                records.forEach(function (record) {
+                    var remap = {color: "color", name: "name", dashboard_order: "dashboard_order", goal: "goal"};
+                    projects[record.record_id_] = remapRecord(record, remap);
+                });
+                var promiseArray = [];
+                modules.forEach(function (module) {
+                    module.projects = [];
+                    var query = "{12.EX.'" + module.id + "'}";
+                    var rec = doQuery('_dbid_module_instances', query, function (records) {
+                        if (records.length > 0) {
+                            records.forEach(function (record) {
+                                var project_id = record.related_project;
+                                if (!projects[project_id]) {
+                                    console.log('error finding project' + project_id);
+                                } else {
+                                    console.log(projects[project_id]);
+                                    module.projects.push(projects[project_id]);
+                                }
+                            });
+                        }
+                    });
+                    promiseArray.push(rec);
+                });
+                var promAll = all(promiseArray);
+                promAll.done(function () {
+                    callback(modules);
+                });
+            });
+        }
+
+
+        //* MAIN *//
+        $(document).ready(function () {
+            $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function () {
+            $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+			    QBU_deltaTime = QBU_serverTime - new Date().getTime();
+                loadSchemaThenExecute(function mainCallbackAfterSchemaLoad() {
+                    var PP = programPrefix() ? programPrefix().split("/")[1] : "-";
+                    document.getElementById("preview_form").setAttribute("action", QBU_juiceDomain_s + 'juice/dashboard/dashboardmodules?sb=' + QBU_encryptedSecret() + '&program=' + PP);
+                    document.getElementById("publish_form").setAttribute("action", QBU_juiceDomain_s + 'juice/s3save?sb=' + QBU_encryptedSecret());
+                    buildModules(function (modules) {
+                        addModules(modules, function addModulesCb(modules) {
+                            addModulettes(modules, function addModuletteCb(modules) {
+                                addProjects(modules, function addProjectsCb(modules) {
+                                    console.log(modules);
+                                    var json = JSON.stringify(modules, null, 2);
+                                    $("#data").val(json);
+                                    $("#preview_data").val(json);
+                                    if (keys['S']) {
+                                        return;//stop! do nothing
+                                    }
+                                    var path = programPrefix() + 'modules';
+                                    //console.log("PATH", path)
+                                    $("#fname").val(path);
+                                    $("#link").val('/juice/' + '?program=' + PP);
+                                    if ($.getUrlVar('publish')) {
+                                        $.get(QBU_dbid, {
+                                            a: "API_GetDBVar",
+                                            varname: "copy_qa_prod_data"
+                                        }).done(function (result) {
+                                            var copyData;
+                                            var el = $(result).find("errcode");
+                                            var err = $(el).text();
+                                            if (err == 0) {
+                                                el = $(result).find("value");
+                                                copyData = JSON.parse($(el).text());
+                                                copyData.dash.date = new Date().getTime();
+                                                var obj = {
+                                                    a: "API_SetDBVar",
+                                                    varname: "copy_qa_prod_data",
+                                                    value: JSON.stringify(copyData)
+                                                };
+                                                $.get(QBU_dbid, obj).done(function (res) {
+                                                    $("#publish_form").submit();
+                                                });
+                                            } else {
+                                                $("#publish_form").submit();
+                                            }
+                                        });
+
+                                    } else {
+                                        $("#preview_form").submit();
+                                    }
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+			});
+        });
+
+    </script>
+</head>
+<body>
+<div id='message'></div>
+<div id='error'></div>
+
+<form style="display: none" method="POST" id="preview_form">
+    <input type="hidden" id="preview_data" name="preview_data" value=""/>
+</form>
+
+<form style="display: none" method="POST" id="publish_form">
+    <input type="hidden" id="data" name="data" value=""/>
+    <input type="hidden" id="fname" name="fname" value=""/>
+    <input type="hidden" id="link" name="link" value=""/>
+</form>
+</body>
+</html>

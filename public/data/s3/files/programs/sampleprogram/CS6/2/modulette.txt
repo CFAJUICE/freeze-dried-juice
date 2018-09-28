@@ -1,0 +1,104 @@
+{
+  "title": "Extracting key ideas and details",
+  "name": "CS6.2.Extracting key ideas and details",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "51",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS6.2.Refresher_Extracting_key_ideas_and_details"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose an article and work through interactive steps to find the key ideas and supporting details.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Bringing music back to the schools",
+          "title": "Tale of a tiny tuba thief?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.2.GuidedPractice1_Extracting_key_ideas_and_details"
+          ]
+        },
+        {
+          "description": "Baseball in the Olympics",
+          "title": "Olympic fever?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.2.GuidedPractice2_Extracting_key_ideas_and_details"
+          ]
+        },
+        {
+          "description": "Solar energy",
+          "title": "Is solar for everyone?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.2.GuidedPractice3_Extracting_key_ideas_and_details"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about extracting key ideas and details!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Fun facts about reading for specific information\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS6.2.Challenge1_Extracting_key_ideas_and_details_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Paragraph challenge:  Find the topic, main idea, and details \n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS6.2.Challenge2_Extracting_key_ideas_and_details_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Read an article: Find the main idea and details\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS6.2.Challenge3_Extracting_key_ideas_and_details_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

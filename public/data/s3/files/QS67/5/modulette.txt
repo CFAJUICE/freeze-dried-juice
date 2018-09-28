@@ -1,0 +1,30 @@
+{
+  "title": "Working with graphs and charts",
+  "name": "QS67.5.Working with graphs and charts",
+  "subject": "writing",
+  "hide_from_dashboard": "1",
+  "hide_audio": "0",
+  "record_id_": "79",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS67.5.Refresher_UNFINISHED_Working_with_graphs_and_charts"
+          ]
+        }
+      ]
+    }
+  ]
+}

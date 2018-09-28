@@ -1,0 +1,15 @@
+extends juice_bar
+
+block content
+
+  //****** module used to pass data (i.e., widget name and file name list)from the server to the page hosting the widget 
+  script angular.module('authorConstants',[]).constant('authorConstants', {'widgetName':'!{widgetName}', 'fileName':'!{fileName}', 'refKey':'!{refKey}', 'tableId': '!{tableId}', 'rid': '!{rid}','programPrefix':'!{programPrefix}'});  
+
+  div(ng-app="author" ng-controller='ctlAuthor')
+    div(style="padding-left:44px; color:#04694A;") 
+    div(style="padding-left:44px;")
+    p &nbsp;
+     div(class="container ju-container-main" style="background-color:#FFFFFF")
+          <div ui-view> </div>
+
+

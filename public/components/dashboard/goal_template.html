@@ -1,0 +1,32 @@
+<div>
+    <div class='goal-box-outer'>
+        <div class='goal-header'>{{programValues.dashboard.tabs.goals.group_goal_label}}</div>
+
+        <div class='goal-title'> {{modulesByGP[indexGoal].name}}</div>
+
+        <div ng-attr-id={{getProjectId(indexGoal,$index)}} class ='project-box' ng-style='disabledGoals($index)' ng-click=projectExpand($index,$event) ng-repeat='project in modulesByGP[indexGoal] track by $index'> 
+            <div> 
+                <div class='project-header'>{{programValues.dashboard.tabs.goals.group_project_label}}
+                </div>
+                <div>{{project.projectName}}
+                </div> 
+            </div>
+	        <div class='goal-footer' ng-show='!isAnyprojectExpanded()'> <img src='/images/goal-box-down-arrow.png' ng-click=projectExpand($index,$event)>
+            </div> 
+            <div id='module-list' class='goal-module-list' ng-style='moduleListWidth(project.modules.length, indexGoal, $index)' ng-if='isprojectExpanded($index)' ng-click='doNothing($event)' >  
+                <div class='module-list-title-container'  ng-click=projectExpand($index,$event)>
+                    <div class='module-list-title'>&nbsp;{{programValues.dashboard.tabs.goals.group_modules_label}}&nbsp;
+                    </div>  
+                    <img  ng-click=projectExpand($index,$event) class='module-list-close' src='/images/goal_module_list_close.png'>
+                </div>
+                <div class='module-container'> 
+                    <div ng-repeat='module in project.modules track by $index' class='module-box'> <dashboard-module ng-attr-index={{getModuleIndex(module)}} /> 
+                    </div> 
+                    <div id='bottom' style='display:block;' > 
+                    </div> 
+                </div> 
+            </div>            
+        </div>
+
+    </div>
+</div>

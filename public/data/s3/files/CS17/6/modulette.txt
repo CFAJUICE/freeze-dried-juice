@@ -1,0 +1,104 @@
+{
+  "title": "Ending with a good conclusion",
+  "name": "CS17.6.Ending with a good conclusion",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "43",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS17.6.Refresher_Ending_with_a_good_conclusion"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a writing scenario and work through interactive steps to write a strong conclusion.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Winning a movie essay contest",
+          "title": "Support your local movie theater!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.6.GuidedPractice1_Ending_with_a_good_conclusion"
+          ]
+        },
+        {
+          "description": "Article to help consumers save money",
+          "title": "Think twice!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.6.GuidedPractice2_Ending_with_a_good_conclusion"
+          ]
+        },
+        {
+          "description": "Blog article on making a good impression ",
+          "title": "Ask for the job!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.6.GuidedPractice3_Ending_with_a_good_conclusion"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about ending with a good conclusion!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Paraphrasing a thesis statement for your conclusion\n",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "CS17.6.Challenge1_Ending_with_a_good_conclusion_fridgemagnets"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Spicing up your essay with a final thought\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS17.6.Challenge2_Ending_with_a_good_conclusion_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Build your own concluding paragraph\n",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "CS17.6.Challenge3_Ending_with_a_good_conclusion_pickandstack"
+          ]
+        }
+      ]
+    }
+  ]
+}

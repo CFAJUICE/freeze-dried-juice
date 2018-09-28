@@ -1,0 +1,71 @@
+<html>
+  <head><link href="//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <script>
+	  var currentPage = 1;
+	  function showNext() {
+        currentPage = currentPage + 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage-1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+
+	  }
+	  function showPrev() {
+		currentPage = currentPage - 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage+1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+	  }      
+    </script>
+  </head>
+  <title>Subject-verb agreement</title>
+<body>
+
+    <div id="page1" style="text-align:center;">
+      <h1 tabindex=0  style="text-align:left;font-family:lato;font-size:20px;color:rgb(85,38,86);">Subject verb agreement: Singular noun</h1><p/>
+      <img src="Tryit_subjectverbagreement_page1.gif" alt="Which form of the verb run should you use in this sentence? A tiger, blank, quickly.  Tiger is a singular noun and requires the singular form runs.  A tiger runs quickly.    Careful! Singular verbs end in s." style="width:800px;height:560px;">
+	  <p/>
+      <div>
+ 	    <button aria-label="Previous" alt="Previous" style="background:url(../../docs/common_images/previousinactive.gif); width:130px;height:32px;border:-2px" onclick="showPrev(); return false" disabled> </button>
+	    <button aria-label="Next" alt="Next" style="background:url(../../docs/common_images/next.gif); width:130px;height:32px;border:-2px" onclick="showNext(); return false"> </button>
+<p style="font-family:lato;font-size:16px;color:rgb(85,38,86);margin-top:-1px">1 of 4</p>
+ 	  </div>
+    </div>
+
+        <div id="page2" style="display:none;text-align:center;">
+      <h1 tabindex=0  style="text-align:left;font-family:lato;font-size:20px;color:rgb(85,38,86);">Subject-verb agreement: Singular pronoun</h1><p/>
+      <img src="Tryit_subjectverbagreement_page2.gif" alt="Which form of the verb run should you use in this sentence? It, blank, quickly.  It is a singular pronoun and requires the singular form runs.  It runs quickly." style="width:800px;height:560px;">
+      <p/>
+      <div>
+ 	    <button aria-label="Previous" alt="Previous" style="background:url(../../docs/common_images/previous.gif); width:130px;height:32px;border:-2px" onclick="showPrev(); return false"> </button>
+	    <button aria-label="Next" alt="Next" style="background:url(../../docs/common_images/next.gif); width:130px;height:32px;border:-2px" onclick="showNext(); return false"> </button>
+<p style="font-family:lato;font-size:16px;color:rgb(85,38,86);margin-top:-1px">2 of 4</p>
+	  </div>
+    </div> 
+
+<div id="page3" style="display:none;text-align:center;">
+      <h1 tabindex=0  style="text-align:left;font-family:lato;font-size:20px;color:rgb(85,38,86);">Subject-verb agreement: Plural noun</h1><p/>
+      <img src="Tryit_subjectverbagreement_page3.gif" alt="Which form of the verb run should you use in this sentence? Many tigers, blank, quickly.  Tigers is a plural noun and requires the plural form run.  Many tigers run quickly.    Careful! Plural verbs do not end in an s." style="width:800px;height:560px;">
+      <p/>
+      <div>
+ 	    <button aria-label="Previous" alt="Previous" style="background:url(../../docs/common_images/previous.gif); width:130px;height:32px;border:-2px" onclick="showPrev(); return false"> </button>
+	    <button aria-label="Next" alt="Next" style="background:url(../../docs/common_images/next.gif); width:130px;height:32px;border:-2px" onclick="showNext(); return false"> </button>
+<p style="font-family:lato;font-size:16px;color:rgb(85,38,86);margin-top:-1px">3 of 4</p>
+	  </div>
+    </div> 
+
+<div id="page4" style="display:none;text-align:center;">
+      <h1 tabindex=0  style="text-align:left;font-family:lato;font-size:20px;color:rgb(85,38,86);">Subject-verb agreement: Plural pronoun</h1><p/>
+      <img src="Tryit_subjectverbagreement_page4.gif" alt="Which form of the verb run should you use in this sentence? They, blank, quickly.  They is a plural pronoun and requires the plural form run.  They run quickly.    They is a plural pronoun even though it does not end in s." style="width:800px;height:560px;">
+      <p/>
+      <div>
+ 	    <button aria-label="Previous" alt="Previous" style="background:url(../../docs/common_images/previous.gif); width:130px;height:32px;border:-2px" onclick="showPrev(); return false"> </button>
+	    <button aria-label="Next" alt="Next" style="background:url(../../docs/common_images/nextinactive.gif); width:130px;height:32px;border:-2px" onclick="showNext(); return false" disabled> </button>
+<p style="font-family:lato;font-size:16px;color:rgb(85,38,86);margin-top:-1px">4 of 4</p>
+	  </div>
+    </div> 
+
+   
+  </body>
+</html>

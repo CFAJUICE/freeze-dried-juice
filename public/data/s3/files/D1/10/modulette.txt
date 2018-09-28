@@ -1,0 +1,94 @@
+{
+  "title": "Overview and Try it testing",
+  "name": "D1.10.Overview and Try It test plan",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "76",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "Overview test plans",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "Overview test plan",
+          "title": "Test Track 1",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D1.10.Refresher_Overview_and_Try_It_test_plan"
+          ]
+        },
+        {
+          "description": "Overview test plan part 2",
+          "title": "Test Track 2 -- Tables",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D1.10.Refresher2_Overview_and_Try_It_test_plan"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Miscellaneous Testing",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "D1.10.Refresher3_Overview_and_Try_It_test_plan"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Try it test plans",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Try it test plan",
+          "title": "Test Track 1",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "D1.10.GuidedPractice1_Overview_and_Try_It_test_plan"
+          ]
+        },
+        {
+          "description": "Try it test plan part 2",
+          "title": "Test Track 2 -- Tables",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "D1.10.GuidedPractice2_Overview_and_Try_It_test_plan"
+          ]
+        },
+        {
+          "description": "One of each kind of input for GP tracking testing",
+          "title": "Input sampler",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "D1.10.GuidedPractice3_Overview_and_Try_It_test_plan"
+          ]
+        },
+        {
+          "description": "One of each kind of input for accessibility testing",
+          "title": "Accessibility inputs",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "D1.10.GuidedPractice4_Overview_and_Try_It_test_plan"
+          ]
+        }
+      ]
+    }
+  ]
+}

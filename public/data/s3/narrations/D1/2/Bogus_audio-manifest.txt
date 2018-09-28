@@ -1,0 +1,1 @@
+{"metadata":{"file":"D1.2.Bogus"},"audioFiles":{"D1.2.Refresher_2":"D1.test.Refresher_two.mp3","D1.2.Refresher_2b":"D1.test.Refresher_too.mp3"}}

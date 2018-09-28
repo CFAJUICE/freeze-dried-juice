@@ -1,0 +1,15 @@
+<div id="canvas-container" ng-if="juiceGame.gameplay"
+     bg-pattern="{background: juiceGame.gameplayBackground()}">
+  
+
+  <div class="round-progression" ng-class="{show: juiceGame.transitioning}" ng-if="juiceGame.transitioning">
+    Round {{juiceGame.currentRound}}
+  </div>
+  <div id="game" class="game">
+    <div class="game-sidebars"
+         ng-cloak ng-if="juiceGame.gameOptions.frameWrap">&nbsp;</div>
+      {{juiceGame.name}} {{juiceGame.title}}
+    <canvas id="canvas" width="900" height="530"></canvas>
+    <canvas id="canvas-debug" ng-if="juiceGame.gameOptions.debug" width="900" height="530" style="position: absolute; top: 50px;"></canvas>
+  </div>
+</div>

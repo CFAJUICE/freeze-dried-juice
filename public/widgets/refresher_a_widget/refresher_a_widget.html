@@ -1,0 +1,138 @@
+<div ng-controller='refresherCtl' style='padding-bottom:15px;'> 
+   <div class="row">
+     <div class="col-sm-1"><img src="/images/audio_guy.png" ng-click="playNarration('https:'+configs.narration_path+'refresher_a/refresher_step_1.mp3')" style="float:left"/></div>
+	 <div class="col-sm-6 ju-header2">
+	     <div><strong>This is your first day on the job! Your first task is to read and edit Letters to the Editor. You select the first letter. It seems like a great letter to print, but you think it might have a run-on sentence.
+         <p/>
+		 How can you tell and how can you fix it?</strong>
+		 <p/> 
+		 </div>
+     </div>
+	 <div class="col-sm-5" style="padding-left: 25px; padding-right:25px">
+         <div class="jumbotron" style="padding-left:30px; padding-right:30px">
+		 Dear Editor,<p/>Your article about the dangers of sharing on Facebook was great! Everyone in my workplace read it and agreed. <span class="ju-highlighted-text">Social media can be dangerous there are so many ways it can hurt you if you are not cautious.</span> We want to see more articles like this!
+		 </div>
+	 </div>
+   </div>
+   
+   <div class="row">
+      <div class="col-sm-12" style="text-align:center"><img src="/images/next_arrow.png" ng-click='next1()'/></div>
+   </div>
+
+   <div class="row" ng-show='lclData.step2'>
+      <div class="col-sm-12 ju-header-bar" ng-show="lclData.step2">First, decide if the sentence is a run-on sentence.</div>
+   </div>
+
+   <div class="row" ng-show='lclData.step2'>
+	 <div class="col-sm-1"><img src="/images/audio_guy.png" ng-click="playNarration('https:'+configs.narration_path+'refresher_a/refresher_step_2.mp3')" style="float:left"/></div>
+	 <div class="col-sm-6"> 
+		 <div>A run-on sentence has two separate sentences joined as one. It sounds right in speech, but it is not correct.  </div>
+         <p/>
+		 <div>
+			    To decide if it’s a run-on sentence, figure out if it has two independent clauses that can stand alone.
+         </div>         
+	 </div>
+	 <div class="col-sm-5" style="padding-left: 25px; padding-right:25px">
+         <div class="jumbotron fadein" style="padding-left:30px; padding-right:30px">
+		   <div ng-class="{'ju-hidden': !lclData.delay0}">
+		     Social media can be dangerous there are so many ways it can hurt you if you are not cautious.
+           </div>
+		 </div>
+	 </div>
+   </div>
+
+   <div class="row">
+      <div class="col-sm-12" style="text-align:center"><img src="/images/next_arrow.png" ng-click='next2()' ng-show="lclData.delay0"/></div>
+   </div>
+
+   <div class="row" ng-show='lclData.step3'>
+      <div class="col-sm-12 ju-header-bar">Then, fix the sentence in one of three ways.</div>
+   </div>
+
+   <div class="row" ng-show='lclData.step3'>  
+     <div class="col-sm-1"><img src="/images/audio_guy.png" ng-click="playNarration('https:'+configs.narration_path+'refresher_a/refresher_step_3.mp3')" style="float:left"/></div>
+     <div class="col-sm-6"> 
+		   <div>1.	Add end punctuation to create two sentences</div>
+	 </div>
+     <div class="col-sm-5 fadein" style="padding-left: 25px; padding-right:25px">
+         <div class="jumbotron" style="padding-left:30px; padding-right:30px">
+		   <div ng-class="{'ju-hidden': !lclData.delay1}">
+            Social media can be dangerous. There are so many ways it can hurt you if you are not cautious.
+           </div>
+		 </div>
+     </div>
+   </div>  
+   
+   <div class="row" ng-show='lclData.delay2'>  
+     <div class="col-sm-1"></div>
+     <div class="col-sm-6"> 
+		   <div ng-show="lclData.delay2" class="fadein">2.	Add a comma and a joining word like <i>and</i> between the two clauses</div>
+	 </div>
+     <div class="col-sm-5 fadein" style="padding-left: 25px; padding-right:25px">
+         <div class="jumbotron" style="padding-left:30px; padding-right:30px">
+		   <div ng-class="{'ju-hidden': !lclData.delay3}">
+            Social media can be dangerous, and there are so many ways it can hurt you if you are not cautious.
+           </div>
+		 </div>
+     </div>
+   </div>  	  
+
+   <div class="row" ng-show='lclData.delay4'>  
+     <div class="col-sm-1"></div>
+     <div class="col-sm-6"> 
+		   <div ng-show="lclData.delay4" class="fadein">3.	Add a semicolon between the two clauses</div>
+	 </div>
+     <div class="col-sm-5 fadein" style="padding-left: 25px; padding-right:25px">
+         <div class="jumbotron" style="padding-left:30px; padding-right:30px">
+		   <div ng-class="{'ju-hidden': !lclData.delay5}">
+            Social media can be dangerous; there are so many ways it can hurt you if you are not cautious.
+           </div>
+		 </div>
+     </div>
+   </div>  	  
+
+   <div class="row">
+      <div class="col-sm-12" style="text-align:center"><img src="/images/next_arrow.png" ng-click='next5()' ng-show="lclData.delay5"/></div>
+   </div>
+
+   <div class="row" ng-show='lclData.step6'>  
+    <div class="col-sm-1"><img src="/images/audio_guy.png" ng-click="playNarration('https:'+configs.narration_path+'refresher_a/refresher_step_4.mp3')" style="float:left"/></div>
+     <div class="col-sm-6"> 
+		   <div ng-show="lclData.step6" class="fadein">
+		      Which correction should you choose for this letter?   
+		      All three are good choices!  Try using them all to add variety to your writing.
+		   </div>
+	 </div>
+     <div class="col-sm-5 fadein" style="padding-left: 25px; padding-right:25px">
+     </div>
+   </div>
+
+    <div class="row">
+      <div class="col-sm-12" style="text-align:center"><img src="/images/next_arrow.png" ng-click='next6()' ng-show='lclData.step6'/></div>
+   </div>
+
+   <div class="row" ng-show='lclData.step7'>  
+     <div class="col-sm-1"><img src="/images/audio_guy.png" ng-click="playNarration('https:'+configs.narration_path+'refresher_a/refresher_step_5.mp3')" style="float:left"/></div>
+     <div class="col-sm-10"> 
+		   <div ng-show="lclData.step7" class="fadein"  style="text-align:center; padding-top: 30px">
+		       <div class="ju-header2">Ready?</div>
+			   <p/>
+			   <div>Now that you know the steps for avoiding a run-on sentence, see if you can use them in a guided practice.</div>
+			   <p/>
+			   <div> 
+			        <img src="/images/guided_practice.png" ng-click='gotoGP()'/>
+					<img src="/images/own_challenges.png" ng-click='gotoOC()'/>
+			   </div>
+			   <p/>
+			   <div>Go back to Facing grammar fearlessly</div>
+		   </div>
+	 </div>
+	 <div class="col-sm-1"></div>
+   </div>
+
+   <a id="bottom"></a>
+</div>
+
+
+
+

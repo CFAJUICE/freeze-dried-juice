@@ -1,0 +1,21 @@
+<div class="feedback-view" ng-if="juiceGame.feedback" bg-pattern="{
+  background: juiceGame.feedbackBackground(juiceGame.gameName)
+}"  ng-class="{'challenge-wheel-game-feedback':juiceGame.challenge_wheel_game, 'normal-game-feedback':!challenge_wheel_game}">
+  <div class="header">
+    <span class="title">Scoreboard</span>
+  </div>
+  <div class="feedback-content" style="margin-top: 50px;">
+      <div class="feedback-header" ng-if="!juiceGame.gameService.isScoreboardReplay()">{{::juiceGame.feedbackMessage()}}&nbsp;</div>
+      <div class="feedback-header" ng-if="juiceGame.gameService.isScoreboardReplay()">Welcome back. Here's how you did last time!</div>
+      <div class="feedback-sub-header" ng-if="juiceGame.gameService.isScoreboardReplay()">Refresh your skills or choose Play Again to improve your score.</div>
+      <div ng-if="!juiceGame.challenge_wheel_game" ng-include="'/javascripts/game/templates/feedback-normal.html'"></div>
+      <div ng-if="juiceGame.challenge_wheel_game" ng-include="'/javascripts/game/templates/feedback-challenge-wheel.html'"></div>
+  </div>
+  <feedback-sound
+    round-stats="{{juiceGame.roundStats()}}"
+    ng-if="juiceGame.feedback"></feedback-sound>
+  <feedback-animation
+    duration="{{::juiceGame.feedbackDuration}}"
+    round-stats="{{juiceGame.roundStats()}}"
+    ng-if="juiceGame.feedback"></feedback-animation>
+</div>

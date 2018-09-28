@@ -1,0 +1,104 @@
+{
+  "title": "Beginning with a compelling introduction",
+  "name": "CS17.4.Beginning with a compelling introduction",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "41",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS17.4.Refresher_Beginning_with_a_compelling_introduction"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a writing scenario and work through interactive steps to decide how to begin your essay.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Winning a movie essay contest",
+          "title": "Traveling to another world",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.4.GuidedPractice1_Beginning_with_a_compelling_introduction"
+          ]
+        },
+        {
+          "description": "Article to help consumers save money",
+          "title": "Buyer's remorse?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.4.GuidedPractice2_Beginning_with_a_compelling_introduction"
+          ]
+        },
+        {
+          "description": "Blog article on making a good impression ",
+          "title": "Standing out from the crowd",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.4.GuidedPractice3_Beginning_with_a_compelling_introduction"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about beginning with a compelling introduction!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Pick an introductory sentence\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS17.4.Challenge1_Beginning_with_a_compelling_introduction_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Choose background information\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS17.4.Challenge2_Beginning_with_a_compelling_introduction_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Build an introductory paragraph",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "CS17.4.Challenge3_Beginning_with_a_compelling_introduction_pickandstack"
+          ]
+        }
+      ]
+    }
+  ]
+}

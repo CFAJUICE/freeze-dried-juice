@@ -1,0 +1,1 @@
+delayedJavascript.hasLoaded();

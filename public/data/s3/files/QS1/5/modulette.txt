@@ -1,0 +1,104 @@
+{
+  "title": "Multiplying fractions",
+  "name": "QS1.5.Multiplying fractions",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "9",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS1.5.Refresher_Multiplying_fractions"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to multiply fractions. ",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Does the estimate make sense?",
+          "title": "Painting the living room",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.5.GuidedPractice1_Multiplying_fractions"
+          ]
+        },
+        {
+          "description": "How much land do we set aside for playing fields?",
+          "title": "Park planning",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.5.GuidedPractice2_Multiplying_fractions"
+          ]
+        },
+        {
+          "description": "How much did Pete's Perfect Pickles' investors lose?",
+          "title": "The stock market",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.5.GuidedPractice3_Multiplying_fractions"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Write the expression to find the fraction of a number",
+          "widget_name": "puzzler_widget",
+          "widget_description": "Puzzler Game",
+          "files": [
+            "QS1.5.Challenge1_Multiplying_fractions_puzzler"
+          ]
+        },
+        {
+          "description": "",
+          "title": "How do you solve the problem?",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "QS1.5.Challenge2_Multiplying_fractions_perfectword"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Find the fraction of a number",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "QS1.5.Challenge3_Multiplying_fractions_balancer"
+          ]
+        }
+      ]
+    }
+  ]
+}

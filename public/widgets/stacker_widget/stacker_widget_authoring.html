@@ -1,0 +1,190 @@
+<div ng-controller="GameAuthoringCtrl as authoring" class="container game authoring">
+  <game-editor content-controller="GameContentCtrl as content">
+    <div ng-include="'/components/authoring/game/editor-header.html'"></div>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+        <textarea class="form-control" placeholder="Directions" ng-model="content.round.directions" rows="5"></textarea>
+      </div>
+    </div>
+
+    <div class="sections">
+
+      <div class="sections">
+        <div class="section">
+          <div class="form-group">
+            <h3 class="col-sm-2">Image</h3>
+
+            <div class="col-sm-10" style="margin-top: 10px;">
+              <p>
+              <input type="file"
+                     accept="image/*"
+                     onchange="angular.element(this).scope().fileChanged(this)"/>
+              </p>
+              <p class="help-block">
+                Upload an image for use in this round.
+              </p>
+              <p>
+                <button class="btn btn-danger" ng-if="content.round.instructions_img" ng-click="content.deleteImg()">
+                  Remove
+                </button>
+              </p>
+            </div>
+            <div class="col-sm-12" ng-if="content.round.instructions_img">
+              <img ng-src="data:image/png;base64, {{content.round.instructions_img}}" alt="Instructions Image" style="width: 500px;"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values -->
+      <div class="sections">
+        <div class="section">
+          <div class="form-group">
+            <h3 class="col-sm-2">Values</h3>
+
+            <div class="col-sm-10 edit-btns">
+              <button class="btn btn-primary" ng-click="content.add('values')"
+                      ng-show="content.sections.values.editing">Add
+              </button>
+              <button class="btn btn-primary" ng-click="content.toggleEdit('values')">
+                {{content.sections.values.editing ? 'Done' : 'Edit'}}
+              </button>
+            </div>
+          </div>
+
+          <div ng-include="'/components/authoring/game/editor-fontsize.html'"></div>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <strong>Scale Words</strong>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input type="text" class="form-control"
+                     ng-readonly="!content.sections.values.editing"
+                     placeholder="Top" ng-model="content.round.scale_top"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input type="text" class="form-control"
+                     ng-readonly="!content.sections.values.editing"
+                     placeholder="Bottom" ng-model="content.round.scale_bottom"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <strong>Values</strong>
+            </div>
+          </div>
+          <div class="form-group can-delete" ng-repeat="value in content.values">
+            <div class="col-sm-11">
+              <textarea class="form-control"
+                     ng-readonly="!content.sections.values.editing"
+                     placeholder="Value" ng-model="value.content"></textarea>
+            </div>
+            <div class="col-sm-1">
+              <button class="btn btn-danger"
+                      ng-click="content.remove('values', value)"
+                      ng-if="content.sections.values.editing">-
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- Answers -->
+        <div class="section">
+          <div class="form-group">
+            <h3 class="col-sm-2">Answers</h3>
+
+            <div class="col-sm-10 edit-btns">
+              <button class="btn btn-primary" ng-click="content.add('answers')"
+                      ng-show="content.sections.answers.editing">Add
+              </button>
+              <button class="btn btn-primary" ng-click="content.toggleEdit('answers')">
+                {{content.sections.answers.editing ? 'Done' : 'Edit'}}
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group can-delete" ng-repeat="answer in content.answers">
+            <div class="col-sm-11">
+              <select ng-model="answer.value"
+                      ng-disabled="!content.sections.answers.editing" class="form-control">
+                <option
+                  ng-repeat="value in content.values"
+                  ng-selected="answer.value == value.id" value="{{value.id}}">{{value.content}}</option>
+              </select>
+            </div>
+            <div class="col-sm-1">
+              <button class="btn btn-danger"
+                      ng-click="content.remove('answers', answer)"
+                      ng-if="content.sections.answers.editing">-
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- Feedback -->
+        <div class="section">
+          <div ng-include="'/components/authoring/game/editor-general-feedback.html'"></div>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              Specific Incorrect Feedback
+            </div>
+          </div>
+          <div class="form-group can-delete" ng-repeat="feedback in content.feedback">
+            <div class="col-sm-10">
+              <div class="row" ng-if="content.sections.feedback.editing">
+                <button class="btn btn-primary col-sm-3" ng-click="content.addCondition(feedback)"
+                        style="margin-bottom: 10px;">Add Answer
+                </button>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-4" ng-repeat="condition in feedback.conditions">
+                  <select class="form-control" style="width: 70%;"
+                          ng-model="condition.content"
+                          ng-change="condition.content"
+                          ng-disabled="!content.sections.feedback.editing">
+                    <option></option>
+                    <!--<option ng-selected="condition.content == 'incorrect'" value="incorrect">Incorrect</option>-->
+                    <option ng-repeat="value in content.values" ng-selected="condition.content == value.content" value="{{value.content}}">
+                      {{value.content}}
+                    </option>
+                  </select>
+                  <button class="btn btn-danger" ng-click="content.removeCondition(feedback, condition)"
+                          ng-if="content.sections.feedback.editing">-
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-11">
+              <textarea class="form-control"
+                        rows="6"
+                        ng-model="feedback.content" ng-readonly="!content.sections.feedback.editing">
+                {{feedback.content}}
+              </textarea>
+            </div>
+            <div class="col-sm-1">
+              <button class="btn btn-danger"
+                      ng-click="content.remove('feedback', feedback)"
+                      ng-if="content.sections.feedback.editing">-
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </game-editor>
+</div>

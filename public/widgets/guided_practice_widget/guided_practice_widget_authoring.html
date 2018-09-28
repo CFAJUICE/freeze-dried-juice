@@ -1,0 +1,104 @@
+<div ng-controller='guidedPractice_authoringCtl' style='padding-bottom:15px;'>
+  <div class="ju-header-bar">&nbsp;&nbsp;Guided Practice Widget Authoring</div>
+  <div class="row"><div class="col-sm-12"><button class='btn btn-success' ng-click='save()' style="float:right">Save File</button> </div></div> 
+  <div class="row">
+	     <div class="col-sm-1"> </div>
+	     <div class="col-sm-11">
+	       <div>
+		     Skill:&nbsp;<input type="text" name="objective" size="80" ng-model="lclData.metadata.objective" placeholder="Enter objective statement (used in ast step)">
+		   </div>
+		   <p/>
+		   <div>
+		     Audio Path for Last Step:&nbsp;<input type="text" name="objective" size="80" ng-model="lclData.metadata.lastStepAudioPath" placeholder="Enter audio path for last step narration">
+		   </div>
+		   <p/>
+         </div>
+  </div>
+  <div class="row">
+	     <div class="col-sm-1" style="background-color: #08A47D; color:#FFFFFF; padding:10px">Right Float Box</div>
+	      <div class="col-sm-6" style="padding-left: 25px; padding-right:25px" > 
+              <textarea  style="width:100%" ng-model="lclData.rightFloatText" ckeditor="editorOptions"> </textarea><p/>
+		  </div>
+  </div>
+
+  <div ng-repeat="step in lclData.steps track by $index">  
+    <div ng-class-even="'ju-even'" ng-class-odd="'ju-odd'">
+	   <div class="row">
+	     <div class="col-sm-1" style="background-color: #08A47D; color:#FFFFFF; padding:10px">Step {{$index+1}}</div>
+		 <div class="col-sm-11">
+		     Step Delay: <input type="text" name="delayRight" size="4" ng-model="step.settings.delayStep">&nbsp;s
+		 </div>
+       </div>
+	   <div class="row">
+	     <div class="col-sm-1">Header</div>
+	     <div class="col-sm-11 btn-group">
+		  <button class='btn btn-default' ng-model="step.settings.showHeader" btn-radio="1" >Show Header</button><button class='btn btn-default' ng-model="step.settings.showHeader" btn-radio="0">Hide Header</button>&nbsp;
+		    
+		    <input type="text" name="header" size="80" ng-model="step.headerText" ng-show="step.settings.showHeader" placeholder="Enter Header Text">
+         </div>
+       </div>
+       
+	   <div class="row">
+	     <div class="col-sm-1">Ruler</div>
+	     <div class="col-sm-3 btn-group">
+		  <button class='btn btn-default' ng-model="step.settings.showRuler" btn-radio="1" >Show Ruler</button><button class='btn btn-default' ng-model="step.settings.showRuler" btn-radio="0">Hide Ruler</button>&nbsp;
+         </div>
+		 <div class="col-sm-2" style="display:inline; padding-left:100px">Right Float Box</div>
+	     <div class="col-sm-6 btn-group">
+		  <button class='btn btn-default' ng-model="step.settings.showRFB" btn-radio="1" >Show Box</button><button class='btn btn-default' ng-model="step.settings.showRFB" btn-radio="0">Hide Box</button>&nbsp;
+         </div>
+	   </div>
+
+	   <div class="row">	
+	     <div class="col-sm-1">Audio</div>
+		 <div class="col-sm-11 btn-group">
+		   <input type="text" name="header" size="80" ng-model="step.settings.audioPath"  placeholder="Enter audio path for narration">
+         </div>
+	   </div>
+	    <div class="row">
+	      <div class="col-sm-1"> </div>
+          <div class="col-sm-6">
+		      
+		  </div>
+		  <div class="col-sm-5 btn-group" style="padding-left: 25px; padding-right:25px"> 
+              <button class='btn btn-default' ng-model="step.settings.hideRightPanel" btn-radio="0" >Show Right Panel</button><button class='btn btn-default' ng-model="step.settings.hideRightPanel" btn-radio="1">Hide Right Panel</button>&nbsp;Delay:<input type="text" name="delayRight" size="4" ng-model="step.settings.delayRight" ng-hide="step.settings.hideRightPanel">&nbsp;s
+		  </div>
+	   </div>
+	   <div class="row">
+	      <div class="col-sm-1"><img src="/images/audio_guy.png" ng-show=false style="float:left"/> </div>
+          <div ng-class="{'col-sm-6':!step.settings.hideRightPanel, 'col-sm-10':step.settings.hideRightPanel}">
+		      <textarea  style="width:100%" ng-model="step.leftText" ckeditor="editorOptions"> </textarea>
+		  </div>
+		  <div class="col-sm-5" style="padding-left: 25px; padding-right:25px" ng-hide="step.settings.hideRightPanel"> 
+              <textarea style="width:100%" ng-model="step.rightText" ckeditor="editorOptions"> </textarea>
+		  </div>
+	   </div>
+	   <div class="row" style="padding-bottom:20px">	
+	     <div class="col-sm-1">Next</div>
+		 <div class="col-sm-11 btn-group">
+	       <button class='btn btn-default' ng-model="step.settings.showNext" btn-radio="1">Show Next Arrow</button><button class='btn btn-default' ng-model="step.settings.showNext" btn-radio="0">Hide Next Arrow</button>&nbsp;<img src="/images/next_arrow.png" ng-show="step.settings.showNext">
+         </div>
+	   </div>
+	   <button class='btn btn-primary' ng-click='insertStep($index)' ng-show="!$last">Insert Step</button><button class='btn btn-primary' ng-click='removeStep($index)'>Remove Step</button>
+	</div>
+  </div>
+  <p> </p>
+  <button class='btn btn-primary' ng-click='addStep()'>Add Step</button>
+  <div class="row"><div class="col-sm-12"><button class='btn btn-success' ng-click='save()' style="float:right">Save File</button> </div></div>
+  <a id="bottom"></a>
+  <script type="text/ng-template" id="saveModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Save File</h3> 
+        </div>
+        <div class="modal-body">
+             <div ng-show="showSave">File Name: <input type="text" name="fname" size="50" ng-model="fname" placeholder="competencyId.moduletteId_refresher_skill name" ng-disabled="{{disableInput}}"></div>
+			 <div ng-show="!showSave">Sorry, the file could not be saved in S3.  Please try again later.  </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()" ng-show="showSave">Save</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+   </script>
+</div>
+
+

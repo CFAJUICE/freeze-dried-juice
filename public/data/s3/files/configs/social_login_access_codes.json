@@ -1,0 +1,21 @@
+{
+  "sample social access code":{
+    "max_users": 50,
+      "account_creation_date_limit": "9/7/2050",
+      "account_login_date_limit": "9/20/2050",
+    "user_properties": {
+      "custom_program_key": "sampleprogram",
+      "roles": "DemoStudent",
+      "context_id":"sample",
+        "tool_consumer_instance_guid":"sampleguid"
+    }
+  
+  },
+  "Just notes from Rob and not a real access code. r8sofu84rnslvuwer234n":{
+    "Place to get additional passwords": "http://preshing.com/20110811/xkcd-password-generator/",
+    "How to get server to re-fetch this from s3": "/juice/reload",
+    "To remove the access code from the current user": "/juice/user_settings/?key=_access_code&value=remove, then log out",
+    "See current user": "/juice/user ... access code will not be cleared from here until logged out",
+    "See user settings, including access code": "/juice/user_settings"
+  }
+}

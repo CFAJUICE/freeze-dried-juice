@@ -1,0 +1,62 @@
+extends static-page
+block append content
+    if message
+        div.blob-container.message
+            div.blob-inner(style="max-width:500px") #{message}
+
+    if(cookies.connect_provider_name==undefined)
+        cookies.connect_provider_name=''
+    if(!cookies.connect_provider_name)
+        #blurb
+            | &ldquo;Just-in-time, contextualized, and empowering academic support&rdquo;
+        script(type="text/javascript").
+            $(document).ready(function(){$('#messaging-container p:first-child').focus();})
+
+        #content.blob-container
+            .blob-inner(id="messaging-container")
+                p(class="notShowingSocialSignIn" tabindex=1)
+                    | Welcome to the JUICE Pilot Testing website. The JUICE Project is sponsored by the&nbsp;
+                    a(href='http://www.collegeforamerica.org/')
+                        | College for America (CfA)
+                    |  program at Southern New Hampshire University.
+                p(class="notShowingSocialSignIn" tabindex=1)
+                    | JUICE is a new learning platform to provide competency-based academic skills support for college students.
+                    | We are developing and researching the effectiveness of JUICE with the help of a US Department of Education&nbsp;
+                    a(href='http://www.ed.gov/news/press-releases/department-awards-75-million-first-world-grants-24-colleges-and-universities')
+                        | First in the World (FITW)
+                    |  grant.  We look forward to sharing the results of our research soon.
+                p(tabindex=1)
+                    | JUICE is available for pilot testing to only a few academic programs at this time. If you received a Pilot Test invitation you can use a social media account to sign up. For more information,&nbsp;
+                    a(href='mailto:juiceinfo@snhu.edu') contact us.
+                p(class="notShowingSocialSignIn" style="font-size:1.6em;color:#088000;text-align:center;" tabindex=1)
+                    span(style="color:orange") &rarr;
+                    a(href="#" class="clickable" style="text-decoration:underline" onclick="$('.notShowingSocialSignIn, .showingSocialSignIn').toggle();$(window).scrollTop($('#socialSignIn').offset().top);$('#login-social-media-message').focus();" tabindex=1)
+                        | Pilot Test Sign In
+                p(class="showingSocialSignIn" style="display:none" tabindex=1)
+                    | TO SIGN UP THE FIRST TIME, you will need a JUICE Pilot Test Code from your academic program
+    if(cookies.connect_provider_name)
+        script(type="text/javascript").
+            $(document).ready(function(){$('#come-back-soon').focus();})
+        #content.blob-container
+            .blob-inner(tabindex=1)
+                p(style="font-size: 1.2em;" tabindex=1 id="come-back-soon")
+                    | Come back soon!   You logged out of JUICE, but you are still logged in to&nbsp;
+                    a(href=cookies.connect_identifier) #{cookies.connect_provider_name}
+                    | .
+                p(style="font-size: 1.2em;" tabindex=1)
+                    img(src="/images/caution.png" width="20")
+                    |  ARE YOU ON A SHARED COMPUTER? Please go to&nbsp;
+                    a(href=cookies.connect_identifier) #{cookies.connect_provider_name}
+                    |  and log out now to protect your account!
+
+                p(id="clickToShowSocialSignIn" style="text-align: center;font-size:1.6em;color:#088000;")
+                    span(style="color:orange") &rarr;
+                    a(href="#" class="clickable" style="text-decoration:underline" onclick="$('.notShowingSocialSignIn, .showingSocialSignIn').toggle();$(window).scrollTop($('#socialSignIn').offset().top);$('#login-social-media-message').focus()" tabindex=1)
+                        | Pilot Test Sign In
+
+    .showingSocialSignIn#socialSignIn(style="display:none")
+        div(style="text-align: center;background: #B6DDE8" id="login-social-media-message" tabindex=1)
+            | Log in via your social media account:
+        #content.blob-container
+            .blob-inner(style="margin: 0;width: 390px;")
+                #janrainEngageEmbed

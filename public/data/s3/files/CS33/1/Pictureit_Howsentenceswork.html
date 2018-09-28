@@ -1,0 +1,53 @@
+<html>
+  <head>
+      <link href="//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link href="../../docs/common_css/picture-it.css" rel="stylesheet" type="text/css">
+      
+    <script>
+	  var currentPage = 1;
+	  function showNext() {
+        currentPage = currentPage + 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage-1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+
+	  }
+	  function showPrev() {
+		currentPage = currentPage - 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage+1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+	  }      
+    </script>
+  </head>
+      <title>How sentences work</title>
+      <body>
+
+
+      <div  class="page" id="page1" style="display:block">
+      <h1 tabindex="0"  class="page-header">How sentences work: Subject, verb, and direct object</h1><p/>
+      <img src="sentences_page1.gif" alt="A subject is who or what is acting in the sentence.  The verb tells what the subject is doing or being.  The direct object tells what an action verb is acting on.  In the sentence The birds build nests, birds is the subject, build is the verb, and nests is the direct object." >
+	  <p/>
+      <div >
+ 	    <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false" disabled> </button>
+	    <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">1 of 2</p>
+ 	  </div>
+    </div>
+
+    <div  class="page" id="page2" >
+      <h1 tabindex="0"   class="page-header">How sentences work: Independent and dependent clauses</h1><p/>
+      <img src="sentences_page2.gif" alt="An independent clause can stand on its own.  A dependent clause has a marker word such as because that makes it incomplete.  The birds build nests is an independent clause.  Because birds build nests is a dependent clause.  Add an independent clause to a dependent clause to complete the sentence.  Because birds build nests, they need twigs, is a complete sentence. " >
+      <p/>
+      <div>
+<button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false" disabled> </button>
+<p class="pager">2 of 2</p>
+	  </div>
+    </div> 
+
+   
+  </body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "title": "pmtest_2",
+  "name": "pmtest_2",
+  "tabs": [
+    {
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "refresher track 1 desc",
+          "title": "refresher track 1",
+          "image": "test-pink-normal.jpg",
+          "widget_name": "showme_widget",
+          "widget_description": "Refresher placeholder"
+        }
+      ]
+    },
+    {
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "track 1 description",
+          "title": "Track 1 title here",
+          "image": "test-unwrapped.jpg",
+          "widget_name": "place_holder_widget",
+          "widget_description": "Generic Placeholder"
+        },
+        {
+          "description": "track 2 description",
+          "title": "track 2 title",
+          "image": "test-rainbow.jpg",
+          "widget_name": "place_holder_widget",
+          "widget_description": "Generic Placeholder"
+        }
+      ]
+    },
+    {
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "challeng track 1 desc",
+          "title": "challenge track 1",
+          "image": "test-pink-swirl.jpg",
+          "widget_name": "blue_widget",
+          "widget_description": "Challenge placeholder with blue background "
+        }
+      ]
+    }
+  ]
+}

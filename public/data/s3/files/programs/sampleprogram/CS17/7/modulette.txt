@@ -1,0 +1,103 @@
+{
+  "title": "Improving what you wrote",
+  "name": "CS17.7.Improving what you wrote",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS17.7.Refresher_Improving_what_you_wrote"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a writing scenario and work through interactive steps to make sure your essay represents your best work.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Winning a movie essay contest",
+          "title": "Crafting a winning essay",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.7.GuidedPractice1_Improving_what_you_wrote"
+          ]
+        },
+        {
+          "description": "Article to help consumers save money",
+          "title": "Polishing your article",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.7.GuidedPractice2_Improving_what_you_wrote"
+          ]
+        },
+        {
+          "description": "Blog article on making a good impression ",
+          "title": "Can the blog be better?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.7.GuidedPractice3_Improving_what_you_wrote"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about improving what you wrote!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Too broad, too narrow, just right?  Editing your thesis statement\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS17.7.Challenge1_Improving_what_you_wrote_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Help! Your friend's article needs work!\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS17.7.Challenge2_Improving_what_you_wrote_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Be the world's greatest proofreader.  Find and fix all the errors!\n",
+          "widget_name": "fix_it_widget",
+          "widget_description": "Correct words and phrases",
+          "files": [
+            "CS17.7.Challenge3_Improving_what_you_wrote_fixit"
+          ]
+        }
+      ]
+    }
+  ]
+}

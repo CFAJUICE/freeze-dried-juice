@@ -1,0 +1,104 @@
+{
+  "title": "Finding percentage",
+  "name": "QS1.1.Finding percentage",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "22",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS1.1.Refresher_Finding_percentage"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to find what percentage one number is of another. ",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Calculating business expense tax deductions",
+          "title": "Home office",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.1.GuidedPractice1_Finding_percentage"
+          ]
+        },
+        {
+          "description": "Reporting percentage enrollment",
+          "title": "School enrollment",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.1.GuidedPractice2_Finding_percentage"
+          ]
+        },
+        {
+          "description": "How does our town stack up?",
+          "title": "Town expenses",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.1.GuidedPractice3_Finding_percentage"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about finding percentage!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Part, whole, and percentage",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "QS1.1.Challenge1_Finding_percentage_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Choose the steps to calculate percentage",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "QS1.1.Challenge2_Finding_percentage_pickandstack"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Calculate percentage",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "QS1.1.Challenge3_Finding_percentage_balancer"
+          ]
+        }
+      ]
+    }
+  ]
+}

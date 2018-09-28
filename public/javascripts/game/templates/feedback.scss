@@ -1,0 +1,132 @@
+.modal-content {
+  .feedback-view {
+    .feedback-rounds-container{
+
+    }
+    li.feedback-result-row:last-child {
+      margin-bottom:5em;
+    }
+
+    li.feedback-rounds {
+      & > li {
+        height: 135px;
+        overflow: hidden;
+      }
+    }
+    .round-number-message {
+      margin-top: 24px;
+    }
+
+    .table {
+      z-index: 1000;
+    }
+
+    .feedback-header {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 60px;
+      font-size: 20px;
+      line-height: 26px;
+      color: rgb(13, 36, 246);
+    }
+
+    .feedback-sub-header {
+      text-align: center;
+      font-size: 12px;
+    }
+
+    ////challenge game style exceptions
+    &.challenge-wheel-game-feedback {
+      .feedback-column-header {
+        font-size: 18px;
+        color: rgb(13, 36, 246);
+        position: absolute;
+        &.column-header-1 {
+          left: 0%;
+        }
+        &.column-header-2 {
+          left: 36.2%
+        }
+        &.column-header-3 {
+          left: 80%;
+          text-align: center;
+        }
+      }
+      .game-btn {
+        margin-top: 11px;
+      }
+      .icon {
+        float: left;
+        display: inline-block;
+        width: 33px;
+        margin-top: 19px;
+        font-size: 24px;
+        margin-right: -15px;
+        margin-left: 12px;
+        &.icon-ok-circled {
+          color: #538135;
+        }
+        &.icon-cancel-circled {
+          color: #C45911;
+        }
+        &.icon-star {
+          color: gold;
+          background: #538135;
+          border-radius: 50%;
+        }
+      }
+      ul.feedback-rounds {
+        z-index: 1;
+        padding-bottom: 2em;
+        overflow-x: hidden;
+        width:850px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          -webkit-appearance: none;
+          width: 6px;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 4px;
+          background-color: rgba(0,0,0,.5);
+          -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+        }
+
+
+        .round-number {
+          font-size: 24px;
+          margin-left: -13px;
+          margin-right: -10px;
+          &::before {
+            //the background globe
+            width: 50px;
+            height: 50px;
+            top: 13px;
+            left: 13px;
+          }
+        }
+        .round-number-message {
+          width: 37%;
+          &.skill-name {
+            width: 29%;
+          }
+        }
+      }
+
+      li.feedback-rounds {
+        height: 79px;
+      }
+      li.feedback-column-header-section {
+        margin-bottom: -28px;
+      }
+      li.feedback-result-row {
+        height: 73px;
+        overflow: hidden;
+        margin-bottom: -2px;
+        &:last-child {
+          margin-bottom:5em;
+        }
+      }
+    }
+  }
+}

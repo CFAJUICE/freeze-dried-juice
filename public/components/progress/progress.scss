@@ -1,0 +1,20 @@
+.orange-container {
+  position: absolute;
+  right: -9px;
+  top: -9px;
+  tooltip{
+    left: -141px;
+    top: 41px;
+  }
+  &:hover tooltip{
+    display:block;
+  }
+}
+
+
+.inline-orange-container{
+  display:inline-block;
+  width:27px;
+  height:27px;
+  text-align:center;
+}

@@ -1,0 +1,19 @@
+ <div class="dashtitle title"><h2>{{programValues.dashboard.tabs.recents.header}}</h2></div>
+ <div class="dash-body">
+  <div class="recent-section" ng-show='anyModuleRecentlyVisited().week || anyModuleRecentlyVisited().month || anyModuleRecentlyVisited().ever'>Last 7 days <span ng-show='anyModuleRecentlyVisited().week'> ({{timeSpentHM.own.week}}) </span></div>
+    <div  class="recent-section message" ng-show='!anyModuleRecentlyVisited().week'>There is no activity for the last 7 days.</div>
+   <div ng-repeat="module in modules track by $index" class='module-box' ng-if="moduleRecentlyVisited($index).week">
+     <dashboard-module index="{{$index}}" timeframe="week" arialevel=1 ariasetsize="{{modulesSetSize}}" modid="{{module.id}}" />
+   </div>
+    <div class="recent-section" ng-show='anyModuleRecentlyVisited().month || anyModuleRecentlyVisited().ever'>Last 30 days<span ng-show='anyModuleRecentlyVisited().month'> ({{timeSpentHM.own.month}}) </span></div>
+	<div  class="recent-section message" ng-show='!anyModuleRecentlyVisited().month'>There is no activity for the last 30 days.</div>
+   <div ng-repeat="module in modules track by $index" class='module-box' ng-if="moduleRecentlyVisited($index).month">
+     <dashboard-module index="{{$index}}" timeframe="month" arialevel=1 ariasetsize="{{modulesSetSize}}" modid="{{module.id}}"/>
+   </div>
+   <div class="recent-section" ng-show='anyModuleRecentlyVisited().ever'>Since you started<span ng-show='anyModuleRecentlyVisited().ever'> ({{timeSpentHM.own.ever}}) </span></div>
+   <div ng-repeat="module in modules track by $index" class='module-box' ng-if="moduleRecentlyVisited($index).ever">
+     <dashboard-module index="{{$index}}" timeframe="ever" arialevel=1 ariasetsize="{{modulesSetSize}}" modid="{{module.id}}"/>
+   </div>
+   <div  class="recent-section" ng-show='!anyModuleRecentlyVisited().week && !anyModuleRecentlyVisited().month && !anyModuleRecentlyVisited().ever'>You have not yet worked in any mini-lesson.</div>
+ </div>
+

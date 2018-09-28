@@ -1,0 +1,117 @@
+<html>
+  <head>
+      <link href="//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link href="../../docs/common_css/picture-it.css" rel="stylesheet" type="text/css">
+      
+    <script>
+	  var currentPage = 1;
+	  function showNext() {
+        currentPage = currentPage + 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage-1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+
+	  }
+	  function showPrev() {
+		currentPage = currentPage - 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage+1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+	  }      
+    </script>
+  </head>
+  <title>Understanding fractions</title>
+<body>
+
+    <div class="page" id="page1" style="display:block" >
+      <h1  tabindex="0"  class="page-header">Understanding fractions</h1><p/>
+      <img src="fractions_page1.gif" alt="An illustration shows a circular pizza pie.  If you ate 1 piece of pizza and your friend ate 2 pieces, who ate the most pizza?" >
+	  <p/>
+      <div>
+ 	    <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false" disabled> </button>
+	    <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">1 of 8</p>
+ 	  </div>
+    </div>
+
+    <div class="page" id="page2" >
+      <h1  tabindex="0"  class="page-header">Understanding fractions</h1><p/>
+      <img src="fractions_page2.gif" alt="An illustration shows 3 circular pizzas of the same size, cut into different numbers of pieces.  The first pizza is cut into 2 large pieces, the second pizza is cut into four smaller pieces, and the third pizza is cut into 8 pieces that are even smaller.  Who ate the most pizza depends on how big the slices were and how many slices were in each pizza.  1 piece of the first pizza is the same size as 2 pieces of the second pizza, and bigger than 2 pieces of the third pizza." >
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">2 of 8</p>
+	  </div>
+    </div> 
+
+    <div class="page" id="page3" >
+      <h1  tabindex="0"  class="page-header">Understanding fractions</h1><p/>
+      <img src="fractions_page3.gif" alt="An illustration shows 2 circular pizzas. The first pizza is cut into two pieces and the second pizza is cut into four pieces. If you ate 1 of 2 pieces from the first pizza and your friend ate 2 of 4 pieces from the second pizza, you ate the same amount." >
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">3 of 8</p>
+	  </div>
+    </div> 
+
+    <div class="page" id="page4" >
+      <h1  tabindex="0"  class="page-header">Using fractions to represent values</h1><p/>
+      <img src="fractions_page4.gif" alt="You can use a fraction to represent the amount of pizza you ate. An illustration shows that you ate 1 of 2 pieces, or 1 over 2, or one-half of one pizza. Your friend ate 2 of 4 pieces, or two over four, or two-fourths of the other pizza. You ate one half and your friend ate two fourths, but you ate the same amount of pizza.  These are called equivalent fractions because they represent the same amount." >
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">4 of 8</p>
+	  </div>
+    </div> 
+
+    <div class="page" id="page5" >
+      <h1  tabindex="0"  class="page-header">Writing equivalent fractions</h1><p/>
+      <img src="fractions_page5.gif" alt="You can write an equivalent fraction by multiplying the top, or numerator, and bottom, or denominator, of the fraction by the same number. An illustration shows two pizzas. The first has 1 out of 2, or one half of its slices missing. The other has 2 out of 4, or two fourths of its slices missing.  1 over 2 times 2 over 2 equals 1 times 2 over 2 times 2, or 2 over 4. The numerator and denominator are multiplied by the same value, 2. One half of one pizza and two fourths of another pizza are the same amount of pizza." >
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">5 of 8</p>
+	  </div>
+    </div> 
+
+    <div class="page" id="page6" >
+      <h1  tabindex="0"  class="page-header">Comparing fractions</h1><p/>
+      <img src="fractions_page6.gif" alt="To compare fractions with different denominators, write equivalent fractions with the same denominator. An illustration shows two pizzas with different amounts remaining. The first pizza has three fourths left, and the second pizza has five eighths left.  To compare three fourths and five eighths, multiply three-fourths by 2 over 2.  three fourths times 2 over 2 equals 3 times 2 over 4 times 2, or 6 over 8 or six eighths.  six eighths is more than five eighths, so three fourths must also be more than five eighths." >
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">6 of 8</p>
+	  </div>
+    </div> 
+
+    <div class="page" id="page7" >
+      <h1  tabindex="0"  class="page-header">Comparing fractions by converting to decimals</h1><p/>
+      <img src="fractions_page7.gif" alt="You can also convert fractions to decimals to compare them. Use a calculator to divide the fraction's numerator by its denominator. An illustration shows one pizza with three fourths remaining and another pizza with five eighths remaining.  Three fourths = 3 divided by 4 = 0.75.  Five eighths = 5 divided by 8 = 0.625.  Since 0.75 is greater than 0.625, three fourths is greater than five eighths." >
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">7 of 8</p>
+	  </div>
+    </div> 
+
+    <div class="page" id="page8" >
+      <h1  tabindex="0" class="page-header">Comparing fractions by reducing to lowest terms</h1><p/>
+      <img src="fractions_page8.gif" alt="You can also compare fractions by reducing them to lowest terms. Reduce a fraction to lowest terms by dividing the numerator and denominator by the same number. An illustration shows one pizza with six eighths remaining and another pizza with three fourths remaining.  6 over 8 divided by 2 over 2 = 6 divided by 2 over 8 divided by 2, or 3 over 4.  six eighths and three fourths represent the same amount of pizza."  >
+	  <p/>
+      <div>
+<button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false" disabled> </button>
+<p class="pager">8 of 8</p>
+	  </div>
+    </div>
+
+  </body>
+</html>

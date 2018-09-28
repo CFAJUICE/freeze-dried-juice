@@ -1,0 +1,41 @@
+<div class="modal-content game-modal-content {{gameNameClass}}">
+  <div class="juice-close close-btn gradient-btn" aria-hidden="true">
+    <img src="/images/close.png" width="100%" height="100%" ng-click="gameModal.close()">
+  </div>
+  <div class="header" style="z-index: 2;"  ng-show="!juiceGame.instructions && !juiceGame.feedback">
+    <div class="juice-close close-btn gradient-btn" aria-hidden="true">
+      <img src="/images/close.png" width="100%" height="100%" ng-click="gameModal.close()">
+    </div>
+    <div class="round-info num-rounds-{{::juiceGame.maxRounds}}">
+      <ul class="rounds full-round-count" ng-class="{'centered': !juiceGame.gameOptions.roundsRight, 'many-rounds':juiceGame.roundCountIterator.length > 6}">
+        <li class="round-title hide-if-small">
+          <div>Round</div>
+        </li>
+        <li ng-repeat="n in juiceGame.roundCountIterator" class="round-number" ng-class="{active: n == juiceGame.currentRound}">
+          <span>{{::n}}</span>
+          <span class="round-light on"></span>
+          <span class="round-light off"></span>
+        </li>
+      </ul>
+      <ul class="rounds short-round-count" ng-class="{'centered': !juiceGame.gameOptions.roundsRight, 'many-rounds':juiceGame.roundCountIterator.length > 6}">
+        <li class="active round-number">
+          <span>{{juiceGame.currentRound}}</span>
+          <span class="round-light on"></span>
+        </li>
+        <li class="round-title of">
+          /
+        </li>
+        <li class="round-number">
+          <span>{{juiceGame.roundCountIterator.length}}</span>
+          <span class="round-light off"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <juice-game>
+    <juice-game-splash></juice-game-splash>
+    <juice-game-instructions></juice-game-instructions>
+    <juice-gameplay></juice-gameplay>
+    <juice-game-feedback></juice-game-feedback>
+  </juice-game>
+</div>

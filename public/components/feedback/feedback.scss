@@ -1,0 +1,52 @@
+feedback {
+  #feedback-button {
+    border-radius: 5px 5px 0 0;
+    z-index: 1000;
+    position: fixed;
+    bottom: 67px;
+    background: $dashboard-dark-purple;
+    color: white;
+    padding: 3px 20px 23px 20px;
+    border: 1px solid $light-purple;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    left: -45px;
+    font-size:13px;
+  }
+
+  #feedback-form{
+    z-index: 1000;
+    height:200px;
+    width:405px;
+    position: fixed;
+    bottom: 0px;
+    background: $light-blue;
+    left: 0px;
+    padding: 1em;
+    color: white;
+    textarea{
+      border: none;
+      height: 100px;
+      width: 375px;
+      color:black;
+    }
+    #feedback-sent{
+      margin-top: 3em;
+      p {
+        font-size: 1.2em;
+      }
+    }
+    #feedback-submit, #feedback-dismiss{
+      float: right;
+      background: $dashboard-dark-purple;
+      border: none;
+    }
+    #feedback-close{
+      float: right;
+      position: relative;
+      top: -4px;
+    }
+  }
+}

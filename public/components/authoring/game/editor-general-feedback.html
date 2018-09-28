@@ -1,0 +1,37 @@
+<div class="form-group">
+  <h3 class="col-sm-5">Feedback</h3>
+
+  <div class="col-sm-7 edit-btns">
+    <button class="btn btn-primary" ng-click="content.add('feedback')"
+            ng-show="content.sections.feedback.editing && !content.customFeedbackAuthoring">Add
+    </button>
+    <button class="btn btn-primary" ng-click="content.toggleEdit('feedback')">
+      {{content.sections.feedback.editing ? 'Done' : 'Edit'}}
+    </button>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3">
+    Correct Feedback
+  </div>
+  <div class="col-sm-9">
+    <textarea class="form-control"
+              rows="6"
+              ng-model="content.round.general_correct" ng-readonly="!content.sections.feedback.editing">
+      {{content.round.general_correct}}
+    </textarea>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3">
+    Incorrect Feedback
+  </div>
+  <div class="col-sm-9">
+    <textarea class="form-control"
+              rows="6"
+              ng-model="content.round.general_incorrect" ng-readonly="!content.sections.feedback.editing">
+      {{content.round.general_incorrect}}
+    </textarea>
+  </div>
+</div>

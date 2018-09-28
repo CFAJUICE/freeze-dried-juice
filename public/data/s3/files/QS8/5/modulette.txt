@@ -1,0 +1,100 @@
+{
+  "title": "Conditional probability--NOT USED",
+  "name": "QS8.5.Conditional probability--NOT USED",
+  "subject": "math",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS8.5.Refresher_Conditional_probability"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "What are the chances?  Choose a scenario and work through interactive steps to learn to calculate probability when you know something about the outcome.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Summer picnic committee",
+          "title": "Can you guess your friend's selection?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.5.GuidedPractice1_Conditional_probability"
+          ]
+        },
+        {
+          "description": "Carnival games",
+          "title": "To come",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.5.GuidedPractice2_Conditional_probability"
+          ]
+        },
+        {
+          "description": "Carnival games",
+          "title": "To come",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.5.GuidedPractice3_Conditional_probability"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "What are the steps?",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "QS8.5.Challenge1_Conditional_probability_pickandstack"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Find the probability",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "QS8.5.Challenge2_Conditional_probability_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "More find the probability",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "QS8.5.Challenge3_Conditional_probability_quickpick"
+          ]
+        }
+      ]
+    }
+  ]
+}

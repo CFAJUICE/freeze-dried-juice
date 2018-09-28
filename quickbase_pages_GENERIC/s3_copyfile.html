@@ -1,0 +1,71 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+  
+  //var QBU_thisTableId = window.location.pathname;
+  var QBU_thisTableId =$.getUrlVar("tableid");
+
+  function copyFile() {
+            document.getElementsByTagName("form")[0].setAttribute("action", QBU_juiceDomain_s + 'juice/s3copy?sb=' + QBU_encryptedSecret() );
+            $("#form1").submit();
+   }
+
+
+
+ $(document).ready(function() {
+ $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+ $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+ QBU_deltaTime = QBU_serverTime - new Date().getTime();
+ loadSchemaThenExecute(function(){
+     
+     var fileName = $.getUrlVar('file');
+     fileName = fileName.replace(/\./g, "/");
+     $("#file").val(fileName);
+     var destBucket = $.getUrlVar("destbucket");
+     $("#destbucket").val(destBucket);
+     var sourceBucket = $.getUrlVar("sourcebucket");
+     $("#sourcebucket").val(sourceBucket);
+     var rid = $.getUrlVar("rid");
+     var date = $.getUrlVar("date");
+
+
+    var QBU_filesTableId = tableIdMapping["_dbid_files"];
+console.log(QBU_filesTableId);    
+    var QBU_editRecord = QBU_db_baseURL + QBU_filesTableId;
+
+    var editRecordCompleted = $.Deferred();
+
+    editRecordCompleted.promise().done(copyFile());
+
+     if (destBucket == 'qa') $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_date_to_qa:date}).done(editRecordCompleted.resolve()); //_fid_27
+     if (destBucket == 'prod') $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_date_to_prod:date}).done(editRecordCompleted.resolve()); //_fid_31
+
+     $('#message').html("<p>&nbsp;</p>Copying <b><i>" + fileName + "</i></b> from Dev bucket to QA bucket.");
+ });
+ });  
+ });
+ });	
+  </script>
+ </head>
+ <body>
+   <div id='message'></div>
+   <p/>
+
+   
+
+   <form id="form1"  method="post">
+    <input type="hidden" id="file" name="file" val=""/>
+    <input type="hidden" name="destbucket" id="destbucket" val=""/>
+    <input type="hidden" name="sourcebucket" id="sourcebucket" val=""/>
+  </form>
+
+   <div id='error'></div>
+ </body>
+</html>
+
+   
+

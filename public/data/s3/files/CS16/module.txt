@@ -1,0 +1,80 @@
+{
+  "description": "Do you want to refresh your paragraph writing skills?  Try exploring one of these mini-lessons for a quick review using an example about writing a letter to get your money back after a bad hotel experience. Or, try a round or two of the Challenge Wheel to check what you already know!",
+  "id": "CS16.paragraph",
+  "subtitle": "Getting your money back",
+  "title": "Writing a great paragraph",
+  "subject": "writing",
+  "challenge_widget_type": "highlighter_widget",
+  "record_id_": "1",
+  "dashboard_order": "10",
+  "challenge_wheel_available": "1",
+  "popup_title": "Build your paragraph writing skills!",
+  "popup_description": "Review and practice identifying audience and purpose, developing a topic sentence, and providing convincing details using mini-lessons about writing a complaint letter.",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "Complaining about an unforgettably terrible experience",
+      "title": "Getting started",
+      "record_id_": "1",
+      "modulettes": [
+        {
+          "id": "CS16.1.Pick the right paragraph type",
+          "description": "Who am I writing for and why?",
+          "link_text": "Decide on your audience and purpose"
+        },
+        {
+          "id": "CS16.2.Write a strong topic sentence",
+          "description": "What should my first sentence say?",
+          "link_text": "Write a strong topic sentence"
+        }
+      ]
+    },
+    {
+      "subtitle": "How bad was it?  All the gory details . . . ",
+      "title": "Building a paragraph",
+      "record_id_": "2",
+      "modulettes": [
+        {
+          "id": "CS16.3.Add support",
+          "description": "What kind of details will help me communicate my ideas?",
+          "link_text": "Add support"
+        },
+        {
+          "id": "CS16.4.Stick to the topic",
+          "description": "I have lots of ideas.  Should I include them all?",
+          "link_text": "Stick to the topic"
+        },
+        {
+          "id": "CS16.5.Connect sentences",
+          "description": "How can I organize my sentences to make them easy to understand?",
+          "link_text": "Connect sentences"
+        }
+      ]
+    },
+    {
+      "subtitle": "This complaint needs work",
+      "title": "Perfecting the message",
+      "record_id_": "4",
+      "modulettes": [
+        {
+          "id": "CS16.6.Make sure the parts work together",
+          "description": "Revise and rewrite!  What should I be looking for?",
+          "link_text": "Make sure the parts work together"
+        }
+      ]
+    },
+    {
+      "subtitle": "A paragraph is not enough!",
+      "title": "Writing something longer",
+      "record_id_": "35",
+      "modulettes": [
+        {
+          "id": "CS16.7.Body paragraphs for an essay",
+          "description": "How should my paragraph look as part of an essay? ",
+          "link_text": "Body paragraphs for an essay"
+        }
+      ]
+    }
+  ]
+}

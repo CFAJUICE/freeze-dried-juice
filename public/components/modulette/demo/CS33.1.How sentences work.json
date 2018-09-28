@@ -1,0 +1,34 @@
+{
+  "title": "How sentences work",
+  "name": "CS33.1.How sentences work",
+  "tabs": [
+    {
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "widget_name": "refresher_widget",
+          "description": "Refresher Tab Widget",
+          "files": [
+            "CS33.1.Refresher_How_sentences_work"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "widget_name": "guided_practice_widget",
+          "description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.1.GuidedPractice1_How_sentences_work"
+          ]
+        }
+      ]
+    }
+  ]
+}

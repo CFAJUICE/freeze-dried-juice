@@ -1,0 +1,1 @@
+{"general":{"name":""},"splash":{"image":""},"instructions":{"context":"","instructions":"","tip":"","image":""},"content":{"number_rounds":1,"rounds":[{"id":"0ce11915-a1b1-3ddd-01e8-ee96ca3fdd10","values":[],"answers":[{"$$hashKey":"object:18"}],"feedback":[{}],"instructions":{"align":"center"},"prompt":{"align":"center"}}]},"review":{"feedbackType":""}}

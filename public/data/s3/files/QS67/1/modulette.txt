@@ -1,0 +1,104 @@
+{
+  "title": "Deciding what math to use",
+  "name": "QS67.1.Deciding what math to use",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "32",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS67.1.Refresher_Deciding_what_math_to_use"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to find what math to use to solve problems.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Is Giganto-Mart membership worth it?",
+          "title": "Joining the club",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS67.1.GuidedPractice1_Deciding_what_math_to_use"
+          ]
+        },
+        {
+          "description": "Join Jalyn's Gym or pay for each visit?",
+          "title": "Fitness fanatic",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS67.1.GuidedPractice2_Deciding_what_math_to_use"
+          ]
+        },
+        {
+          "description": "What are the costs of a shared beach condo?",
+          "title": "Splitting the bill",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS67.1.GuidedPractice3_Deciding_what_math_to_use"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "What are you going to spend?  Setting up the math problem\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "QS67.1.Challenge1_Deciding_what_math_to_use_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Problem-solving breakthrough!  Pick the next step\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "QS67.1.Challenge2_Deciding_what_math_to_use_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Pick the right math expression and find the cost ",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "QS67.1.Challenge3_Deciding_what_math_to_use_perfectword"
+          ]
+        }
+      ]
+    }
+  ]
+}

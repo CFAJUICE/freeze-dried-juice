@@ -1,0 +1,70 @@
+<div ng-controller='refresherCtl' class="refresher-container" >
+ 
+ <div class="progress-dots" style="position:fixed; top:175px; left:0px; width:60px;">
+   <div  style="margin:0px auto 10px; text-align:center" ng-show="lclData.allowExpandAll" ><img width="34" height="56" src="/images/see_all_final.png" aria-label="Display all steps" role="complementary" ng-click="expandAll()"> </div>
+   <ju-dots>Progress Dots Directive</ju-dots>
+ </div>
+ <div ng-repeat="step in lclData.steps track by $index">
+ <div ng-class="lclData.stripes[$index]" id="{{ 'step_' + $index }}">
+   <div tabindex=0 id="{{ 'step_' + $index + '_screenreader'}}" class="screen-reader-only" ng-show='step.settings.showStep && $index > 0 && lclData.steps[$index-1].settings.showNextAccess'>Press tab to continue,&nbsp;</div>
+   <div  class="row fadein"  ng-show='step.settings.showStep && step.settings.showHeader' style="padding-top:1px; padding-bottom:1px; font-weight:bold" tabindex=0>
+      <div id="{{ 'step_' + $index + '_hdr'}}" class="col-sm-12 ju-header-bar"  ng-bind-html="fixupHeader(step.headerText)"  role="heading"></div>
+   </div>
+
+   <div class="row fadein" ng-show='step.settings.showStep'>
+       <div ng-class="(programValues.modulette.hide_sub_audio || moduletteData.hide_sub_audio==='1') ? 'not-visible' : 'visible'" class="col-sm-1 audio-image-container" style="z-index:100">
+	           <img src="/images/audio_guy.png" id="{{ 'audio_' + $index }}" ng-show="audioguyIdle($index)" ng-click="playNarration($index)" style="float:left; margin-right:5px" aria-label="Play or pause audio version of content, toggle">
+	           <img src="/images/audio_guy_inprogress.png" id="{{ 'audioprog_' + $index }}" ng-show="audioguyPlaying($index)" ng-click="playNarration($index)" style="float:left; margin-right:5px" aria-label="Play or pause audio version of content, toggle">
+			   <img src="/images/audio_guy_paused.png" id="{{ 'audiopause_' + $index }}" ng-show="audioguyPaused($index)" ng-click="playNarration($index)" style="float:left; margin-right:5px" aria-label="Play or pause audio version of content, toggle">
+     </div>
+	 <div   ng-class="{'left-panel':true, 'col-sm-6':!step.settings.hideRightPanel, 'col-sm-11':step.settings.hideRightPanel, 'full-whiteboard':step.settings.fullWhiteboard}"  > 
+	     <div ng-class="{'jumbotron':step.settings.fullWhiteboard}" ng-style="whiteboardStyle(step.settings.fullWhiteboard)" tabindex=0>
+		   <div  bind-html-compile="step.leftText"  ></div>  
+		   <div  class="screen-reader-only" ng-hide="hasListOnMac(step.leftText)">End of content area</div>
+		 </div>
+	 </div>
+
+	 <div class="col-sm-5 fadein right-panel" style="padding-left: 25px; padding-right:25px; ">
+         <div class="jumbotron fadein" style="padding-left:30px; padding-right:30px" ng-hide="step.settings.hideRightPanel">
+		   <div class="fadein" tabindex=0>
+		      <div ng-class="{'ju-hidden': !lclData['delayRight'+$index]}" bind-html-compile="step.rightText"  ></div>
+		      <div  class="screen-reader-only" ng-hide="hasListOnMac(step.rightText)">End of content area</div>
+		   </div>
+		 </div>
+	 </div>
+   </div>
+
+   <div class="row fadein"  ng-show="step.settings.showStep && step.settings.showNext  && (step.settings.hideRightPanel || lclData['delayRight'+$index])" style="padding-top:0px; padding-bottom:10px">
+       <div class="col-sm-12" style="text-align:center">
+           <img class="next-button" src="/images/next_arrowN.png" ng-show="$first" ng-click='next($index)'aria-label="next step" tabindex=0 />
+           <img class="next-button" src="/images/next_arrow.png" ng-hide="$first" ng-click='next($index)' aria-label="next step" tabindex=0 />
+       </div>
+   </div>
+
+ </div>
+ </div>
+
+ <div ng-class="lclData.lastStepColor">
+ <div class="row" ng-show='lclData.lastRefresherStep' >  
+     <div class="col-sm-1" style="padding-left:25px"><img src="/images/audio_guy.png" ng-show="false" ng-click="playNarration('lastStep')" style="float:left"/></div>
+     <div class="col-sm-10"> 
+		   <div class="fadein"  style="text-align:center; padding-top: 10px" tabindex=0>
+		       <!--div class="ju-header2">All set with <i>{{lclData.objective}}</i>?</div-->
+			   <div id="laststep" tabindex=0 class="ju-header2">All set?   Or need some practice?</div>
+			   <div> 
+			        <img src="/images/guided_practice1.png" ng-click='gotoGP()' aria-label="Do a step-by-step try it"/>&nbsp;&nbsp;
+					<img src="/images/quick_challenge.png" ng-click='gotoOC()' aria-label="Play a quick challenge game"/>
+			   </div>
+			   <p>&nbsp; </p>
+			   <div class="ju-link" ng-click='gotoML()'>Choose a different mini-lesson</div>
+			   <p>&nbsp; </p>
+		   </div>
+	 </div>
+	 <div class="col-sm-1"></div>
+ </div> 
+ </div>
+ 
+
+&nbsp;
+ <a id="bottom"></a>
+</div>

@@ -1,0 +1,74 @@
+<html>
+  <head>
+      <link href="//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link href="../../docs/common_css/picture-it.css" rel="stylesheet" type="text/css">
+      
+    <script>
+	  var currentPage = 1;
+	  function showNext() {
+        currentPage = currentPage + 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage-1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+
+	  }
+	  function showPrev() {
+		currentPage = currentPage - 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage+1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+	  }      
+    </script>
+  </head>
+  <title>Subject-verb agreement</title>
+<body>
+
+    <div  class="page" id="page1" style="display:block">
+      <h1 tabindex=0 class="page-header">Subject verb agreement: Singular noun</h1><p/>
+      <img src="Tryit_subjectverbagreement_page1.gif" alt="Which form of the verb run should you use in this sentence? A tiger, blank, quickly.  Tiger is a singular noun and requires the singular form runs.  A tiger runs quickly.    Careful! Singular verbs end in s." >
+	  <p/>
+      <div>
+ 	    <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false" disabled> </button>
+	    <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">1 of 4</p>
+ 	  </div>
+    </div>
+
+        <div  class="page" id="page2" >
+      <h1 tabindex=0   class="page-header">Subject-verb agreement: Singular pronoun</h1><p/>
+      <img src="Tryit_subjectverbagreement_page2.gif" alt="Which form of the verb run should you use in this sentence? It, blank, quickly.  It is a singular pronoun and requires the singular form runs.  It runs quickly." >
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">2 of 4</p>
+	  </div>
+    </div> 
+
+<div  class="page" id="page3" >
+      <h1 tabindex=0   class="page-header">Subject-verb agreement: Plural noun</h1><p/>
+      <img src="Tryit_subjectverbagreement_page3.gif" alt="Which form of the verb run should you use in this sentence? Many tigers, blank, quickly.  Tigers is a plural noun and requires the plural form run.  Many tigers run quickly.    Careful! Plural verbs do not end in an s." >
+      <p/>
+      <div>
+          <button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false"> </button>
+<p class="pager">3 of 4</p>
+	  </div>
+    </div> 
+
+<div  class="page" id="page4" >
+      <h1 tabindex=0   class="page-header">Subject-verb agreement: Plural pronoun</h1><p/>
+      <img src="Tryit_subjectverbagreement_page4.gif" alt="Which form of the verb run should you use in this sentence? They, blank, quickly.  They is a plural pronoun and requires the plural form run.  They run quickly.    They is a plural pronoun even though it does not end in s." >
+      <p/>
+      <div>
+<button class="previous-button" aria-label="Previous" alt="Previous" onclick="showPrev(); return false"> </button>
+          <button class="next-button" aria-label="Next" alt="Next" onclick="showNext(); return false" disabled> </button>
+<p class="pager">4 of 4</p>
+	  </div>
+    </div> 
+
+   
+  </body>
+</html>

@@ -1,0 +1,43 @@
+/*
+ * WARNING: Do not edit main.css. It is generated from main.scss
+ *
+ * main.scss
+ * this is the file which contains all the scss includes for the site
+ * Don't do any style definitions here
+ */
+
+@import "variables";
+@import "site";
+@import "header";
+
+/* components */
+@import "components/tabs/tabs.scss";
+@import "components/module/module.scss";
+@import "components/modulette/modulette.scss";
+@import "components/audio-controller/audio-controller.scss";
+@import "components/breadcrumbs/breadcrumbs.scss";
+@import "components/topnav/topnav.scss";
+@import "components/home/home.scss";
+@import "components/progress/progress.scss";
+@import "components/tooltip/tooltip.scss";
+@import "components/dashboard/dashboard.scss";
+@import "components/walkthrough-tooltip/walkthrough-tooltip.scss";
+@import "components/help/help.scss";
+@import "components/common-modal/common-modal.scss";
+@import "components/search/search.scss";
+@import "components/feedback/feedback.scss";
+@import "components/try-it-report/try-it-report.scss";
+@import "components/author-program/author-program.scss";
+@import "components/ferpa/ferpa.scss";
+@import "components/social-modal/social-modal.scss";
+@import "components/cookie-notice/cookie-notice.scss";
+@import "components/scaleable-game/scaleable-game.scss";
+
+/* widgets */
+@import "widgets/fix_it_widget/fix_it_widget.scss";
+
+/* other */
+@import "javascripts/game/templates/feedback.scss";
+@import "javascripts/game/game-styles.scss";
+@import "static-page";
+@import "bower_components/datetimepicker/jquery.datetimepicker.css";

@@ -1,0 +1,56 @@
+{
+  "description": "Are citations driving you crazy? Get help on documenting your sources by exploring mini-lessons using examples from a family history project. Or, start with the Challenge Wheel game to check what you already know!",
+  "id": "JCS100.citations",
+  "subtitle": "Writing a family history",
+  "title": "Mastering citations",
+  "subject": "writing",
+  "challenge_widget_type": "finders_keepers_widget",
+  "record_id_": "11",
+  "dashboard_order": "4",
+  "challenge_wheel_available": "1",
+  "popup_title": "Cite your sources with confidence!",
+  "popup_description": "Are citations driving you crazy?  Get a clear understanding of how to document sources using mini-lessons with examples about a family history project.",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "What source information does your family need?",
+      "title": "Why and when to cite your sources",
+      "record_id_": "39",
+      "modulettes": [
+        {
+          "id": "JCS100.1.Why documenting sources matters",
+          "description": "I'm writing a history for my own family!  Why should I document my sources?",
+          "link_text": "Why documenting sources matters"
+        },
+        {
+          "id": "JCS100.2.When to cite sources",
+          "description": "Does everything I write need a citation?",
+          "link_text": "When to cite sources"
+        },
+        {
+          "id": "JCS100.3.Including many sources in a paragraph",
+          "description": "I have my own ideas and a lot of sources!  How do I put it all together?",
+          "link_text": "Using many sources in a paragraph"
+        }
+      ]
+    },
+    {
+      "subtitle": "Successfully citing your family history sources",
+      "title": "\"How to\" guides for citations and references--APA style",
+      "record_id_": "41",
+      "modulettes": [
+        {
+          "id": "JCS100.4.Basic rules for documenting sources",
+          "description": "One author, two authors. . .?  How should I format my citations and reference list?",
+          "link_text": "Basic rules for documenting sources"
+        },
+        {
+          "id": "JCS100.5.Finding citation and reference details",
+          "description": "I can't find the information I need for my reference list entry!",
+          "link_text": "Finding citation and reference details"
+        }
+      ]
+    }
+  ]
+}

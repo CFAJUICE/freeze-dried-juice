@@ -1,0 +1,352 @@
+/*
+ * site.scss
+ *
+ * contains the general styles for the site that can be overridden for certain contexts
+ */
+
+@media (min-width: 768px){
+  .col-sm-2 {
+    width:initial;
+  }
+}
+
+
+@mixin with-count($n) {
+  @if $n == 1 {
+    &:first-child:nth-last-child(1) {
+      @content;
+    }
+  }
+  @else {
+    &:first-child:nth-last-child(#{$n}),
+    &:first-child:nth-last-child(#{$n}) ~ & {
+      @content;
+    }
+  }
+}
+
+
+.underlay {
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  top: 0px;
+  bottom: 0px;
+  height: 1000px;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: 50% 100px;
+  opacity: .5;
+}
+
+#loading {
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  top: 0px;
+  bottom: 0px;
+  height: 1000px;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: 50% 100px;
+  background-image: url(/images/spinner.gif);
+  opacity: .5;
+  &.loading-module{
+    opacity: .8;
+    background-image: url(/components/module/images/challenge_wheel_animated.gif);
+  }
+}
+
+.not-visible{
+  visibility: hidden;
+}
+.relative{
+  position:relative;
+}
+
+.table{
+  display:table;
+}
+.table-row{
+  display:table-row;
+}
+.table-cell{
+  display:table-cell;
+}
+
+h1{
+  font-size:30px;
+  color:#025B5B;
+  font-weight:bold;
+}
+h2{
+  font-size:21px;
+  color:#025B5B;
+  font-weight:bold;
+}
+h3{
+  font-size: 18px;
+  color: #099EAD;
+}
+
+h1, h2, h3{
+  margin-top:3px;
+}
+body{
+  font-size:14px;
+  color:$text-gray;
+}
+
+a, .expando, a:hover, a:visited{
+  color:$link-color;
+}
+
+.link, .clickable, .expando, a{
+  cursor: pointer;
+}
+
+.ju-link {
+  color:$link-color;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration:underline;
+}
+
+.ju-colors, .ju-color-background{
+  background-color: $subject-default-color;
+  color: #FFFFFF;
+}
+
+.ju-tab {
+  height:66px;
+  width:193px;
+  background-color:$subject-default-tab-color;
+  display:inline-block;
+  border-radius: 5px  5px   0  0;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left:15px;
+}
+
+.ju-header-bar {  
+  line-height:110%;
+  font-size: 20px;
+  background-color: $subject-default-color;
+  color: #FFFFFF;
+  padding-left: 15px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.ju-color-text{
+  color:$subject-default-tab-color;
+}
+
+.ju-ruler {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $subject-default-color;
+}
+
+.ju-ruler-gray {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 1px 0px 0px 0px;
+  border-color: $medium-gray;
+}
+
+.ju-border {
+  border-color: $subject-default-color;
+}
+
+.subject-writing{
+  .ju-colors, .ju-color-background{
+    background-color:$subject-writing-color;
+  }
+  .ju-tab{
+    background-color:$subject-writing-tab-color;
+  }
+  .ju-color-text {
+    color: $subject-writing-tab-color;
+  }
+  .ju-header-bar, .tabs {
+    background-color:$subject-writing-color;
+  }
+  .ju-ruler, .ju-border {
+    border-color:$subject-writing-color;
+  }
+}
+
+.subject-math{
+  .ju-colors, .ju-color-background{
+    background-color:$subject-math-color;
+  }
+  .ju-tab{
+    background-color:$subject-math-tab-color;
+  }
+  .ju-color-text {
+    color: $subject-math-tab-color;
+  }
+  .ju-header-bar, .tabs {
+    background-color:$subject-math-color;
+  }
+  .ju-ruler, .ju-border {
+    border-color:$subject-math-color;
+  }
+}
+
+.subject-border-color{
+  border-style:solid;
+  border-width:4px;
+  border-color:$subject-default-color;
+  &.subject-math{
+    border-color:$subject-math-color;
+  }
+  &.subject-writing{
+    border-color:$subject-writing-color;
+  }
+  @media (max-width:$small-width){
+    border-width:2px;
+  }
+}
+
+
+
+
+
+
+
+.question-text{
+  color:#58595B;
+  font-weight:bold;
+}
+
+.chart-text{
+  font-size:14pt;
+  color:#552656
+}
+
+.big-continue{
+  clear:both;
+  background:$light-gray;
+  width:940px;
+  text-align:center;
+  padding:1em;
+}
+.goto-button, .juice-button{
+  border:none;
+  cursor: pointer;
+  background: $juice-purple;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding:1em;
+  width:200px;
+  text-align: center;
+  color: white;
+  display: inline-block;
+  .subtitle{
+    font-size:0.8em;
+    padding-bottom:0px !important;
+  }
+  &:disabled{
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.juice-button{
+  width: auto;
+}
+
+.force-scrollbar{
+  overflow-y:scroll;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  }
+}
+
+.header-body-separator {
+  clear: both;
+  height: 52px;
+  padding-left: 63px;
+  @media (max-width: $small-width){
+    padding-left:20px;
+  }
+  padding-top: 12px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+}
+.not-sure-help {
+  position: absolute;
+  font-size: 13px;
+  top: 18px;
+  left: 350px;
+}
+.not-sure-help a {
+  color: white;
+  text-decoration: underline;
+}
+
+.page-body {
+  background: $background-gray;
+  padding-top: 11px;
+  padding-left: 56px;
+  padding-right: 25px;
+  min-height:500px;
+}
+
+.circle-icon {
+  border: 8px solid #FFC00D;
+  width: 140px;
+  height: 140px;
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
+}
+
+feedback {
+  display:block;
+}
+ @media (max-width: $small-width) {
+    feedback{
+      display:none;
+    }
+    .progress-dots {
+      display:none;
+    }
+    .small-width-navbar {
+      position:static;
+    }
+ }
+
+.hide-if-user-is-touching{
+  display:block;
+}
+.show-if-user-is-touching{
+  display:none;
+}
+
+.user-is-touching{
+  .hide-if-user-is-touching{
+    display:none;
+  }
+  .show-if-user-is-touching{
+    display:block;
+  }
+}

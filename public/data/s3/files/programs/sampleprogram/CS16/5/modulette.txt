@@ -1,0 +1,103 @@
+{
+  "title": "Connect sentences",
+  "name": "CS16.5.Connect sentences",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS16.5.Refresher_Connect_sentences"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Practice adding smooth transitions to your writing by working through one of these interactive examples",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Letter of complaint to the Gravel Mountain Motel",
+          "title": "Bad, worse, and worst of all",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.5.GuidedPractice1_Connect_sentences"
+          ]
+        },
+        {
+          "description": "Facebook posting about the Downtown Street Fair",
+          "title": "Building excitement",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.5.GuidedPractice2_Connect_sentences"
+          ]
+        },
+        {
+          "description": "Contest entry for the <i>Worst cook in town.</i>",
+          "title": "What happened first?  Second? Third?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.5.GuidedPractice3_Connect_sentences"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about connecting sentences!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Which words are transition words?",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS16.5.Challenge1_Connect_sentences_finderskeepers"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Find the transition words",
+          "widget_name": "highlighter_widget",
+          "widget_description": "Select words and phrases",
+          "files": [
+            "CS16.5.Challenge2_Connect_sentences_highlighter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Fill in the blanks",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "CS16.5.Challenge3_Connect_sentences_perfectword\t"
+          ]
+        }
+      ]
+    }
+  ]
+}

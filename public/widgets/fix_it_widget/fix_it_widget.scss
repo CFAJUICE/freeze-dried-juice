@@ -1,0 +1,71 @@
+/* you have to add this to /main.scss to get it to compile */
+
+#fix_it-problem-text {
+  .answer-choice {
+    .original-answer{
+      font-weight: bold;
+    }
+    &:hover {
+      background-color: rgba(255, 255, 0, 0.3);
+      cursor: pointer;
+    }
+    &.unselectable:hover {
+      background-color: transparent;
+      cursor: default;
+    }
+    &.selected, &.edited {
+      background-color: rgba(255, 255, 0, 1)
+    }
+    &.correct-answer.show-correct-and-incorrect-selected {
+      background-color: #11ff11;
+    }
+
+    &.incorrect-answer.show-correct-and-incorrect-selected{
+      background-color: orange;
+      text-decoration: line-through;
+    }
+    display: inline-block;
+    position: relative;
+    .change-answer-textbox {
+      width: 120px;
+      padding: 0px;
+      color: black;
+      position: absolute;
+      right: 28px;
+    }
+
+    &.selected tooltip{
+      display:block;
+    }
+    .ok-button {
+      color: black;
+      padding: 0px;
+      width: 18px;
+      margin-top: 2px;
+      margin-left: 5px;
+      margin-right: -4px;
+      position: absolute;
+      right: 10px;
+    }
+    tooltip{
+      text-align: left;
+      display:none;
+      background-color:#0026A3;
+      opacity: 1;
+      padding: .1em;
+      padding-left: 11px;
+      padding-right: 11px;
+      min-width: 100px;
+      font-size: 15px;
+      left: -127px;
+      height: 30px;
+      top: -39px;
+      white-space: nowrap;
+      &:after, &:before{
+        border-top-color: #0026A3;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+
+}

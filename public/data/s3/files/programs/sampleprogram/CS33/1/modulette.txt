@@ -1,0 +1,103 @@
+{
+  "title": "How sentences work",
+  "name": "CS33.1.How sentences work",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS33.1.Refresher_How_sentences_work"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose an online news story and work through an interactive example on sentence structure basics.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "A new spin on the usual carwash fundraiser",
+          "title": "Putting on the dog!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.1.GuidedPractice1_How_sentences_work"
+          ]
+        },
+        {
+          "description": "Panicking and falling over in a neighborhood near you",
+          "title": "Fainting goats",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.1.GuidedPractice2_How_sentences_work"
+          ]
+        },
+        {
+          "description": "Is an exotic pet right for you?",
+          "title": "Exotic pets",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.1.GuidedPractice3_How_sentences_work"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Identify the main parts of sentences\n",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "CS33.1.Challenge1_How_sentences_work_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Read and highlight different sentence parts",
+          "widget_name": "highlighter_widget",
+          "widget_description": "Select words and phrases",
+          "files": [
+            "CS33.1.Challenge2_How_sentences_work_highlighter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Which sentences are complete?\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS33.1.Challenge3_How_sentences_work_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

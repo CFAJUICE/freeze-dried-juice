@@ -1,0 +1,44 @@
+{
+  "description": "This is a collection of mini-lessons that are helpful for authoring.",
+  "id": "D3.authoring",
+  "subtitle": "",
+  "title": "Authoring resources",
+  "subject": "math",
+  "challenge_widget_type": "",
+  "record_id_": "12",
+  "dashboard_order": "0",
+  "challenge_wheel_available": "0",
+  "popup_title": "Welcome to the authoring module",
+  "popup_description": "",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "",
+      "title": "Getting started with JUICE authoring",
+      "record_id_": "42",
+      "modulettes": [
+        {
+          "id": "D3.1.Making a mini-lesson",
+          "description": "Start here for an overview of the basics of JUICE authoring.",
+          "link_text": "Making a mini-lesson"
+        },
+        {
+          "id": "D3.2.Math library",
+          "description": "Looking for math DID YOU KNOWs and Picture it links?  Samples are in this mini-lesson.",
+          "link_text": "Math library"
+        },
+        {
+          "id": "D3.3.Authoring math notation",
+          "description": "Learn how to use Math JAX to build complex math expressions",
+          "link_text": "Authoring math notation"
+        },
+        {
+          "id": "D3.4.Authoring for screen readers",
+          "description": "Tips, examples, and recommendations for screen reader authoring",
+          "link_text": "Authoring for screen readers"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+.top-path-dashboard topnav #top-nav-right #nav-search-area{
+  #search-arrow, #search-arrow-text{
+    display:block;
+    @media (max-width:$small-width){
+      display:none;
+    }
+  }
+}
+
+topnav {
+  position: absolute;
+  z-index: 1000;
+  right: 0px;
+  top: 0px;
+  color: white;
+  padding: 1em;
+  padding: 0px;
+  bottom: 0px;
+  left: 0px;
+  @media (max-width: $small-width) {
+     position:static;
+  }
+  #site-logo {
+    vertical-align: middle;
+    line-height:200px;
+    margin-left: 24px;
+    max-width: 118px;
+    max-height: 100px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+
+    @media (max-width: $small-width) {
+      max-width: 97px;
+    }
+  }
+
+  #nav-site-logo{
+    float:left;
+  }
+
+  #top-nav-left{
+    & > div, & > a > div{
+      float:left;
+      margin-right:5px;
+    }
+  }
+  #top-nav-right{
+    position:absolute;
+    right:0px;
+    top:42px;
+    @media (max-width: $small-width) {
+      top:46px;
+    }
+    &> div{
+      float:right;
+      margin-left:20px;
+      position:relative;
+
+    }
+    #nav-display-name{
+      z-index:-1;
+      margin-right: 5px;
+      max-width: 21.4vw;
+      @media (max-width: $small-width){
+        z-index:1;
+        position: absolute;
+        top: -42px;
+        right: 73px;
+        white-space: nowrap;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin: 0px;
+        padding: 0px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+      }
+    }
+    #nav-logout{
+      @media (max-width: $small-width) {
+        position:absolute;
+        top: -42px;
+        right: 13px;
+      }
+      a {
+        color: #FCBF00;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: normal;
+      }
+      &.icon-circle:before {
+        font-size: 12px;
+        position: absolute;
+        top: 5px;
+        left: -21px;
+        color: #7C4F80;
+        @media (max-width: $small-width) {
+          display:none;
+        }
+      }
+    }
+
+    #nav-search-area{
+      position:relative;
+      margin-right:40px;
+      top:-2px;
+      #search-arrow{
+        display:none;
+        z-index: 1000;
+        position: absolute;
+        top: 20px;
+        right: 161px;
+        height: 51px;
+      }
+      #search-arrow-text{
+        display:none;
+        position: absolute;
+        font-size: 11px;
+        line-height: 1em;
+        width: 130%;
+        right: -89px;
+        top: 63px;
+      }
+
+    }
+  }
+
+  .nav-button{
+    cursor: pointer;
+    color:white;
+    width:75px;
+    height:100px;
+    background-repeat:no-repeat;
+    background-size: 35px 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:relative;
+    @media (max-width: $small-width) {
+        background-size: 15px 15px;
+        width:41px;
+        height:68px;
+        top: -15px;
+    }
+    .label{
+      position:absolute;
+      bottom:10px;
+      width:100%;
+      text-align: center;
+    }
+  }
+  #nav-home{
+    background-image:url("/components/topnav/images/home-icon.png");
+  }
+
+  #nav-help{
+    background-image:url("/components/topnav/images/help-icon.png");
+  }
+
+  #nav-roles{
+    margin-top:-6px;
+    font-size:0.8em;
+  }
+}
+
+
+.top-path-modulette topnav, .top-path-try-it-report topnav{
+  height:55px;
+  overflow: hidden;
+  #nav-site-logo {
+    #site-logo {
+      @media (max-width: $small-width) {
+        max-width:89px;
+        margin-top:21px;
+      }
+    }
+  }
+  #top-nav-left {
+    #nav-home{
+      margin-left: 28px;
+    }
+    .nav-button{
+      width:50px;
+      @media (max-width:$small-width){
+        width: 28px;
+      }
+      .label{
+        display:none;
+      }
+    }
+    & > div, & > a > div {
+      height: 61px;
+      margin-top: 8px;
+      background-size: 27px;
+      background-position-y: 6px;
+      @media (max-width: $small-width) {
+        background-size: 15px 15px;
+        top: 7px;
+        width: 26px;
+        left: -11px;
+      }
+    }    
+  }
+
+
+  #top-nav-right{
+    top:2px;
+    & > div{
+      margin-top: 15px;
+    }
+  }
+}

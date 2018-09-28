@@ -1,0 +1,195 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+
+  QBU_deltaTime = QBU_serverTime - new Date().getTime();
+
+        //var QBU_thisTableId = window.location.pathname;
+        var QBU_thisTableId = $.getUrlVar("tableid");
+        var keys = {};
+        window.addEventListener("keydown",
+                function (e) {
+                    keys[String.fromCharCode(e.keyCode)] = true;
+                    if (keys['L'] && keys['O']) {
+                        $("#preview_form").attr('action', 'http://127.0.0.1/juice/modulette/preview');
+                        $("#publish_form").attr('action', 'http://127.0.0.1/juice/s3save');
+                    }
+                }, false);
+
+
+        function initializeModulette(modulette_record) {
+            var modulette_remap = {
+                title: 'title',
+                name: 'modulette_name',
+                subject: 'subject',
+                hide_from_dashboard: 'hide_from_dashboard',
+                hide_audio: 'hide_audio',
+				record_id_: 'record_id_',
+                hide_sub_audio: 'hide_sub_audio'
+            };
+            modulette = remapRecord(modulette_record, modulette_remap);
+            if (!modulette.title) {
+                modulette.title = modulette.name.split('.').slice(-1)[0];//get last element after .
+            }
+            modulette.tabs = [];
+            return modulette;
+        }
+
+        function addTabs(modulette, tab_records) {
+            var remap = {tab_name: 'tab_name', tab_header: 'tab_header', tab_subheader: 'tab_subheader'};
+            console.log(tab_records, 'tab recordssssss');
+            tab_records.forEach(function (record, index) {
+                var tab_index = record.type.replace('tab', '') - 1;
+                var tab = {};
+                remapRecord(record, remap, tab);
+                modulette.tabs[tab_index] = tab;
+            });
+        }
+
+        //helper function - sets up and returns the reference to the track object in the modulette
+        function getAndInitializeTabAndTrackIndexes(modulette, record) {
+            var track_index = record.track_name.replace('Track ', '');
+            var tab_type = record.tab___type ? record.tab___type : record.track___tab___type;
+            var tab_index = tab_type.replace('tab', '') - 1;
+            var tabs = modulette.tabs;
+            if (!tabs[tab_index]) {
+                tabs[tab_index] = {};
+            }
+            tabs[tab_index].name = record.tab_name;
+            tabs[tab_index].id = makeStringIntoValidId(record.tab_name);
+            if (!tabs[tab_index].tracks) {
+                tabs[tab_index].tracks = [];
+            }
+            if (!tabs[tab_index].tracks[track_index]) {
+                tabs[tab_index].tracks[track_index] = {};
+            }
+            var track = tabs[tab_index].tracks[track_index];
+            return track;
+        }
+
+        function addTracks(modulette, track_records) {
+            var remap = {description: 'description', title: 'title', image: 'image'};
+            for (var key in track_records) {
+                var record = track_records[key];
+                var track = getAndInitializeTabAndTrackIndexes(modulette, record)
+                track = remapRecord(record, remap, track);
+            }
+        }
+
+        function addWidgetsToTracksInTabs(modulette, widget_records) {
+            var remap = {
+                widget_name: 'widget___name', widget_description: 'widget___description',
+            };
+            for (var key in widget_records) {
+                var record = widget_records[key];
+                var track = getAndInitializeTabAndTrackIndexes(modulette, record)
+                remapRecord(record, remap, track);
+            }
+        }
+
+        function addFilesToWidgets(modulette, file_records) {
+            for (var key in file_records) {
+                var file_record = file_records[key];
+                var file_name = file_record.file_name;
+                var track_index = file_record.track_name.replace('Track ', '');
+                var tab_name = file_record.tab_name;
+                //now fine matching widget
+                var tabs = modulette.tabs;
+                for (var i = 0; i < tabs.length; i++) {
+                    var tab = tabs[i];
+                    if (!tab || tab.name != tab_name) {
+                        continue;
+                    }
+                    var track = tab.tracks[track_index];
+                    if (!track.files) {
+                        track.files = [];
+                    }
+                    track.files.push(file_name);
+                }
+            }
+        }
+
+        function buildModulette(callback) {
+            var moduletteName = $.getUrlVar('name');
+            var modulette_query = "{modulette_name.EX.'" + moduletteName + "'}";
+            doQuery('_dbid_modulettes', modulette_query, function (modulettes) {
+                var modulette = initializeModulette(modulettes[0]);
+                doQuery('_dbid_tabs', modulette_query, function (tab_records) {
+                    addTabs(modulette, tab_records);
+                    doQuery('_dbid_tracks', modulette_query, function (track_records) {
+                        addTracks(modulette, track_records);
+                        doQuery("_dbid_widget_instances", modulette_query, function (widget_records) {
+                            addWidgetsToTracksInTabs(modulette, widget_records);
+                            doQuery("_dbid_files", modulette_query, function (file_records) {
+                                addFilesToWidgets(modulette, file_records);
+                                callback(modulette);
+
+                            })
+                        });
+                    });
+                });
+            });
+        }
+
+        //* MAIN *//
+        $(document).ready(function () {
+            $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function () {
+			$.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+			QBU_deltaTime = QBU_serverTime - new Date().getTime();
+                loadSchemaThenExecute(function mainCallbackAfterSchemaLoad() {
+                    var PP = programPrefix() ? programPrefix().split("/")[1] : "-";
+                    document.getElementById("preview_form").setAttribute("action", QBU_juiceDomain_s + 'juice/modulette/preview?sb=' + QBU_encryptedSecret() + '&program=' + PP);
+                    document.getElementById("publish_form").setAttribute("action", QBU_juiceDomain_s + 'juice/s3save?sb=' + QBU_encryptedSecret());
+                    buildModulette(function (modulette) {
+                        console.log('tabs:', modulette.tabs);
+                        for (var i = modulette.tabs.length - 1; i >= 0; i--) {  //remove null values (missing tabs)
+                            if (!modulette.tabs[i]) modulette.tabs.splice(i, 1);
+                        }
+                        console.log('tabs:', modulette.tabs);
+                        console.log('modulette:', modulette);
+                        $("#modstructure").val(JSON.stringify(modulette));
+                        $("#data").val(JSON.stringify(modulette, null, 2));
+                        var path = programPrefix() + $.getUrlVar('name').split('.').slice(0, -1).join('.');
+                        $("#fname").val(path + '.modulette');
+                        $("#link").val('/juice/modulette/' + $.getUrlVar('name') + '?program=' + PP);
+                        if (keys['S']) {
+                            return;//stop! do nothing
+                        }
+                        if ($.getUrlVar('publish')) {
+                             QBU_editRecord = QBU_db_baseURL + QBU_thisTableId;
+							 var date = $.getUrlVar("date");
+							 $.get(QBU_editRecord, {a: "API_editRecord", rid:modulette.record_id_, _fnm_publish_date_internal:date}).done(function(res) { 
+                                $("#publish_form").submit();
+                            });
+                        } else {
+                            $("#preview_form").submit();
+                        }
+                        ;
+
+                    });
+                });
+            });
+			});
+        });
+
+    </script>
+</head>
+<body>
+<div id='message'></div>
+<div id='error'></div>
+
+<form style="display: hidden" method="POST" id="preview_form">
+    <input type="hidden" id="modstructure" name="modstructure" value=""/>
+</form>
+
+<form style="display: hidden" method="POST" id="publish_form">
+    <input type="hidden" id="data" name="data" value=""/>
+    <input type="hidden" id="fname" name="fname" value=""/>
+    <input type="hidden" id="link" name="link" value=""/>
+</form>
+</body>
+</html>

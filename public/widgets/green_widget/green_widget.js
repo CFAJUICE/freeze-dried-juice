@@ -1,0 +1,1 @@
+angular.module('green_widget', ['angularWidget']);

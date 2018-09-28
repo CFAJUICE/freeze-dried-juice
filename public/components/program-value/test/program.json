@@ -1,0 +1,55 @@
+{
+    "logo":"https://duckduckgo.com/i/df2ff3d4.png",
+    "short_logo":"https://duckduckgo.com/i/df2ff3d4.png",
+    "show_help":true,
+    "help":{
+        "path": "S3_FILE_PATH/docs/help/help.html"
+    },
+    "breadcrumbs":{
+        "site_parent":{
+            "text":"College for Magic"
+        },
+        "site":{
+            "text":"Wizardry",
+            "icon_url":"/components/breadcrumbs/orange-icon.png",
+            "link":"/juice/"
+        }
+    },
+    "dashboard":{
+        "tabs":{
+            "coaches": {
+                "label":"Student activity magic report",
+                "header_not_visited":"This student has not yet to practic magic.",
+                "header_visited":"CAULDREN student activity report for:",
+                "hide":false
+            },
+            "modules": {
+                "label":"Magic Modules",
+                "header":"Learning Witchcraft Modules",
+                "hide":false
+            },
+            "recents": {
+                "label":"Recent Sorcery",
+                "header":"Recently Sorcery",
+                "hide":false
+            },
+            "goals": {
+                "label":"Eye of Newt",
+                "header":"Bubble Bubble Toil and Trouble",
+                "hide":false,
+                "group_goal_label":"Magic GOAL",
+                "group_project_label":"Magic PROJECT"
+            }
+        }
+    },
+    "module":{
+        "modal":{
+            "logo":"/images/juice_logo_large.png",
+            "show_learn_more":true,
+            "learn_more_link_label":"Learn more about hogwarts",
+            "learn_more_content_html":[
+                "<p>You have much to learn</p>"
+            ]
+        }
+    }
+}

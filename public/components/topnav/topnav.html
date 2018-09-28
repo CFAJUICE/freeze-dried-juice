@@ -1,0 +1,44 @@
+<div class="topnav" >
+    <span id="pagetitle" class="screen-reader-only" tabindex=0 > Juice Home </span> 
+    <a id="skiplink" href="#tab-modules" class="screen-reader-only" style="background-color:red; color:white; position:fixed; z-index:2000" tabindex=0 ng-focus="showSkipLink()" ng-blur="hideSkipLink()" ng-click="initRefresherTab()" role="complementary" aria-label="Skip Navigation"> Skip Navigation </a>
+    <div id="nav-site-logo" >
+        <a ng-if="!slim" href="/juice/" id="site-logo-link" tabindex=-1 role="none">
+            <img ng-show="programValues.done" ng-src="{{top_path == 'modulette' ? programValues.short_logo : programValues.logo}}" id="site-logo" aria-label="JUICE Home">
+        </a>
+        <span ng-if="slim" id="site-logo-link">
+            <img ng-show="programValues.done" ng-src="{{top_path == 'modulette' ? programValues.short_logo : programValues.logo}}" id="site-logo">
+        </span>
+    </div>
+    <div id="top-nav-left" ng-if="!slim" >
+        <a href="/juice/"  role="navigation" aria-label="JUICE Home" style="display:inline-block; color:white">
+            <div id="nav-home" class="nav-button" >
+                <div class="label" role="none">home</div>
+            </div>
+        </a>
+        <a href="/juice/help"  ng-if="!programValues.help.hide" aria-label="JUICE Help" style="display:inline-block; color:white">
+            <div id="nav-help" class="nav-button" >
+                <div class="label" role="none">help</div>
+            </div>
+        </a>
+    </div>
+    <div id="top-nav-right">
+        <div id="nav-search-area" ng-show="!slim" role="search">
+            <form method="post" ng-submit="searchButtonClick()" >
+                <input type="text" placeholder="Search" name="search" class="search-box" ng-model="searchBoxText" role="searchbox">
+                <img src="/components/topnav/images/search-banner-button.png" class="search-button" ng-click="searchButtonClick()" tabindex=-1>
+            </form>
+            <img src="/components/topnav/images/search-arrow.png" id="search-arrow">
+            <div id="search-arrow-text">
+                What are you looking for?
+            </div>
+        </div>
+        <div id="nav-logout" class="icon-circle">
+            <a href="/juice/logout-user" tabindex=0>logout</a>
+        </div>
+
+        <div id="nav-display-name"  ng-if="user_display_name">
+            {{user_display_name}}
+        </div>
+        <div id="nav-roles" style="display:none">{{user.roles}}</div>
+    </div>
+</div>

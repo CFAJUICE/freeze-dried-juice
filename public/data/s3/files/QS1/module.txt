@@ -1,0 +1,68 @@
+{
+  "description": "Do you need help with math problems using decimals, fractions, or percents? Try exploring one of these mini-lessons for a quick review of the basics using examples about home improvements. Or, try a round or two of the Challenge Wheel to check what you already know!",
+  "id": "QS1.basic_math",
+  "subtitle": "Adventures in home improvement",
+  "title": "Conquering decimals, fractions, and percents",
+  "subject": "math",
+  "challenge_widget_type": "balancer_widget",
+  "record_id_": "4",
+  "dashboard_order": "2",
+  "challenge_wheel_available": "1",
+  "popup_title": "Boost your basic math skills!",
+  "popup_description": "Explore mini-lessons for a quick review of decimals, fractions, percents and problem solving using examples about home improvements.",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "Flooring, carpet, and a new home office",
+      "title": "Decimals and percent",
+      "record_id_": "9",
+      "modulettes": [
+        {
+          "id": "QS1.1.Finding percentage",
+          "description": "What percentage of the total floor space of my house is my new home office?",
+          "link_text": "Finding percentage"
+        },
+        {
+          "id": "QS1.2.Percent of a number",
+          "description": "The landlord will pay 60% of the total cost for new carpet.  How much does he owe me?",
+          "link_text": "Percent of a number"
+        },
+        {
+          "id": "QS1.3.Percent increase",
+          "description": "How much did the cost of the flooring project increase from the contractor's original estimate?",
+          "link_text": "Percent increase"
+        },
+        {
+          "id": "QS1.4.Percent decrease",
+          "description": "How much did the cost of the flooring project decrease from the contractor's original estimate?",
+          "link_text": "Percent decrease"
+        }
+      ]
+    },
+    {
+      "subtitle": "Repainting the walls",
+      "title": "Fractions",
+      "record_id_": "10",
+      "modulettes": [
+        {
+          "id": "QS1.5.Multiplying fractions",
+          "description": " `2/3` of my painter's estimate should be for labor.  How much money is that?",
+          "link_text": "Multiplying fractions"
+        }
+      ]
+    },
+    {
+      "subtitle": "Paying contractors",
+      "title": "Turning words into math",
+      "record_id_": "11",
+      "modulettes": [
+        {
+          "id": "QS1.6.Writing math expressions",
+          "description": "I have two plumbers' estimates with different service fees and hourly rates.  Which one is cheaper?",
+          "link_text": "Writing math expressions"
+        }
+      ]
+    }
+  ]
+}

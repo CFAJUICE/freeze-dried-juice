@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "properties": {
+    "instructions": "instructions",
+    "content": {
+      "type": "object",
+      "description": "While there are mechanisms for extending and including in JSON Schema, I'm not using them here. Refer to each games folder and the schema.json file included there. You'll find out how each games content is structured there."
+    },
+    "review": "review"
+  },
+  "required": ["content", "instructions"],
+
+
+  "definitions": {
+    "instructions": {
+      "type": "object",
+      "properties": {
+        "instructions": "string",
+        "tip": "string",
+        "image": "string"
+      }
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "feedbackType": {
+          "type": "string",
+          "enum": ["confetti", "fireworks", "balloons"]
+        }
+      }
+    }
+  }
+}

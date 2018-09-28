@@ -1,0 +1,85 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+
+  
+
+
+  var QBU_thisTableId =$.getUrlVar("tableid");
+  var QBU_mode = $.getUrlVar("mode");
+  var QBU_selectedImages = [];
+  var QBU_modId, destBucket, sourceBucket, message;
+  var promiseArray = [];
+  var QBU_copyFail = true;
+  var QBU_editRecord;
+
+  function copyFile(fileName, copyCallback) {
+     var prom = $.ajax({
+         type: "POST",
+         url: QBU_juiceDomain_s + 'juice/s3copy?sb=' + QBU_encryptedSecret(),
+         processData: true,
+         data:{file: fileName, ftype: 'png', table: QBU_thisTableId, destbucket: destBucket, sourcebucket: sourceBucket}
+     }).done(copyCallback);
+	 promiseArray.push(prom);
+   }
+
+   function moduleCallback(res) {
+       $('#message').html(res); 
+   }
+
+   function all(arrayOfPromises) {
+    return $.when.apply($, arrayOfPromises).then(function() {
+        return arguments;
+    });
+}
+
+ $(document).ready(function() {
+ $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+ $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+ QBU_deltaTime = QBU_serverTime - new Date().getTime();
+ loadSchemaThenExecute(function(){
+	QBU_modId = $.getUrlVar('module');     
+    destBucket = $.getUrlVar("destbucket");
+    sourceBucket = $.getUrlVar("sourcebucket");
+    var rid = $.getUrlVar("rid");
+    var date = $.getUrlVar("date");
+	QBU_editRecord = QBU_db_baseURL + QBU_thisTableId;
+       
+     
+	if (QBU_mode == "module")  {
+	    var fileName = programPrefix() + QBU_modId.split('.')[0].replace(/\./g, "/") + '/module.txt';
+		var editRecordCompleted = $.Deferred();
+        editRecordCompleted.promise().done(copyFile(fileName, moduleCallback));
+	    $('#message').html("<p>&nbsp;</p>Copying <b><i>" + fileName + "</i></b>.");  
+        if (destBucket == 'qa') $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_copy_date_to_qa_internal:date}).done(editRecordCompleted.resolve()); 
+        if (destBucket == 'prod') $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_copy_date_to_prod_internal:date}).done(editRecordCompleted.resolve()); 
+    }
+    if (QBU_mode == "modulette")  {
+	    var modArr = QBU_modId.split('.');
+        var modPrefix = modArr[0] + "/" + modArr[1] + "/";
+	    var fileName = programPrefix() + modPrefix + 'modulette.txt';
+		var editRecordCompleted = $.Deferred();
+        editRecordCompleted.promise().done(copyFile(fileName, moduleCallback));
+	    $('#message').html("<p>&nbsp;</p>Copying <b><i>" + fileName + "</i></b>.");  
+        if (destBucket == 'qa') $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_copy_date_to_qa_internal:date}).done(editRecordCompleted.resolve()); 
+        if (destBucket == 'prod') $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_copy_date_to_prod_internal:date}).done(editRecordCompleted.resolve()); 
+    }
+
+ });
+ });  
+ });
+ });	
+  </script>
+ </head>
+ <body>
+   <div id='message'></div>
+   <p/>
+   <div style='margin-left:25px'><table id="table" style="max-width:800px; border-collapse:collapse"> </table></div>
+   <p/>
+   <div id='error'></div>
+ </body>
+</html>

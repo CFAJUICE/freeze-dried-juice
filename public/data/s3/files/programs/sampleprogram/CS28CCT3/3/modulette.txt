@@ -1,0 +1,104 @@
+{
+  "title": "Rebutting an argument",
+  "name": "CS28CCT3.3.Rebutting an argument",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "54",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS28CCT3.3.Refresher_Rebutting_an_argument"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a situation and work through interactive steps to rebut the argument.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Neighbor sues neighbor",
+          "title": "Esprit argues back",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.3.GuidedPractice1_Rebutting_an_argument"
+          ]
+        },
+        {
+          "description": "Family dispute over too much technology",
+          "title": "Your nephews have their say\n",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.3.GuidedPractice2_Rebutting_an_argument"
+          ]
+        },
+        {
+          "description": "Year-round school proposal",
+          "title": "People in the community disagree",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.3.GuidedPractice3_Rebutting_an_argument"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about rebutting an argument!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Rebut a piece of evidence ",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS28CCT3.3.Challenge1_Rebutting_an_argument_quickpick\t"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Arguments and rebuttals!  Which goes with which?\n",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "CS28CCT3.3.Challenge2_Rebutting_an_argument_stacker"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Construct your own rebuttal",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS28CCT3.3.Challenge3_Rebutting_an_argument_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

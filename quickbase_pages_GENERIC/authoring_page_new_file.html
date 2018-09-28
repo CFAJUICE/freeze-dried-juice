@@ -1,0 +1,60 @@
+<html>
+ <head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+<script>
+
+  //var QBU_thisTableId = window.location.pathname;
+  var QBU_thisTableId =$.getUrlVar("tableid");
+  
+
+
+  $(document).ready(function() {
+  $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+  $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+  QBU_deltaTime = QBU_serverTime - new Date().getTime();
+  loadSchemaThenExecute(function(){
+     var widgetName = $.getUrlVar('name');
+     var fileRef = $.getUrlVar('fileRef');
+	 var refKey = $.getUrlVar('refKey');
+
+	 var QBU_filesTableId = tableIdMapping["_dbid_files"];
+	 
+      $( "#update-btn" ).click(function() {
+        var fname = $("#fname").val().replace(/ /g, "_");
+        if (QBU_isProgramCopy){
+             if (fname.indexOf("programs." + QBU_programId + ".") < 0) {
+	              fname = programPrefix(".") + fname;
+             }  
+	    }
+
+		var QBU_addRecord = QBU_db_baseURL + QBU_filesTableId;
+	    $('#message').html("Adding Record...");
+		$.get(QBU_addRecord, {a: "API_AddRecord", _fnm_related_widget_instance: refKey, _fnm_file_name: fname})// _fid_7, _fid_6
+		 .done(function(result){
+console.log(result);
+                 var el = $(result).find("rid")[0];
+		 var rid = $(el).text();
+                 window.location.replace(QBU_juiceDomain + 'juice/author/' + widgetName + '/-/' + fname + '?' + QBU_secretHandshake + '&tableid=' + QBU_addRecord + '&rid=' + rid + '&sb=' +QBU_encryptedSecret());
+         });
+	  })
+   });
+   });  
+   });
+   });	
+  </script>
+ </head>
+ <body>
+
+     <p/>
+     File name:
+     <p/><input id="fname" type="text" size="120"/>
+    <p/> <input id="update-btn" type="button" value="submit"/>
+   <p> </p>
+   <p/>
+   <div id='message'></div>
+
+ </body>
+</html>

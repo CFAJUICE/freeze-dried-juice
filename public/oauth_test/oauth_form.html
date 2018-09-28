@@ -1,0 +1,170 @@
+<html>
+<head>
+    <script>
+        var user_group = 'USER_GROUP';
+        var pilot = 'PILOT';
+    </script>
+    <script src="../../bower_components/oauth-signature/dist/oauth-signature.js"></script>
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <script>
+        var consumer_secret = 'CONSUMER_SECRET';
+    </script>
+    <script src="../../oauth_test/oauth_test.js"></script>
+    <link rel="stylesheet" href="../../oauth_test/oauth_test.css"/>
+    <link rel="stylesheet" href="/form.css"/>
+</head>
+<body>
+<div id="page-oauth-form" style="display:none">
+<form method="post" id="oauth_form" action="/juice/process_oauth" target="_logged_in_window">
+
+    <p id="debug-container">
+        <label>
+            Debug oauth process
+        </label>
+        <input type="checkbox" value="true" name="debug">
+    </p>
+
+    <div id="user_configs" style="clear:both">
+        <p id="user_config_buttons">
+        </p>
+        <p>
+            <label>
+                &nbsp;
+            </label>
+            <input type="submit">
+        </p>
+    </div>
+
+
+    <fieldset>
+        <div id="params">
+        <legend>Oauth parameters <span class="small-button" id="add-parameter">&plus;</span></legend>
+
+
+        <div id="new-params">
+        </div>
+
+        <p class="clear:both"><label>custom_program_key</label><input type="text" id="custom_program_key" name="custom_program_key"
+                                                   value="AAGS"></p>
+
+        <p ><label>custom_target_id</label><input type="text" id="custom_target_id" name="custom_target_id"
+                                                 value=""></p>
+
+        <p><label>resource_link_id</label><input type="text" id="resource_link_id" name="resource_link_id"
+                                                 value=""></p>
+
+
+        <p><label>custom_source</label><input type="text" id="custom_source" name="custom_source"
+                                                 value=""></p>
+
+
+
+        <p><label>context_id</label><input type="text" id="context_id" name="context_id" value="juicetestaccount"></p>
+
+        <p><label>lis_person_contact_email_primary</label><input type="text" id="lis_person_contact_email_primary"
+                                                                 name="lis_person_contact_email_primary"
+                                                                 value="aj bahcmcom@collegeforamerica.org"></p>
+
+        <p><label>lis_person_name_family</label><input type="text" id="lis_person_name_family"
+                                                       name="lis_person_name_family" value="Smith"></p>
+
+        <p><label>lis_person_name_full</label><input type="text" id="lis_person_name_full" name="lis_person_name_full"
+                                                     value="John Smith"></p>
+
+        <p><label>lis_person_name_given</label><input type="text" id="lis_person_name_given"
+                                                      name="lis_person_name_given" value="John"></p>
+
+        <p><label>roles</label><input type="text" id="roles" name="roles" value="Student"></p>
+        <p id="user-id-container"><label>user_id</label><input type="text" id="user_id" name="user_id" value="003E0000010HLeuIAG"></p>
+
+        <p><label>context_label</label><input type="text" id="context_label" name="context_label" value="assignment">
+        </p>
+
+        <p><label>context_title</label><input type="text" id="context_title" name="context_title" value="assignment">
+        </p>
+
+        <p><label>custom_programid</label><input type="text" id="custom_programid" name="custom_programid"
+                                                     value="" placeholder="deprecated"></p>
+
+        <p><label>custom_juiceStatus</label><input type="text" id="custom_juicestatus" name="custom_juicestatus"
+                                                   value="true"></p>
+
+        <p><label>custom_studentId</label><input type="text" id="custom_studentid" name="custom_studentid"
+                                                 value=""></p>
+
+        <p><label>custom_JUICEgroup</label><input type="text" id="custom_JUICEgroup" name="custom_JUICEgroup"
+                                                  value=""></p>
+
+
+        <p><label>launch_presentation_document_target</label><input type="text" id="launch_presentation_document_target"
+                                                                    name="launch_presentation_document_target"
+                                                                    value="frame"></p>
+
+        <p><label>launch_presentation_locale</label><input type="text" id="launch_presentation_locale"
+                                                           name="launch_presentation_locale" value="en-US"></p>
+
+        <p><label>lis_person_sourcedid</label><input type="text" id="lis_person_sourcedid" name="lis_person_sourcedid"
+                                                     value="S3294476"></p>
+
+        <p><label>lti_message_type</label><input type="text" id="lti_message_type" name="lti_message_type"
+                                                 value="basic-lti-launch-request"></p>
+
+        <p><label>lti_version</label><input type="text" id="lti_version" name="lti_version" value="LTI-1p0"></p>
+
+        <p><label>oauth_callback</label><input type="text" id="oauth_callback" name="oauth_callback"
+                                               value="about:blank"></p>
+
+        <p><label>oauth_consumer_key</label><input type="text" id="oauth_consumer_key" name="oauth_consumer_key"
+                                                   value="jcx5yvvq2y2s1wcqixquukaxj3_test"></p>
+        <p><label>
+            tool_consumer_instance_guid
+        </label><input type="text" id="tool_consumer_instance_guid"
+                       name="tool_consumer_instance_guid" value="oauth_test_page.juiceyourskills.com">
+
+
+        <p><label>oauth_nonce (generated)</label><input type="text" id="oauth_nonce" name="oauth_nonce"
+                                                        value="generated" readonly=""></p>
+
+        <p><label>oauth_signature (generated)</label><input type="text" id="oauth_signature" name="oauth_signature"
+                                                            value="generated" readonly=""></p>
+
+        <p><label>oauth_signature_method</label><input type="text" id="oauth_signature_method"
+                                                       name="oauth_signature_method" value="HMAC-SHA1"></p>
+
+        <p><label>oauth_timestamp (generated)</label><input type="text" id="oauth_timestamp" name="oauth_timestamp"
+                                                            value="generated" readonly=""></p>
+
+        <p><label>oauth_version</label><input type="text" id="oauth_version" name="oauth_version" value="1.0"></p>
+
+
+        <p><label>consumer_secret : </label><input type="text" id="consumer_secret"
+                                                                name="consumer_secret">
+        </p>
+    </div>
+
+
+
+    <p id="submit-container">
+        <label style="color:red;font-weight:bold" id="consumer_secret_message">
+
+
+        </label>
+        <input type="submit" id="submit">
+    </p>
+    </fieldset>
+</form>
+
+<div id="generated_url_container">
+    <!--
+    <h3>Generated URL</h3>
+    <p>
+        <a href="" id="generated_url">http://test.com</a>
+    </p>
+-->
+    <p>
+        <button id="generate_new">Generate New Nonce and Sig</button>
+    </p>
+</div>
+</div>
+</body>
+</html>

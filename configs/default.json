@@ -1,0 +1,51 @@
+{
+  "NOTES":"Some configs are in /public/components/configs/configs.js",
+  "port":80,
+  "ssl_port":443,
+  "freeze_dried_juice":false,
+  "secret":"SETME TO RANDOM ALPHANUMERIC STRING",
+  "server_instance":"dev",
+  "db_name":"juice",
+  "aws_dev_file_bucket":"SETME - AWS BUCKET FOR DEV FILES",
+  "aws_qa_file_bucket":"SETME - AWS BUCKET FOR QA FILES",
+  "aws_prod_file_bucket":"SETME - AWS BUCKET FOR PROD FILES",
+  "aws_narration_bucket":"SETME - AWS BUCKET FOR NARRATION FILES",
+  "aws_region":"SETME - AWS REGION",
+  "aws_access_key_id": "SETME - NO ID SET",
+  "aws_secret_access_key": "SETME - NO KEY SET",
+  "force_social_login":false,
+  "ga_tracking_code":"UA-SETME TO YOUR GOOGLE TRACKING CODE",
+  "quickbase_decrypt_key":"mYXQ9CpT2hUksOx9LCSH",
+  "quickbase_decrypt_key2":"/PnnyYipMEbWqpBeHzTneA==",
+  "base_url":"//your.domain.com",
+  "base_file_resources": "$BASE_URL/data/s3/files/",
+  "base_file_resources_NOTE": "You can set base file resource TO AWS PATH",
+  "narration_file_resources": "$BASE_URL/data/s3/narrations/",
+  "social_login_access_codes":{"note":"this will be updated from s3"},
+  "janrain_api_key":"SETME for social login with janrain.com",
+  "qb_keys":{
+    "betsytoken1": "SETME to the quickbase user token"
+  },
+  "test_user_filters": {
+    "003E000001dhrPjIAI":"user_id",
+    "0030L00001lAK5rQAG":"user_id"
+  },
+  "oauth_test_users":[
+    {"username": "test", "password": "SETME test oauth user password", "group": "super"}
+  ],
+  "index_weights":{
+    "modules":{"search_title":6, "search_tags":10, "search_rubrics":6, "search_project_names":6, "search_project_goals":6},
+    "modulettes": {"search_group":5, "search_title":7, "search_tags":10, "search_rubrics":6},
+    "ancillary_files": {"search_title":6, "search_tags":10, "search_description":5}
+  },
+  "oauth_test_consumer_key":"jcx5yvvq2y2s1wcqixquukaxj3_test",
+  "oauth_consumer_key_mapping":{
+    "EXAMPLE_CONSUMER_KEY": {
+      "label":"Something to identify who this is",
+      "oauth_consumer_key":"What we are looking up by... repeated in object for easy access",
+      "oauth_consumer_secret":"2349fsdlfjosfsdfwuer"
+    }
+  },
+  "scaleable_games":[],
+  "deployed_scaleable_games":["highlighter"]
+}

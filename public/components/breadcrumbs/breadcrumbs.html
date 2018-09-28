@@ -1,0 +1,25 @@
+<div class="breadcrumbs ju-main-nav-bar-under" ng-if="!slim">
+    <div style="float:right;color:#411A41;">{{server_instance}}&nbsp;</div>
+    <div ng-if="service.show_breadcrumbs" ng-repeat="breadcrumb in breadcrumb_list" class="breadcrumb-element"
+         ng-class="{'icon-bread-crumb-sep':$index!=0, 'element-{{$index}}': 1==1}">
+		 <span ng-if="$index==0" class="screen-reader-only">Breadcrumb navigation:</span>
+        <a ng-if="breadcrumb.link" ng-href="{{breadcrumb.link}}">
+             <span ng-if="breadcrumb.icon_url">
+                <img ng-if="!breadcrumb.fallback_icon_url" ng-src="{{breadcrumb.icon_url}}" class="icon" alt=""></img>
+                <span ng-if="breadcrumb.fallback_icon_url"><img-with-fallback src="breadcrumb.icon_url"
+                                                                              fallback="breadcrumb.fallback_icon_url"
+                                                                              imgclass="'icon'" alt=""></img-with-fallback></span>
+            </span>
+            {{breadcrumb.text}} <span ng-if="$index==1" class="screen-reader-only">Home</span>
+        </a> 
+        <span ng-class="breadcrumb-{{$index}}" ng-if="!breadcrumb.link" ng-href="{{breadcrumb.link}}" tabindex=0>
+            <span ng-if="breadcrumb.icon_url">
+                <img ng-if="!breadcrumb.fallback_icon_url" ng-src="{{breadcrumb.icon_url}}" class="icon" alt=""></img>
+                <span ng-if="breadcrumb.fallback_icon_url"><img-with-fallback src="breadcrumb.icon_url"
+                                                                              fallback="breadcrumb.fallback_icon_url"
+                                                                              imgclass="'icon'" alt=""></img-with-fallback></span>
+            </span>
+            {{breadcrumb.text}}
+        </span>
+    </div>
+</div>

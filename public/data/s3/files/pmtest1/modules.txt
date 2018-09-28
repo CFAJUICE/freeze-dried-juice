@@ -1,0 +1,120 @@
+[
+  {
+    "title": "What's the probability?",
+    "subtitle": "Planning the office summer picnic",
+    "id": "QS8.probability",
+    "goal": "Analyze Data",
+    "hide_from_dashboard": "0",
+    "competencies": [
+      "Can explain and apply basic concepts of statistics and probability"
+    ],
+    "dashboard_order": "6",
+    "modulettes": [
+      {
+        "name": "QS8.1.Mean, median, and mode",
+        "title": "Mean, median, and mode",
+        "id": "QS8.1",
+        "order": "1"
+      },
+      {
+        "name": "QS8.2.Introduction to probability",
+        "title": "Introduction to probability",
+        "id": "QS8.2",
+        "order": "2"
+      },
+      {
+        "name": "QS8.3.Basic probability",
+        "title": "Basic probability",
+        "id": "QS8.3",
+        "order": "3"
+      },
+      {
+        "name": "QS8.4.Probability with \"OR\"",
+        "title": "Probability with OR",
+        "id": "QS8.4",
+        "order": "4"
+      },
+      {
+        "name": "QS8.6.Compound probability",
+        "title": "Compound probability",
+        "id": "QS8.6",
+        "order": "5"
+      }
+    ],
+    "projects": []
+  },
+  {
+    "title": "Facing grammar fearlessly",
+    "subtitle": "Online magazine editor-in-chief",
+    "id": "CS33.grammar",
+    "goal": "Explore Writing",
+    "hide_from_dashboard": "0",
+    "competencies": [
+      "Can use standard syntax and sentence structure; correct spelling, punctuation, and capitalization; appropriate grammar (e.g., correct tense, subject-verb agreement, no missing words"
+    ],
+    "dashboard_order": "2",
+    "modulettes": [
+      {
+        "name": "CS33.1.How sentences work",
+        "title": "How sentences work",
+        "id": "CS33.1",
+        "order": "1"
+      },
+      {
+        "name": "CS33.2.Avoid run-on sentences",
+        "title": "Avoid run-on sentences",
+        "id": "CS33.2",
+        "order": "2"
+      },
+      {
+        "name": "CS33.3.Fix incomplete sentences",
+        "title": "Fix incomplete sentences",
+        "id": "CS33.3",
+        "order": "3"
+      },
+      {
+        "name": "CS33.4.Match subjects with the right verb form",
+        "title": "Subject-verb agreement",
+        "id": "CS33.4",
+        "order": "4"
+      },
+      {
+        "name": "CS33.5.Choose the right verb tense",
+        "title": "Choose the right verb tense",
+        "id": "CS33.5",
+        "order": "5"
+      },
+      {
+        "name": "CS33.6.Personal pronouns",
+        "title": "Personal pronouns",
+        "id": "CS33.6",
+        "order": "6"
+      },
+      {
+        "name": "CS33.7.Plurals, possessives, and plural possessives",
+        "title": "Plurals, possessives, and plural possessives",
+        "id": "CS33.7",
+        "order": "7"
+      },
+      {
+        "name": "CS33.8.Words that are easy to confuse",
+        "title": "Words that are easy to confuse",
+        "id": "CS33.8",
+        "order": "8"
+      },
+      {
+        "name": "CS33.9.When to use commas, semicolons, and colons",
+        "title": "When to use commas, semicolons, and colons",
+        "id": "CS33.9",
+        "order": "9"
+      },
+      {
+        "name": "CS33.10.When to use capital letters",
+        "title": "When to use capital letters",
+        "id": "CS33.10",
+        "order": "10"
+      }
+    ],
+    "projects": []
+  }
+]

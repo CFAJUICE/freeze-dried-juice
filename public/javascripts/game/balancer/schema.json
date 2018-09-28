@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "number_rounds": "integer",
+    "rounds": {
+      "type": "array",
+      "items": {
+        "type": "round"
+      }
+    }
+  },
+
+
+  "definitions": {
+    "round": {
+      "type": "object",
+      "properties": {
+
+      }
+    }
+  }
+}

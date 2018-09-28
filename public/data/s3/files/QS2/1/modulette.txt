@@ -1,0 +1,104 @@
+{
+  "title": "Calculating averages",
+  "name": "QS2.1.Calculating averages",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "67",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS2.1.Refresher_Calculating_averages"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to review how to calculate averages.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Estimating toy manufacturing capacity",
+          "title": "Big orders are coming!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS2.1.GuidedPractice1_Calculating_averages"
+          ]
+        },
+        {
+          "description": "Managing a healthy diet\n",
+          "title": "To snack or not to snack",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS2.1.GuidedPractice2_Calculating_averages"
+          ]
+        },
+        {
+          "description": "Building your personal expense budget",
+          "title": "How much do I spend?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS2.1.GuidedPractice3_Calculating_averages"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Choose the steps for calculating averages\n",
+          "widget_name": "pick_and_stack_widget",
+          "widget_description": "Pick and Stack game",
+          "files": [
+            "QS2.1.Challenge1_Calculating_averages_pickandstack"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Super editor!  Build an expression to find the average",
+          "widget_name": "fix_it_widget",
+          "widget_description": "Correct words and phrases",
+          "files": [
+            "QS2.1.Challenge2_Calculating_averages_fixit"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Work it out!  What's the average?\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "QS2.1.Challenge3_Calculating_averages_balancer"
+          ]
+        }
+      ]
+    }
+  ]
+}

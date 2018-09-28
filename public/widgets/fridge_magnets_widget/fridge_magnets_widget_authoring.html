@@ -1,0 +1,186 @@
+<div ng-controller="GameAuthoringCtrl as authoring" class="container game authoring">
+  <game-editor content-controller="GameContentCtrl as content">
+    <div ng-include="'/components/authoring/game/editor-header.html'"></div>
+
+    <div class="sections">
+        <div class="section">
+            <div ng-include="'/components/authoring/game/common-start.html'"></div>
+        </div>
+        <!-- Instructions -->
+        <div class="section">
+        <div class="form-group">
+          <h3 class="col-sm-2">Instructions</h3>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <textarea class="form-control" placeholder="Instructions" ng-model="content.round.instructions" rows="8"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-6">
+            <label>
+              <select class="form-control select-inline"
+                      ng-model="content.round.instructions_align"
+                      ng-init="content.round.instructions_align = content.round.instructions_align ? content.round.instructions_align : 'center'">
+                <option value="center">Center Align</option>
+                <option value="left">Left Align</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <br/>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <textarea class="form-control" placeholder="Example" ng-model="content.round.example" rows="8"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-6">
+            <label>
+              <select class="form-control select-inline"
+                      ng-model="content.round.example_align"
+                      ng-init="content.round.example_align = content.round.example_align ? content.round.example_align : 'center'">
+                <option value="center">Center Align</option>
+                <option value="left">Left Align</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Values -->
+      <div class="section">
+        <div class="form-group">
+          <h3 class="col-sm-2">Values</h3>
+
+          <div class="col-sm-10 edit-btns">
+            <button class="btn btn-primary" ng-click="content.toggleEdit('values')">
+              {{content.sections.values.editing ? 'Done' : 'Edit'}}
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+              <p class="help-block" style="clear:both">
+                <ul>
+                    <li>Surround phrases [With brackets]. Individual words not in brackets but seperate by spaces become individual magnets.</li>
+                    <li>Put alternate answers on new lines. Alternate answers must use all the same magnets as main answer.</li>
+                </ul>
+              </p>
+            <textarea placeholder="Values" class="form-control"
+                      style="height: 150px;"
+                      ng-model="content.round.values_content"
+                      ng-disabled="!content.sections.values.editing"
+                      ng-change="content.updateValues()">{{content.round.values_content}}</textarea>
+          </div>
+          <div class="col-sm-12" ng-repeat="values in content.round.value_sets">
+            <span ng-repeat="value in values" class="example-magnet">
+              {{value.content}}
+            </span>
+            <span class="error" style="color:red" ng-show="!content.arrayContentMatch(values, content.round.value_sets[0])">Warning: Does not match first entry.</span>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <!-- Distractors -->
+      <div class="section">
+        <div class="form-group">
+          <h3 class="col-sm-2">Distractors</h3>
+
+          <div class="col-sm-10 edit-btns">
+            <button class="btn btn-primary" ng-click="content.toggleEdit('distractors')">
+              {{content.sections.distractors.editing ? 'Done' : 'Edit'}}
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <textarea placeholder="Distractors" class="form-control"
+                      style="height: 150px;"
+                      ng-model="content.round.distractors_content"
+                      ng-disabled="!content.sections.distractors.editing"
+                      ng-change="content.updateDistractors()">{{content.round.distractors_content}}</textarea>
+          </div>
+          <div class="col-sm-12">
+            <span ng-repeat="value in content.round.distractors" class="example-magnet">
+              {{value.content}}
+            </span>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <!-- Feedback -->
+      <div class="section">
+        <div ng-include="'/components/authoring/game/editor-general-feedback.html'"></div>
+
+        <!-- Specific Feedback -->
+        <div class="form-group">
+          <div class="col-sm-12">
+            Specific Incorrect Feedback
+          </div>
+        </div>
+        <div class="form-group can-delete" ng-repeat="feedback in content.feedback">
+          <div class="col-sm-10">
+            <div class="row" ng-if="content.sections.feedback.editing">
+              <button class="btn btn-primary col-sm-3" ng-click="content.addCondition(feedback)"
+                      style="margin-bottom: 10px;">Add Answer
+              </button>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-4" ng-repeat="condition in feedback.conditions">
+                <select class="form-control" style="width: 70%;"
+                        ng-model="condition.content"
+                        ng-change="condition.content"
+                        ng-disabled="!content.sections.feedback.editing">
+                  <option></option>
+                  <!--<option ng-selected="condition.content == 'incorrect'" value="incorrect">Incorrect</option>-->
+                  <option ng-repeat="value in content.value_sets[0].concat(content.round.distractors)" ng-selected="condition.content == value.content" ng-value="value.content">
+                    {{value.content}}
+                  </option>
+                </select>
+                <button class="btn btn-danger" ng-click="content.removeCondition(feedback, condition)"
+                        ng-if="content.sections.feedback.editing">-
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-11">
+            <textarea class="form-control"
+                      rows="6"
+                      ng-model="feedback.content" ng-readonly="!content.sections.feedback.editing">
+              {{feedback.content}}
+            </textarea>
+          </div>
+          <div class="col-sm-1">
+            <button class="btn btn-danger"
+                    ng-click="content.remove('feedback', feedback)"
+                    ng-if="content.sections.feedback.editing">-
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </game-editor>
+</div>

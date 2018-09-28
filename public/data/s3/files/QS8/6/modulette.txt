@@ -1,0 +1,104 @@
+{
+  "title": "Compound probability",
+  "name": "QS8.6.Compound probability",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "13",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS8.6.Refresher_Compound_probability"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "What are the chances?  Choose a scenario and work through interactive steps to learn to calculate the probability of two outcomes.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Summer picnic committee",
+          "title": "Making two picks at a time",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.6.GuidedPractice1_Compound_probability"
+          ]
+        },
+        {
+          "description": "Carnival games",
+          "title": "Match two and it belongs to you!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.6.GuidedPractice2_Compound_probability"
+          ]
+        },
+        {
+          "description": "Office fundraiser",
+          "title": "The end of the night...",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS8.6.GuidedPractice3_Compound_probability"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Carnvial prizes!  What are your chances of picking a winning combination?  \n",
+          "widget_name": "fix_it_widget",
+          "widget_description": "Correct words and phrases",
+          "files": [
+            "QS8.6.Challenge1_Compound_probability_fixit"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Which combination of picks is most likely?   Least likely?   \n",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "QS8.6.Challenge2_Compound_probability_stacker"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Grab bag!  What are the chances that you and your friend will get what you want? ",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "QS8.6.Challenge3_Compound_probability_sorter"
+          ]
+        }
+      ]
+    }
+  ]
+}

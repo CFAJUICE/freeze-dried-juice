@@ -1,0 +1,96 @@
+{
+  "type": "object",
+  "properties": {
+    "number_rounds": "integer",
+    "rounds": {
+      "type": "array",
+      "items": {
+        "type": "round"
+      }
+    }
+  },
+
+
+  "definitions": {
+    "round": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "general_correct": "string",
+        "general_incorrect": "string",
+        "instructions": "instructions",
+        "prompt": "prompt",
+
+        "answer": {
+          "type": "string",
+          "description": "stores the id of the correct answer"
+        },
+
+        "icon": {
+          "type": "string",
+          "description": "base64 encoded version of the answer icon"
+        },
+
+        "text_display": {
+          "type": "string",
+          "description": "text format - plain or speech bubbles"
+        },
+
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "value"
+          }
+        },
+
+        "feedback": {
+          "type": "array",
+          "items": {
+            "type": "feedback"
+          }
+        }
+      }
+    },
+
+    "instructions": {
+      "type": "object",
+      "properties": {
+        "align": "string",
+        "content": "string",
+        "img": {
+          "type": "string",
+          "description": "base64 encoded version of the instructions image"
+        }
+      }
+    },
+
+    "prompt": {
+      "type": "object",
+      "properties": {
+        "align": "string",
+        "content": "string"
+      }
+    },
+
+    "value": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "content": "string",
+        "size": "string"
+      }
+    },
+
+    "feedback": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "answer": {
+          "type": "string",
+          "description": "stores the id of the associated answer"
+        },
+        "content": "string"
+      }
+    }
+  }
+}

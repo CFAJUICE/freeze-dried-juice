@@ -1,0 +1,73 @@
+{
+  "description": "If you are facing a big writing assignment, these mini-lessons can help you get ready to plan and organize your writing process, starting with an essay contest example. For each step in the process, you can also practice writing skills using a consumer article or a blog. Try the Challenge Wheel game first if you are not sure which skills you need to review.",
+  "id": "CS17.essays",
+  "subtitle": "Enter a writing contest or write an article",
+  "title": "Writing a winning essay",
+  "subject": "writing",
+  "challenge_widget_type": "pick_and_stack_widget",
+  "record_id_": "6",
+  "dashboard_order": "8",
+  "challenge_wheel_available": "1",
+  "popup_title": "Boost your essay writing skills!",
+  "popup_description": "Learn about planning an essay, developing a thesis statement, writing a first draft, and revising your work using mini-lessons about a movie essay contest.",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "Why are movies better than TV?",
+      "title": "Getting started",
+      "record_id_": "22",
+      "modulettes": [
+        {
+          "id": "CS17.1.Generating ideas",
+          "description": "What am I going to write about?",
+          "link_text": "Generating ideas"
+        },
+        {
+          "id": "CS17.2.Developing a strong thesis statement",
+          "description": "What is my opinion or position?  How do I make that clear?",
+          "link_text": "Developing a strong thesis statement"
+        },
+        {
+          "id": "CS17.3.Planning and organizing",
+          "description": "How should I put my ideas together?",
+          "link_text": "Planning and organizing"
+        }
+      ]
+    },
+    {
+      "subtitle": "Lights, Camera, Action! Now Write!",
+      "title": "Writing the first draft",
+      "record_id_": "23",
+      "modulettes": [
+        {
+          "id": "CS17.4.Beginning with a compelling introduction",
+          "description": "How do I begin my essay?",
+          "link_text": "Beginning with a compelling introduction"
+        },
+        {
+          "id": "CS17.5.Building body paragraphs",
+          "description": "How do I write paragraphs to support my thesis?",
+          "link_text": "Building body paragraphs"
+        },
+        {
+          "id": "CS17.6.Ending with a good conclusion",
+          "description": "What makes a strong conclusion?",
+          "link_text": "Ending with a good conclusion"
+        }
+      ]
+    },
+    {
+      "subtitle": "The finishing touches",
+      "title": "Revising",
+      "record_id_": "24",
+      "modulettes": [
+        {
+          "id": "CS17.7.Improving what you wrote",
+          "description": "What can I do to make my essay better?",
+          "link_text": "Improving what you wrote"
+        }
+      ]
+    }
+  ]
+}

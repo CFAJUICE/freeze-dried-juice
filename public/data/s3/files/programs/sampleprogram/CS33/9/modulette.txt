@@ -1,0 +1,103 @@
+{
+  "title": "When to use commas, semicolons, and colons",
+  "name": "CS33.9.When to use commas, semicolons, and colons",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS33.9.Refresher_When_to_use_commas_semi_colons_and_colons"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose an online news story and work through an interactive example on when and when NOT to use commas, semicolons, and colons.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Manners in the electronic age",
+          "title": "Shhhh!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.9.GuidedPractice1_When_to_use_commas_semi_colons_and_colons"
+          ]
+        },
+        {
+          "description": "Building a nature trail behind City Hall",
+          "title": "A vote for nature",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.9.GuidedPractice2_When_to_use_commas_semi_colons_and_colons"
+          ]
+        },
+        {
+          "description": "Stop the mall!",
+          "title": "Save our downtown",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.9.GuidedPractice3_When_to_use_commas_semi_colons_and_colons"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Punctuation heaven!  Find all the sentences with correct punctuation\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS33.9.Challenge1_When_to_use_commas_semi_colons_and_colons_finderskeepers"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Commas, semicolons, and colons, oh my!  Use them correctly in sentences\n",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "CS33.9.Challenge2_When_to_use_commas_semi_colons_and_colons_fridgemagnets"
+          ]
+        },
+        {
+          "description": "",
+          "title": "You can do it!  Complete the paragraphs with the perfect punctuation\n",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "CS33.9.Challenge3_When_to_use_commas_semi_colons_and_colons_perfectword"
+          ]
+        }
+      ]
+    }
+  ]
+}

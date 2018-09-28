@@ -1,0 +1,6 @@
+<div class="dashtitle title"><h2>{{programValues.dashboard.tabs.goals.header}}</h2></div>
+<div class="dash-body" ng-click="globalClick()">
+  <div ng-repeat="goal in modulesByGP track by $index" class='goal-box'>
+   <dashboard-goal index="{{$index}}" />
+  </div>
+</div>

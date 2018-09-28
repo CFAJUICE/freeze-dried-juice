@@ -1,0 +1,104 @@
+{
+  "title": "Words that are easy to confuse",
+  "name": "CS33.8.Words that are easy to confuse",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "33",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS33.8.Refresher_Words_that_are_easy_to_confuse"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose an online news story and work through an interactive example on how to avoid mixing up words that sound the same and are spelled differently",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Tornadoes in town",
+          "title": "Twist and shout",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.8.GuidedPractice1_Words_that_are_easy_to_confuse"
+          ]
+        },
+        {
+          "description": "Staying safe",
+          "title": "Stormy weather",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.8.GuidedPractice2_Words_that_are_easy_to_confuse"
+          ]
+        },
+        {
+          "description": "Tips for staying cool",
+          "title": "Beat the heat",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.8.GuidedPractice3_Words_that_are_easy_to_confuse"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Sort out sentences with the wrong words\n",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "CS33.8.Challenge1_Words_that_are_easy_to_confuse_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Tricky words:  Complete the paragraphs with the perfect words\n",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "CS33.8.Challenge2_Words_that_are_easy_to_confuse_perfectword"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Super editor!   Find and fix the mixed up words\n",
+          "widget_name": "fix_it_widget",
+          "widget_description": "Correct words and phrases",
+          "files": [
+            "CS33.8.Challenge3_Words_that_are_easy_to_confuse_fixit"
+          ]
+        }
+      ]
+    }
+  ]
+}

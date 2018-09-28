@@ -1,0 +1,104 @@
+{
+  "title": "Making financial decisions",
+  "name": "QS67.2.Making financial decisions",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "37",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS67.2.Refresher_Making_financial_decisions"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to use math to make financial decisions.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Pay now or pay later?",
+          "title": "New sofa",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS67.2.GuidedPractice1_Making_financial_decisions"
+          ]
+        },
+        {
+          "description": "Evaluating the installment plan",
+          "title": "Flat screen TV",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS67.2.GuidedPractice2_Making_financial_decisions"
+          ]
+        },
+        {
+          "description": "Hire movers or rent a truck?",
+          "title": "Moving day!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS67.2.GuidedPractice3_Making_financial_decisions"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Make sense of job estimates and installment plans\n",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "QS67.2.Challenge1_Making_financial_decisions_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "How expensive will it be?  Set up the math and find the answer\n",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "QS67.2.Challenge2_Making_financial_decisions_fridgemagnets"
+          ]
+        },
+        {
+          "description": "",
+          "title": "You have two offers. Which is the better deal?",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "QS67.2.Challenge3_Making_financial_decisions_quickpick"
+          ]
+        }
+      ]
+    }
+  ]
+}

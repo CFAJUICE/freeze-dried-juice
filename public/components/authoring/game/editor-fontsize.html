@@ -1,0 +1,16 @@
+<div class="form-group">
+  <div class="col-sm-12">
+    <strong>Font Sizes</strong>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-12">
+    <label class="inline-checkbox-label" ng-repeat="fontSize in content.fontSizes">
+      <input type="radio" class="inline-checkbox" name="font_size"
+             value="{{fontSize}}"
+             ng-model="content.round.font_size"
+             ng-readonly="!content.sections.values.editing"/>
+      <strong>{{fontSize}}px</strong>
+    </label>
+  </div>
+</div>

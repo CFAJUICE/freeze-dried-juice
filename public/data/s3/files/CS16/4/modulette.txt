@@ -1,0 +1,104 @@
+{
+  "title": "Stick to the topic",
+  "name": "CS16.4.Stick to the topic",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "20",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS16.4.Refresher_Stick_to_the_topic"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Practice sticking to the topic by working through one of these interactive examples",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Letter of complaint to the Gravel Mountain Motel",
+          "title": "More is not always better",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.4.GuidedPractice1_Stick_to_the_topic"
+          ]
+        },
+        {
+          "description": "Facebook posting about the Downtown Street Fair",
+          "title": "Tell me what I need to know",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.4.GuidedPractice2_Stick_to_the_topic"
+          ]
+        },
+        {
+          "description": "Contest entry for the <i>Worst cook in town.</i>",
+          "title": "Will the judges be impressed?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.4.GuidedPractice3_Stick_to_the_topic"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about sticking to the topic!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Which sentences don't stick to the topic?",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS16.4.Challenge1_Stick_to_the_topic_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Which details don't work?",
+          "widget_name": "highlighter_widget",
+          "widget_description": "Select words and phrases",
+          "files": [
+            "CS16.4.Challenge2_Stick_to_the_topic_highlighter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Decide which details to use",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS16.4.Challenge3_Stick_to_the_topic_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

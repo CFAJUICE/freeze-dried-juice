@@ -1,0 +1,10 @@
+<div class="modal-body">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+          ng-click="alert.close()">&times;</button>
+  <br/>
+
+  <div ng-cloak ng-if="alert.message" ng-bind="alert.message"></div>
+  <button class="btn btn-primary pull-right"
+          ng-cloak ng-if="alert.yes" ng-bind="alert.yes" ng-click="alert.close()"></button>
+  <div style="clear:both;"></div>
+</div>

@@ -1,0 +1,56 @@
+<div class="modal-wrapper">
+  <div class="modal-body" >
+    <div ng-transclude></div>
+  </div>
+  <div class="modal-footer" ng-if="!juiceGame.splash" style="z-index: 1999;">
+    <div id="down-arrow-container">
+      <div class="icon-down-big">&nbsp;</div>
+    </div>
+    <a class="action-btn left instructions-btn" href="#"
+       cancel-click
+       ng-click="(juiceGame.playing) && juiceGame.instructionsShow($event)"
+       
+       ng-show="juiceGame.playing">
+    </a>
+    <div class="round-end-buttons">
+      <button type="button" id="game-play-button" class="btn btn-info game-btn no-left-margin-btn" ng-show="juiceGame.instructions" ng-click="juiceGame.go('play')" click-sound>Start</button>          <!-- Instructions Screen -->
+
+      <button type="button" id="game-show-answers-button"  class="btn btn-info game-btn no-left-margin-btn" ng-show="juiceGame.error" ng-click="juiceGame.go('showAnswers')" click-sound>
+          <span class="normal-label">Show Answers</span>
+          <span class="short-label">Show</span>
+      </button>                                                       <!-- Game Screen -->
+      <button type="button" id="game-check-it-button" class="btn btn-info game-btn"
+              ng-show="((juiceGame.playing || juiceGame.error) && !juiceGame.transitioning) && !juiceGame.immediate"
+              ng-click="juiceGame.go('submit')" cancel-click click-sound>
+          <span class="normal-label">Check It!</span>
+          <span class="short-label">Check!</span>      
+      </button> <!-- Game Screen -->
+
+      <button type="button" id="game-next-round-button" class="btn btn-info game-btn no-left-margin-btn" ng-show="juiceGame.forceScoreboard && !juiceGame.feedback" ng-click="juiceGame.go('showAttempt')" click-sound>                           <!-- Game Screen -->
+        <span class="normal-label">Next Round</span>
+        <span class="short-label">Next</span>
+      </button>
+      <button type="button" id="game-next-round-button" class="btn btn-info game-btn no-left-margin-btn" ng-show="juiceGame.completed" ng-click="juiceGame.go('nextRound')" click-sound>                           <!-- Game Screen -->
+        
+        <span class="normal-label"> {{juiceGame.hasNextRound() ? 'Next Round' : 'Scoreboard'}}</span>
+        <span class="short-label"> {{juiceGame.hasNextRound() ? 'Next' : 'Scores'}}</span>
+      </button>
+
+      <button type="button" id="game-clear-answer-button" class="btn btn-info game-btn" ng-show="juiceGame.error" ng-click="juiceGame.go('rewind')" click-sound>
+          <span class="normal-label">Clear Answer</span>
+          <span class="short-label">Clear</span>
+      </button>                                                 <!-- Game Screen -->
+
+      <button id="game-play-again-button" class="btn btn-info game-btn no-left-margin-btn" href="#" ng-show="juiceGame.feedback"
+         ng-click="juiceGame.go('playAgain')" cancel-click click-sound>
+         <span class="normal-label">Play Again</span>
+         <span class="short-label">Play</span>
+      </button>
+    </div>
+
+    <a id="game-reset-button" class="action-btn right reset-btn" href="#"
+       ng-show="juiceGame.playing"
+       ng-click="juiceGame.playing && juiceGame.go('reset')" cancel-click click-sound>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+doctype html
+html(ng-app=htmlApp ng-controller=htmlCtrl)
+  head
+    title(ng-bind="pageTitle")
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    base(href="/juice/")
+    script var paramsFromServer = !{paramsFromServer};
+    script if(!paramsFromServer) var paramsFromServer = {};//in case it doesn't get defined
+    script(type="text/javascript").
+      var hashAppend = '?githash='+paramsFromServer.gitHash;
+
+    script(type="text/x-mathjax-config").
+      MathJax.Hub.Config({
+        "HTML-CSS": {
+          webFont: ["STIX-Web"],
+          scale: 88
+        },
+        "AssistiveMML": {
+            disabled: false
+        }
+      });
+
+    script !{setProgramDefaults}
+    script(src="/public_configs.js?githash="+gitHash)
+    script(src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML-full")
+    !{scriptTags}
+    
+    if(loadDelayed)
+      script.
+        setTimeout(function(){
+         // delayedJavascript.loadDelayedScripts();
+        }, 5000);
+        delayedJavascript.loadDelayedScripts();
+
+    link(rel='stylesheet', href='/libs/fontello/css/fontello.css')
+    link(rel='stylesheet', href='/bower_components/ionicons/css/ionicons.min.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(href='//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css')
+    link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Architects+Daughter')
+    link(rel='stylesheet', href='/stylesheets/widget-animation.css')
+    link(rel='stylesheet', href='/bower_components/ng-ckeditor/ng-ckeditor.css')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+    link(rel='stylesheet', href='/main.css?githash='+gitHash)
+    meta(charset="utf-8")
+  body
+    block content

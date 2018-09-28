@@ -1,0 +1,155 @@
+<!-- Multiple Choice display type -->
+<div ng-show='getDisplayType()=="MC"' id='{{id}}' class='ju-mc-wrapper-out'>
+	<div class='ju-mc-wrapper-in'  ng-class-even="'ju-even'" ng-class-odd="'ju-odd'">
+		<div style='margin-left: 0px;'>
+			<div class='screen-reader-only'>Multiple-Choice interactive question.</div> 
+			<div class='screen-reader-only' ng-show='showCorrect($index)'>You answered correctly. </div>
+			<div class='screen-reader-only' ng-show='!showCorrect($index) && !showCheckAnswer($index)'>You did not answer correctly. </div>
+			<div ng-show='lclData.inputData[id].prompt' ng-bind-html='trustAsHtml(lclData.inputData[id].prompt)'> </div><p/>
+			<div style='margin-left: 20px;'>
+				<div ng-show='showChoice(0)'  ng-class='{"touch-spacer": isTouchMode}'>
+					<input id='{{id}}_choice{{shuffledIndexes[0]}}' type='radio'  aria-setsize='{{lclData.inputData[id].noOfChoices}}' name='{{id}}' ng-value='shuffledIndexes[0]-1' ng-disabled='isDisabled($index)'   ng-model='answer' />
+					<label for='{{id}}_choice{{shuffledIndexes[0]}}' class='label-align-first' style='font-weight: normal'> 
+						<span ng-bind-html='trustAsHtml(shuffledChoices[0])'/>
+					</label>
+					<br aria-hidden='true'/>
+				</div>
+				<div ng-show='showChoice(1)'  ng-class='{"touch-spacer": isTouchMode}'>
+					<input id='{{id}}_choice{{shuffledIndexes[1]}}' type='radio' aria-setsize='{{lclData.inputData[id].noOfChoices}}' name='{{id}}' ng-value='shuffledIndexes[1]-1' ng-disabled='isDisabled($index)' ng-model='answer' />
+					<label for='{{id}}_choice{{shuffledIndexes[1]}}' class='label-align' style='font-weight: normal'> 
+						<span ng-bind-html='trustAsHtml(shuffledChoices[1])'/>
+					</label>
+					<br aria-hidden='true'/>
+				</div>
+				<div ng-show='showChoice(2)'  ng-class='{"touch-spacer": isTouchMode}'>
+					<input id='{{id}}_choice{{shuffledIndexes[2]}}' type='radio' aria-setsize='{{lclData.inputData[id].noOfChoices}}' name='{{id}}' ng-value='shuffledIndexes[2]-1' ng-disabled='isDisabled($index)' ng-model='answer' /> 
+					<label for='{{id}}_choice{{shuffledIndexes[2]}}' class='label-align' style='font-weight: normal'>
+						<span ng-bind-html='trustAsHtml(shuffledChoices[2])'/>
+					</label>
+					<br aria-hidden='true'/>
+				</div>
+				<div ng-show='showChoice(3)'  ng-class='{"touch-spacer": isTouchMode}'>
+					<input id='{{id}}_choice{{shuffledIndexes[3]}}' type='radio' aria-setsize='{{lclData.inputData[id].noOfChoices}}' name='{{id}}' ng-value='shuffledIndexes[3]-1' ng-disabled='isDisabled($index)' ng-model='answer' />
+					<label for='{{id}}_choice{{shuffledIndexes[3]}}' class='label-align' style='font-weight: normal'> 
+						<span ng-bind-html='trustAsHtml(shuffledChoices[3])'/>
+					</label><br aria-hidden='true'/>
+				</div>
+				<div ng-show='showChoice(4)'  ng-class='{"touch-spacer": isTouchMode}'>
+					<input id='{{id}}_choice{{shuffledIndexes[4]}}'  type='radio' aria-setsize='{{lclData.inputData[id].noOfChoices}}' name='{{id}}' ng-value='shuffledIndexes[4]-1' ng-disabled='isDisabled($index)' ng-model='answer' />
+					<label for='{{id}}_choice{{shuffledIndexes[4]}}' class='label-align' style='font-weight: normal'> 
+						<span ng-bind-html='trustAsHtml(shuffledChoices[4])'/>
+					</label><br aria-hidden='true'/>
+				</div>
+			</div>
+			<div style='position:relative;top:-35px;'>
+				<img src='/images/check_arrow.png' ng-click='checkAnswer($index)' style='position:absolute;' ng-class="{'check-image-right':true, 'ju-mc-submit':true, 'check-image-adjustment': hasLeftInput($index)}" ng-show='showCheckAnswer($index)' style='position:absolute;z-index:1000;' aria-label='Check Answer'/>
+			</div>  
+			<div style='position:relative;top:-35px;'>
+				<img src='/images/correct_check.png' style='position:absolute;' ng-class="{'check-image-right':true, 'ju-mc-submit':true, 'check-image-adjustment': hasLeftInput($index)}" ng-show='showCorrect($index)' />
+			</div> 
+		</div>
+	</div>
+	<div ng-if=feedbackReviewFlag style='background-color:#F5FFA0'>
+		<div><b>Correct Answer:</b> <span>{{increment(lclData.inputData[id].correct)}}</span></div> 
+		<div><b>Correct Feedback:</b> <span ng-bind-html='lclData.inputData[id].correctFeedback'/></div> 
+		<div><b>Generic Incorrect Feedback:</b> <span ng-bind-html='lclData.inputData[id].incorrectFeedback'/></div> 
+		<div><b>Specific Incorrect Feedback</b>
+			<div style='padding-left:10px'  ng-repeat='a in lclData.inputData[id].choices track by $index' ng-show='showChoice($index)'><i>Answer #{{$index+1}}: </i><span ng-bind-html=a.incFeedback/>
+			</div>  
+		</div>
+	</div>
+</div>
+
+<!-- Multi-select display type -->
+<div ng-show='getDisplayType()=="MS"' id='{{id}}' class='ju-mc-wrapper-out'>
+	<div class='ju-mc-wrapper-in'  ng-class-even="'ju-even'" ng-class-odd="'ju-odd'">
+		<div style='margin-left: 0px;'>
+			<div class='screen-reader-only'>Multiple-Selection interactive question.</div>
+			<div class='screen-reader-only' ng-show='showCorrect($index)'>You answered correctly. </div>
+			<div class='screen-reader-only' ng-show='!showCorrect($index) && !showCheckAnswer($index)'>You did not answer correctly. </div>
+			<div ng-show='lclData.inputData[id].prompt' ng-bind-html='trustAsHtml(lclData.inputData[id].prompt)'> </div><p/>
+			<div style='margin-left: 20px;'>
+				<div ng-show='showChoice(0)' ng-class='{"touch-spacer": isTouchMode}'>
+					<label class='label-align-first' style='font-weight: normal'>
+						<input tabindex=0 id='{{id}}_choice_ms{{shuffledIndexes[0]}}' type='checkbox' name='{{id}}' ng-value='shuffledIndexes[0]-1' ng-disabled='isDisabled($index)' ng-model='answersMS[shuffledIndexes[0]-1]' ng-keydown='msKeyDown($event, 0)' aria-setsize='{{lclData.inputData[id].noOfChoices}}' aria-posinset=1/> 
+						<span ng-bind-html='trustAsHtml(shuffledChoices[0])'/>
+					</label>
+					<br aria-hidden=true/>
+				</div>
+				<div ng-show='showChoice(1)' ng-class='{"touch-spacer": isTouchMode}'>
+					<label class='label-align' style='font-weight: normal'>
+						<input tabindex=0 id='{{id}}_choice_ms{{shuffledIndexes[1]}}' type='checkbox' name='{{id}}' ng-value='shuffledIndexes[1]-1' ng-disabled='isDisabled($index)' ng-model='answersMS[shuffledIndexes[1]-1]' ng-keydown='msKeyDown($event, 1)' aria-setsize='{{lclData.inputData[id].noOfChoices}}' aria-posinset=2/> 
+						<span ng-bind-html='trustAsHtml(shuffledChoices[1])'/>
+					</label>
+					<br aria-hidden=true/>
+				</div>
+				<div ng-show='showChoice(2)' ng-class='{"touch-spacer": isTouchMode}'>
+					<label class='label-align' style='font-weight: normal'>
+						<input tabindex=0 id='{{id}}_choice_ms{{shuffledIndexes[2]}}' type='checkbox' name='{{id}}' ng-value='shuffledIndexes[2]-1' ng-disabled='isDisabled($index)' ng-model='answersMS[shuffledIndexes[2]-1]' ng-keydown='msKeyDown($event, 2)' aria-setsize='{{lclData.inputData[id].noOfChoices}}' aria-posinset=3/> 
+						<span ng-bind-html='trustAsHtml(shuffledChoices[2])'/>
+					</label>
+					<br aria-hidden=true/>
+				</div>
+				<div ng-show='showChoice(3)' ng-class='{"touch-spacer": isTouchMode}'>
+					<label class='label-align' style='font-weight: normal'>
+						<input tabindex=0 id='{{id}}_choice_ms{{shuffledIndexes[3]}}' type='checkbox' name='{{id}}' ng-value='shuffledIndexes[3]-1' ng-disabled='isDisabled($index)' ng-model='answersMS[shuffledIndexes[3]-1]' ng-keydown='msKeyDown($event, 3)' aria-setsize='{{lclData.inputData[id].noOfChoices}}' aria-posinset=4/> 
+						<span ng-bind-html='trustAsHtml(shuffledChoices[3])'/>
+					</label>
+					<br aria-hidden=true/>
+				</div>
+				<div ng-show='showChoice(4)' ng-class='{"touch-spacer": isTouchMode}'>
+					<label class='label-align' style='font-weight: normal'>
+						<input tabindex=0 id='{{id}}_choice_ms{{shuffledIndexes[4]}}' type='checkbox' name='{{id}}' ng-value='shuffledIndexes[4]-1' ng-disabled='isDisabled($index)' ng-model='answersMS[shuffledIndexes[4]-1]' ng-keydown='msKeyDown($event, 4)' aria-setsize='{{lclData.inputData[id].noOfChoices}}' aria-posinset=5/> 
+						<span ng-bind-html='trustAsHtml(shuffledChoices[4])'/>
+					</label>
+					<br aria-hidden=true/>
+				</div>
+			</div>
+			<div style='position:relative;top:-35px;'>
+				<img id='{{id}}_checkanswer' src='/images/check_arrow.png' ng-click='checkAnswer($index)' style='position:absolute;' ng-class="{'check-image-right':true, 'ju-mc-submit':true, 'check-image-adjustment': hasLeftInput($index)}" ng-show='showCheckAnswer($index)' style='position:absolute;z-index:1000;' tabindex=0 aria-label='check answer'/>
+			</div>  
+			<div style='position:relative;top:-35px;'>
+				<img src='/images/correct_check.png' style='position:absolute;' ng-class="{'check-image-right':true, 'ju-mc-submit':true, 'check-image-adjustment': hasLeftInput($index)}" ng-show='showCorrect($index)' tabindex=-1/>
+			</div>
+		</div>
+	</div>
+	<div ng-if=feedbackReviewFlag style='background-color:#F5FFA0'>
+		<div><b>Correct Answer(s):</b> <span>{{buildCorrectMS(id)}}</span></div> 
+		<div><b>Correct Feedback:</b> <span ng-bind-html='lclData.inputData[id].correctFeedback'/></div> 
+		<div><b>Generic Incorrect Feedback:</b> <span ng-bind-html='lclData.inputData[id].incorrectFeedback'/></div> 
+		<div><b>Specific Incorrect Feedback</b>
+			<div style='padding-left:10px'><i>All correct but missing some: </i><br/><span ng-bind-html=lclData.inputData[id].incorrectFeedback_not_complete/></div> 
+			<div style='padding-left:10px'><i>All correct plus some incorrect: </i><br/><span ng-bind-html=lclData.inputData[id].incorrectFeedback_allCorrPlusInc/></div>
+			<div style='padding-left:10px'><i>Missing correct plus some incorrect: </i><br/><span ng-bind-html=lclData.inputData[id].incorrectFeedback_missCorrPlusInc/></div>
+			<div style='padding-left:10px'><i>All incorrect: </i><br/><span ng-bind-html=lclData.inputData[id].incorrectFeedback_allIncorrect/></div>
+		</div>
+	</div>
+</div>
+
+<!-- Fill In display type -->
+<span  ng-show='getDisplayType()=="FI"' style='text-indent:0px' >	
+	<span ng-class='{"btn-group":true,  "dropup": dropUp, "dropdown": !dropUp}' dropdown is-open='false' >			  
+		<button  ng-click='toggleDropUp($event)' class='btn btn-default text-left' id='{{id}}' ng-hide='isDisabled($index)' dropdown-toggle style='min-width:100px;max-width:200px;overflow:hidden;text-overflow:ellipsis;padding-top:0px;padding-bottom:1px;text-align:left' bind-html-compile='fiSelectedItemText' aria-expanded='false'>
+		</button>
+		<ul class='dropdown-menu' aria-labelledby='dropdownMenu' role='listbox'   style='min-width:auto;width:250px;padding-left:10px;padding-right:5px;list-style-position:outside;'>
+			<li  id='{{id + "_" + $index}}' role='option' tabindex=-1 ng-click='fiItemSelected($index)' ng-keydown='fiKeyDown($event, $index)'  class='ju-fihover' style='text-indent:0px; padding-left:5px;line-height:1;' ng-repeat='a in shuffledChoices track by $index'  >
+				<div   style='padding-top:5px;font-size:16px;' ng-class='{"touch-spacer": isTouchMode, "padding-bottom-5px": !isTouchMode}' ng-bind-html= a>  </div>
+			</li>
+		</ul>
+		<span id='{{answerIdFI}}' ng-show='isDisabled($index)' style='background-color:rgb(235, 235, 228);padding-left:5px;padding-right:5px;padding-bottom:2px;position:relative;bottom:2px' bind-html-compile='lclData.inputData[id].choices[lclData.inputData[id].correct].text'> 
+		</span>
+		<div class='screen-reader-only' ng-show='showCorrect($index)'>You answered correctly. </div>
+		<div class='screen-reader-only' ng-show='!showCorrect($index) && !showCheckAnswer($index)'>You did not answer correctly. </div>
+		<img ng-src='/images/{{imageFI}}' ng-show='(showCheckAnswer($index)||showCorrect($index))&&getDisplayType()=="FI"&&!hideImageFI' ng-click='checkAnswer($index)' class='ju-mc-submit'  ng-style='stylesFISubmit' aria-label='check answer'/>
+	</span>
+	<div ng-if=feedbackReviewFlag&&getDisplayType()=="FI" style='background-color:#F5FFA0'>
+		<div><b>Correct Answer:</b> <span>{{increment(lclData.inputData[id].correct)}}</span></div>
+		<div><b>Correct Feedback:</b> <span ng-bind-html='lclData.inputData[id].correctFeedback'/></div> 
+		<div><b>Generic Incorrect Feedback:</b> <span ng-bind-html='lclData.inputData[id].incorrectFeedback'/></div> 
+		<div><b>Specific Incorrect Feedback</b>
+			<div style='padding-left:10px'  ng-repeat='a in lclData.inputData[id].choices track by $index' ng-show='showChoice($index)'><i>Answer #{{$index+1}}: </i>
+				<span ng-bind-html=a.incFeedback/>
+			</div>  
+		</div>
+	</div>
+</span>

@@ -1,0 +1,20 @@
+{
+  "strict": true,
+  "undef": true,
+  "curly": true,
+  "indent": 2,
+  "quotmark": true,
+  "esnext": true,
+  "globals":
+  {
+    "window": false,
+    "angular": false,
+    "helpers": false,
+    "forEach": false,
+    "paramsFromServer": false,
+    "multiReplaceAll": false,
+    "replaceAll": false,
+    "console": false,
+    "document": false
+  }
+}

@@ -1,0 +1,562 @@
+[
+  {
+    "title": "Facing grammar fearlessly",
+    "subtitle": "Online magazine editor-in-chief",
+    "description": "Do you want to refresh your grammar skills for writing? Try exploring one of these mini-lessons for a quick review of the basics of grammar using examples about editing an online magazine called Community Living. Or, try a round or two of the Challenge Wheel to check what you already know!",
+    "id": "CS33.grammar",
+    "goal": "Explore Writing",
+    "popup_title": "Refresh your grammar skills!",
+    "popup_description": "Do you need a quick review of verbs, pronouns, tricky words, capitalization, punctuation and other grammar basics? Review and practice using mini-lessons with examples about editing an online magazine.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "1",
+    "competencies": [
+      "Can use standard syntax and sentence structure; correct spelling, punctuation, and capitalization; appropriate grammar (e.g., correct tense, subject-verb agreement, no missing words)"
+    ],
+    "competencies_id": [
+      "CS33"
+    ],
+    "modulettes": [
+      {
+        "name": "CS33.1.How sentences work",
+        "title": "How sentences work",
+        "id": "CS33.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "How sentences work"
+        ],
+        "subcompetencies_id": [
+          "CS33.1"
+        ]
+      },
+      {
+        "name": "CS33.2.Avoid run-on sentences",
+        "title": "Avoid run-on sentences",
+        "id": "CS33.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Avoid run-on sentences"
+        ],
+        "subcompetencies_id": [
+          "CS33.2"
+        ]
+      },
+      {
+        "name": "CS33.3.Fix incomplete sentences",
+        "title": "Fix incomplete sentences",
+        "id": "CS33.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Fix incomplete sentences"
+        ],
+        "subcompetencies_id": [
+          "CS33.3"
+        ]
+      },
+      {
+        "name": "CS33.4.Match subjects with the right verb form",
+        "title": "Subject-verb agreement",
+        "id": "CS33.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Subject-verb agreement"
+        ],
+        "subcompetencies_id": [
+          "CS33.4"
+        ]
+      },
+      {
+        "name": "CS33.5.Choose the right verb tense",
+        "title": "Choose the right verb tense",
+        "id": "CS33.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Choose the right verb tense"
+        ],
+        "subcompetencies_id": [
+          "CS33.5"
+        ]
+      },
+      {
+        "name": "CS33.6.Personal pronouns",
+        "title": "Personal pronouns",
+        "id": "CS33.6",
+        "order": "6",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Personal pronouns"
+        ],
+        "subcompetencies_id": [
+          "CS33.6"
+        ]
+      },
+      {
+        "name": "CS33.7.Plurals, possessives, and plural possessives",
+        "title": "Plurals, possessives, and plural possessives",
+        "id": "CS33.7",
+        "order": "7",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Plurals, possessives and plural possessives."
+        ],
+        "subcompetencies_id": [
+          "CS33.7"
+        ]
+      },
+      {
+        "name": "CS33.8.Words that are easy to confuse",
+        "title": "Words that are easy to confuse",
+        "id": "CS33.8",
+        "order": "8",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Words that are easy to confuse"
+        ],
+        "subcompetencies_id": [
+          "CS33.8"
+        ]
+      },
+      {
+        "name": "CS33.9.When to use commas, semicolons, and colons",
+        "title": "When to use commas, semicolons, and colons",
+        "id": "CS33.9",
+        "order": "9",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "When to use commas, semi colons and colons"
+        ],
+        "subcompetencies_id": [
+          "CS33.9"
+        ]
+      },
+      {
+        "name": "CS33.10.When to use capital letters",
+        "title": "When to use capital letters",
+        "id": "CS33.10",
+        "order": "10",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "When to use capital letters"
+        ],
+        "subcompetencies_id": [
+          "CS33.10"
+        ]
+      }
+    ],
+    "projects": []
+  },
+  {
+    "title": "Writing a great paragraph",
+    "subtitle": "Getting your money back",
+    "description": "Do you want to refresh your paragraph writing skills?  Try exploring one of these mini-lessons for a quick review using an example about writing a letter to get your money back after a bad hotel experience. Or, try a round or two of the Challenge Wheel to check what you already know!",
+    "id": "CS16.paragraph",
+    "goal": "Explore Writing",
+    "popup_title": "Build your paragraph writing skills!",
+    "popup_description": "Review and practice identifying audience and purpose, developing a topic sentence, and providing convincing details using mini-lessons about writing a complaint letter.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "2",
+    "competencies": [
+      "Can write a paragraph"
+    ],
+    "competencies_id": [
+      "CS16"
+    ],
+    "modulettes": [
+      {
+        "name": "CS16.1.Pick the right paragraph type",
+        "title": "Decide on your audience and purpose",
+        "id": "CS16.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Pick the right paragraph type"
+        ],
+        "subcompetencies_id": [
+          "CS16.1"
+        ]
+      },
+      {
+        "name": "CS16.2.Write a strong topic sentence",
+        "title": "Write a strong topic sentence",
+        "id": "CS16.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Write a strong topic sentence"
+        ],
+        "subcompetencies_id": [
+          "CS16.2"
+        ]
+      },
+      {
+        "name": "CS16.3.Add support",
+        "title": "Add support",
+        "id": "CS16.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Add support"
+        ],
+        "subcompetencies_id": [
+          "CS16.3"
+        ]
+      },
+      {
+        "name": "CS16.4.Stick to the topic",
+        "title": "Stick to the topic",
+        "id": "CS16.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Stick to the topic"
+        ],
+        "subcompetencies_id": [
+          "CS16.4"
+        ]
+      },
+      {
+        "name": "CS16.5.Connect sentences",
+        "title": "Connect sentences",
+        "id": "CS16.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Connect sentences"
+        ],
+        "subcompetencies_id": [
+          "CS16.5"
+        ]
+      },
+      {
+        "name": "CS16.6.Make sure the parts work together",
+        "title": "Make sure the parts work together",
+        "id": "CS16.6",
+        "order": "6",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Make sure the parts work together"
+        ],
+        "subcompetencies_id": [
+          "CS16.6"
+        ]
+      },
+      {
+        "name": "CS16.7.Body paragraphs for an essay",
+        "title": "Body paragraphs for an essay",
+        "id": "CS16.7",
+        "order": "7",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Body paragraphs for an essay"
+        ],
+        "subcompetencies_id": [
+          "CS16.7"
+        ]
+      }
+    ],
+    "projects": []
+  },
+  {
+    "title": "Writing a winning essay",
+    "subtitle": "Enter a writing contest or write an article",
+    "description": "If you are facing a big writing assignment, these mini-lessons can help you get ready to plan and organize your writing process, starting with an essay contest example. For each step in the process, you can also practice writing skills using a consumer article or a blog. Try the Challenge Wheel game first if you are not sure which skills you need to review.",
+    "id": "CS17.essays",
+    "goal": "Explore Writing",
+    "popup_title": "Boost your essay writing skills!",
+    "popup_description": "Learn about planning an essay, developing a thesis statement, writing a first draft, and revising your work using mini-lessons about a movie essay contest.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "3",
+    "competencies": [
+      "Can write a five-paragraph essay"
+    ],
+    "competencies_id": [
+      "CS17"
+    ],
+    "modulettes": [
+      {
+        "name": "CS17.1.Generating ideas",
+        "title": "Generating ideas",
+        "id": "CS17.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Generating ideas"
+        ],
+        "subcompetencies_id": [
+          "CS17.1"
+        ]
+      },
+      {
+        "name": "CS17.2.Developing a strong thesis statement",
+        "title": "Developing a strong thesis statement",
+        "id": "CS17.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Developing a strong thesis statement"
+        ],
+        "subcompetencies_id": [
+          "CS17.2"
+        ]
+      },
+      {
+        "name": "CS17.3.Planning and organizing",
+        "title": "Planning and organizing",
+        "id": "CS17.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Planning and organizing"
+        ],
+        "subcompetencies_id": [
+          "CS17.3"
+        ]
+      },
+      {
+        "name": "CS17.4.Beginning with a compelling introduction",
+        "title": "Beginning with a compelling introduction",
+        "id": "CS17.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Beginning with a compelling introduction"
+        ],
+        "subcompetencies_id": [
+          "CS17.4"
+        ]
+      },
+      {
+        "name": "CS17.5.Building body paragraphs",
+        "title": "Building body paragraphs",
+        "id": "CS17.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Building body paragraphs"
+        ],
+        "subcompetencies_id": [
+          "CS17.5"
+        ]
+      },
+      {
+        "name": "CS17.6.Ending with a good conclusion",
+        "title": "Ending with a good conclusion",
+        "id": "CS17.6",
+        "order": "6",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Ending with a good conclusion"
+        ],
+        "subcompetencies_id": [
+          "CS17.6"
+        ]
+      },
+      {
+        "name": "CS17.7.Improving what you wrote",
+        "title": "Improving what you wrote",
+        "id": "CS17.7",
+        "order": "7",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Improving what you wrote"
+        ],
+        "subcompetencies_id": [
+          "CS17.7"
+        ]
+      }
+    ],
+    "projects": []
+  },
+  {
+    "title": "Smart techniques for reading and summarizing",
+    "subtitle": "Getting to the point of an op-ed article about a mysterious burglary",
+    "description": "Would you like to get better at gathering key ideas and information as you read?  Do you need tips and tools to help you write a summary in your own words?   Try exploring one of these mini-lessons using an Op-Ed about a mysterious series of musical instrument thefts to learn about tools and techniques for skimming, reading, and summarizing.  Or, try a round or two of the Challenge Wheel to check what you already know! \n",
+    "id": "CS6.criticalreading",
+    "goal": "Analyze Data",
+    "popup_title": "Refresh your critical reading and summarizing skills!",
+    "popup_description": "Review and practice using mini-lessons based on an opinion article about music.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "4",
+    "competencies": [
+      "Can read critically in order to identify main ideas, supporting evidence, and conclusions"
+    ],
+    "competencies_id": [
+      "CS6"
+    ],
+    "modulettes": [
+      {
+        "name": "CS6.1.Previewing and organizing",
+        "title": "Previewing and organizing",
+        "id": "CS6.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Previewing and organizing"
+        ],
+        "subcompetencies_id": [
+          "CS6.1"
+        ]
+      },
+      {
+        "name": "CS6.2.Extracting key ideas and details",
+        "title": "Extracting key ideas and details",
+        "id": "CS6.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Extracting key ideas and details"
+        ],
+        "subcompetencies_id": [
+          "CS6.2"
+        ]
+      },
+      {
+        "name": "CS6.3.Restating the conclusion",
+        "title": "Restating the conclusion",
+        "id": "CS6.3",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Restating the conclusion"
+        ],
+        "subcompetencies_id": [
+          "CS6.3"
+        ]
+      },
+      {
+        "name": "CS6.4.Creating your summary",
+        "title": "Creating your summary ",
+        "id": "CS6.4",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Creating your summary"
+        ],
+        "subcompetencies_id": [
+          "CS6.4"
+        ]
+      },
+      {
+        "name": "CS6.5.Understanding what you read",
+        "title": "Understanding what you read",
+        "id": "CS6.5",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Understanding what you read"
+        ],
+        "subcompetencies_id": [
+          "CS6.5"
+        ]
+      }
+    ],
+    "projects": []
+  },
+  {
+    "title": "Arguing with Aplomb",
+    "subtitle": "Law reporter",
+    "description": "Do you want to refresh your argument skills? Try exploring one of these mini-lessons for a quick review of the stages of an argument using examples from Mr. Aplomb's lawsuit against Ms. Esprit for making too much noise. Or, try a round or two of the Challenge Wheel to check what you already know!",
+    "id": "CS28CCT3.arguments",
+    "goal": "Access Information",
+    "popup_title": "Refresh your argument skills!",
+    "popup_description": " Do you need to review how to identify and construct an effective argument? Review and practice using mini-lessons about Mr. Aplomb's lawsuit against Ms. Esprit.",
+    "hide_from_dashboard": "0",
+    "dashboard_order": "5",
+    "competencies": [
+      "Can articulate an argument",
+      "Can develop and support an argument with evidence",
+      "Can recognize the flaws and inconsistencies of an argument"
+    ],
+    "competencies_id": [
+      "CS38",
+      "CS39",
+      "CCT3"
+    ],
+    "modulettes": [
+      {
+        "name": "CS28CCT3.1.Identifying arguments",
+        "title": "Identifying arguments",
+        "id": "CS28CCT3.1",
+        "order": "1",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Recognizing an argument",
+          "Developing an argument"
+        ],
+        "subcompetencies_id": [
+          "CS38.1",
+          "CS39.1"
+        ]
+      },
+      {
+        "name": "CS28CCT3.2.Supporting arguments",
+        "title": "Supporting arguments",
+        "id": "CS28CCT3.2",
+        "order": "2",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Recognizing evidence",
+          "Evaluating evidence",
+          "Providing evidence"
+        ],
+        "subcompetencies_id": [
+          "CS38.2",
+          "CCT3.1",
+          "CS39.2"
+        ]
+      },
+      {
+        "name": "CS28CCT3.3.Rebutting an argument",
+        "title": "Rebutting an argument",
+        "id": "CS28CCT3.3",
+        "order": "3",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Recognizing a rebuttal",
+          "Evaluating a rebuttal",
+          "Preparing a rebuttal"
+        ],
+        "subcompetencies_id": [
+          "CS38.3",
+          "CCT3.2",
+          "CS39.3"
+        ]
+      },
+      {
+        "name": "CS28CCT3.4.Answering the rebuttal",
+        "title": "Answering the rebuttal",
+        "id": "CS28CCT3.4",
+        "order": "4",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Recognizing a counter-rebuttal",
+          "Evaluating a counter-rebuttal",
+          "Preparing a counter-rebuttal"
+        ],
+        "subcompetencies_id": [
+          "CS38.4",
+          "CCT3.3",
+          "CS39.4"
+        ]
+      },
+      {
+        "name": "CS28CCT3.5.Judging arguments",
+        "title": "Judging arguments",
+        "id": "CS28CCT3.5",
+        "order": "5",
+        "hide_from_dashboard": "0",
+        "subcompetencies": [
+          "Judging an argument"
+        ],
+        "subcompetencies_id": [
+          "CCT3.4"
+        ]
+      }
+    ],
+    "projects": []
+  }
+]

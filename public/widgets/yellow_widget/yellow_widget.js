@@ -1,0 +1,1 @@
+angular.module('yellow_widget', ['angularWidget']);

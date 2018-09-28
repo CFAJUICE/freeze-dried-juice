@@ -1,0 +1,25 @@
+<div ng-controller='smctl' style='text-align:center; line-height:200%; padding-top:15px; padding-bottom:15px'> 
+   <table style='width:100%'>
+     <tr ng-show="lclData.tr1">
+	    <td style='text-align: left; vertical-align: top; padding: 10px'>
+		  <b>What are you writing about?</b>
+		</td>
+		<td style='text-align: left; vertical-align: top; padding: 10px' ng-show="lclData.tr1td" class="fadein">
+          <b>You are writing about building a <br>new hospital.</b>
+		</td>
+	 </tr>
+	 <tr ng-show="lclData.tr2">
+	    <td style='text-align: left; vertical-align: top; padding: 10px'>
+		  <b>What is it that you want to say about <br>the hospital?</b>
+		</td>
+		<td id="id2" style='text-align: left; vertical-align: top; padding: 10px'  ng-show="lclData.tr2td" class="fadein">
+          <b>The hospital will help the <br>community in many ways.</b> 
+		</td>
+	 </tr>
+   </table>
+   <button ng-click='next()' ng-show='lclData.button'>Next</button>
+</div>
+
+
+
+

@@ -1,0 +1,83 @@
+{
+  "type": "object",
+  "properties": {
+    "number_rounds": "integer",
+    "rounds": {
+      "type": "array",
+      "items": {
+        "type": "round"
+      }
+    }
+  },
+
+
+  "definitions": {
+    "round": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "instructions": "string",
+        "answer_content": "string",
+        "general_correct": "string",
+        "general_incorrect": "string",
+        "appear_randomly": "boolean",
+
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "answer"
+          }
+        },
+        "buckets": {
+          "type": "array",
+          "items": {
+            "type": "bucket"
+          }
+        },
+        "feedback": {
+          "type": "array",
+          "items": {
+            "type": "feedback"
+          }
+        }
+      }
+    },
+
+    "answer": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "content": "string",
+        "bucket": {
+          "type": "string",
+          "description": "References a bucket id"
+        }
+      }
+    },
+
+    "bucket": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "name": "string",
+        "content": "string"
+      }
+    },
+
+    "feedback": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "content": "string",
+        "answer": {
+          "type": "string",
+          "description": "References an answer id"
+        },
+        "bucket": {
+          "type": "string",
+          "description": "References a bucket id or 'any', representing any bucket"
+        }
+      }
+    }
+  }
+}

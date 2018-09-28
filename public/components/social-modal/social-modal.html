@@ -1,0 +1,39 @@
+<div class="underlay" ng-show="showSocialModal"></div>
+<div class="common-modal force-scrollbar" ng-init="ferpaAgree = false" ng-show="showSocialModal">
+
+    <div id="modal-content">
+        <img src="/images/logos/Logo_OnColor.png" style="width:147px;margin-bottom:1em;">
+
+        <p>
+            <strong>WELCOME!</strong> We’re pilot testing this JUICE website and our newest learning resources. Please
+            tell us what you think by using the <strong>Feedback</strong> feature.
+        </p>
+        <ul>
+            <li style="margin-bottom:1em;">
+                <span>
+                    <strong>Are you visiting for the first time?</strong>
+                    <br>
+                    Click any JUICE module and take the page tour. Or, use
+                    <strong>Search</strong>.
+                </span>
+            </li>
+            <li>
+                <span>
+                    <strong>If you’re pilot testing as part of an academic program:</strong>
+                    <br>
+                    This JUICE website provides a separate account for review and
+                    practice and may include new modules or features that are still
+                    in development.
+                </span>
+            </li>
+        </ul>
+
+    </div>
+    <br>
+
+    <div>
+        <button class="juice-button" ng-click="doSocialAgree()">
+            Continue
+        </button>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<html>
+  <head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+
+ 
+
+  //var QBU_thisTableId = window.location.pathname;
+  var QBU_thisTableId =$.getUrlVar("tableid");
+
+var messageString = "Processing..."; 
+
+  
+function extractPrefix(name){
+  var arr = name.split("_");
+  var ret;
+  for (var i=0; i<arr.length-1 ; i++ ){
+     ret ?  ret = arr[i] : ret = ret + "_" + arr[i];
+  }
+  return ret;
+}
+
+function buildMaps(records){
+  var superManifest = {};
+   $.each(records, function(key, record) {
+      var prefix = extractPrefix(record.default_name);
+	  if (!superManifest[prefix]) superManifest[prefix] = {metadata: {file : ""}, audioFiles: {}};
+	  if (record.content_file_name) superManifest[prefix].metadata.file = record.content_file_name;
+      superManifest[prefix]["audioFiles"][record.default_name] = record.mapped_name;
+   });
+   $("#data").val(JSON.stringify(superManifest));
+   var promiseArray = [];
+    for (var prefix in superManifest) {
+	  var fname = superManifest[prefix].metadata.file.replace(/\./g, "/")+"_audio-manifest.txt";
+	 if (programPrefix() && fname.indexOf("programs/") < 0) fname = programPrefix() + fname;
+	  console.log(fname);
+          var prom = $.ajax({
+                       type: "POST",
+                       //url: 'https://localhost/juice/audiomap1?' + QBU_secretHandshake,
+		       url: QBU_juiceDomain_s + 'juice/audiomap1?sb=' + QBU_encryptedSecret(),
+                       data: {data: JSON.stringify(superManifest[prefix]), fname: fname},
+                     });
+           prom.done(function(result, status, xhr){
+		      messageString = messageString.length < 15 ? result + "<br/>" : messageString + result + "<br/>";
+              $('#message').html(messageString);
+           });
+		   promiseArray.push(prom);
+   }
+   var promAll = all(promiseArray);
+   promAll.done(function() {
+       messageString = messageString + "<p/><input type='button' value='Close' onclick='window.history.go(-1)'/>";
+	   $('#message').html(messageString);
+   });
+}
+
+function fileSelected() {
+    var files = document.getElementById('fileToUpload').files;
+    if (files) {
+       var fileSize = 0;
+       for (var i =0; i < files.length; i++) {
+         console.log(files[i].name);
+       }
+     }
+}
+
+function all(arrayOfPromises) {
+    return $.when.apply($, arrayOfPromises).then(function() {
+        //console.log('arguments', arguments)
+        //return Array.prototype.slice.call(arguments, 0);
+        return arguments;
+    });
+}
+
+$(document).ready(function() {
+ $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+ $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+  QBU_deltaTime = QBU_serverTime - new Date().getTime();
+ loadSchemaThenExecute(function(){
+   $('#message').html(messageString);
+   //tableIdMapping["audio_maps"] = "bkuuxie46";
+   doQuery("_dbid_audio_maps", "{'6'.XEX.' Publish Mapping to Server'}", buildMaps);
+ });
+ });
+ });
+});	
+
+    </script>
+  </head>
+
+  <body>
+    <div id='message'></div>
+    <p/>
+
+   <div id='error'></div>
+  </body>
+</html>

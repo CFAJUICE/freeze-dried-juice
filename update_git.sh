@@ -1,0 +1,14 @@
+cd ../
+cd dev.juiceyourskills.com
+git pull
+npm install
+cd ../
+cd test.juiceyourskills.com
+git pull
+npm install
+cd ../
+cd www.juiceyourskills.com
+git pull
+npm install
+cd ../
+cd dev.juiceyourskills.com

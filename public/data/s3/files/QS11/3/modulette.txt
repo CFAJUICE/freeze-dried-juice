@@ -1,0 +1,104 @@
+{
+  "title": "Area",
+  "name": "QS11.3.Area",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "85",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS11.3.Refresher_Area"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to find area.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Replacement fabric needed!",
+          "title": "Pool cover calamity",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS11.3.GuidedPractice1_Area"
+          ]
+        },
+        {
+          "description": "How much paint for the ceilings?",
+          "title": "Painting puzzle",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS11.3.GuidedPractice2_Area"
+          ]
+        },
+        {
+          "description": "Which bag of grass seed?",
+          "title": "Green grows the grass. . .",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS11.3.GuidedPractice3_Area"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Which measurement is which?",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "QS11.3.Challenge1_Area_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Find the area!",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "QS11.3.Challenge2_Area_perfectword"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Areas from large to small",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "QS11.3.Challenge3_Area_stacker"
+          ]
+        }
+      ]
+    }
+  ]
+}

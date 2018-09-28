@@ -1,0 +1,64 @@
+[
+  {
+    "context_id":"juicetestaccount",
+    "lis_person_contact_email_primary":"Donald@snhu.edu",
+    "lis_person_name_family":"Duck",
+    "lis_person_name_full":"Donald Duck",
+    "lis_person_name_given":"Donald",
+    "roles":"Student",
+    "user_id":"duck0202161"
+  },
+
+  {
+    "context_id":"juicetestaccount",
+    "lis_person_contact_email_primary":"Samuel@snhu.edu",
+    "lis_person_name_family":"Silver",
+    "lis_person_name_full":"Samuel Silver",
+    "lis_person_name_given":"Samuel",
+    "roles":"Student",
+    "user_id":"silver0202161"
+  },
+
+  {
+    "context_id":"juicetestaccount",
+    "lis_person_contact_email_primary":"Wendy@snhu.edu",
+    "lis_person_name_family":"Wiggins",
+    "lis_person_name_full":"Wendy Wiggins",
+    "lis_person_name_given":"Wendy",
+    "roles":"Student",
+    "user_id":"wiggins0202161"
+  },
+
+  {
+    "context_id":"juicetestaccount",
+    "lis_person_contact_email_primary":"Cora@snhu.edu",
+    "lis_person_name_family":"Coach",
+    "lis_person_name_full":"Cora Coach",
+    "lis_person_name_given":"Cora",
+    "roles":"Coach",
+    "user_id":"coach0202161",
+    "custom_studentId":"duck0202161"
+  },
+
+  {
+    "context_id":"juicetestaccount",
+    "lis_person_contact_email_primary":"tester@snhu.edu",
+    "lis_person_name_family":"Reviewer",
+    "lis_person_name_full":"Ronaldo Reviewer",
+    "lis_person_name_given":"Ronaldo",
+    "roles":"Reviewer",
+    "user_id":"reviewer0202161",
+    "custom_studentId":"duck0202161"
+  },
+
+  {
+    "context_id":"juicetestaccount",
+    "lis_person_contact_email_primary":"tester@snhu.edu",
+    "lis_person_name_family":"Administrator",
+    "lis_person_name_full":"Alistair Administrator",
+    "lis_person_name_given":"Alistair",
+    "roles":"Admin",
+    "user_id":"admin0202161",
+    "custom_studentId":"duck0202161"
+  }
+]

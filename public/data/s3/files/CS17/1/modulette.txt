@@ -1,0 +1,104 @@
+{
+  "title": "Generating ideas",
+  "name": "CS17.1.Generating ideas",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "52",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS17.1.Refresher_Generating_ideas"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a writing scenario and work through interactive steps to brainstorm and generate ideas. ",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Winning a movie essay contest",
+          "title": "Free tickets to the movies!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.1.GuidedPractice1_Generating_ideas"
+          ]
+        },
+        {
+          "description": "Article to help consumers save money",
+          "title": "New vs. used",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.1.GuidedPractice2_Generating_ideas"
+          ]
+        },
+        {
+          "description": "Blog article on making a good impression ",
+          "title": "Get that job!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.1.GuidedPractice3_Generating_ideas"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about generating ideas!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Why are you writing?",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS17.1.Challenge1_Generating_ideas_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Who are you writing for?\n",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "CS17.1.Challenge2_Generating_ideas_stacker"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Which ideas support your topic?\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS17.1.Challenge3_Generating_ideas_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

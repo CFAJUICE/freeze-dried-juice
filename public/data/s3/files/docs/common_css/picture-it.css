@@ -1,0 +1,50 @@
+.previous-button {
+    background: url(../common_images/previous.gif);
+
+}
+
+.previous-button:disabled {
+    background: url(../common_images/previousinactive.gif);
+}
+
+.next-button {
+    background: url(../common_images/next.gif);
+}
+
+.previous-button:focus, .next-button:focus {
+    outline: none;
+    box-shadow: 0 0 0px 3px #7AACFE;
+}
+
+.next-button:disabled {
+    background: url(../common_images/nextinactive.gif);
+}
+
+.previous-button, .next-button {
+    width: 130px;
+    height: 32px;
+    border: -2px;
+}
+
+.previous-button:focus, .next-button:focus {
+    opacity: 0.8;
+}
+
+.pager {
+    font-family: lato;
+    font-size: 16px;
+    color: rgb(85, 38, 86);
+    margin-top: -1px;
+}
+
+.page-header {
+    text-align: left;
+    font-family: lato;
+    font-size: 22px;
+    color: rgb(85, 38, 86);
+}
+
+.page {
+    display: none;
+    text-align: center;
+}

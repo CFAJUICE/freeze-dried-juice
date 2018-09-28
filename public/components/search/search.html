@@ -1,0 +1,90 @@
+<div id="page-search">
+<h2 id="resultshdr" tabindex=0 role="none"
+    ng-keydown="($event.keyCode === 9) && tab_key()">Search Results</h2>
+<div role="tree">    
+    <div class="module" ng-repeat="module in results track by $index" ng-if="programModules[module.id]" role="none">
+       <div style="font-size: 18px; color: #099EAD; margin-top: 3px;"> 
+            <a  href="/juice/module/{{module.id}}" 
+			    id="{{treeItemId(module.id)}}" 
+			    role="treeitem" 
+				aria-level=1 
+				aria-expanded="false"
+				tabindex="{{treeItemId(module.id) == tree.current.id?0:-1}}"  
+				aria-setsize="{{level1Size}}" 
+				aria-posinset="{{level1Pos[module.id]}}" 
+				ng-keydown="($event.keyCode === 40 || $event.keyCode === 39 || $event.keyCode === 38 || $event.keyCode === 37) && tree_arrowKeys($event)">
+                <img-with-fallback
+                        ng-if="module.title"
+                        src="module.program_icon"
+                        fallback="module.icon"
+                        imgclass="'circle-icon'"
+                        ng-click="isCoachStudentView()||$location.path('module/'+modules[index].id)">
+                </img-with-fallback>
+                <span class="title" role="none">{{programModules[module.id].title}}</span>
+                <span ng-if="showScores" role="none">Score: {{module.score | round:2}} | Avg Sort Score: {{module.sort_score | round:2}}</span>
+            </a>
+            <a class="learn-more-link icon-info-circled" aria-hidden="true" tabindex=-1 ng-click="toggle('learn-more-'+module.key)">Learn more</a>
+            <a ng-href="/juice/modulette/{{child.id}}" aria-hidden="true" tabindex=-1>{{child.title}}</a>
+         </div>
+        <div class="learn-more" id="learn-more-{{module.key}}" style="display:none;">
+            <h4>{{programModules[module.id].popup_title ? programModules[module.id].popup_title : programModules[module.id].title }}</h4>
+            <p>
+                {{programModules[module.id].popup_description ? programModules[module.id].popup_description : programModules[module.id].description}}
+            </p>
+        </div>
+        <div ng-style="keyboardNavStyle(module.id)" class="child" ng-repeat="child in module.children track by $index" ng-class="{'prefix-seperator':child.prefix_seperator}" role="none" >
+            <div class="modulettes" ng-if="child.type=='modulettes'" role="none">
+                <div class="inline-orange-container inline-tooltip-container">
+                    <img ng-src="/images/orange_wedges/20x20/of_6/{{progress.getProgress(module.id, child.id)}}.png">
+                    <tooltip id="tooltip-{{makeHtmlId(child.id)}}" ng-bind-html="progress.getTooltip(module.id, child.id)"></tooltip>
+                </div>
+                <a ng-href="/juice/modulette/{{child.id}}"
+				   id="{{child._id}}" 
+				   role="treeitem" 
+				   aria-level=2 
+				   tabindex="{{child._id == tree.current.id?0:-1}}"  
+				   aria-setsize="{{module.children.length}}" 
+				   aria-posinset="{{$index +1}}" 
+				   ng-keydown="($event.keyCode === 40 || $event.keyCode === 39 || $event.keyCode === 38 || $event.keyCode === 37) && tree_arrowKeys($event)">     
+				{{child.title}}</a>
+                <span class="tab-links" aria-hidden="true">
+                    <a ng-href="/juice/modulette/{{child.id}}" tabindex=-1>Overview</a>
+                    <a ng-href="/juice/modulette/{{child.id}}/guided_practice" tabindex=-1>Try It</a>
+                    <a ng-href="/juice/modulette/{{child.id}}/challenge" tabindex=-1>Challenge Games</a>
+                </span>
+                <span ng-if="showScores">score: {{child.score | round:2}}, order: {{child.order}}</span>
+            </div>
+            <div class="ancillary_files" ng-if="child.type=='ancillary_files'" 
+			       id="{{child._id}}" 
+				   role="treeitem" 
+				   aria-level=2 
+				   tabindex="{{child._id == tree.current.id?0:-1}}"  
+				   aria-setsize="{{module.children.length}}" 
+				   aria-posinset="{{$index +1}}"
+				   ng-keydown="($event.keyCode === 13 && openPictureIt($parent.$parent.$index, $index)) ||
+				   ($event.keyCode === 40 || $event.keyCode === 39 || $event.keyCode === 38 || $event.keyCode === 37) && tree_arrowKeys($event)"
+                   >
+                <div class="picture-it-icon-container  inline-tooltip-container" aria-hidden="true" tabindex=-1>
+                    <img alt="" ng-src="{{child.icon}}" ng-if="child.icon" class="set-icon">
+                    <img alt="" src="/images/picture_it.png" ng-if="!child.icon" class="picture-it-icon">
+                    <tooltip ng-if="child.icon!='/images/accessible_icon.png'" id="tooltip-{{makeHtmlId(child.id)}}">Picture it visual resource, opens in a<br> pop-up</tooltip>
+                    <tooltip ng-if="child.icon=='/images/accessible_icon.png'" id="tooltip-{{makeHtmlId(child.id)}}">Screen reader resource, opens in new window</tooltip>
+                </div>
+				<span class="screen-reader-only" ng-if="child.icon!='/images/accessible_icon.png'">Picture it visual resource, opens in a new window, </span>
+                <span class="screen-reader-only" ng-if="child.icon=='/images/accessible_icon.png'">Screen reader resource, opens in a new window, </span>
+                <a ng-href="{{filePath}}{{child.file_name}}" 
+				   id="{{child._id +'_href'}}"
+				   tabindex=-1
+				   onclick="window.GARecordPictureIt(this.href); window.open(this.href, '', 'resizable=yes,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no,width=825,left=100,height=695,top=50'); return false;"> 
+				   
+                    {{child.title}}
+                </a>
+                <span ng-if="showScores">score: {{child.score | round:2}}, order: {{child.order}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="no-results" ng-show="!results.length">
+        No results found
+    </div>
+</div>
+</div>

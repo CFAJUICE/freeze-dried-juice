@@ -1,0 +1,68 @@
+extends static-page
+block append content
+    if message
+        div.blob-container.message.notShowingSocialSignin
+            div.blob-inner(style="max-width:500px") #{message}
+
+    if(!message)
+        #blurb.notShowingSocialSignin
+            | Thank you #{user.displayName} for signing in via #{user.providerName}. You're almost done!
+            div(style="font-size:0.8em;margin-top:5px;") <a href="#" class="show-social" tabindex=1>(Need to go back?)</a>
+    .showingSocialSignIn#socialSignIn(style="display:none")
+        #blurb
+            | &ldquo;Just-in-time, contextualized, and empowering academic support&rdquo;
+        #content.blob-container
+            .blob-inner
+                p
+                    | JUICE is available for pilot testing to only a few academic programs at this time. If you received a Pilot Test invitation you can use a social media account to sign up. For more information,&nbsp;
+                    a(href='mailto:juiceinfo@snhu.edu') contact us.
+
+                .blob-inner(style="margin: 0 auto;width: 390px;")
+                    #janrainEngageEmbed
+
+    #content.blob-container.notShowingSocialSignin
+        .blob-inner
+
+            form(method='post', action='/juice/connect')
+                if(message)
+                    p(style="margin-left: -1em;")
+                        | Please contact your academic program to request a new JUICE Pilot Test Code.
+                        p <a href="#" class="show-social">(Sign in with a different user?)</a>
+                if(!message)
+                    p(style="margin-left: -1em;" tabindex=1)
+                        | Now do this:
+                p
+                    div(id='agree-red-arrow' style='display: none;color: red;font-weight: bold;') &rarr;
+                    input(type='checkbox' name='agree_to_terms' id='agree_to_terms' style='float:none;position: relative;top: -2px;' tabindex=1  aria-label='Checkbox to agree to terms of use')
+                    | Read and agree to the&nbsp;
+                    a(target="terms" href="https:" + fileResources + "docs/social_login_terms_and_conditions.html" href2="https://s3-us-west-2.amazonaws.com/snhu.juice.files/docs/social_login_terms_and_conditions.html" tabindex=1) JUICE Terms of Use
+                p(tabindex=1)
+                    | Enter the JUICE Pilot Test Code you received from your academic program:
+                p(id="agree-required-section" style="position:relative")
+                    div(id="agree-mask" style="position:absolute;width:500px;height:2em;") &nbsp;
+                    input(name='access_code' class='agree-required' disabled='disabled' style="width:200px" tabindex=1)
+                    input(type='submit' class='agree-required' disabled='disabled' tabindex=1)
+                script(type='text/javascript').
+                    $(document).ready(function (){
+                        $('.show-social').click(function(){
+                            $('.showingSocialSignIn').show();
+                            $('.notShowingSocialSignin').hide();
+                        })
+                        $('#agree_to_terms').change(function () {
+                            if ($('#agree_to_terms')[0].checked) {
+                                $('#agree-mask').hide();
+                                $(".agree-required").prop('disabled', false);
+                                $('#agree-red-arrow').css('display', 'none');
+                            }else {
+                                $('#agree-mask').show();
+                                $(".agree-required").prop('disabled', true);
+                            }
+                        });
+
+                        $('#agree-required-section, #agree-mask').click(function(){
+                            if (!$('#agree_to_terms')[0].checked) {
+                                $('#agree-red-arrow').css('display', 'inline-block');
+                            }
+                        });
+                    });
+

@@ -1,0 +1,104 @@
+{
+  "title": "Writing math expressions",
+  "name": "QS1.6.Writing math expressions",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "45",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS1.6.Refresher_Working_with_math_expressions"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to use a math expression to solve problems.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "What will each one charge?",
+          "title": "Tale of two plumbers",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.6.GuidedPractice1_Writing_math_expressions"
+          ]
+        },
+        {
+          "description": "Join Jalyn's Gym or pay for each visit?",
+          "title": "Fitness fanatic",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.6.GuidedPractice2_Writing_math_expressions"
+          ]
+        },
+        {
+          "description": "What are the costs of a shared beach condo?",
+          "title": "Splitting the bill",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.6.GuidedPractice3_Writing_math_expressions"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Identify what you know, don't know, and don't need to know",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "QS1.6.Challenge1_Writing_math_expressions_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Problem solving steps--what's next?",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "QS1.6.Challenge2_Writing_math_expressions_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Write the math expression and find the answer",
+          "widget_name": "perfect_word_widget",
+          "widget_description": "Perfect Word",
+          "files": [
+            "QS1.6.Challenge3_Writing_math_expressions_perfectword"
+          ]
+        }
+      ]
+    }
+  ]
+}

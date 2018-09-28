@@ -1,0 +1,148 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+
+  
+
+
+  var QBU_thisTableId =$.getUrlVar("tableid");
+  var QBU_mode = $.getUrlVar("mode");
+ // var QBU_mode = $.getUrlVar("mode");
+  //var QBU_selectedImages = [];
+  var QBU_modId, destBucket, sourceBucket, message;
+  var promiseArray = [];
+  var QBU_copyFail = true;
+  var copyData;
+
+
+  function copyFile(fileName, copyCallback) {
+     var prom = $.ajax({
+         type: "POST",
+         url: QBU_juiceDomain_s + 'juice/s3copy?sb=' + QBU_encryptedSecret(),
+         processData: true,
+         data:{file: fileName, ftype: 'txt', table: QBU_thisTableId, destbucket: destBucket, sourcebucket: sourceBucket}
+     }).done(copyCallback);
+     promiseArray.push(prom);
+   }
+
+   function moduleCallback(res) {
+       $('#message').html(res); 
+   }
+
+   function all(arrayOfPromises) {
+    return $.when.apply($, arrayOfPromises).then(function() {
+        return arguments;
+    });
+}
+
+function getCopyData(){
+    $.get(QBU_dbid, {a:"API_GetDBVar", varname:"copy_qa_prod_data"}).done(function(result){
+        var data;
+        var el = $(result).find("errcode");
+        var err = $(el).text();
+        if (err == 0){
+            el = $(result).find("value");
+            data = $(el).text();
+        }
+        //callback(copyData);
+       if (data) {
+          copyData =  JSON.parse(data);
+          //QBU_s3programcusttime = '1498504997000';
+          copyData.cust.date = parseInt(QBU_s3programcusttime);
+          console.log(copyData);
+          for (i=0; i<6 ; i++){ displayDate(copyData, i)};
+
+       } else {
+        copyData = {dash: {date: "", dateToQA: "", dateToProd:""}, cust: {date: 1, dateToQA: "", dateToProd:""}};
+        var obj = {a: "API_SetDBVar", varname:"copy_qa_prod_data", value:JSON.stringify(copyData)};  
+        $.get(QBU_thisTableId, obj).done(function(res){  });
+       }
+    });
+}
+
+function displayDate(data, index) {
+   var list = [{date:data.dash.date, id:'#d_p', prevDate:"", button:'#b_0'}, 
+                      {date:data.dash.dateToQA, id:'#d_qa', prevDate:data.dash.date, button:'#b_1'}, 
+                      {date:data.dash.dateToProd, id:'#d_prod', prevDate:data.dash.dateToQA},
+                      {date:data.cust.date, id:'#c_p', prevDate:"", button:'#b_2'}, 
+                      {date:data.cust.dateToQA, id:'#c_qa', prevDate:data.cust.date, button:'#b_3'}, 
+                      {date:data.cust.dateToProd, id:'#c_prod', prevDate:data.cust.dateToQA}];
+    if(list[index].date) {var d = new Date(); d.setTime(list[index].date); $(list[index].id).html(d.toLocaleString());}; 
+    if(list[index].date && list[index].prevDate && list[index].date < list[index].prevDate) $(list[index].id).css('color', 'red');
+    if(list[index].date && list[index].prevDate && list[index].date >= list[index].prevDate) $(list[index].id).css('color', 'black');
+    if(!list[index].date && list[index].button) $(list[index].button).css('visibility', 'hidden');
+    if(list[index].date && list[index].button) $(list[index].button).css('visibility', 'visible');
+    //$('#c_p').html('-- NA --');
+}
+
+  function handleButton(index) {
+   var list = [{src:'dev', dest:'qa', date1:'dash', date2:'dateToQA'}, {src:'qa', dest:'prod', date1:'dash', date2:'dateToProd'}, 
+               {src:'dev', dest:'qa', date1:'cust', date2:'dateToQA'}, {src:'qa', dest:'prod', date1:'cust', date2:'dateToProd'}];
+   //var indexObj = {index: index}; 
+   var fileName = programPrefix() +'modules.txt';
+   if(index > 1) fileName = programPrefix() +'program.json';
+   sourceBucket = list[index].src;
+   destBucket = list[index].dest;
+   
+   copyFile(fileName, function(res){
+      $('#message').html(res);
+       if(res.indexOf('ERROR') < 0) {
+            //var index = indexObj.index;
+            copyData[list[index].date1][list[index].date2] = new Date().getTime();
+            var obj = {a: "API_SetDBVar", varname:"copy_qa_prod_data", value:JSON.stringify(copyData)};  
+            $.get(QBU_thisTableId, obj).done(function(res){
+                 getCopyData();
+            });
+       } 
+   
+   });
+   
+ }
+
+
+ $(document).ready(function() {
+ $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+ $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+ QBU_deltaTime = QBU_serverTime - new Date().getTime();
+ 
+ loadSchemaThenExecute(function(){
+ $.getScript(QBU_juiceDomain_s + "juice/s3programcusttime/" + QBU_programId, function(){ 
+   console.log('Program Id', QBU_programId, QBU_thisTableId);
+   if(QBU_mode == 'dash') $('#tr-dash').css('display', 'table-row' );
+   if(QBU_mode == 'cust') $('#tr-cust').css('display', 'table-row' );
+  
+  getCopyData();
+
+ });
+ });
+ });  
+ });
+ });    
+  </script>
+ </head>
+ <body>
+ </p>
+ <div>
+   <table style='border-collapse: collapse; margin:50px'>
+     <tr>
+      <td style='border: 1px solid LightGray; padding:5px'> </td> <td style='border: 1px solid LightGray; padding:5px'>Date Published</td><td style='border: 1px solid LightGray; padding:5px'>Copy to QA</td><td style='border: 1px solid LightGray; padding:5px'>Date to QA</td><td style='border: 1px solid LightGray; padding:5px'>Copy to PROD</td><td style='border: 1px solid LightGray; padding:5px'>Date to PROD</td>
+     </tr>
+     <tr id='tr-dash' style='display:none'>
+       <td  style='border: 1px solid LightGray; padding:5px'>Dashboard</td><td id='d_p' style='border: 1px solid LightGray; padding:5px'> </td><td  style='border: 1px solid LightGray; padding:5px'><button id='b_0' type="button" onclick=handleButton(0)>-> QA</button> </td><td id='d_qa' style='border: 1px solid LightGray; padding:5px'> </td><td  style='border: 1px solid LightGray; padding:5px'><button id='b_1' type="button" onclick=handleButton(1)>-> PROD</button> </td><td id='d_prod' style='border: 1px solid LightGray; padding:5px'> </td>
+     </tr>
+     <tr id='tr-cust' style='display:none'>
+       <td  style='border: 1px solid LightGray; padding:5px'>Customizations</td><td id='c_p' style='border: 1px solid LightGray; padding:5px'> </td><td  style='border: 1px solid LightGray; padding:5px'><button id='b_2' type="button" onclick=handleButton(2)>-> QA</button> </td><td id='c_qa' style='border: 1px solid LightGray; padding:5px'> </td><td style='border: 1px solid LightGray; padding:5px'><button id='b_3' type="button" onclick=handleButton(3)>-> PROD</button> </td><td id='c_prod' style='border: 1px solid LightGray; padding:5px'> </td>
+     </tr>
+   </table>
+ </div>
+   <div id='message'></div>
+   <p/>
+   <div style='margin-left:25px'><table id="table" style="max-width:800px; border-collapse:collapse"> </table></div>
+   <p/>
+   <div id='error'></div>
+ </body>
+</html>

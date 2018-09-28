@@ -1,0 +1,104 @@
+{
+  "title": "Previewing and organizing",
+  "name": "CS6.1.Previewing and organizing",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "49",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS6.1.Refresher_Previewing_and_organizing"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose an article and work through interactive steps to preview it and organize your ideas for a summary.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Bringing music back to the schools",
+          "title": "The day the music died",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.1.GuidedPractice1_Previewing_and_organizing"
+          ]
+        },
+        {
+          "description": "Baseball in the Olympics",
+          "title": "Disappointed fans",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.1.GuidedPractice2_Previewing_and_organizing"
+          ]
+        },
+        {
+          "description": "Solar energy",
+          "title": "Using the sun for electricity",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS6.1.GuidedPractice3_Previewing_and_organizing"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about previewing and organizing!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Reading and summarizing trivia challenge!\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS6.1.Challenge1_Previewing_and_organizing_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Practice the power of previewing\n",
+          "widget_name": "highlighter_widget",
+          "widget_description": "Select words and phrases",
+          "files": [
+            "CS6.1.Challenge2_Previewing_and_organizing_highlighter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Find article facts quickly",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS6.1.Challenge3_Previewing_and_organizing_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

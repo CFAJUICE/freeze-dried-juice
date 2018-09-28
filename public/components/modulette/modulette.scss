@@ -1,0 +1,299 @@
+#modulette{
+
+  .page-actions {
+    float: right;
+    font-size: 14px;
+    margin-top: -30px;
+    margin-right: 214px;
+  }
+
+  // adjust header area for small-width devices--responsive design
+  .header-area{
+    min-height:76px;
+  }
+
+  .modulette-left-margin {
+    padding-left: 61px;
+  }
+
+  @media (max-width: $small-width) {
+    walkthrough-tooltip, #page-tour{
+      display:none;
+    }
+
+    .header-area{
+      //min-height:100px;
+    }
+    .modulette-left-margin {
+      padding-left: 0px;
+    }
+  }
+
+  .title-container{
+    padding-left: 75px;
+    padding-top: 9px;
+    @media (max-width: $small-width){
+      padding-left: 5px;
+      h2.title{
+        font-size:15px;
+      }
+    }
+  }
+  audio-controller {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    margin-top:3px;
+    @media (max-width:$small-width){
+      margin-top:0px;
+    }
+  }
+
+  .report-link{
+    position: relative;
+    top: -12px;
+  }
+
+  h2.title{
+    color:white;
+    margin-top:3px;
+    padding-top:3px;
+  }
+
+
+  .tab-set-container {
+    background-color: $subject-default-color;
+    .tab-element .content {
+      background-color: $subject-default-tab-color;
+    }
+  }
+
+
+  &.subject-writing{
+    .tab-set-container {
+      background-color:$subject-writing-color;
+      .tab-element .content {
+        background-color:$subject-writing-tab-color;
+      }
+    }
+  }
+
+  &.subject-math{
+    .tab-set-container {
+      background-color:$subject-math-color;
+      .tab-element .content {
+        background-color: $subject-math-tab-color;
+      }
+    }
+  }
+
+  .tab-set-container {
+    background-color: transparent;
+    padding-top:0em;
+    .tab-set {
+      max-width: 620px;
+      @media (max-width:$small-width){
+        max-width: 371px;
+      }
+      .tab-element {
+        .content {
+          text-align:left;
+//          background-color: $dark-blue;
+          .small-text, .normal-text {
+            padding-left: 40px;
+          }
+        }
+        &.active .content{
+          background-color: white;
+        }
+      }
+    }
+  }
+  .tabs{
+    padding-left:61px;
+    z-index:1000;
+  }
+
+@media (min-width: $small-width) {
+  .tabs.fixed{
+    position: fixed;
+    top: 78px;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 7px 5px 0px rgba(0,0,0,0.37);
+    .tab img{
+      width:20px;
+      height:20px;
+      margin-top:2px;
+    }
+    .tab {
+      margin-top:2px;
+      height:24px;
+      .name {
+        padding-top:0px;
+        font-size:11px;
+      }
+    }
+  }
+}
+
+
+  .tab.active{
+    background-color:white;
+    color:#04694A;
+  }
+
+  .tab {
+    position:relative;
+    height:36px;
+    margin-left:15px;
+    cursor: pointer;
+    img {
+      float: left;
+      height:31px;
+      width:31px;
+      margin-top:3px;
+    }
+    .name {
+      display: inline-block;
+      padding-top: 6px;
+      padding-left: 5px;
+    }
+
+    & .tab-tooltip{
+      display:none;
+      z-index:10000;
+      padding:1em;
+      position:absolute;
+      top:55px;
+      left:-55px;
+      background:$tooltip-background;
+      color:white;
+      width:300px;
+      border-radius:10px;
+    }
+
+    .tab-tooltip:after, .tab-tooltip:before {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .tab-tooltip:after {
+      border-color: rgba(238, 238, 238, 0);
+      border-bottom-color: $tooltip-background;
+      border-width: 15px;
+      margin-left: -15px;
+    }
+    .tab-tooltip:before {
+      border-color: rgba(204, 204, 204, 0);
+      border-bottom-color: $tooltip-background;
+      border-width: 16px;
+      margin-left: -16px;
+    }
+    &:hover .tab-tooltip{
+      display:block;
+    }
+  }
+  .chooser{
+    position:relative;
+    h2{
+      margin-top:1em;
+      margin-left:3px;
+    }
+
+    .choice{
+      h3{
+        font-size:20px;
+        min-height:45px;
+        @media (max-width: 450px) {
+          font-size:4.5vw;
+        }
+      }
+      cursor: pointer;
+      position:relative;
+      padding-right:1em;
+      padding-bottom:1em;
+      float:left;
+      $choice_width: 200px;
+      width:$choice_width;
+      min-height:200px;
+      text-align: center;
+      @media (max-width: $small-width) {
+        width: 33vw;
+      }
+      .orange-container{
+        top: 14px;
+        position: absolute;
+        right: 32px;
+        @media (max-width: $small-width) {
+          right: 2.5vw;
+        }
+
+      }
+      &.chooser-track-challenge {
+        .orange-container{
+          top: 6px;
+          right: 9px;
+        }
+      }
+
+      .choice_image, .title, .description{
+        text-align: center;
+      }
+
+      $image_width:140px;
+      .choice_image{
+        top:0px;
+        left: ($choice_width - $image_width)/2;
+        width:$image_width;
+        height:$image_width;
+        margin-bottom:1.5em;
+        margin-top:1em;
+        @media (max-width: $small-width) {
+          width: 21vw;
+          height: 21vw;
+        }
+      }
+      .choice_image:not(.tab-challenge-choice-image) {
+        -moz-border-radius: $image_width/2;
+        -webkit-border-radius: $image_width/2;
+        border-radius: $image_width/2;
+        @media (max-width: $small-width) {
+          width: 21vw/2;
+          height: 21vw/2;
+        }
+      }
+      .choice_image.tab-challenge-choice-image{
+        width:300px;
+        height:200px;
+        @media (max-width: $small-width) {
+          width: 29vw;
+          height: 20vw;
+        }
+      }
+    }
+    .choice.chooser-track-challenge{
+      width:300+18px;
+      @media (max-width: $small-width){
+        margin-left:2px;
+        width: 32vw;
+      }
+    }
+  }
+
+
+  .subtitle{
+    padding-bottom:1em;
+  }
+
+  .widget-wrapper{
+    margin-top:1em;
+  }
+}
+

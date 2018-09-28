@@ -1,0 +1,36 @@
+/* variables.scss
+* this contains all of the scss variables for the site (colors, font sizes, etc...)
+*/
+$text-gray:#59595B;
+$light-gray:#F2F2F2;
+$medium-gray:#CCCCCC;
+$juice-purple:#552659;
+$light-purple: #957495;
+$light-blue:#098491;
+$dark-blue:#025B5B;
+$lighter-blue:#B6DDE8;
+$background-gray:#F4F4F4;
+$juice-orange:#EEC342;
+$juice-light-orange:#FABF19;
+$tooltip-background:#411A41;
+$subject-default-color:#08A47D;
+$subject-default-tab-color:#04694A;
+$subject-writing-color:#08A47D;
+$subject-writing-tab-color:#04694A;
+$subject-math-color:$light-blue;
+$subject-math-tab-color:$dark-blue;
+$dashboard-light-purple:#7C4E7D;
+$dashboard-dark-purple:#5B2E5C;
+$ju-dot-small: 14;  //16
+$ju-dot-big: 22; //24
+$juice-green:#7CBA42;
+$link-color: #923190;
+$small-width:700px;
+
+@mixin clear-after {
+  &:after{
+    content: '';
+    display: block;
+    clear:both;
+  }
+}

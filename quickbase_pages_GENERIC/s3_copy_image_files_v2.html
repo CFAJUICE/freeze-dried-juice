@@ -1,0 +1,129 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+
+  
+
+
+  var QBU_thisTableId =$.getUrlVar("tableid");
+  var QBU_mode = $.getUrlVar("mode");
+  var QBU_selectedImages = [];
+  var QBU_modId, destBucket, sourceBucket, message;
+  var promiseArray = [];
+  var QBU_copyFail = true;
+  var QBU_editRecord;
+
+  function copyFile(fileName, copyCallback) {
+     var prom = $.ajax({
+         type: "POST",
+         url: QBU_juiceDomain_s + 'juice/s3copy?sb=' + QBU_encryptedSecret(),
+         processData: true,
+         data:{file: fileName, ftype: 'png', table: QBU_thisTableId, destbucket: destBucket, sourcebucket: sourceBucket}
+     }).done(copyCallback);
+	 promiseArray.push(prom);
+   }
+
+   function moduleImageCallback(res) {
+       $('#message').html(res); 
+   }
+
+   function trackImageCallback(res) {
+       var mess = res.split("<input")[0];  //remove Close button...
+	   if (mess.indexOf('ERROR') < 0) QBU_copyFail = false;
+       message = message ? message + '<p>' + mess : mess;
+       $('#message').html(message);
+   }
+
+   function trackImagesCopy() {
+		 $.each(QBU_selectedImages, function(key, image) {
+	        var modArr = QBU_modId.split('.');
+            modPrefix = modArr[0] + "/" + modArr[1] + "/";
+	        var fileName = programPrefix() + modPrefix + image;
+			console.log(fileName);
+            copyFile(fileName, trackImageCallback);
+	     })
+		 var promAll = all(promiseArray);
+		 promAll.done(function() {
+             console.log(QBU_copyFail);
+			 if (!QBU_copyFail){  //if at least one file was copied succesfully...
+                if (destBucket == 'qa') $.get(QBU_editRecord, {a: "API_editRecord", rid: $.getUrlVar("rid"), _fnm_date_to_qa_internal:$.getUrlVar("date")});
+                if (destBucket == 'prod') $.get(QBU_editRecord, {a: "API_editRecord", rid: $.getUrlVar("rid"), _fnm_date_to_prod_internal:$.getUrlVar("date")});
+			 }
+		 });
+   }
+
+   function all(arrayOfPromises) {
+    return $.when.apply($, arrayOfPromises).then(function() {
+        return arguments;
+    });
+}
+
+ $(document).ready(function() {
+ $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+ $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+ QBU_deltaTime = QBU_serverTime - new Date().getTime();
+ loadSchemaThenExecute(function(){
+    var trackImageList = ["guided_practice_track_1.png", "guided_practice_track_2.png", "guided_practice_track_3.png", "challenge_track_1.png", "challenge_track_2.png", "challenge_track_3.png"];
+	QBU_modId = $.getUrlVar('module');     
+    destBucket = $.getUrlVar("destbucket");
+    sourceBucket = $.getUrlVar("sourcebucket");
+    var rid = $.getUrlVar("rid");
+    var date = $.getUrlVar("date");
+	QBU_editRecord = QBU_db_baseURL + QBU_thisTableId;
+    
+   
+     
+	if (QBU_mode == "modimage")  {
+	    var fileName = programPrefix() + QBU_modId.split('.')[0].replace(/\./g, "/") + '/module.png';
+		var editRecordCompleted = $.Deferred();
+        editRecordCompleted.promise().done(copyFile(fileName, moduleImageCallback));
+	    $('#message').html("<p>&nbsp;</p>Copying <b><i>" + fileName + "</i></b>.");  
+        if (destBucket == 'qa') $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_date_to_qa_internal:date}).done(editRecordCompleted.resolve()); // _fid_62
+        if (destBucket == 'prod') $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_date_to_prod_internal:date}).done(editRecordCompleted.resolve()); //_fid_64
+    }
+
+     if (QBU_mode == "trackimage")  {
+	    $('#message').html("<p>&nbsp;</p>Select the files to copy, then press <input id='copy' type='button' value='copy' onclick='trackImagesCopy()'/>.");
+		var selection = $('#table');
+        $.each(trackImageList, function( key, value ) {
+             var label = $('<td>', {'style':'border:1px solid lightgray; padding:5px'}).append($('<label>', {'for': 'cb'+key}).append($('<input>', {'type': 'checkbox', 'id': 'cb'+key, 'name': 'cb'+key})).append(value));
+             var item = $('<tr>', {'padding': '20px'}).append(label);
+             item.appendTo(selection);
+        });
+		var checks = selection.find('input');
+		// assign function to onclick property of each checkbox
+        for (var i=0, len=checks.length; i<len; i++) {
+            if ( checks[i].type === 'checkbox' ) {
+                 checks[i].onclick = function() {
+                     var key = $(this)[0].id.slice(2);
+                     var checked = $(this)[0].checked;
+					 var image = trackImageList[parseInt(key)];
+					 var k = $.inArray(image, QBU_selectedImages);
+                     if (k < 0 && checked) {
+                           QBU_selectedImages.push(image);
+                     }
+                     if (k >= 0 && !checked) {
+                           QBU_selectedImages.splice(k, 1);
+                     }
+                 }
+            }
+        }
+     } 
+ });
+ });  
+ });
+ });	
+  </script>
+ </head>
+ <body>
+   <div id='message'></div>
+   <p/>
+   <div style='margin-left:25px'><table id="table" style="max-width:800px; border-collapse:collapse"> </table></div>
+   <p/>
+   <div id='error'></div>
+ </body>
+</html>

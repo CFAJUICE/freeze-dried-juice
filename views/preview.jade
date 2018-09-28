@@ -1,0 +1,25 @@
+extends juice_bar
+
+block content
+
+  //****** module used to pass data (i.e., widget name and file name list)from the server to the page hosting the widget 
+  script angular.module('previewConstants',[]).constant('previewConstants', {'widgetName':'!{widgetName}', 'fileName':'!{fileName}', 'filePath':'!{bucketName}', 'feedbackReviewFlag':'!{feedbackReviewFlag}'}); 
+  div(ng-app="preview" ng-controller='ctlPreview')
+    div(style="padding-left:44px; background-color:#552656; color:#04694A; padding-top:70px;")     
+    div(style="padding-left:44px;  background-color:#08A47D;")
+      button(ng-click='reset()' style='margin-right:5px; margin-bottom:5px;') Reset
+      button(ng-click='expandAll()' style='margin-right:5px; margin-bottom:5px;') Expand GP
+      button(ng-click='audioOff()' ng-show="audioButton.turnOff" style='margin-right:5px; margin-bottom:5px;') Turn OFF Audio
+      button(ng-click='audioOn()' ng-show="audioButton.turnOn" style='margin-right:5px; margin-bottom:5px;') Turn ON Audio
+      button(ng-click='next()' ng-disabled="disabledButton.next" ng-hide="hiddenButton.next" style='margin-right:5px; margin-bottom:5px; float:right') Next  
+      button(ng-click='previous()' ng-disabled="disabledButton.previous" ng-hide="hiddenButton.previous" style='margin-right:5px; margin-bottom:5px; float:right') Previous
+      label(style='color:#FFFFFF;') Unlimited Tries 
+        input(type='checkbox' ng-model='unlimitedTries' ng-click='clickUnlimitedTries()') 
+      label(style='color:#FFFFFF;') Always Correct 
+        input(type='checkbox' ng-model='alwaysCorrect' ng-click='clickAlwaysCorrect()')
+    p &nbsp;
+       div(ng-class="{'container': true, 'ju-container-main':true, 'ju-guided':guidedPractice}" style="margin-left:60px")
+        div(style="padding_top:0px;")
+          <div ui-view> </div>
+
+

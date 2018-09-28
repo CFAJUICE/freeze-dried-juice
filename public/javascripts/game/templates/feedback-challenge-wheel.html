@@ -1,0 +1,59 @@
+<div class="feedback-rounds-container">
+    <ul class="feedback-rounds">
+        <li class="feedback-column-header-section">
+            <div>
+                <div class="feedback-column-header column-header-1">
+                    Skill
+                </div>
+
+                <div class="feedback-column-header column-header-2">
+                    Score
+                </div>
+
+                <div class="feedback-column-header column-header-3">
+                    Refresh <br>your skills
+                </div>
+            </div>
+
+        </li>
+
+        <li class="feedback-result-row"
+            ng-repeat="n in juiceGame.roundCountIterator"
+            ng-click="juiceGame.showRound(n)"
+            ng-class="{active: (juiceGame.gameRoundIndex + 1) == n}"
+            ng-init="message=juiceGame.feedbackMessage(n);related_modulette=juiceGame.getRoundValue(n, 'related_modulette');skill_name=juiceGame.getRoundValue(n, 'skill_name')"
+                >
+                <div class="round-number">
+                    <span class="round">{{::n}}</span>
+                    <!--<span class="round-light on"></span>-->
+                    <span class="round-light off"></span>
+                </div>
+
+                <span class="round-number-message skill-name"
+                      ng-bind-html="skill_name"
+                      truncate-feedback='{"threshold": 135, "maxHeight": 150}'>
+                </span>
+
+                <span class="icon icon-ok-circled" ng-if="message=='Good! You got it right.'"></span>
+                <span class="icon icon-cancel-circled" ng-if="message=='Oops! Your answer was incorrect.'"></span>
+                <span class="icon icon-star" ng-if="message=='Great! Got it on the first try!'"></span>
+                <span class="icon" ng-if="message==' '">&nbsp;</span>
+                <span class="round-number-message feedback-message"
+                      ng-bind-html="message"
+                      ng-class="{}"
+                      truncate-feedback='{"threshold": 135, "maxHeight": 150}'>
+                </span>
+
+
+                <button ng-if="related_modulette && juiceGame.gameService.isScoreboardReplay()" class="btn btn-info game-btn"
+                        ng-click="gameModal.close();juiceGame.goToLink('/modulette/'+ related_modulette);"
+                        cancel-click
+                        click-sound>Go</button>
+                <button ng-if="related_modulette && !juiceGame.gameService.isScoreboardReplay()" class="btn btn-info game-btn"
+                        ng-click="gameModal.close();juiceGame.goToLink('/modulette/'+ related_modulette + '?notify=We have saved your scoreboard! We\'ll show it to you if you try the Challenge Wheel again.');"
+                        cancel-click
+                        click-sound>Go</button>
+        </li>
+
+    </ul>
+</div>

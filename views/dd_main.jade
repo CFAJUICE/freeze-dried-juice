@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+  //****** module used to pass data (i.e., intercative content JSON representation)from the server to the page hosting the widget 
+  script angular.module('Interactives',[]).constant('constants', {'inter1':'!{interactive}', 'rawText':'!{rawText}'});  
+
+  div(ng-app="dd_main" ng-controller='ctl1')
+    h2= templateName
+
+    //****** drag-and-drop widget.  Config data could be passed through 'options' attribute
+    div(style='width:800px') <ng-widget  src="'dd_widget'" options="{}"></ng-widget> 
+
+    //****** navigation
+    div
+      button(ng-click='postItems()' style='margin-right:5px; margin-bottom:5px') Preview   
+      button(ng-click='reset()' style='margin-right:25px; margin-bottom:5px') Reset
+      button(ng-click='reLoad()'  style='margin-right:25px; margin-bottom:5px') Load Another Question
+      button(ng-click='goHome()') Back to Home Page
+      
+
+    //****** "Authoring" section
+    div(style='float:left; margin-right:10px;')  
+      textarea(id='ta' style='width:800px; height:200px;' ).
+         {{lclData.rawText}}
+    div 
+      p: i Any word bracketed by [[...]] in the text on the left will become choices to be dragged in place.  
+      P: i You can experiment yourself by bracketing any word (or group of words), and click Preview--the activity above will automatically update. Feel free to write your own paragraph! 
+      p: i Click Load Another Problem to load another problem. Only the drag-and-drop widget (blue text area) is reloaded--not the entire page. 
+      p: i Clik Reset to display the original problem.  
+
+ 

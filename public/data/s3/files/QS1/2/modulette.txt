@@ -1,0 +1,104 @@
+{
+  "title": "Percent of a number",
+  "name": "QS1.2.Percent of a number",
+  "subject": "math",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "17",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "QS1.2.Refresher_Percent_of_a_number"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to find the percentage of a number. ",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "How much does my landlord owe me?",
+          "title": "New carpet",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.2.GuidedPractice1_Percent_of_a_number"
+          ]
+        },
+        {
+          "description": "How many out-of-state visitors?",
+          "title": "Museum visitors",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.2.GuidedPractice2_Percent_of_a_number"
+          ]
+        },
+        {
+          "description": "How much did they cost?",
+          "title": "Car repairs",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "QS1.2.GuidedPractice3_Percent_of_a_number"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Write the expression to find percentage",
+          "widget_name": "puzzler_widget",
+          "widget_description": "Puzzler Game",
+          "files": [
+            "QS1.2.Challenge1_Percent_of_a_number_puzzler"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Find the percentage of a number",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "QS1.2.Challenge2_Percent_of_a_number_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Use percentages to find the biggest savings",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "QS1.2.Challenge3_Percent_of_a_number_stacker"
+          ]
+        }
+      ]
+    }
+  ]
+}

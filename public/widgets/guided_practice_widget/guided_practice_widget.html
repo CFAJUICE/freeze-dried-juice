@@ -1,0 +1,107 @@
+<div ng-controller='guidedPracticeCtl' style='padding-bottom:15px; margin-top:-15px; font-weight:normal; color:black; '>
+    <div class="progress-dots" style="position:fixed; top:192px; left:22px"><ju-dots>Progress Dots Directive</ju-dots></div>
+<!--div style="position:fixed;margin-left:878px;width:350px;height:100%;" ng-show='lclData.showRFB' bind-html-compile="lclData.rightFloatText"></div-->
+
+
+
+<table role="none" ng-keydown="($event.keyCode === 49 && $event.altKey) && popupRightFloat()"><tr role="none"><td  style="padding:10px; padding-top:0px;  width:100%" role="none">
+  <div class="row"><div class="col-sm-5" style="background-color:rgb(255,255,255)"></div><div class="col-sm-7"> <div id="rightpanel" class="col-xs-11" style="background-color:rgb(255,255,255)"></div><div class="col-xs-1" style="background-color:rgb(255,255,255)"></div></div></div> 
+
+ <div ng-repeat="step in lclData.steps track by $index" >
+
+  <div tabindex=0 id="{{ 'step_' + $index + '_screenreader'}}" class="screen-reader-only" ng-show='step.settings.showStep && $index > 0 && lclData.steps[$index-1].settings.showNextAccess'>Press tab to continue,&nbsp;</div> 
+  <div ng-class="lclData.stripes[$index]" id="{{ 'step_' + $index }}">
+   <div ng-show='step.settings.showStep && step.settings.showRuler' class="ju-ruler" aria-hidden="true"></div>
+   <div ng-show='step.settings.showStep && !step.settings.showRuler && !$first && !step.settings.showHeader && lclData.stripes[$index]!=lclData.stripes[$index-1]' class="ju-ruler-gray" aria-hidden="true"></div>
+
+   <div class="row fadein"  ng-show='step.settings.showStep && step.settings.showHeader' style="padding-top:0px; padding-bottom:1px; font-weight:bold" tabindex=0 >
+      <div  id="{{ 'step_' + $index + '_hdr'}}" ng-class="{'col-sm-12':true, 'ju-guided-header-first': $first, 'ju-header-bar':!$first}"  ng-bind-html="fixupHeader(step.headerText)" tabindex=-1></div>
+   </div>
+   
+   <div class="row fadein" id="{{ 'row_' + $index }}" ng-show='step.settings.showStep' ng-class="{'ju-guided-step-first': $first}" style="position:relative" tabindex=-1 role='none'>
+     <div id="{{ 'row_' + $index + '_feedbackscrdr'}}" tabindex=-1 ng-show="hasLeftInput($index) && (showCorrectFeedback($index) || showIncorrectFeedback($index))"  class="screen-reader-only">
+	     <div bind-html-compile="lclData.feedbackText" > </div>
+		 <div  ng-show="showCorrectFeedback($index)" class="screen-reader-only">You answered correctly!</div>
+     </div>
+	 <div ng-class="{'col-sm-5':!step.settings.hideRightPanel && !$first, 'col-sm-7':!step.settings.hideRightPanel && $first, 'col-sm-12':step.settings.hideRightPanel && !hasLeftInput($index), 'col-xs-11':hasLeftInput($index), 'left-panel':true}" style="padding-left:15px;position:static" tabindex=0>          
+		 <div bind-html-compile="step.leftText" ng-hide="!step.leftText" ng-attr-tabindex="{{(hasLeftInput($index) && (showIncorrectFeedback($index) || showCorrectFeedback($index)))?'0':'-1'}}"> </div>		 
+		 <div id="{{ 'row_' + $index + '_feedback'}}" tabindex=-1 role="none" >
+		   <div ng-show="showCorrectFeedback($index)" class="ju-feedback-correct" bind-html-compile="lclData.feedbackText" > </div>
+		   <div  ng-show="showCorrectFeedback($index)" class="screen-reader-only">You answered correctly!</div>
+		   <div ng-show="showIncorrectFeedback($index)"  class="ju-feedback-incorrect">
+		        <div bind-html-compile="lclData.feedbackText"></div>
+				<div style='padding-top:5px'><a ng-show='lclData.showMoreInfo' ng-click='displayMoreInfo()' > Need more info?</a></div>
+		   </div>		   
+		 </div> 
+		 <div class="screen-reader-only" ng-hide="hasListOnMac(step.leftText)">End of content area</div>
+	 </div>
+
+	 <div ng-class="{'col-sm-7':!step.settings.hideRightPanel && !$first, 'col-sm-5':!step.settings.hideRightPanel && $first, 'col-sm-1':hasLeftInput($index)}" ng-hide='step.settings.hideRightPanel && !hasLeftInput($index)' style="position:static" role='none'>
+
+	   <div ng-attr-id="{{ 'rightpanel-' + $index }}" ng-class="{'col-xs-11': !$first, 'col-xs-12': $first,  'fadein': true, 'right-panel':true}" style="padding-left: 20px; padding-right:15px;position:static" role='none'>
+         <div ng-attr-id="{{ 'rightpanel-' + $index + '-child' }}" class="fadein" style="padding-left:0px; padding-right:0px;" ng-hide="step.settings.hideRightPanel" tabindex=0 role='none'>
+		   <div class="fadein">
+				<div ng-class="{'ju-hidden': !lclData['delayRight'+$index]}" bind-html-compile="step.rightText"> </div>
+				<div class="screen-reader-only" ng-hide="hasListOnMac(step.rightText)">End of content area</div>
+		   </div>
+		 </div>
+	   </div>
+	   <div class="col-xs-1 fadein" style="padding-left: 5px; padding-right:0px; height:100%" ng-hide='$first' role='none'>
+         <div class="fadein" style="padding-left:0px; padding-right:0px;height:100%" ng-hide="step.settings.hideRightPanel"> </div>
+	   </div>
+	 </div>
+
+
+   </div>
+
+   <div class="row fadein"  ng-show="step.settings.showStep && step.settings.showNext  && inputsCompleted($index) && (step.settings.hideRightPanel || lclData['delayRight'+$index])" style="padding-top:0px; padding-bottom:10px;" ng-class="{'ju-guided-step-first': $first}" role='none'>
+      <div id="{{ 'row_' + $index +'_next'}}" tabindex=-1 class="col-sm-12" style="text-align:center;" ng-click='next($index)'>
+	     <img  class="next-button" src="/images/next_arrowN.png" ng-show="$first" ng-click='next($index)' aria-label="next step" tabindex=0 ng-keydown="($event.keyCode === 9) && captureTab($event)"/>
+		 <img  src="/images/next_arrow.png" ng-hide="$first" ng-click='next($index)' aria-label="next step" tabindex=0 ng-keydown="($event.keyCode === 9) && captureTab($event)"/>
+	  </div>
+   </div>
+
+ </div>
+ </div>
+
+ <div ng-class="lclData.lastStepColor">
+   <div class="row" ng-show='lclData.lastRefresherStep' >  
+     <div class="col-sm-12"> 
+		  <div class="fadein"  style="text-align:center; padding-top: 10px"	>
+		       <div id="laststep" tabindex=0 class="ju-header2">Need more practice?  Or ready for a challenge?</div>
+			  
+			   <div> 
+			        <img src="/images/guided_practice2.png" ng-click='gotoGP()' aria-label="Do another Try it"/>
+					<img src="/images/quick_challenge.png" ng-click='gotoOC()' aria-label="Play a quick challenge game"/>
+			   </div>
+			   <p>&nbsp; </p>
+			   <div class="ju-link" ng-click='gotoML()'>Choose a different mini-lesson</div>
+			   <p>&nbsp; </p>
+		  </div>
+	 </div>
+   </div> 
+ </div>
+
+
+
+
+</td>
+<td style="padding:10px">
+  <div ng-class="{'ju-float-right-spacer':!isMobileMode(), 'ju-float-right-spacer-mobile':isMobileMode() && lclData.rightFloatText}"></div>
+  <div class="ju-float-right" ng-show='lclData.showRFB && !isMobileMode()' bind-html-compile="lclData.rightFloatText"></div>
+  <div class="ju-float-right" ng-show='isMobileMode() && !lclData.onInitialStep  && lclData.rightFloatText'> <img style="float:right" src="/images/floating_box_icon.png" ng-click='showMobileFloat()' aria-label="Show data box"/></div>
+</td></tr></table>
+ 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+ <a id="bottom"></a>
+ <table><tr>
+    <td style="padding:10px"><div  ng-show='lclData.showMobileRFB && isMobileMode()' bind-html-compile="lclData.rightFloatText"></div></td>
+	<td style="padding:10px"><div ng-class="{'ju-float-right-spacer-mobile':isMobileMode()}"></div></td>
+ </tr></table>
+  <a id="bottomFB"></a>
+</div>
+
+
+

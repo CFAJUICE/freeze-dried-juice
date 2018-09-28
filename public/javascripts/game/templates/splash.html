@@ -1,0 +1,6 @@
+<div>
+  <div class="splash-view" ng-show="juiceGame.splash" bg-pattern="{pattern: juiceGame.infoBackground}">
+    <h3>{{juiceGame.gameTitle}} {{juiceGame.gameDescription ? '- ' + juiceGame.gameDescription : ''}}</h3>
+    <img ng-src="{{juiceGame.section.splash.image ? 'data:image/png;base64, ' + juiceGame.section.splash.image : '/images/splash.png'}}" alt="Splash Image"/>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+{
+  "title": "Answering the rebuttal",
+  "name": "CS28CCT3.4.Answering the rebuttal",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "55",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS28CCT3.4.Refresher_Answering_the_rebuttal"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a situation and work through interactive steps to answer the rebuttal.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Neighbor sues neighbor",
+          "title": "Aplomb responds to Esprit",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.4.GuidedPractice1_Answering_the_rebuttal"
+          ]
+        },
+        {
+          "description": "Family dispute over too much technology",
+          "title": "Your sister answers back",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.4.GuidedPractice2_Answering_the_rebuttal"
+          ]
+        },
+        {
+          "description": "Year-round school proposal",
+          "title": "The school board responds",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.4.GuidedPractice3_Answering_the_rebuttal"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about answering the rebuttal!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Counter-rebuttals:  good or bad?",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS28CCT3.4.Challenge1_Answering_the_rebuttal_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Pick the best counter-rebuttal!",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS28CCT3.4.Challenge2_Answering_the_rebuttal_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Construct your own counter-rebuttal\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS28CCT3.4.Challenge3_Answering_the_rebuttal_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "title": "Choose the right verb tense",
+  "name": "CS33.5.Choose the right verb tense",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS33.5.Refresher_Choose_the_right_verb_tense"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose an online news story and work through an interactive example on choosing the right verb tense to place events on a timeline that makes sense to your reader",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "An unwelcome encounter with nature",
+          "title": "Bears in town",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.5.GuidedPractice1_Choose_the_right_verb_tense"
+          ]
+        },
+        {
+          "description": "Ribbon cutting ceremony",
+          "title": "New city park",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.5.GuidedPractice2_Choose_the_right_verb_tense"
+          ]
+        },
+        {
+          "description": "Ambulance corps needs volunteers",
+          "title": "Help wanted",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.5.GuidedPractice3_Choose_the_right_verb_tense"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Practice your verb tense skills\n",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS33.5.Challenge1_Choose_the_right_verb_tense_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Sort out sentences with errors in verb tense\n",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "CS33.5.Challenge2_Choose_the_right_verb_tense_sorter"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Super editor!  Find and fix verb tense errors\n",
+          "widget_name": "fix_it_widget",
+          "widget_description": "Correct words and phrases",
+          "files": [
+            "CS33.5.Challenge3_Choose_the_right_verb_tense_fixit"
+          ]
+        }
+      ]
+    }
+  ]
+}

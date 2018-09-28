@@ -1,0 +1,20 @@
+<div id="feedback-button" class="clickable" onclick="$('#feedback-form').show()">feedback</div>
+<div id="feedback-form" style="display:none">
+    <div id="feedback-close" class="icon-cancel clickable" ng-click="resetFeedback();"></div>
+    <form ng-submit="submit()" ng-if="!sent">
+        <p>Tell us what you think:</p>
+        <p>
+            <textarea name="feedback-textarea" id="feedback-textarea"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Send" id="feedback-submit" ng-click="submit()">
+        </p>
+    </form>
+    <div ng-if="sent" id="feedback-sent">
+        <p>Thank you. We appreciate your feedback!</p>
+        <input type="button" value="Close" id="feedback-dismiss" ng-click="resetFeedback();">
+        <div ng-if="sentError">
+            {{sentError}}
+        </div>
+    </div>
+</div>

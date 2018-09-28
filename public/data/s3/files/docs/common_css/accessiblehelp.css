@@ -1,0 +1,74 @@
+
+.page-header {
+    text-align: left;
+    font-family: lato;
+    font-size: 30px;
+    color: rgb(2,91,91);
+    font-weight: 700;
+}
+
+.h2 {
+    text-align: left;
+    font-family: lato;
+    font-size: 23px;
+    color: rgb(2, 91, 91);
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.h3 {
+    text-align: left;
+    font-family: lato;
+    font-size: 18px;
+    color: rgb(85, 38, 86);
+    font-weight: 700;
+    line-height: 1.6;
+}
+.normal {
+    text-align: left;
+    font-family: lato;
+    font-size: 15px;
+    color: rgb(0,0,0);
+    line-height: 1.6
+    
+}
+.link {
+    text-align: left;
+    font-family: lato;
+    font-size: 15px;
+    color: rgb(146, 49, 144);
+    text-decoration-line: underline;
+    font-weight: 700;
+    line-height: 1.6;
+}
+.h4 {
+    text-align: left;
+    font-family: lato;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(9, 158, 173);
+    line-height: 1.6;
+}
+ul  {
+    font-family: lato;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+}
+.toc {
+    text-align: left;
+    font-family: lato;
+    font-size: 15px;
+    color: rgb(146, 49, 144);
+    text-decoration-line: underline;
+    font-weight: 500;
+    line-height: 1.6;
+}
+    .toc2 {
+    text-align: left;
+    font-family: lato;
+    font-size: 13px;
+    color: rgb(89, 89, 91);
+    font-weight: 500;
+    margin-left:2em;
+}

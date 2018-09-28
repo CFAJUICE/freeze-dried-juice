@@ -1,0 +1,77 @@
+
+#common-modal-overlay{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(200,200,200,.8);
+  z-index: 10000;
+}
+
+.common-modal, #common-modal{
+  z-index: 10001;
+  position:fixed;
+  top:10%;
+  width: 60%;
+  margin: auto;
+  border-radius:10px;
+  background:white;
+  padding:4em;
+  left: 0;
+  right: 0;
+  max-height: 85%;
+  max-width: 789px;
+  h2#module-modal-popup-title{
+    float: left;
+    width: 40%;
+  }
+  @media (max-width: $small-width) {
+    width: 90%;
+    padding:2em;
+
+  }
+  .circle-icon{
+    max-width: 20vw;
+    max-height: 20vw;
+    min-width: 60px;
+    min-height: 60px;
+    border-width: 5px;
+  }
+  #popup-description{
+    font-size:1.3em;
+    padding-bottom: 1em;
+    clear:both;
+  }
+  #module-modal-logo{
+    max-width: 147px;
+    display: block;
+    width: 47vw;
+  }
+  .circle-icon-container{
+    position: absolute;
+    top: 91px;
+    right: 27px;
+  }
+  #close-common-modal{
+    font-size: 23px;
+    position: absolute;
+    right: 1.5em;
+    top: 2em;
+    cursor: pointer;
+    color:black;
+  }
+  #learn-more-container{
+    margin-top: 2em;
+    margin-left: -1em;
+    clear: both;
+    a{
+      text-decoration: none;
+      cursor:pointer;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+  }
+}
+

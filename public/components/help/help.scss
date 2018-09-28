@@ -1,0 +1,68 @@
+#common-modal.help-modal{
+  width:70%;
+  max-height:90%;
+  text-align:center;
+  img{
+    max-width:90%;
+    max-height:500px;
+  }
+}
+#page-help{
+  padding:1em;
+  #large-logo{
+    width:240px;
+  }
+  #notices{
+    padding-bottom:1em;
+  }
+
+  a[name] {
+    display: block;
+    padding-top: 120px;
+    margin-top: -120px;
+  }
+
+  p{
+    padding-left:2em;
+  }
+  ul{
+    padding-left:4em;
+  }
+  h4{
+    padding-left:1.4em;
+    padding-top:1em;
+  }
+  h3{
+    padding-top:2em;
+    font-size:21px;
+    &:before{
+      content: url(/components/breadcrumbs/orange-icon.png);
+      position: relative;
+      top: 2px;
+      padding-right: 5px;
+    }
+  }
+
+  .thumb-wrapper{
+    position:relative;
+    display:inline-block;
+  }
+  .thumb{
+    border:2px solid $link-color;
+    cursor: pointer;
+    height:120px;
+  }
+  .icon-popup:before {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: $link-color;
+  }
+  .expando{
+    text-decoration: underline;
+    color: $link-color;
+  }
+  .expand-target{
+    display:none;
+  }
+}

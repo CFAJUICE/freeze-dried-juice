@@ -1,0 +1,156 @@
+<div id="modulette" class="subject-{{moduletteData.subject}}" ng-show="loaded">
+    <div class="header-area ju-colors">
+        <div class="title-container">
+            <h2 class="title">{{moduletteData.title}}</h2>
+        </div>
+        <div class="page-actions">
+            <div ng-if="tab_id==='refresher'" id="page-tour" class="icon-map-o clickable" ng-click="restartTour()">&nbsp;&nbsp;page tour</div>
+        </div>
+        <audio-controller ng-class="(programValues.modulette.hide_main_audio || moduletteData.hide_audio==='1') ? 'not-visible' : 'visible'" ng-if="tab_id=='refresher'"></audio-controller>
+        <walkthrough-tooltip required-element=".audio-coaching-control" pointer-bottom="false" order="1" position="top:14px;right:259px;">
+            Turn on audio coaching for this page
+        </walkthrough-tooltip>
+        <walkthrough-tooltip required-element=".audio-image-container" pointer-bottom="false" order="2" position="top:109px;left:97px;" lean-left="true">
+            Listen to audio coaching for this step. <br>
+            Click again to pause
+        </walkthrough-tooltip>
+        <walkthrough-tooltip required-element="#tab-refresher" pointer-bottom="false" order="3" position="top:44px;left:140px;" lean-left="true">
+            Read through a step-by-step review of the basics
+        </walkthrough-tooltip>
+        <walkthrough-tooltip required-element="#tab-guided_practice" pointer-bottom="false" order="5" position="top:44px;left:264px;">
+            Answer questions and get detailed coaching as you work through an interactive example
+        </walkthrough-tooltip>
+        <walkthrough-tooltip required-element="#tab-challenge" pointer-bottom="false" order="6" position="top:44px;left:500px;">
+            Play the mini-games as many times as you like and get lots of friendly feedback
+        </walkthrough-tooltip>
+        <walkthrough-tooltip order="7" last="true" required-element=".breadcrumbs" relative-to=".breadcrumbs .element-2" pointer-bottom="false"  left-adjust="-108" top-adjust="-100" position="top: 0px;left: 0px;position: fixed;z-index: 10000;">
+            Go back and choose another mini-lesson
+        </walkthrough-tooltip>
+
+        <div class="tab-set-container">
+            <div class="tab-set" role="tablist">
+                <div
+                        ng-repeat="tab in moduletteData.tabs"
+                        id="tab-{{tab.id}}"
+                        ng-click="tabClick(tab.id)"
+                        ng-class="{'active' : tab.id==tab_id}"
+                        class="tab-element"
+						role="tab"
+					    aria-selected="{{tab.id==tab_id}}"
+					    tabindex="{{tab.id==tab_id?0:-1}}"
+				        ng-keydown="($event.keyCode === 39 || $event.keyCode === 37 || $event.keyCode === 9 || $event.keyCode === 13) && tab_arrowKeys($event.keyCode, tab.id)"
+					    
+                 >
+                    <div class="content">
+                        <img ng-src="{{image_path}}{{tab.id}}.png">
+                        <span class="normal-text">
+                            {{tab.display_name}}
+                        </span>
+                        <span class="small-text">
+                            {{tab.display_name == 'Challenge Games' ? 'Games' : tab.display_name}}
+                        </span>
+                    </div>
+
+                    <div class="tab-tooltip" ng-if="tab.id=='refresher'">
+                        Read through a step-by-step presentation. Turn on audio to hear narration.
+                    </div>
+                    <div class="tab-tooltip" ng-if="tab.id=='guided_practice'">
+                        Work through an interactive step-by-step example. Answer questions and get detailed feedback
+                        and coaching.
+                    </div>
+                    <div class="tab-tooltip" ng-if="tab.id=='challenge'">
+                        Choose a quick mini-game for practice or a self-check.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modulette-left-margin">
+        <div style="background-color:#FFFFFF;margin-top:1em" class="container ju-container-main relative">
+            <walkthrough-tooltip required-element=".next-button" pointer-bottom="true" order="4" position="bottom: 247px; left: 42%;" relative-to=".next-button:visible" left-adjust="-158" top-adjust="-362">
+                Continue the Overview
+            </walkthrough-tooltip>
+            <div ng-if="!selectedWidget">
+                <div ng-repeat="widget in activeTab.widgets[track]" class="selectable-widget">
+                    <a ng-click="selectWidget(widget, $index)">{{widget.id}}</a>
+                </div>
+            </div>
+            <div ng-if="(track_id == 'chooser') || (tab_id=='challenge')" class="chooser">
+                <div ng-if="tab_id == 'refresher'">
+                    <h2 ng-if="!currentTab.tab_header">Choose from any of these examples to see an interactive refresher.</h2>
+                    <h2 ng-if="currentTab.tab_header" ng-bind-html="currentTab.tab_header | trustHTML" ></h2>
+                    <div ng-if="currentTab.tab_subheader" class="subtitle" ng-bind-html="currentTab.tab_subheader | trustHTML"></div>
+                </div>
+
+                <div ng-if="tab_id == 'guided_practice'">
+                    <h2 ng-if="!currentTab.tab_header">Choose from any of these examples to see an interactive walkthrough.</h2>
+                    <h2 ng-if="currentTab.tab_header" ng-bind-html="currentTab.tab_header | trustHTML" tabindex=0></h2>
+                    <div ng-if="currentTab.tab_subheader" class="subtitle" ng-bind-html="currentTab.tab_subheader | trustHTML" tabindex=0></div>
+                </div>
+
+
+                <div class="show-if-user-is-touching" ng-if="(tab_id === 'challenge')">
+                    <h2 style="margin-top: 0px;">Sorry!</h2>
+                    <p>Spotlight games work on mobile devices, but other JUICE games may not work properly yet.   Touch screen controls are not enabled for some games.  Games will not resize to fit on smartphone screens.</p>
+                </div>
+
+                <div ng-if="tab_id == 'challenge'" ng-click="challengeWheelClick()">
+                    <h2 ng-if="!currentTab.tab_header">Play all three challenges to practice your skills. Pick any challenge to
+                        get started!</h2>
+                    <h2 ng-if="currentTab.tab_header" ng-bind-html="currentTab.tab_header | trustHTML" ></h2>
+                    <div ng-if="currentTab.tab_subheader" class="subtitle" ng-bind-html="currentTab.tab_subheader | trustHTML"></div>
+                </div>
+
+                <div ng-repeat="track in tracks" class="choice chooser-track-{{tab_id}}" 
+				        ng-if="$index != 0" 
+						ng-click="trackClick($index, tab_id)"
+						ng-keydown="($event.keyCode === 13) && trackClick($index, tab_id)"
+						tabindex=0 >
+                    <div class="track_image_wrapper" role="none">
+                        <div class="orange-container">
+                            <img ng-src="/images/orange_wedges/20x20/of_6/{{progress.getProgress(module_id, modulette_id, tab_id, $index)}}.png" role="none">
+                            <tooltip ng-bind-html="progress.getTooltip(module_id, modulette_id, tab_id, $index)" role="none"></tooltip>
+                        </div>
+                        <img-with-fallback
+                                src="full_s3_path + tab_id + '_track_' + $index + '.png'"
+                                fallback="fallback_s3_path + tab_id + '_track_' + $index + '.png'"
+                                imgclass="'tab-' + tab_id + '-choice-image subject-' + moduletteData.subject+ ' subject-border-color choice_image'" />
+                    </div>
+					<div class="screen-reader-only">{{tab_name}} {{$index}} of {{tracks.length-1}}</div>
+                    <h3 class="title" id="track-title-{{$index}}">{{track.title}}</h3>
+                    <div class="description" ng-bind-html="track.description"></div>
+					<div class="screen-reader-only" ng-bind-html="progress.getTooltip(module_id, modulette_id, tab_id, $index)"></div>
+                </div>
+                <div ng-if="tab_id=='challenge'">
+                    <ng-widget src="challenge_widget_name" options="{}" class="ng-scope ng-isolate-scope"></ng-widget>
+                </div>
+                <!--
+                <div ng-if="tab_id == 'challenge' || tab_id=='guided_practice'" class="big-continue">
+                    <h2>Conquered all three challenges?</h2>
+                    <h3>Go back to overview for Facing Grammer Fearlessly to work on another skill.</h3>
+                    <div class="goto-button">
+                        <div class="title">READY TO GO?</div>
+                        <div class="subtitle">
+                            BACK TO OVERVIEW
+                        </div>
+                    </div>
+                    <div class="goto-button" ng-if="tab_id=='guided_practice'">
+                        <div class="title">TRY SOME CHALLENGES ON MY OWN!</div>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <div ng-if="(track_id != 'chooser') && (tab_id != 'challenge')" id="widget-wrapper">
+                <a ng-if="showReportLink" class="report-link" href="try-it-report/{{trackFilename}}">Report</a>
+                <div ng-if="widget_name && manifest_loaded">
+                    <ng-widget src="widget_name" options="{}" class="ng-scope ng-isolate-scope" style="position:relative">
+                    </ng-widget>
+                </div>
+                <div id="widget-not-loaded" ng-if="!widget_name || !manifest_loaded">
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

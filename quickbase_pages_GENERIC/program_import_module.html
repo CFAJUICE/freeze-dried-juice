@@ -1,0 +1,549 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+<script>
+
+  //var QBU_thisTableId = window.location.pathname;
+  var QBU_thisTableId =$.getUrlVar("tableid");
+  var QBU_progress = 0;
+  var messageString = "";
+  var QBU_completionArray = [];
+  var modulesToCopy = [];
+   var competencyModules = {}; var moduleSubs = {};
+   var asyncReferenceCount = 0;
+
+  var QBU_tableList = ["_dbid_modulette_groups", "_dbid_modulettes", "_dbid_tabs", "_dbid_tracks", "_dbid_widget_instances", "_dbid_files", "_dbid_modulette_sub_competencies"];
+var QBU_tableProps = {
+       "_dbid_modules" : {moduleIdField: 11},
+    "_dbid_modulette_groups" : {moduleIdField:15, relatedItemField:9, relatedItemFieldName:"related_module"},
+    "_dbid_modulettes" : {moduleIdField:25, relatedItemField:15, relatedItemFieldName:"related_modulette_group"},
+    "_dbid_tabs": {moduleIdField:18, relatedItemField:7, relatedItemFieldName:"related_modulette"},
+    "_dbid_tracks": {moduleIdField:18, relatedItemField:7, relatedItemFieldName:"related_tab"},
+    "_dbid_widget_instances": {moduleIdField:23, relatedItemField:11, relatedItemFieldName:"related_track"},
+    "_dbid_files": {moduleIdField:36, relatedItemField:7, relatedItemFieldName:"related_widget_instance"},
+    "_dbid_modulette_rubrics": {relatedItemField:7, relatedItemFieldName:"rubric_id"},
+    "_dbid_modulette_sub_competencies": {moduleIdField:12, relatedItemField:6, relatedItemFieldName:"related_modulette"}
+}
+
+  var masterTableIdMapping = {};
+//sets the table id mapping
+function loadMasterSchemaThenExecute(callback) {
+   console.log( QBU_dbid_master);
+  $.when(
+      $.get(QBU_dbid_master, {a: "API_GetSchema"}).done(function (result) {
+       // console.log("mappings", result);
+        $(result).find("chdbid").each(function (ind, el) {
+          var name = $(el).attr("name");
+          var id = $(el).text();
+          masterTableIdMapping[name] = $(el).text();
+        });
+      })
+  ).then(callback);
+}
+
+function all(arrayOfPromises) {
+    return $.when.apply($, arrayOfPromises).then(function() {
+        return arguments;
+    });
+}
+
+function importProgress() {
+    QBU_progress = QBU_progress + 1;  
+    messageString = messageString + "*"
+    $("#message").html(messageString);
+    if (QBU_progress > 100){
+       QBU_progress =  0;
+       //messageString = messageString + "<br/>";
+       messageString = "";
+    }
+}
+
+function doQueryMaster(tableName, itemFieldId, itemToCopy, callback) {
+  var tb = masterTableIdMapping[tableName];
+  var query = "{" +itemFieldId+ ".EX.'" + itemToCopy + "'}";
+  var records = $.get(QBU_db_baseURL + masterTableIdMapping[tableName], {
+    a: "API_DoQuery",
+    clist: "a",
+    query: query
+    //query: ""
+    //query: "{14.EX.'" + moduletteName + "'}"
+    //query: "{14.EX.'" + moduletteName + "'}AND{18.EX.'" + tabs[i] + "'}"
+  });
+  records.done(function (result) {
+    var out = [];
+    $(result).find("record").each(function (ind, record) {
+      var record_obj = {}
+      $(record).children().each(function (c_index, child) {
+        var key = $(child).prop('nodeName');
+        var value = $(child).text();
+        record_obj[key] = value;
+      })
+      out.push(record_obj);
+    });
+    callback(out, itemToCopy);
+  });
+ return records;
+}
+
+function doPurgeRecords(tableName, fieldId, fieldValue, callback) {
+   var query =  "{" + fieldId + ".EX.'" + fieldValue + "'}";
+   var records = $.get(QBU_db_baseURL + tableIdMapping[tableName], {
+       a: "API_PurgeRecords",
+       query: query
+    });
+    records.done(function(results){
+        callback();
+   });
+}
+
+function doPurgeAllRecords(moduleId, callback) {
+   var tableName = "_dbid_modules";
+   var fieldId = QBU_tableProps[tableName].moduleIdField;
+   doPurgeRecords(tableName, fieldId, moduleId, function(){
+       var promiseArray = [];
+       QBU_tableList.forEach(function(tableName){
+          (function(tableName) {
+             var promise = $.Deferred();
+             promiseArray.push(promise);
+             var fieldId = QBU_tableProps[tableName].moduleIdField;
+             doPurgeRecords(tableName, fieldId, "", function(){
+                promise.resolve();
+             }); 
+          })(tableName);
+       });    
+       var promAll = all(promiseArray);
+       promAll.done(function(results){
+          callback(moduleId);
+       });
+   });     
+}
+
+
+//
+// Takes an object and returns XML to be included in the POST body of API_AddRecord
+//
+function generateXML(obj) {
+  var doc = document.implementation.createDocument(null, "qdbapi", null);
+  $.each(obj, function(key, elem){ 
+    var fieldElement;
+      fieldElement = doc.createElement("field");
+    var field = doc.createTextNode(elem);
+    fieldElement.setAttribute("name", key);
+    fieldElement.appendChild(field);
+    doc.documentElement.appendChild(fieldElement);
+  });
+   var errElement = doc.createElement("ignoreError");
+   errElement.appendChild(doc.createTextNode("1"));
+   doc.documentElement.appendChild(errElement);
+  return doc;
+}
+
+function all(arrayOfPromises) {
+    return $.when.apply($, arrayOfPromises).then(function() {
+        return arguments;
+    });
+}
+
+
+ function doAddHeadRecord(tableName, recordXML, referenceItem, callback) {
+   var url = QBU_db_baseURL + tableIdMapping[tableName];
+   $.ajax({
+     type: "POST",
+     url: url,
+     headers: {"QUICKBASE-ACTION":"API_AddRecord", "Content-Type":"application/xml"},
+     processData: false,
+     data: recordXML
+     }).done(function(result){
+       var el = $(result).find("rid")[0];
+       var rid = $(el).text();
+       callback(rid, referenceItem);
+     });
+  }
+
+ function setImportCompleteMessage(){
+       $('#working').css({"display":"none"});
+       $('#complete').css({"display":"inline"});
+ }
+
+
+  function doAddRecord(tableName, recordXML, referenceItem, relatedItemFieldId, parentRidValue, callback, subCompRef) {
+   var url = QBU_db_baseURL + tableIdMapping[tableName];
+   //console.log("doAddRecord", tableName, typeof callback );
+   asyncReferenceCount += 1;
+   importProgress();
+   $.ajax({
+     type: "POST",
+     url: url,
+     headers: {"QUICKBASE-ACTION":"API_AddRecord", "Content-Type":"application/xml"},
+     processData: false,
+     data: recordXML
+   }).done(function(result){
+           //console.log("done", tableName, referenceItem, relatedItemFieldId, parentRidValue );
+           var el = $(result).find("rid")[0];
+           var rid = $(el).text();
+           var obj = {a: "API_EditRecord", rid:rid}
+           obj["_fid_"+ relatedItemFieldId] = parentRidValue;
+           $.get(url, obj).done(function(result){callback(rid, referenceItem); asyncReferenceCount -= 1; if(asyncReferenceCount == 0) setImportCompleteMessage();}); 
+           if (tableName == "_dbid_modulette_sub_competencies"){
+              var obj = {a: "API_EditRecord", rid:rid}
+              obj["_fnm_related_sub_competency"] = subCompRef; //_fid_9
+              $.get(url, obj);
+           }
+     });
+  }
+
+   
+ function moduletteInModulesToCopy(moduletteName) {
+      var retValue = false; 
+      modulesToCopy.forEach(function(module) {
+         if (moduletteName.split('.')[0] == module.split('.')[0]) retValue = true;
+      });
+      return retValue;
+ }
+
+
+  //referenceItem is the value in the reference key field in Master table
+  //parentRidValue is the value of the reference field in the PROGRAM table copy.
+  function processTable(tableName, relatedItemFieldId, relatedItemFieldName, refItem, parentRidValue, callback) {
+           //console.log(tableName, relatedItemFieldId, relatedItemFieldName, refItem, parentRidValue);
+               //var query = "{" +relatedModuleFieldId+ ".EX.'" + moduleToCopy + "'}";
+               doQueryMaster(tableName, relatedItemFieldId, refItem, function(records) {  
+                   records.forEach(function(record){
+                        record[relatedItemFieldName] = parentRidValue;
+                      //  console.log(record);
+                        var doc = generateXML(record);
+                        if (tableName != "_dbid_modulette_rubrics") var refItem = record["record_id_"];
+                        if (tableName == "_dbid_modulette_sub_competencies"){                                       
+                              var subCompRef = record.related_sub_competency;   //needed for API_EditRecord
+                             (function(xml) {doAddRecord(tableName, xml, refItem, relatedItemFieldId, parentRidValue, callback, subCompRef)})(doc);
+                        } else if (tableName == "_dbid_modulette_rubrics") {
+                          if (moduletteInModulesToCopy(record["modulette_name"])) {  // if modulette belongs to module to copy...
+                             var query = "{6.EX.'" + record["modulette_name"] + "'}AND{7.EX.'" + record["rubric_id"] + "'}";  //don't add duplicates
+                             doQuery(tableName, query, function(records) { 
+                                 console.log("************", query, records);
+                                 if (!records[0]){ 
+                                       (function(xml) {doAddRecord(tableName, xml, refItem, relatedItemFieldId, parentRidValue, callback)})(doc);
+                                 }
+                              });
+                           }
+                        } else {
+                              var refItem = record["record_id_"];
+                             (function(xml) {doAddRecord(tableName, xml, refItem, relatedItemFieldId, parentRidValue, callback)})(doc);
+                        }
+                  });
+               });   
+  }
+
+ var syncWidgets = function () {
+      //purge table
+      $.get(tableIdMapping["_dbid_widgets"], {a: "API_PurgeRecords", query: ""}).done(function () {
+         doQueryMaster("_dbid_widgets", "", "", function(records) {  // alias for widgets table is _dbid_table_1 !!!! 
+             var url= tableIdMapping["_dbid_widgets"];
+             records.forEach(function(record){    
+               importProgress();
+               //console.log("widget", record.name);
+               var doc = generateXML(record);
+               (function(doc) {$.ajax({
+                   type: "POST",
+                   url: url,
+                   headers: {"QUICKBASE-ACTION":"API_AddRecord", "Content-Type":"application/xml"},
+                   processData: false,
+                   data: doc
+                }) })(doc);
+            });
+         
+          });
+      }); 
+ }
+
+ var processModuletteGroups = function (rid, refItem) {
+          var tableName = "_dbid_modulette_groups";
+          console.log("in modulette processing", tableName, rid, refItem);
+          importProgress();
+          processTable(tableName, QBU_tableProps[tableName].relatedItemField, QBU_tableProps[tableName].relatedItemFieldName, refItem, rid, processModulettes);
+ } 
+
+ var processModulettes = function (rid, refItem) {
+          var tableName = "_dbid_modulettes";
+          console.log("in modulette processing", tableName, rid, refItem);
+          importProgress();
+           processTable(tableName, QBU_tableProps[tableName].relatedItemField, QBU_tableProps[tableName].relatedItemFieldName, refItem, rid,processTabs);
+ } 
+
+ var processTabs = function (rid, refItem) {
+          var tableName = "_dbid_tabs";
+          console.log("in tab processing", tableName, rid, refItem);
+          importProgress();
+           processTable(tableName, QBU_tableProps[tableName].relatedItemField, QBU_tableProps[tableName].relatedItemFieldName, refItem, rid, processTracks);
+           tableName = "_dbid_modulette_sub_competencies";
+           processTable(tableName, QBU_tableProps[tableName].relatedItemField, QBU_tableProps[tableName].relatedItemFieldName, refItem, rid, function(){});
+ } 
+
+  var processTracks = function (rid, refItem) {
+          var tableName = "_dbid_tracks";
+          console.log("in track processing", tableName, rid, refItem);
+           processTable(tableName, QBU_tableProps[tableName].relatedItemField, QBU_tableProps[tableName].relatedItemFieldName, refItem, rid, processWidgetInstances);
+ } 
+
+  var processWidgetInstances = function (rid, refItem) {
+          var tableName = "_dbid_widget_instances";
+          console.log("in widget instance processing", tableName, rid, refItem);
+          importProgress();
+           processTable(tableName, QBU_tableProps[tableName].relatedItemField, QBU_tableProps[tableName].relatedItemFieldName, refItem, rid, processFiles);
+ } 
+
+ var processFiles = function (rid, refItem) {
+          var tableName = "_dbid_files";
+          console.log("in files processing", tableName, rid, refItem);
+           processTable(tableName, QBU_tableProps[tableName].relatedItemField, QBU_tableProps[tableName].relatedItemFieldName, refItem, rid, function(){});
+ } 
+
+ var processModuletteRubrics = function (rid, refItem) {
+          var tableName = "_dbid_modulette_rubrics";
+          console.log("in modulette_rubric processing", tableName, rid, refItem);
+          importProgress();
+          //rid must be the Rubric Name
+           processTable(tableName, QBU_tableProps[tableName].relatedItemField, QBU_tableProps[tableName].relatedItemFieldName, refItem, refItem, function(){});
+ } 
+
+ var getModuleList = function() {
+    var modulesToCopyStr =  $("#modules").val();
+    var modules = modulesToCopyStr ? modulesToCopyStr.split(",") : [];
+    return modules;
+ }
+
+  var setModuleList = function(modules) {
+    var modulesStr = "";
+    $.each(modules, function(index, mod) {
+       modulesStr = modulesStr + mod;
+       if (index < modules.length - 1) modulesStr = modulesStr + ',';
+    });
+    return modulesStr;
+ }
+
+
+  function buildModuleSubcompDisplay(modules) {
+     var content = '<tr style="padding:20px">' + '<td style="width:200px;vertical-align:top;padding-bottom:10px"><strong>Module</strong></td><td style="padding-bottom:10px"><strong>Subcompetency</strong></td></tr>'
+     content = content + '<tr style="padding:20px">';
+     $.each(modules, function(index, mod) {
+          content = content + '<td style="width:200px;vertical-align:top;padding-bottom:10px">' + mod + '</td><td style="padding-bottom:10px">';
+          $.each(moduleSubs[mod].sort(), function(i, subcomp){
+              content = content + '<div>' + subcomp + '</div>';
+          });
+          content = content + '</td></tr>';
+     });
+     content = content + '</table>';
+     return content;
+  }
+
+  function showSubcompetencies(key) {
+    console.log(document.body.scrollTop);
+    $('#competency').html(competencyModules[key].competency);
+    $('#subcompetencies').css('top', (document.body.scrollTop - 50) + 'px');
+    $('#subtable').html( buildModuleSubcompDisplay(competencyModules[key].modules));
+    $('#subcompetencies').css('visibility', 'visible');
+  }
+
+   function hideSubcompetencies() {
+    console.log('TOGGLE');
+    $('#subcompetencies').css('visibility', 'hidden');
+  }
+
+ //* MAIN *//
+        $(document).ready(function () {
+        $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+           loadSchemaThenExecute(function mainCallbackAfterSchemaLoad(){
+              loadMasterSchemaThenExecute(function mainCallbackAfterSchemaLoad(){
+
+              function showModule(title) {
+                  var show = true;
+                  if (title.indexOf('***') == 0) show = false;
+                  return show;
+              }
+
+              function showCompetency(modules, moduleDict) {
+                  var hide = true;
+                  $.each(modules, function(index, mod) {
+                     if (moduleDict[mod].indexOf('***') != 0) hide = false;
+                  });                  
+                  return !hide;
+              }
+
+              function buildModuleListDisplay(key, modules, moduleDict, modulesInProgram) {
+                  var content = '<table style="width:450px;border-collapse:collapse;font-size:14px">';
+                  $.each(modules, function(index, mod) {
+                       if (showModule(moduleDict[mod])) {
+                         if ($.inArray(mod, modulesInProgram) >= 0){
+                            content = content + '<tr><td style="width:200px;vertical-align:top;padding-bottom:10px;color:red">' + mod + '***</td><td style="vertical-align:top;padding-bottom:10px;color:red">' + moduleDict[mod] + '</td></tr>'; 
+
+                         } else {
+                            content = content + '<tr><td style="width:200px;vertical-align:top;padding-bottom:10px">' + mod + '</td><td style="vertical-align:top;padding-bottom:10px;">' + moduleDict[mod] + '</td></tr>'; 
+                         }                         
+                       }
+                  });
+                  content = content + '<tr><td style="width:200px;vertical-align:top;padding-bottom:10px"><a href="javascript:showSubcompetencies('+key+')">Show subcompetencies...</a></td><td style="vertical-align:top;padding-bottom:10px;">&nbsp;</td></tr>'; 
+                  content = content + '</table>';
+                  return content;
+              }
+
+
+                //build and display competency-modules structure
+                //
+               
+                var modulesList = [];
+                var moduleDict = {};
+                var modulesInProgram = [];
+                var showSubcompetencies = false; var subSelection = $('#subcompetencies'); var subTable = $('#subtable');
+                doQuery("_dbid_modules", "", function(moduleRecords) {
+                       $.each(moduleRecords, function(k, mod) {
+                            modulesInProgram.push(mod.id);
+                       });
+                       console.log('MODULES IN PROGRAM', modulesInProgram);
+                  doQueryMaster("_dbid_modulette_sub_competencies", "", "", function(records, recIdReference) {
+                   records.forEach(function(record){ 
+                       var key = record.sub_competency___related_competency;
+                       moduleDict[record.related_module_id] = record.related_module_title;
+                       if (!moduleSubs[record.related_module_id]) moduleSubs[record.related_module_id] = [];
+                       moduleSubs[record.related_module_id].push(record.sub_competency);
+                       if (!competencyModules[key]) competencyModules[key] = {competency:record.competency, modules:[]};
+                       if ($.inArray(record.related_module_id, competencyModules[key].modules) < 0)  competencyModules[key].modules.push(record.related_module_id);
+                    });
+                    console.log(competencyModules);  
+                    console.log(moduleDict);
+                    console.log(moduleSubs);
+                
+                    var selection = $('#table');
+                    $.each(competencyModules, function( key, value ) {
+                       var label = $('<td>', {'style':'border:1px solid lightgray;vertical-align:top'}).append($('<label>', {'for': 'cb'+key, 'style':'display: block; padding-left: 1.5em;text-indent: -1.25em;'}).append($('<input>', {'type': 'checkbox', 'id': 'cb'+key, 'name': 'cb'+key})).append(value.competency));
+                       //label.append('<br/><a href="javascript:showSubcompetencies('+key+')">Show Subcompetencies...</a>');
+                       var item = $('<tr>', {'padding': '20px'}).append(label).append($('<td>', {'width':'500px', 'style':'border:1px solid lightgray;vertical-align:top'}).html(buildModuleListDisplay(key, value.modules, moduleDict, modulesInProgram)));
+                       if (showCompetency(value.modules, moduleDict)) item.appendTo(selection);
+                    });
+                      
+                    var checks = selection.find('input');
+                    
+                    // assign function to onclick property of each checkbox
+                    for (var i=0, len=checks.length; i<len; i++) {
+                      if ( checks[i].type === 'checkbox' ) {
+                         checks[i].onclick = function() {
+                              console.log('check', $(this)[0].id.slice(2), $(this)[0].checked);
+                              var key = $(this)[0].id.slice(2);
+                              var checked = $(this)[0].checked;
+                              var modules = getModuleList();
+                              $.each(competencyModules[parseInt(key)].modules, function(index, mod) {
+                              var k = $.inArray(mod, modules);
+                                  if (k < 0 && checked) {
+                                      modules.push(mod);
+                                  }
+                                  if (k >= 0 && !checked) {
+                                      modules.splice(k, 1);
+                                  }
+                              });
+                              $("#modules").val(setModuleList(modules));
+                          }
+                      }
+                    }
+                 }); //end doQuery
+               }); //end doQueryMaster
+
+                 
+                
+                $("#import-btn").click(function() {
+                   //update widgets table
+                   syncWidgets();
+                   $("#import-btn").attr("disabled", true);
+				   $("#working").css({"display":"inline"});
+                   asyncReferenceCount += 1; //increment count to make sure we won't exit right away (IMPORT COMPLETE message)
+                   //update rubrics & modulette-rubrics tables
+                   //clean-up first
+                   //$.get(tableIdMapping["_dbid_rubrics"], {a: "API_PurgeRecords",query: ""}).done(function () {
+                     // $.get(tableIdMapping["_dbid_modulette_rubrics"], {a: "API_PurgeRecords",query: ""}).done(function () {
+                        doQueryMaster("_dbid_rubrics", "", "", function(records, recIdReference) {
+                          records.forEach(function(record){
+                                  var doc = generateXML(record);
+                                  var refItem = record["rubric_id"];
+                                  console.log("REFITEM", refItem);
+                                  importProgress();
+                                  (function(xml, refItem) {doAddHeadRecord("_dbid_rubrics", xml, refItem, processModuletteRubrics)}) (doc, refItem);
+                           });
+                        });  
+                     // });
+                    //});  
+
+                   var modulesToCopyStr =  $("#modules").val();
+                   
+                   if (modules){
+                       modulesToCopy = modulesToCopyStr.split(",");
+                   }
+                   console.log("list of Modules", modulesToCopy);
+                   //var modulesToCopy = ["QS8.probability", "CS33.grammar"];
+                    modulesToCopy.forEach(function(module) {
+                        var moduleToCopy = module.trim();   
+                        doPurgeAllRecords(moduleToCopy, function(module){
+                            //console.log("deleted module", module);
+                             doQueryMaster("_dbid_modules", QBU_tableProps["_dbid_modules"].moduleIdField, moduleToCopy, function(records, recIdReference) { //"11"
+                                records.forEach(function(record){
+                                  var doc = generateXML(record);
+                                  var refItem = record["record_id_"];
+                                   importProgress();
+                                  (function(xml, refItem) {doAddHeadRecord("_dbid_modules", xml, refItem, processModuletteGroups)}) (doc, refItem);
+                                });
+                             });             
+                         }); 
+                      });     
+                      
+                     setTimeout(function(){asyncReferenceCount -= 1;
+					   if(asyncReferenceCount == 0) setImportCompleteMessage();
+					 }, 5000); //check  count after 5s (for IMPORT COMPLETE message).  
+
+
+                  });  // end click handler
+
+              }); 
+           });
+        });
+        });
+
+    </script>
+</head>
+<body style="font-family:Arial, sans-serif;padding:20px;font-size:14px;">
+
+
+<b>Import JUICE modules to your program</b>
+<p/>
+Selecting competencies from the table below creates a comma-separated list of module ids to import, i.e.: QS8.probability, CS33.grammar.  
+<p/>
+1.    Modules you have already imported are shown in red with asterisks ***. If you re-import a module, any changes you have made will be overwritten.<br/>
+2.    Review the competency list below; click the link to to see a list of subcompetencies included in each module.<br/>
+3.    Select competencies to add modules to the import list.  You may also edit the list manually.<br/>
+4.    Click <b>Import</b> when you are done. When the asterisks stop appearing underneath the Import button, the import is complete.<br/>
+5.    You may return to this page and import more modules at any time.  You can delete imported modules from the modules table in your program.<br/>
+
+<div><strong>Modules selected for import:</strong></div>
+<p/><input id="modules" type="text" size="200"/>
+<p/> <input id="import-btn" type="button" value="Import"/><span id="working" style="color:red;display:none;padding-left:20px"><strong>WORKING...</strong></span> <span id="complete" style="color:green;display:none;padding-left:20px"><strong>IMPORT COMPLETED!</strong></span> 
+<div id='message'></div>
+
+<div id='list' style='margin-left:25px;position:relative'>
+<table id="table" style="max-width:900px; border-collapse:collapse;font-size:14px">
+   <tr>
+     <td style="width:500px"><b> Available Competencies </b></td>
+     <td>
+        <table style="width:450px"><tr><td style="width:200px"><b>JUICE Module Ids</b></td><td><b>Module Name</b></td></tr></table>
+     </td>
+   </tr> 
+</table>
+<p/>
+
+<div id='subcompetencies' style='position:absolute;width:750px;top:-50px;left:200px;background:#F5F5F5;padding:20px;box-shadow:10px 10px 5px #888888;visibility:hidden' onclick='hideSubcompetencies()'> 
+  <div style='text-align:right'>X</div>
+  <strong>Competency: </strong> <span id='competency'> </span>
+  <p/>
+  <table id='subtable' style='margin:20px;font-size:14px'> </table>
+</div>
+</div>
+<div id='error'></div>
+
+</body>
+</html>

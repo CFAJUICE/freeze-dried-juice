@@ -1,0 +1,92 @@
+html
+    head
+        title JUICE - Refresh Your Skills
+        script.
+            var force_ga = '/unauthenticated.html'
+        script(src='/public_configs.js?githash='+gitHash)
+        script(src='/components/google-analytics/google-analytics.js?githash='+gitHash)
+        link(rel='stylesheet', href='/main.css?githash='+gitHash)
+        script(src='/bower_components/jquery/dist/jquery.js?githash='+gitHash)
+        script(src='/components/cookie-notice/cookie-notice.js?githash='+gitHash)
+        script.
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i = 0; i <ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length,c.length);
+                    }
+                }
+                return "";
+            }
+            $(document).ready(function(){
+                var has_logged_in = Number(getCookie('user_has_logged_in'));
+                if(!has_logged_in){
+                    //check the url for keywords
+                    var keywords = ['module', 'modulette'];
+                    keywords.forEach(function(keyword){
+                        if(window.location.pathname.indexOf(keyword)!==-1){
+                            has_logged_in = true;
+                        }
+                    });
+                }
+                if(has_logged_in){
+                    $('#log-back-in').show('slow');
+                }
+            })
+    body#unauthenticated-page.static-page
+        #log-back-in.blob-container
+            .blob-inner
+                | Goodbye! You have logged out of JUICE. To return, log back into your online learning portal.
+        header
+            img#logo(src='/images/logos/Logo_OnWhite.png')
+        #blurb
+            | “Just-in-time, contextualized, and empowering academic support”
+        #content.blob-container
+            .blob-inner(tabindex=1)
+                p
+                    | Welcome to the JUICE Learning Project sponsored by the&nbsp;
+                    a(href='http://www.collegeforamerica.org/')
+                        | College for America (CfA)
+                    |                 program at Southern New Hampshire University.
+                p
+                    | JUICE is a new learning platform designed to provide competency-based academic skills support for
+                    | college students. We are developing and researching the effectiveness of JUICE with the help of a US
+                    | Department of Education&nbsp;
+                    a(href='http://www.ed.gov/news/press-releases/department-awards-75-million-first-world-grants-24-colleges-and-universities')
+                        | First in the World (FITW)
+                    |                 grant. JUICE is available to only a limited number of
+                    |                 people at this time. We look forward to sharing the results of our research soon.
+                p
+                    | If you are a student, learning coach, advisor, project reviewer, or instructor with access to JUICE, return to
+                    | your online learning portal to log in. For more information,&nbsp;
+                    a(href='mailto:juiceinfo@snhu.edu') contact us
+                    | .
+        #footer.blob-container
+            div(style="display:none" id="code-initializer")
+                | vnrulsferlosujwnsyxl
+            .blob-inner(tabindex=1)
+                #footer-wrapper
+                    #cfa-container
+                        img#cfa-logo(src='/images/logos/Combined_logo.png')
+                    #cc
+                        | Except where otherwise noted, content on this site is licensed under a&nbsp;
+                        a(rel='license', href='http://creativecommons.org/licenses/by-sa/4.0/')
+                            | Creative Commons Attribution-ShareAlike 4.0 International License
+                        br
+                        br
+                        | The College for America at Southern New Hampshire University name and logo are registered trademarks of Southern New Hampshire University.
+                .terms-and-policy
+                    a(target="terms" href="https:" + fileResources + "docs/social_login_terms_and_conditions.html")  Terms of Use
+                    span |
+                    a(target="terms" href="https:" + fileResources + "docs/privacy_policy.html") Privacy Policy
+        .cookie-notice
+            .pad
+                | &nbsp;
+            .notice-content(tabindex=1)
+                | We use cookies to give you the best online experience. By using our website, you agree to our use of cookies in accordance with our privacy policy.
+                button(class='juice-button' aria-label='Accept cookies OK button') OK

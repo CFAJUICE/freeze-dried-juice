@@ -1,0 +1,185 @@
+<div ng-controller="GameAuthoringCtrl as authoring" class="container game authoring">
+  <game-editor content-controller="GameContentCtrl as content">
+    <div ng-include="'/components/authoring/game/editor-header.html'"></div>
+
+    <div class="sections">
+        <div class="section">
+            <div ng-include="'/components/authoring/game/common-start.html'"></div>
+        </div>
+        <!-- Instructions -->
+        <div class="section">
+        <div class="form-group">
+          <h3 class="col-sm-2">Instructions</h3>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <textarea class="form-control" placeholder="Instructions" ng-model="content.round.instructions.content" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-6">
+            <label>
+              <select class="form-control select-inline"
+                      ng-model="content.round.instructions.align"
+                      ng-init="content.round.instructions.align = content.round.instructions.align ? content.round.instructions.align : 'center'">
+                <option value="center">Center Align</option>
+                <option value="left">Left Align</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+              <strong>Font Size</strong>
+              <label class="inline-checkbox-label" >
+                  <select ng-model="content.round.instructions_font_size">
+                      <option ng-repeat="fontSize in [10, 12, 14, 16, 18, 20, 22, 24]"
+                              value="{{fontSize}}"
+                              ng-selected="fontSize == content.round.instructions_font_size">{{fontSize}}</option>
+                  </select>
+              </label>
+          </div>
+        </div>
+
+        <br/>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <textarea class="form-control" placeholder="Prompt" ng-model="content.round.prompt.content"
+                      rows="{{content.round.instructions.img ? 1 : 5}}"
+                      ng-readonly="content.round.instructions.img"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+              <strong>Font Size</strong>
+              <label class="inline-checkbox-label" >
+                  <select ng-model="content.round.prompt_font_size">
+                      <option ng-repeat="fontSize in [10, 12, 14, 16, 18, 20, 22, 24]"
+                              value="{{fontSize}}"
+                              ng-selected="fontSize == content.round.prompt_font_size">{{fontSize}}</option>
+                  </select>
+              </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <p>
+              <input type="file"
+                     accept="image/*"
+                     data-type="round-img"
+                     onchange="angular.element(this).scope().fileChanged(this)"/>
+            </p>
+            <p class="help-block">
+              Upload an image to use as your prompt.
+            </p>
+            <p>
+              <button class="btn btn-danger" ng-if="content.round.instructions.img" ng-click="content.deleteImg(content.round.instructions)">
+                Remove
+              </button>
+            </p>
+          </div>
+          <div class="col-sm-12" ng-if="content.round.instructions.img">
+            <img ng-src="data:image/png;base64, {{content.round.instructions.img}}" alt="Instructions Image" class="prompt-img"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-6">
+            <label>
+              <select class="form-control select-inline"
+                      ng-model="content.round.prompt.align"
+                      ng-init="content.round.prompt.align = content.round.prompt.align ? content.round.prompt.align : 'center'">
+                <option value="center">Center Align</option>
+                <option value="left">Left Align</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+        <!-- Values -->
+      <div class="section values">
+        <div class="form-group">
+          <h3 class="col-sm-2">Problem</h3>
+
+          <div class="col-sm-10 edit-btns">
+            <button class="btn btn-primary" ng-click="content.toggleEdit('values')">
+              {{content.sections.values.editing ? 'Done' : 'Edit'}}
+            </button>
+          </div>
+            <p class="help-block" style="clear:both">
+            <ul>
+                <li>~ is used for new lines</li>
+                <li>[Brackets to mark correct phrases]</li>
+                <li>[Brackets with incorrect phrase|Pipe separating correct answer on right|you can have alternative answers|yes many of them]</li>
+                <li>If you will be copy/pasting from word,
+                    <a target="_blank" href="http://www.techrepublic.com/blog/microsoft-office/turn-off-words-smart-quotes/">turn off smartquotes</a>.
+                    ‘Smartquotes’ are the tilted apostrophes, and you need the straight ones ' that users can type on the keyboard.
+                </li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12" style="">
+              <div class="col-sm-12">
+                  <textarea class="form-control" placeholder="[Some example phrase.] This is some unselectable text. ~[Another example phrase after new line break.] [I incorect fraze.|I am so correct!|I am also correct]" ng-model="content.round.problem_content"
+                            rows="5"
+                            ng-readonly="!content.sections.values.editing"
+                            ></textarea>
+              </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+              <strong>Font Size</strong>
+              <label class="inline-checkbox-label" >
+                  <select ng-model="content.round.problem_font_size">
+                      <option ng-repeat="fontSize in [10, 12, 14, 16, 18, 20, 22, 24]"
+                              value="{{fontSize}}"
+                              ng-selected="fontSize == content.round.instructions_font_size">{{fontSize}}</option>
+                  </select>
+              </label>
+          </div>
+        </div>
+
+
+
+
+        <!-- Feedback -->
+      <div class="section feedback">
+        <div ng-include="'/components/authoring/game/editor-general-feedback.html'"></div>
+
+        <!-- Specific feedback -->
+        <div class="form-group">
+          <div class="col-sm-12">
+            Specific Incorrect Feedback
+          </div>
+        </div>
+        <div class="form-group can-delete" ng-repeat="feedback in content.feedback">
+          <div class="col-sm-3">
+            <select class="form-control" ng-model="feedback.answer">
+              <option ng-repeat="value in content.values" value="{{value.id}}" ng-selected="feedback.answer == value.id">{{value.content}}</option>
+            </select>
+          </div>
+
+          <div class="col-sm-8">
+            <textarea class="form-control"
+                      rows="6"
+                      ng-model="feedback.content" ng-readonly="!content.sections.feedback.editing">
+              {{feedback.content}}
+            </textarea>
+          </div>
+          <div class="col-sm-1">
+            <button class="btn btn-danger"
+                    ng-click="content.remove('feedback', feedback)"
+                    ng-if="content.sections.feedback.editing">-
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </game-editor>
+</div>

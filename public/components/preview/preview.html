@@ -1,0 +1,17 @@
+<div style="padding-left:44px; color:#04694A;"></div>
+<div style="padding-left:44px;">
+    <button ng-click="reset()" style="margin-right:5px; margin-bottom:5px;">Reset</button>
+    <button ng-click="next()" ng-disabled="disabledButton.next" ng-hide="hiddenButton.next"
+            style="margin-right:5px; margin-bottom:5px; float:right">Next
+    </button>
+    <button ng-click="previous()" ng-disabled="disabledButton.previous" ng-hide="hiddenButton.previous"
+            style="margin-right:5px; margin-bottom:5px; float:right">Previous
+    </button>
+</div>
+<p>&nbsp;
+
+<div ng-class="{'container': true, 'ju-container-main':true, 'ju-guided':guidedPractice}">
+    <div style="padding:10px">
+        <div ui-view></div>
+    </div>
+</div>

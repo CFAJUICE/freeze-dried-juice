@@ -1,0 +1,80 @@
+#generated_url_container{
+    padding:1em;
+    border-radius:5px;
+    background:lightgray;
+    border:1px solid darkgray;
+    width:500px;
+}
+
+#generated_url_container{
+    clear:both;
+}
+
+label{
+    width:130px;
+    float:left;
+    clear:both;
+    position:relative;
+}
+
+.post-get{
+    width:60px;
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+
+.pilot-study label:nth-child(odd){
+    background:white;
+}
+
+input, select{
+    width:400px;
+    position:relative;
+    float:left;
+}
+
+label, input, select{
+    margin-bottom:1em;
+}
+
+#generated_url_container{
+    clear:both;
+}
+
+fieldset{
+    clear:both;
+}
+form > p {
+    display: none;
+}
+
+.pilot-study #generated_url_container, .pilot-study #debug-container, .pilot-study #user_configs, .pilot-study #params > p{
+    display:none;
+}
+
+#params > p#user-id-container{
+    display:block;
+}
+
+#submit-container{
+    display:block;
+}
+
+h3{
+    display:none;
+}
+
+.small-button{
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin: 5px;
+    padding: 1px 3px;
+    font-family: sans-serif;
+    background: lightgray;
+}
+.label-input{
+    margin: 0px;
+    width: 200px;
+}

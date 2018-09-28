@@ -1,0 +1,63 @@
+{
+  "description": "Do you need help with math problems using basic statistics or probability? Try exploring one of these mini-lessons for a quick review using examples about randomly selecting a planning committee and ordering food for the office summer picnic. Or, try a round or two of the Challenge Wheel to check what you already know!",
+  "id": "QS8.probability",
+  "subtitle": "Planning the office summer picnic",
+  "title": "What's the probability?",
+  "subject": "math",
+  "challenge_widget_type": "quick_pick_widget",
+  "record_id_": "6",
+  "dashboard_order": "9",
+  "challenge_wheel_available": "1",
+  "popup_title": "Boost your probability and statistics skills!",
+  "popup_description": " Review and practice mean, median, mode, and probability calculations using mini-lessons about selecting volunteers for a picnic committee.",
+  "hide_audio": "0",
+  "hide_sub_audio": "0",
+  "modulette_groups": [
+    {
+      "subtitle": "How much food do we need?",
+      "title": "Working with data",
+      "record_id_": "17",
+      "modulettes": [
+        {
+          "id": "QS8.1.Mean, median, and mode",
+          "description": "How can I use mean, median and mode to estimate this year's attendance?",
+          "link_text": "Mean, median, and mode"
+        }
+      ]
+    },
+    {
+      "subtitle": "Will your first few picks give you the committee you want?",
+      "title": "Getting started with probability",
+      "record_id_": "18",
+      "modulettes": [
+        {
+          "id": "QS8.2.Introduction to probability",
+          "description": "What do I need to know about probability to get started?",
+          "link_text": "Introduction to probability"
+        },
+        {
+          "id": "QS8.3.Basic probability",
+          "description": "What are the odds that my first pick will have been to the picnic at least 7 times?",
+          "link_text": "Basic probability"
+        }
+      ]
+    },
+    {
+      "subtitle": "Different ways of selecting the committee",
+      "title": "Trickier probability",
+      "record_id_": "33",
+      "modulettes": [
+        {
+          "id": "QS8.4.Probability with \"OR\"",
+          "description": "How likely is it that I will pick a manager OR a director?",
+          "link_text": "Probability with OR"
+        },
+        {
+          "id": "QS8.6.Compound probability",
+          "description": "If I pick two at a time, what are the chances my first two picks will have the variety I need for the committee?",
+          "link_text": "Compound probability"
+        }
+      ]
+    }
+  ]
+}

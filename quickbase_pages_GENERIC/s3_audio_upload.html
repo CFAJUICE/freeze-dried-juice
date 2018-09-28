@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+
+  
+
+
+//
+//  This script is also used to upload module and track images!  
+//
+
+  var QBU_thisTableId =$.getUrlVar("tableid");
+  var QBU_mode = $.getUrlVar("mode");
+  QBU_mode = QBU_mode ? QBU_mode : "audio" 
+  var QBU_modId = $.getUrlVar("modid");  //module OR modulette id
+  console.log("modid", QBU_modId);
+
+
+function fileSelected() {
+    var files = document.getElementById('fileToUpload').files;
+    if (files) {
+       var fileSize = 0;
+       for (var i =0; i < files.length; i++) {
+          console.log(files[i].name);
+       }
+     }
+}
+
+function doUpload() {
+       var action = document.getElementsByTagName("form")[0].getAttribute("action");
+	   document.getElementsByTagName("form")[0].setAttribute("action", action + '&sb=' + QBU_encryptedSecret());
+       $("#form1").submit();
+       $('#wait').html("<p>&nbsp;</p><strong>&nbsp;&nbsp;&nbsp;Uploading, please wait...</strong>");
+}
+
+function uploadFile() {
+       if (QBU_mode == 'modimage' || QBU_mode == 'trackimage') {
+          var rid = $.getUrlVar("rid");
+          var date = decodeURIComponent($.getUrlVar("date"));          
+          var QBU_editRecord = QBU_db_baseURL + QBU_thisTableId;
+          $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_upload_date_internal:date}).done(function() {doUpload()}); 
+       } else doUpload();
+	   
+}
+
+
+
+$(document).ready(function() {
+ $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+ $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+ QBU_deltaTime = QBU_serverTime - new Date().getTime();
+ loadSchemaThenExecute(function(){
+   
+   if (QBU_mode == 'audio') {
+       document.getElementsByTagName("form")[0].setAttribute("action", QBU_juiceDomain_s + 'juice/audio?' + 'prefix=' + programPrefix('.'));
+       $('#message').html("<p>&nbsp;</p>Click Choose Files to select the narratione files to be uploaded</b>.");
+   }
+   if (QBU_mode == 'modimage' || QBU_mode == 'trackimage') {
+        var modPrefix;
+        if (QBU_mode == 'modimage') {
+            modPrefix = QBU_modId.split('.')[0] + "."
+        } else if (QBU_mode == 'trackimage') {
+            var modArr = QBU_modId.split('.');
+            modPrefix = modArr[0] + "." + modArr[1] + ".";
+        }
+        document.getElementsByTagName("form")[0].setAttribute("action", QBU_juiceDomain_s + 'juice/images?' + 'prefix=' + programPrefix('.') + '&modprefix=' + modPrefix);
+       $('#message').html("<p>&nbsp;</p>Click Choose Files to select the image files to be uploaded</b>.");
+       console.log(modPrefix );
+   }
+ });
+ });
+ });
+ });    
+
+    </script>
+  </head>
+
+  <body>
+    <div id='message'></div>
+    <p/>
+
+    <form id="form1"  method="post" enctype="multipart/form-data"> 
+
+     <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();" multiple/>
+     <p>&nbsp;</p>
+     <p/>
+    <div id="fileSize"></div>
+    <div id="fileType"></div>
+   <p/>      
+    <input id="uploadbutton" type="button" onclick="uploadFile()" value="Upload" />
+    <div id="wait"> </div>
+   </form>
+   <div id='error'></div>
+  </body>
+</html>

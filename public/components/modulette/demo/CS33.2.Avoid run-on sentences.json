@@ -1,0 +1,92 @@
+{
+  "title": "Avoid run-on sentences",
+  "name": "CS33.2.Avoid run-on sentences",
+  "tabs": [
+    {
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "image": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS33.2.Refresher_Avoid_run-on_sentences"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Obedience classes train you and your dog.",
+          "title": "Good dog!",
+          "image": "CS33.2.Guided_Photo_Track1.png",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.2.GuidedPractice1_Avoid_run-on_sentences"
+          ]
+        },
+        {
+          "description": "Animal heroes among us.",
+          "title": "Rescued!",
+          "image": "CS33.2.Guided_Photo_Track2.png",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.2.GuidedPractice2_Avoid_run-on_sentences"
+          ]
+        },
+        {
+          "description": "A new spin on the carwash fundraiser.",
+          "title": "Dog washing for a good cause!",
+          "image": "CS33.2.Guided_Photo_Track3.png",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS33.2.GuidedPractice3_Avoid_run-on_sentences"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "Identify run-on sentences",
+          "title": "Sorter Challenge!",
+          "image": "Game_placeholder.PNG",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "CS33.2.Challenge1_Avoid_run-on_sentences_sorter"
+          ]
+        },
+        {
+          "description": "Find sentences that are correct  (not available)",
+          "title": "Shopping Spree!",
+          "image": "Game_placeholder.PNG",
+          "widget_name": "sorter_widget",
+          "widget_description": "Sorter game",
+          "files": [
+            "CS33.2.Challenge2_Avoid_run-on_sentences_sorter"
+          ]
+        },
+        {
+          "description": "Fix run-on sentences",
+          "title": "Fridge Magnet Frenzy!",
+          "image": "Game_placeholder.PNG"
+        }
+      ]
+    }
+  ]
+}

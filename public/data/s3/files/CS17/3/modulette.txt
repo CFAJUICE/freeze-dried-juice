@@ -1,0 +1,104 @@
+{
+  "title": "Planning and organizing",
+  "name": "CS17.3.Planning and organizing",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "40",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS17.3.Refresher_Planning_and_organizing"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a writing scenario and work through interactive steps to organize your ideas and create a plan for writing.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Winning a movie essay contest",
+          "title": "So many reasons that movies are better",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.3.GuidedPractice1_Planning_and_organizing"
+          ]
+        },
+        {
+          "description": "Article to help consumers save money",
+          "title": "Three key criteria for deciding what to buy",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.3.GuidedPractice2_Planning_and_organizing"
+          ]
+        },
+        {
+          "description": "Blog article on making a good impression ",
+          "title": "Just a few paragraphs to make your point",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS17.3.GuidedPractice3_Planning_and_organizing"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about planning and organizing!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Fun facts about essay organizing and planning\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS17.3.Challenge1_Planning_and_organizing_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Organize the essay body to match the thesis\n",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "CS17.3.Challenge2_Planning_and_organizing_stacker"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Identify supporting details for an essay\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS17.3.Challenge3_Planning_and_organizing_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

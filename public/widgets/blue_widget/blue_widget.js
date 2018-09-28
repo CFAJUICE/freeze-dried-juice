@@ -1,0 +1,1 @@
+angular.module('blue_widget', ['angularWidget']);

@@ -1,0 +1,150 @@
+.tab-set-container {
+  background-color: #7C4E7D;
+  padding: 2em 1.5em 0em 1.5em;
+  z-index: 1;
+  width: 100%;
+  &.fixed{
+    box-shadow: 0px 7px 5px 0px rgba(0,0,0,0.37);
+    position: fixed;
+    top: 78px;
+    z-index: 1025;
+    @media (max-width:$small-width){
+      top:0px;
+    }
+    .tab-set .tab-element{
+      font-size:11px;
+      .tab-tooltip{
+        font-size:15px;
+      }
+      .content img{
+        width:20px;
+        height:20px;
+      }
+    }
+  }
+
+  @media (max-width: $small-width) {
+    padding: 1em .5em 0em .5em;
+  }
+  .tab-set {
+    display:table;
+    width: 620px;
+    @media (max-width:650px){
+      width: 100%;
+    }
+    .tab-element {
+      cursor:pointer;
+      display: table-cell;
+      position: relative;
+      width: 30%;
+      @include with-count(1) {
+        width: 30%;
+        padding-right:60%;
+      }
+      @include with-count(2) {
+        width: 30%;
+        &:last-child{
+          padding-right:30%;
+        }
+      }
+      @include with-count(3) {
+        width: 30%;
+      }
+      @include with-count(4) {
+        width: 22%;
+      }
+      @include with-count(5) {
+        width: 18%;
+      }
+      .content {
+        color: white;
+        background-color: $dashboard-dark-purple;
+        margin: 2px 1em 0px 1em;
+        padding: 0.5em 0px;
+        text-align: center;
+        border-radius: 10px 10px 0px 0px;
+        font-weight:bold;
+        white-space: nowrap;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+        img{
+          width: 27px;
+          position: relative;
+          left: 7px;
+          top: -3px;
+          float: left;
+        }
+        .small-text, .normal-text {
+          display:none;
+        }
+
+        .normal-text {
+          display: block;
+        }
+
+        @media (max-width: $small-width) {
+          //font-size: 2vw;
+          margin: 0px 0.5vw;
+          .normal-text{
+            display:none;
+          }
+          .small-text{
+            display:block;
+          }
+        }
+      }
+      &.active {
+        .content {
+          color: $light-blue;
+          background-color: white;
+        }
+      }
+
+      & .tab-tooltip{
+        display:none;
+        z-index:10000;
+        padding:1em;
+        position:absolute;
+        top:55px;
+        left:-55px;
+        background:$tooltip-background;
+        color:white;
+        width:250px;
+        max-width: 21vw;
+        border-radius:10px;
+      }
+
+      &:first-child .tab-tooltip{
+        left:-15px;
+      }
+
+      .tab-tooltip:after, .tab-tooltip:before {
+        bottom: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .tab-tooltip:after {
+        border-color: rgba(238, 238, 238, 0);
+        border-bottom-color: $tooltip-background;
+        border-width: 15px;
+        margin-left: -15px;
+      }
+      .tab-tooltip:before {
+        border-color: rgba(204, 204, 204, 0);
+        border-bottom-color: $tooltip-background;
+        border-width: 16px;
+        margin-left: -16px;
+      }
+      &:hover .tab-tooltip{
+        display:block;
+      }
+
+    }
+  }
+}

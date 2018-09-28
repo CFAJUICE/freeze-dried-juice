@@ -1,0 +1,12 @@
+<div class="form-group">
+  <div class="col-sm-12">
+    <strong>Size</strong>
+  </div>
+  <label class="col-sm-12">
+    <select class="form-control"
+            ng-model="value.size">
+      <option ng-repeat="size in content.valueSizes" ng-value="size">{{size}}</option>
+    </select>
+    <!-- ng-init="value.size = value.size ? value.size : content.valueSizes[0]" -->
+  </label>
+</div>

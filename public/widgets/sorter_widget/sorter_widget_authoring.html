@@ -1,0 +1,185 @@
+<div ng-controller="GameAuthoringCtrl as authoring" class="container game authoring" style="padding-bottom: 115px;">
+  <game-editor content-controller="GameContentCtrl as content">
+    <div ng-include="'/components/authoring/game/editor-header.html'"></div>
+
+    <div class="sections">
+        <div class="section">
+            <div ng-include="'/components/authoring/game/common-start.html'"></div>
+        </div>
+        <!-- Instructions -->
+        <div class="section">
+            <div class="form-group">
+          <h3 class="col-sm-2">Instructions</h3>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <textarea class="form-control" placeholder="Instructions" ng-model="content.round.instructions" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-6">
+            <label>
+              <select class="form-control select-inline"
+                      ng-model="content.round.instructions_align"
+                      ng-init="content.round.instructions_align = content.round.instructions_align ? content.round.instructions_align : 'center'">
+                <option value="center">Center Align</option>
+                <option value="left">Left Align</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <strong>Font Size</strong>
+            <label class="inline-checkbox-label" >
+              <select ng-model="content.round.instructions_font_size">
+                <option ng-repeat="fontSize in [10, 12, 14, 16, 18, 20, 22, 24]"
+                        value="{{fontSize}}" 
+                        ng-selected="fontSize == content.round.instructions_font_size">{{fontSize}}</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3 class="col-sm-2">Prompt</h3>
+
+          <div class="col-sm-10" style="margin-top: 10px;">
+            <p>
+              <input type="file"
+                     accept="image/*"
+                     onchange="angular.element(this).scope().fileChanged(this)"/>
+            </p>
+            <p class="help-block">
+              Upload an image to use as a prompt.
+            </p>
+            <p>
+              <button class="btn btn-danger" ng-if="content.round.prompt_img" ng-click="content.deleteImg()">
+                Remove
+              </button>
+            </p>
+          </div>
+          <div class="col-sm-12" ng-if="content.round.prompt_img">
+            <img ng-src="data:image/png;base64, {{content.round.prompt_img}}" alt="Prompt Image" style="width: 300px;"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="form-group">
+          <h3 class="col-sm-2">Buckets</h3>
+
+          <div class="col-sm-10 edit-btns">
+            <button class="btn btn-primary" ng-click="content.add('buckets')"
+                    ng-show="content.sections.buckets.editing">Add
+            </button>
+            <button class="btn btn-primary" ng-click="content.toggleEdit('buckets')">
+              {{content.sections.buckets.editing ? 'Done' : 'Edit'}}
+            </button>
+          </div>
+        </div>
+        <div class="form-group can-delete" ng-repeat="bucket in content.buckets">
+          <div class="col-sm-3">
+            <input type="text" class="form-control"
+                   ng-readonly="!content.sections.buckets.editing"
+                   placeholder="Bucket Name" ng-model="bucket.name"/>
+          </div>
+          <div class="col-sm-8">
+            <input type="text" class="form-control"
+                   ng-readonly="!content.sections.buckets.editing"
+                   placeholder="Bucket description" ng-model="bucket.content"/>
+          </div>
+          <div class="col-sm-1">
+            <button class="btn btn-danger"
+                    ng-click="content.remove('buckets', bucket)"
+                    ng-if="content.sections.buckets.editing">-
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="form-group">
+          <h3 class="col-sm-2">Answers</h3>
+
+          <div class="col-sm-10 edit-btns">
+            <button class="btn btn-primary" ng-click="content.toggleEdit('answers')">
+              {{content.sections.answers.editing ? 'Done' : 'Edit'}}
+            </button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <textarea placeholder="Question" class="form-control"
+                      style="height: 150px;"
+                      ng-model="content.round.answer_content"
+                      ng-disabled="!content.sections.answers.editing"
+                      ng-change="content.updateAnswers()">{{content.round.answer_content}}</textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div ng-repeat="answer in content.answers" class="col-sm-4" style="margin-bottom: 10px;">
+            <div ng-bind="answer.content"></div>
+            <select class="" ng-model="answer.bucket">
+              <option value=""></option>
+              <option
+                      ng-repeat="bucket in content.buckets"
+                      ng-selected="answer.bucket == bucket.id" value="{{bucket.id}}">{{bucket.name}}</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <label>
+              <input ng-model="content.round.appear_randomly" type="checkbox" ng-disabled="!content.sections.answers.editing" class="inline-checkbox"/>
+              Appear Randomly
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div ng-include="'/components/authoring/game/editor-general-feedback.html'"></div>
+
+        <!-- Specific feedback -->
+        <div class="form-group">
+          <div class="col-sm-12">
+            Specific Incorrect Feedback
+          </div>
+        </div>
+        <div class="form-group can-delete" ng-repeat="feedback in content.feedback">
+          <div class="col-sm-2">
+            <select class="form-control" ng-model="feedback.answer">
+              <option value="any">- Any -</option>
+              <option ng-repeat="answer in content.answers" value="{{answer.id}}" ng-selected="feedback.answer == answer.id">{{answer.content}}</option>
+            </select>
+          </div>
+
+          <div class="col-sm-2">
+            <select class="form-control" ng-model="feedback.bucket">
+              <option value="any">- Any -</option>
+              <option ng-repeat="bucket in content.buckets" value="{{bucket.id}}" ng-selected="feedback.bucket == bucket.id">{{bucket.name}}</option>
+            </select>
+          </div>
+
+          <div class="col-sm-7">
+            <textarea class="form-control"
+                      rows="6"
+                      ng-model="feedback.content" ng-readonly="!content.sections.feedback.editing">
+              {{feedback.content}}
+            </textarea>
+          </div>
+          <div class="col-sm-1">
+            <button class="btn btn-danger"
+                    ng-click="content.remove('feedback', feedback)"
+                    ng-if="content.sections.feedback.editing">-
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </game-editor>
+</div>

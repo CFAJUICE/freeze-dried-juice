@@ -1,0 +1,82 @@
+{
+    "site_title":"JUICE - Refresh Your Skills",
+    "logo":"/images/juice_logo.png",
+    "short_logo":"/images/juice_logo_short.png",
+    "require_ferpa": false,
+    "help":{
+        "hide":false,
+        "help_type" : "JUICE",
+        "form_hidden_help_options":{
+            "CfA JUICE":"S3_FILE_PATH/docs/help/help.html",
+            "Generic JUICE":"S3_FILE_PATH/docs/help/generic_juice.html",
+            "Generic unbranded":"S3_FILE_PATH/docs/help/generic_unbranded.html",
+            "Custom":"USER_DEFINED"
+        },
+        "path": "S3_FILE_PATH/docs/help/help.html"
+    },
+    "breadcrumbs":{
+        "site_parent":{
+            "text":"College Name",
+            "program_name": ""
+        },
+        "site":{
+            "text":"JUICE",
+            "icon_url":"/components/breadcrumbs/orange-icon.png"
+        }
+    },
+    "dashboard":{
+        "tabs":{
+            "coaches": {
+                "label":"Student activity report",
+                "short_label":"Report",
+                "header_not_visited":"This student has not yet accessed JUICE.",
+                "header_visited":"JUICE student activity report for:",
+                "tab_tooltip":"View activity for selected student"
+            },
+            "modules": {
+                "label":"JUICE Modules",
+                "short_label":"Modules",
+                "header":"JUICE Learning Modules",
+                "tab_tooltip":"View JUICE module library"
+            },
+            "recents": {
+                "label":"Recently Visited",
+                "short_label":"Visited",
+                "header":"Recently Visited",
+                "tab_tooltip":"View recently visited JUICE modules",
+                "hide":false
+            },
+            "goals": {
+                "label":"Goals & Projects",
+                "short_label":"Goals",
+                "header":"Goals and Projects with JUICE Learning Resources",
+                "tab_tooltip":"Find JUICE modules for Goals and Projects",
+                "hide":false,
+                "group_goal_label":"GOAL",
+                "group_project_label":"PROJECT",
+                "group_modules_label":"JUICE Learning Modules"
+            }
+        }
+    },
+    "module":{
+        "hide_main_audio":false,
+        "hide_sub_audio":false,
+        "modal":{
+            "logo":"/images/juice_logo_large.png",
+            "show_learn_more":true,
+            "learn_more_link_label":"Learn more about JUICE",
+            "learn_more_content_html":[
+                "<p>Welcome to JUICE skill-building resources!  ",
+                "</p> ",
+                "<p>It’s easy to get started: Click Continue to explore the module page. From there choose a skill or start by ",
+                "trying the Challenge Wheel game. Whatever you choose you’ll get encouraging feedback and options for as much ",
+                "review and practice as you need.</p> ",
+                "<p>Tip: See the <span id=\"page-tour\" class=\"icon-map-o\">page tour</span> for a quick way to learn about features.</p>"
+            ]
+        }
+    },
+    "modulette":{
+        "hide_main_audio":false,
+        "hide_sub_audio":false
+    }
+}

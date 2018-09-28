@@ -1,0 +1,111 @@
+<html ng-app="jumc" ng-controller='mc_authoringCtl'>
+ <head>
+  <title> Multiple Choice Dialog </title>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/components/jumultchoice/mcdialog.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"> </script>
+  <script src="/bower_components/lvl-drag-drop/script/lvl-uuid.js"></script>
+  <link rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css'>
+  <link rel='stylesheet', href='/stylesheets/style.css'>
+ </head>
+ <body>
+  <div >
+    ID<br/><input type="text" name="mcid" size="50" ng-model="mcData.mcid" disabled>
+  <p> </p>
+   <p style="display:none"> Group ID<br/><input type="text" name="mcid" size="50" ng-model="mcData.content.groupId" placeholder="Optional Group Id (for step feedback)"></p>
+  <p> </p>
+    Display As<br/><label><input type="radio" ng-model="mcData.content.displayType" value="MC">Multiple Choice</label>
+	<label><input type="radio" ng-model="mcData.content.displayType" value="FI">Fill-In</label>
+	<label><input type="radio" ng-model="mcData.content.displayType" value="MS">Multi-Select</label>
+  <p> </p>
+    <p ng-hide="mcData.content.displayType=='FI'">Prompt<br/><textarea rows="1" cols="100" ng-model="mcData.content.prompt" placeholder="Insert Prompt here"></textarea><p/>	
+  </div>
+  <p/>
+  <div>
+
+    <div class="btn-group" dropdown is-open="false">
+        <button class="btn btn-default" type="button" id="nr-choices" dropdown-toggle>
+            No. of Choices: {{mcData.content.noOfChoices}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="nr-choices">
+            <li ng-repeat="a in listChoices"><a ng-click="dropboxChoiceSelected(a)">{{a}}</a></li>
+        </ul>
+    </div>
+
+
+
+	<div class="btn-group" dropdown is-open="false" >
+        <button class="btn btn-default" type="button" id="nr-tries" dropdown-toggle >
+            No. of Tries: {{mcData.content.selectedTry}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="nr-tries">
+            <li ng-repeat="a in listTries"><a ng-click="dropboxTrySelected(a)">{{a}}</a></li>
+        </ul>
+    </div><p></p>
+       
+	   <div class="row">
+	           <div class="col-sm-1" ><b>Correct</b></div>
+			   <div class="col-sm-1" ><b>Fixed</b></div>
+		       <div class="col-sm-5"><b>Answer</b></div>
+               <div class="col-sm-5" ng-show= "mcData.content.displayType != 'MS'"><b>Incorrect Feedback</b></div>
+       </div>
+
+	   <div ng-repeat="choice in mcData.content.choices track by $index" >
+	     
+		 <div ng-class-even="'ju-even'" ng-class-odd="'ju-odd'" ng-show= "mcData.content.displayType != 'MS'">
+	         <div class="row" ng-show="$index < mcData.content.noOfChoices">
+	            <div class="col-sm-1" >
+			        <input id="'cor'+$index" name="correct" ng-value="$index" ng-model="mcData.content.correct" type="radio">
+				</div>
+			    <div class="col-sm-1" >
+				    <input id="'fixed'+$index" value="true" ng-model="mcData.content.choices[$index].fixed" type="checkbox">
+				</div>
+		       <div class="col-sm-5">
+			        <textarea rows="1" cols="40" ng-model="mcData.content.choices[$index].text"></textarea>
+		        </div>
+               <div class="col-sm-5">
+			        <textarea rows="1" cols="40" ng-model="mcData.content.choices[$index].incFeedback"></textarea>
+               </div>
+            </div>
+          </div>
+
+		  <div ng-class-even="'ju-even'" ng-class-odd="'ju-odd'" ng-show= "mcData.content.displayType == 'MS'">
+	        <div class="row" ng-show="$index < mcData.content.noOfChoices">
+	            <div class="col-sm-1" >
+			        <input id="'cor'+$index" name="correct" ng-value="$index" ng-model="mcData.content.choices[$index].correct" type="checkbox">
+				</div>
+			    <div class="col-sm-1" >
+				    <input id="'fixed'+$index" value="true" ng-model="mcData.content.choices[$index].fixed" type="checkbox">
+				</div>
+		       <div class="col-sm-10">
+			        <textarea rows="1" cols="80" ng-model="mcData.content.choices[$index].text"></textarea>
+		        </div>
+
+             </div>
+          </div>
+
+      </div>
+
+	   <div >
+          Correct Feedback<br/><textarea rows="1" cols="100" ng-model="mcData.content.correctFeedback" placeholder="Insert Correct Feedback here"></textarea>
+         <p> </p>
+          Incorrect Feedback<br/><textarea rows="1" cols="100" ng-model="mcData.content.incorrectFeedback" placeholder="Insert Generic Incorrect Feedback here"></textarea><p/>	
+		  <p> </p>
+		   <span ng-show= "mcData.content.displayType == 'MS'">Incorrect Feedback--all selections correct, but missing some<br/><textarea rows="1" cols="100" ng-model="mcData.content.incorrectFeedback_not_complete" placeholder="Insert Incorrect Feedback here"></textarea></span><p/>	
+		  <p> </p>
+		   <span ng-show= "mcData.content.displayType == 'MS'">Incorrect Feedback--all correct selections included, but also some incorrect ones<br/><textarea rows="1" cols="100" ng-model="mcData.content.incorrectFeedback_allCorrPlusInc" placeholder="Insert Incorrect Feedback here"></textarea></span><p/>	
+		  <p> </p>
+		   <span ng-show= "mcData.content.displayType == 'MS'">Incorrect Feedback--some correct answers missing, plus some incorrect ones included<br/><textarea rows="1" cols="100" ng-model="mcData.content.incorrectFeedback_missCorrPlusInc" placeholder="Insert Incorrect Feedback here"></textarea></span><p/>	
+		  <p> </p>
+		   <span ng-show= "mcData.content.displayType == 'MS'">Incorrect Feedback--no correct answer<br/><textarea rows="1" cols="100" ng-model="mcData.content.incorrectFeedback_allIncorrect" placeholder="Insert Incorrect Feedback here"></textarea></span><p/>	
+		  <p> </p>
+          More Info:<br/><textarea rows="3" cols="100" ng-model="mcData.content.moreInfo" placeholder="Insert Additional Information here"></textarea>
+       </div>
+
+
+  </div>
+ </body>
+</html>

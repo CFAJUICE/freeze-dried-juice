@@ -1,0 +1,10 @@
+{
+  "juice":{
+    "custom_program_keys":["default"],
+    "quickbase_key_name":""
+  },
+   "sampleprogram":{
+    "custom_program_keys":["sample","sampleprogram"],
+    "quickbase_key_name":""
+  }    
+}

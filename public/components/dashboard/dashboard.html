@@ -1,0 +1,36 @@
+<div id="dashboard" class="subject-math">
+      <div class="tab-set-container">
+        <div class="tab-set" role="tablist">
+            <div
+                    ng-repeat="tab in dashboardData.tabs"
+                    id="tab-{{tab.id}}"
+                    ng-click="tabClick(tab.id)"
+					class="tab-element"
+                    ng-class="{'active' : tab.id==tab_id}" 
+					ng-if="showTabs()[$index] && !programValues.dashboard.tabs[tab.id].hide"
+					role="tab"
+					aria-selected="{{tab.id==tab_id}}"
+					tabindex="{{tab.id==tab_id?0:-1}}"
+				    ng-keydown="($event.keyCode === 39 || $event.keyCode === 37 || $event.keyCode === 9) && tab_arrowKeys($event.keyCode, tab.id)"
+					ng-focus="tabClick(tab.id)"
+					
+            >
+                <div class="name content">
+                    <span class="normal-text">
+                        {{programValues.dashboard.tabs[tab.id].label}}
+                    </span>
+                    <span class="small-text">
+                        {{programValues.dashboard.tabs[tab.id].short_label ? programValues.dashboard.tabs[tab.id].short_label : programValues.dashboard.tabs[tab.id].label}}
+                    </span>
+                </div>
+                <div class="tab-tooltip">
+                    {{programValues.dashboard.tabs[tab.id].tab_tooltip}}
+                </div>
+            </div>
+        </div>
+      </div>
+     <div class="ju-container-main">
+		<div ng-cloak ui-view> </div>
+     </div>
+
+</div>

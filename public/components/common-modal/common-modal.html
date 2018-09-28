@@ -1,0 +1,27 @@
+<div id="common-modal-overlay" ng-show="showModal()" ng-click="showModal(false)">
+    &nbsp;
+</div>
+<div id="common-modal" ng-show="showModal()">
+    <div id="close-common-modal" class="icon-cancel" ng-click="showModal(false)"></div>
+    <img src="/images/juice_logo_large.png" id="module-modal-logo">
+    <div class="circle-icon-container">
+        <img ng-src="{{module_icon}}" class="circle-icon">
+    </div>
+    <h2>{{module.popup_title || module.title}}</h2>
+
+    <p id="popup-description">{{(module.popup_description || module.description) | trustHTML}}</p>
+
+    <div class="juice-button" ng-click="showModal(false)">
+        Continue
+    </div>
+    <div id="learn-more-container">
+        <a ng-click="showLearnMore = !showLearnMore" class="icon-info-circled">Learn more about JUICE</a>
+    </div>
+    <div ng-if="showLearnMore">
+        JUICE is a new set of online learning resources with friendly, interactive ways to review and practice basic
+        academic skills for success in college-level work. JUICE is currently in development, so is not yet
+        generally available to many students, However, some students have access as part of a randomly selected
+        group participating in a JUICE research study. Other students may have access as part of other pilot test
+        programs.
+    </div>
+</div>

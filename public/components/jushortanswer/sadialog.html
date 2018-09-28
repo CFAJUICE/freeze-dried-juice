@@ -1,0 +1,121 @@
+<html ng-app="jusa" ng-controller='sa_authoringCtl'>
+ <head>
+  <title> Short Answer Dialog </title>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/components/jushortanswer/sadialog.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"> </script>
+  <script src="/bower_components/lvl-drag-drop/script/lvl-uuid.js"></script>
+  <link rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css'>
+  <link rel='stylesheet', href='/stylesheets/style.css'>
+ </head>
+ <body>
+  <div >
+    ID<br/><input type="text" name="said" size="50" ng-model="saData.said" disabled>
+  <p> </p>
+  <p style="display:none">  Group ID<br/><input type="text" name="said" size="50" ng-model="saData.content.groupId" placeholder="Optional Group Id (for step feedback)"></p>
+  <p> </p>
+  </div>
+  <p/>
+  <div style='padding-left:0px'>
+
+    <div class="row" >
+	  <span style='margin-left:15px'>Answer Rules Options</span><br/>
+	  <span class="btn-group col-sm-3" dropdown is-open="false">
+        <button class="btn btn-default" type="button" id="input-type" dropdown-toggle>
+            Input Type: {{saData.content.inputType}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="input-type">
+            <li ng-repeat="a in listInputTypes"><a ng-click="dropboxInputTypeSelected(a)">{{a}}</a></li>
+        </ul>		
+      </span>
+	  <span ng-show="saData.content.inputType=='text'">
+	    <span class="col-sm-3"><label>Case Sensitive <input type="checkbox" ng-model="saData.content.caseSensitive"></label></span>
+	    <span class="col-sm-3"><label>Ignore Spaces <input type="checkbox" ng-model="saData.content.ignoreSpaces"></label></span>   
+      </span>
+	  <span ng-show="saData.content.inputType=='numeric'">
+	    <span class="btn-group col-sm-3" dropdown is-open="false">
+          <button class="btn btn-default" type="button" id="answer-rules" dropdown-toggle>
+            Answer Rule: {{saData.content.answerRule}}
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="answer-rules">
+            <li ng-repeat="a in listAnswerRules"><a ng-click="dropboxAnswerRuleSelected(a)">{{a}}</a></li>
+          </ul>		
+        </span>
+	  </span>
+	</div>
+    <p>&nbsp;</p>  
+
+    <div class="btn-group" dropdown is-open="false">
+        <button class="btn btn-default" type="button" id="nr-inputs" dropdown-toggle ng-disabled="!saData.insertMode">
+            No. of Inputs: {{saData.content.noOfInputs}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="nr-Inputs">
+            <li ng-repeat="a in listInputs"><a ng-click="dropboxInputsSelected(a)">{{a}}</a></li>
+        </ul>
+    </div>
+
+	<div class="btn-group" dropdown is-open="false" >
+        <button class="btn btn-default" type="button" id="nr-tries" dropdown-toggle >
+            No. of Tries: {{saData.content.selectedTry}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="nr-tries">
+            <li ng-repeat="a in listTries"><a ng-click="dropboxTrySelected(a)">{{a}}</a></li>
+        </ul>
+    </div><p></p>
+      
+	 <div class="row"> 
+	   <span style='margin-left:15px'>Input Sizes:<br/></span>
+	   <div ng-repeat="input in saData.content.inputs track by $index">	     
+	    	<span class="col-sm-2" ng-show="$index < saData.content.noOfInputs"><input  ng-model="saData.content.inputs[$index].size" type="text"></span>
+       </div>
+    </div>
+   
+
+    <div class="row"> 
+	   <span style='margin-left:15px'>Correct Answers:<br/></span>
+	   <div ng-repeat="answers in saData.content.correct track by $index">
+	     <div ng-repeat="answer in answers track by $index">	     
+	    	<span class="col-sm-2" ng-show="$index < saData.content.noOfInputs"><input  ng-model="saData.content.correct[$parent.$index][$index]" type="text"></span>
+         </div>
+	   <p>&nbsp;</p>
+       </div>
+    </div>
+	&nbsp;&nbsp;&nbsp;&nbsp;<button class='btn btn-default' ng-click='addCorrectAnswer()'>Add Correct Answer</button><button class='btn btn-default' ng-click='removeCorrectAnswer()'>Remove Correct Answer</button>
+	
+	<p>&nbsp;</p>
+
+          Correct Feedback<br/><textarea rows="1" cols="100" ng-model="saData.content.correctFeedback" placeholder="Insert Correct Feedback here"></textarea>
+         <p> </p>
+          Incorrect Feedback<br/><textarea rows="1" cols="100" ng-model="saData.content.incorrectFeedback" placeholder="Insert Generic Incorrect Feedback here"></textarea><p/>	
+		  <p> </p>
+           
+		  <div class="row"> 
+	         <span style='margin-left:15px'>Specfic Answer Incorrect Feedback:<br/></span>
+	           <div ng-repeat="feedback in saData.content.specificIncFeedback track by $index">
+	               <div ng-repeat="items in feedback track by $index">	     
+	    	            <span class="col-sm-2" ng-show="$index < saData.content.noOfInputs"><input  ng-model="saData.content.specificIncFeedback[$parent.$index][$index]" type="text"></span>
+                   </div>
+
+                   <div class="row" ng-show="saData.content.specificIncFeedback[$index].length > 0"><span class="col-sm-2">&nbsp;</span><span class="col-sm-10" style='margin-left:15px'><textarea rows="1" cols="80" ng-model="saData.content.specificIncFeedback[$index][5]" placeholder="Insert Specific Incorrect Feedback here"></textarea></span></div> 
+			   
+               </div>
+           </div> 
+
+		    <div style='margin-top:5px;'>
+	        &nbsp;&nbsp;&nbsp;&nbsp;<button class='btn btn-default' ng-click='addIncFeedback()'>Add Feedback</button><button class='btn btn-default' ng-click='removeIncFeedback()'>Remove Feedback</button>
+			</div>
+         
+
+
+          More Info:<br/><textarea rows="3" cols="100" ng-model="saData.content.moreInfo" placeholder="Insert Additional Information here"></textarea>
+
+
+
+  </div>
+ </body>
+</html>

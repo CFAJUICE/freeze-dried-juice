@@ -1,0 +1,104 @@
+{
+  "title": "Judging arguments",
+  "name": "CS28CCT3.5.Judging arguments",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "56",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS28CCT3.5.Refresher_Judging_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a situation and work through interactive steps to decide which argument is strongest.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Neighbor sues neighbor",
+          "title": "And the winner is ...",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.5.GuidedPractice1_Judging_arguments"
+          ]
+        },
+        {
+          "description": "Family dispute over too much technology",
+          "title": "What do you decide?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.5.GuidedPractice2_Judging_arguments"
+          ]
+        },
+        {
+          "description": "Year-round school proposal",
+          "title": "What's your vote?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS28CCT3.5.GuidedPractice3_Judging_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about judging arguments!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Understanding the reasons an argument is effective\n",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS28CCT3.5.Challenge1_Judging_arguments_finderskeepers"
+          ]
+        },
+        {
+          "description": "",
+          "title": "The strongest argument?\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS28CCT3.5.Challenge2_Judging_arguments_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "You be the judge!\n",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS28CCT3.5.Challenge3_Judging_arguments_quickpick"
+          ]
+        }
+      ]
+    }
+  ]
+}

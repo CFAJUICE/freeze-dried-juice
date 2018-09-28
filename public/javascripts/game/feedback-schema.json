@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "properties": {
+    "startedAt": "date-time",
+    "endedAt": "date-time",
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "attempt"
+      }
+    }
+  },
+
+
+  "definitions": {
+    "attempt": {
+      "type": "object",
+      "properties": {
+        "startedAt": "date-time",
+        "endedAt": "date-time",
+        "rounds": {
+          "type": "array",
+          "items": {
+            "type": "round"
+          }
+        }
+      }
+    },
+    "round": {
+      "type": "object",
+      "properties": {
+        "startedAt": "date-time",
+        "endedAt": "date-time",
+        "tries": {
+          "type": "array",
+          "items": {
+            "type": "try"
+          }
+        }
+      }
+    },
+    "try": {
+      "type": "object",
+      "properties": {
+        "startedAt": "date-time",
+        "endedAt": "date-time",
+        "feedback": {
+          "type": "array",
+          "items": {
+            "type": "tryFeedback"
+          }
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "answer"
+          }
+        }
+      }
+    },
+
+    "tryFeedback": {
+      "type": "object",
+      "properties": {
+        "answer": "answer"
+      }
+    },
+
+    "answer": {
+      "type": "object",
+      "properties": {
+        "id": "string",
+        "correct": "boolean",
+        "content": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+<script>
+
+  var QBU_thisTableId = window.parent.location.pathname;
+ 
+
+   $(document).ready(function () {
+
+       //to resize window on CAMPER home page
+       window.parent.func = function() {
+        parent.$("iframe").each(function(iel, el) {
+           if (el.contentWindow === window) {
+             // Found our iframe, resize.
+             el.width = 100 + "%";
+             el.height = 80 + "px";
+             el.parentNode.style.height = "90px";
+           };
+        });
+     };
+   window.parent.func();
+
+
+       $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){ 
+	   $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+	   QBU_deltaTime = QBU_serverTime - new Date().getTime();
+            loadSchemaThenExecute(function mainCallbackAfterSchemaLoad(){
+
+
+              if (QBU_isProgramCopy) {
+			        $("#import-btn").show();
+					$("#customize-btn").show();
+					$("#qa-prod-btn").show();
+              } else {
+                    $("#copy-btn").show();
+			  }
+
+
+          $("#copy-btn").click(function() {
+               window.open(QBU_db_baseURL + QBU_dbid_common + "?a=dbpage&pagename=make_program_copy.html&tableid=" + tableIdMapping["_dbid_modules"]);
+          });
+
+		  $("#import-btn").click(function() {
+               window.open(QBU_db_baseURL + QBU_dbid_common + "?a=dbpage&pagename=program_import_module.html&tableid="+ tableIdMapping["_dbid_modules"]);
+          });
+
+		  $("#customize-btn").click(function() {
+                      //program id is in QBU_programId 
+		     window.open(QBU_juiceDomain_s + 'juice/author-program/' +QBU_programId + '?sb=' + QBU_encryptedSecret());
+          });
+
+		  $("#qa-prod-btn").click(function() {
+               window.open(QBU_db_baseURL + QBU_dbid_common + "?a=dbpage&pagename=s3_copy_dash_progcust.html&mode=cust&tableid="+ QBU_dbid);
+          });
+
+
+	      });
+       });
+	   });
+       });
+
+    </script>
+</head>
+<body>
+
+<div> <input id="copy-btn" style='display:none' type="button" value="Make Copy"/> <input id="import-btn" style='display:none' type="button" value="Import Modules"/> <input id="customize-btn" style='display:none' type="button" value="Customize Program"/> <input id="qa-prod-btn" style='display:none' type="button" value="Copy Customizations to QA/Prod"/></div>
+
+<div id='message'></div>
+<div id='error'></div>
+
+</body>
+</html>

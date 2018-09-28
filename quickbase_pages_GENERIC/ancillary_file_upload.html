@@ -1,0 +1,82 @@
+<html>
+ <head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+<script>
+
+  
+
+//var QBU_thisTableId = window.location.pathname;
+var QBU_thisTableId =$.getUrlVar("tableid");
+
+ function fileSelected() {
+        var file = document.getElementById('fileToUpload').files[0];
+        if (file) {
+          var fileSize = 0;
+          if (file.size > 1024 * 1024)
+            fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+          else
+            fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+
+          document.getElementById('fileSize').innerHTML = 'Size: ' + fileSize;
+          document.getElementById('fileType').innerHTML = 'Type: ' + file.type;
+		  var filename = $.getUrlVar('name');
+          if (programPrefix() && filename.indexOf('programs/') < 0) filename = programPrefix() + filename;
+          $("#fname").val(filename);
+		 
+         //$("#filedata").val(file);
+        }
+    }
+
+      function uploadFile() {
+          var rid = $.getUrlVar("rid");
+          var date = decodeURIComponent($.getUrlVar("date"));
+          var QBU_filesTableId = tableIdMapping["_dbid_ancillary_files"];
+          var QBU_editRecord = QBU_db_baseURL + QBU_filesTableId;
+          $.get(QBU_editRecord, {a: "API_editRecord", rid: rid, _fnm_last_upload_internal:date, _fnm_file_name: $("#fname").val()}).done(function(){ //_fid_9, _fid_6
+            $("#table").val(QBU_filesTableId);
+		    document.getElementsByTagName("form")[0].setAttribute("action", QBU_juiceDomain_s + 'juice/ancillary?sb=' + QBU_encryptedSecret());
+            $("#form1").submit();
+		  });
+      }
+
+
+
+   $(document).ready(function() {
+   $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){
+   $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+   QBU_deltaTime = QBU_serverTime - new Date().getTime();
+   loadSchemaThenExecute(function(){
+     var fileName = $.getUrlVar('name');
+	 if (programPrefix() && fileName.indexOf('programs/') < 0) fileName = programPrefix() + fileName;
+     $('#message').html("<p>&nbsp;</p>Click Choose File to select the local file to be uploaded under the name <b><i>" + fileName + "</i></b>.");
+   });
+   }); 
+   });
+   });	
+  </script>
+ </head>
+ <body>
+   <div id='message'></div>
+   <p/>
+
+  <form id="form1"  method="post" enctype="multipart/form-data"> 
+    <input type="hidden" id="fname" name="fname" value=""/>
+    <input type="hidden" id="table" name="table" value=""/>
+
+
+    <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+     <p/>
+    <div id="fileSize"></div>
+    <div id="fileType"></div>
+   <p/>    
+   
+  <input type="button" onclick="uploadFile()" value="Upload" />
+
+  </form>
+
+   <div id='error'></div>
+ </body>
+</html>

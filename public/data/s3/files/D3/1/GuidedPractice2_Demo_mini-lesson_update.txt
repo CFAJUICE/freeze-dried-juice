@@ -1,0 +1,1 @@
+{"metadata":{"objective":"","lastStepAudioPath":""},"steps":[{"headerText":"","leftText":"<p>Left pane.</p><p>&nbsp;</p>","rightText":"<p>Right pane</p>","settings":{"showHeader":1,"showAudio":1,"audioPath":"","hideRightPanel":0,"showNext":1,"delayStep":"0","delayRight":"0","showRFB":1}}],"overviewHeader":"Overview","inputData":{},"rightFloatText":null}

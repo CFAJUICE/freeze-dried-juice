@@ -1,0 +1,48 @@
+<html>
+ <head>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/db/__COMMON_DBID__?a=dbpage&pagename=common.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
+
+  <script>
+
+  QBU_deltaTime = QBU_serverTime - new Date().getTime();
+
+  //var QBU_thisTableId = window.location.pathname;
+  var QBU_thisTableId =$.getUrlVar("tableid");
+
+   var s3Buckets = {dev:"__S3_DEV_BUCKET__", qa:"__S3_QA_BUCKET__", prod:"__S3_PROD_BUCKET__"};
+   $(document).ready(function() {
+   $.getScript(QBU_thisTableId + "?a=dbpage&pagename=common_dbspecific.js", function(){
+   $.getScript(QBU_juiceDomain_s + "juice/servertime", function () {
+   QBU_deltaTime = QBU_serverTime - new Date().getTime();
+     var index = 0;
+     var widgetName = $.getUrlVar('name');
+     var fileName = $.getUrlVar('files');
+     var bucket = $.getUrlVar('bucket');
+     fileName = fileName.replace(/%20/g, "_" );
+     var bucketName = bucketName = QBU_filesDomain+s3Buckets["dev"]+'/'; // var bucketName = bucketName = '//'+s3Buckets["dev"]+'.s3-us-west-2.amazonaws.com/';
+     if (bucket && (bucket == "qa" || bucket == "prod")){
+        bucketName = QBU_filesDomain+s3Buckets[bucket]+'/';
+     } 
+     var url = bucketName + fileName.replace(/\./g,"/") +".txt";    
+     console.log(url);
+     //$('#message').html(files);
+     window.location.replace( QBU_juiceDomain_dev+ 'juice/viewjson/' + widgetName + "/" + fileName + "?bucket=" + bucketName + '&sb=' + QBU_encryptedSecret());
+     /*$.ajax({  //tried client-side only, but JSON Formatter extension not triggered, so reverted to server-side retrieval of file from S3.
+                  type: "GET",
+                  url: url
+     }).done(function(result, status, xhr){
+            //console.log(result);
+            window.open('data:application/json,'+result);            
+        });*/
+   });	
+   });
+   });
+  </script>
+ </head>
+ <body>
+   <div id='message'></div>
+   <div id='error'></div>
+ </body>
+</html>

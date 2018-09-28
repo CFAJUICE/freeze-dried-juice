@@ -1,0 +1,50 @@
+<html>
+  <head><link href="//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <script>
+	  var currentPage = 1;
+	  function showNext() {
+        currentPage = currentPage + 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage-1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+
+	  }
+	  function showPrev() {
+		currentPage = currentPage - 1;
+        document.getElementById('page'+currentPage).style.display = 'block';
+	    document.getElementById('page'+(currentPage+1)).style.display = 'none';
+	    window.scrollTo(0, 0);
+		document.getElementsByTagName("h1")[currentPage-1].focus()
+	  }      
+    </script>
+  </head>
+      <title>How sentences work</title>
+      <body>
+
+
+      <div id="page1" style="text-align:center;">
+      <h1 tabindex="0"  style="text-align:left;font-family:lato;font-size:20px;color:rgb(85,38,86);">How sentences work: Subject, verb, and direct object</h1><p/>
+      <img src="sentences_page1.gif" alt="A subject is who or what is acting in the sentence.  The verb tells what the subject is doing or being.  The direct object tells what an action verb is acting on.  In the sentence The birds build nests, birds is the subject, build is the verb, and nests is the direct object." style="width:800px;height:565px;">
+	  <p/>
+      <div >
+ 	    <button aria-label="Previous" alt="Previous" style="background:url(../../docs/common_images/previousinactive.gif); width:130px;height:32px;border:-2px" onclick="showPrev(); return false" disabled> </button>
+	    <button aria-label="Next" alt="Next" style="background:url(../../docs/common_images/next.gif); width:130px;height:32px;border:-2px" onclick="showNext(); return false"> </button>
+<p style="font-family:lato;font-size:16px;color:rgb(85,38,86);margin-top:-1px">1 of 2</p>
+ 	  </div>
+    </div>
+
+    <div id="page2" style="display:none;text-align:center;">
+      <h1 tabindex="0"  style="text-align:left;font-family:lato;font-size:20px;color:rgb(85,38,86);">How sentences work: Independent and dependent clauses</h1><p/>
+      <img src="sentences_page2.gif" alt="An independent clause can stand on its own.  A dependent clause has a marker word such as because that makes it incomplete.  The birds build nests is an independent clause.  Because birds build nests is a dependent clause.  Add an independent clause to a dependent clause to complete the sentence.  Because birds build nests, they need twigs, is a complete sentence. " style="width:800px;height:565px;">
+      <p/>
+      <div>
+ 	    <button aria-label="Previous" alt="Previous" style="background:url(../../docs/common_images/previous.gif); width:130px;height:32px;border:-2px" onclick="showPrev(); return false"> </button>
+	    <button aria-label="Next" alt="Next" style="background:url(../../docs/common_images/nextinactive.gif); width:130px;height:32px;border:-2px" onclick="showNext(); return false" disabled> </button>
+<p style="font-family:lato;font-size:16px;color:rgb(85,38,86);margin-top:-1px">2 of 2</p>
+	  </div>
+    </div> 
+
+   
+  </body>
+</html>

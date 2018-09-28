@@ -1,0 +1,104 @@
+{
+  "title": "Decide on your audience and purpose",
+  "name": "CS16.1.Pick the right paragraph type",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "47",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "CS16.1.Refresher_Pick_the_right_paragraph_type"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Practice deciding on your audience and purpose by working through one of these interactive examples",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Letter of complaint to the Gravel Mountain Motel",
+          "title": "Get your money back!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.1.GuidedPractice1_Pick_the_right_paragraph_type"
+          ]
+        },
+        {
+          "description": "Facebook posting about the Downtown Street Fair",
+          "title": "Come to the street fair!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.1.GuidedPractice2_Pick_the_right_paragraph_type"
+          ]
+        },
+        {
+          "description": "Contest entry for the <i>Worst cook in town.</i>",
+          "title": "Worst cook in town?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "CS16.1.GuidedPractice3_Pick_the_right_paragraph_type"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "Play all three challenges to practice what you've learned about identifying audience and purpose!",
+      "tab_subheader": "",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Find your purpose",
+          "widget_name": "balancer_widget",
+          "widget_description": "Balancer game",
+          "files": [
+            "CS16.1.Challenge1_Pick_the_right_paragraph_type_balancer"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Identify your audience",
+          "widget_name": "quick_pick_widget",
+          "widget_description": "Quick Pick game",
+          "files": [
+            "CS16.1.Challenge2_Pick_the_right_paragraph_type_quickpick"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Find the sentences that support your audience and purpose",
+          "widget_name": "finders_keepers_widget",
+          "widget_description": "Finders Keepers",
+          "files": [
+            "CS16.1.Challenge3_Pick_the_right_paragraph_type_finderskeepers"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "title": "Basic rules for documenting sources",
+  "name": "JCS100.4.Basic rules for documenting sources",
+  "subject": "writing",
+  "hide_from_dashboard": "0",
+  "hide_audio": "0",
+  "record_id_": "73",
+  "hide_sub_audio": "0",
+  "tabs": [
+    {
+      "tab_name": "Refresher",
+      "tab_header": "",
+      "tab_subheader": "",
+      "name": "Refresher",
+      "id": "refresher",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "",
+          "widget_name": "refresher_widget",
+          "widget_description": "Refresher Tab Widget",
+          "files": [
+            "JCS100.4.Refresher_Basic_rules_for_documenting_sources"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Guided Practice",
+      "tab_header": "Choose a scenario and work through interactive steps to learn the basic rules for in-text citations and reference list entries.",
+      "tab_subheader": "",
+      "name": "Guided Practice",
+      "id": "guided_practice",
+      "tracks": [
+        null,
+        {
+          "description": "Family history",
+          "title": "Show off those sources!",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "JCS100.4.GuidedPractice1_Basic_rules_for_documenting_sources"
+          ]
+        },
+        {
+          "description": "Tips for buying a used car",
+          "title": "Who said what?",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "JCS100.4.GuidedPractice2_Basic_rules_for_documenting_sources"
+          ]
+        },
+        {
+          "description": "Hiking in national parks",
+          "title": "And my source is. . .",
+          "widget_name": "guided_practice_widget",
+          "widget_description": "Guided Practice Tab Widget",
+          "files": [
+            "JCS100.4.GuidedPractice3_Basic_rules_for_documenting_sources"
+          ]
+        }
+      ]
+    },
+    {
+      "tab_name": "Challenge!",
+      "tab_header": "",
+      "tab_subheader": "Note:  You can download a list of references for the real sources used in these games <a href=\"S3_BUCKET_/JCS100/4/game_references.pdf\" onclick=\"window.open(this.href, '', 'scrollbars=yes,dependent=yes,width=1000,left=100,height=700,top=50'); return false;\">here</a>.",
+      "name": "Challenge!",
+      "id": "challenge",
+      "tracks": [
+        null,
+        {
+          "description": "",
+          "title": "Making everything match\n",
+          "widget_name": "stacker_widget",
+          "widget_description": "Stacker game",
+          "files": [
+            "JCS100.4.Challenge1_Basic_rules_for_documenting_sources_stacker"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Build your own citations\n",
+          "widget_name": "fridge_magnets_widget",
+          "widget_description": "Fridge mag game",
+          "files": [
+            "JCS100.4.Challenge2_Basic_rules_for_documenting_sources_fridgemagnets"
+          ]
+        },
+        {
+          "description": "",
+          "title": "Super editor!  Get those details right\n",
+          "widget_name": "fix_it_widget",
+          "widget_description": "Correct words and phrases",
+          "files": [
+            "JCS100.4.Challenge3_Basic_rules_for_documenting_sources_fixit"
+          ]
+        }
+      ]
+    }
+  ]
+}

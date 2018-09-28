@@ -1,0 +1,14 @@
+<div class="walkthrough-container" ng-attr-style="position:absolute;{{position}}">
+
+    <div data-required-element="{{requiredElement}}" class="walkthrough-tooltip {{pointerBottomClass}} {{leanLeftClass}} {{leanRightClass}}" id="walkthrough-{{order}}" ng-show="order == service.current_step">
+        <div ng-click="$event.stopPropagation();">
+        <div class="tooltip-label icon-map-o"> page tour</div>
+        <!--{{order}}--><span ng-transclude></span>
+        </div>
+        <div class="next-container">
+            <span class="next link" ng-click="next(button_text); $event.stopPropagation();">{{button_text}}</span>
+        </div>
+        <div class="close-element clickable" ng-click="stop();  $event.stopPropagation();">X</div>
+    </div>
+</div>
+
